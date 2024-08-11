@@ -1,0 +1,97 @@
+nav {
+    border-bottom: 1px solid black;
+}
+
+.navbar h2 {
+    font-family: 'PT Serif', serif;
+}
+
+.title {
+    font-family: 'PT Serif', serif;
+}
+
+.right .nav-item {
+    font-size: medium;
+}
+
+li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero-area {
+    border-bottom: 1px solid black;
+}
+
+p a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.title {
+    font-size: 60px;
+}
+
+.trends {
+    border-bottom: 1px solid lightgrey;
+}
+
+.trends h2 {
+    font-size: small;
+    font-weight: bold;
+}
+
+.trend-blog-number {
+    font-size: 30px;
+    opacity: 0.2;
+}
+
+.trend-blog h2 {
+    font-size: medium;
+}
+
+.blog-content h2 {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.fa-bookmark {
+    opacity: 0.6;
+}
+
+.content-right h2 {
+    font-size: small;
+    font-weight: bold;
+}
+
+.button {
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    padding: 6px 16px;
+}
+
+.button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button h4 {
+    font-size: small;
+    margin: 0;
+}
+
+.sub-line {
+    border-bottom: 1px solid lightgrey;
+}
+
+.see-all h4 {
+    font-size: small;
+}
+
+.see-all a {
+    text-decoration: none;
+}
+
+.tags h4 {
+    font-size: small;
+}

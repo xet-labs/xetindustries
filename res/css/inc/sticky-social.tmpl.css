@@ -1,0 +1,36 @@
+.sticky-social-wrap {
+    display: none;
+    position: absolute;
+}
+
+
+.sticky-social {
+    z-index: 10;
+    display: grid;
+    top: 27.5%;
+    gap: 39px;
+    font-size: 24.8px;
+    margin-left: 48px;
+    min-height: auto;
+    position: fixed;
+    align-items: center;
+    color: var(--colr-txt);
+    transition: unset;
+}
+.sticky-social i,
+.sticky-social svg{
+    color: var(--colr-txt);
+}
+
+.sticky-social a {
+    margin: auto;
+    cursor: pointer;
+}
+
+
+@media (min-width: 980px) {
+
+    .sticky-social-wrap {
+        display: unset;
+    }
+}

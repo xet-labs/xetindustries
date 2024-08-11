@@ -1,0 +1,122 @@
+
+@charset "utf-8";
+
+/* fonts*/
+@import url(/res/css/inc/fonts.local.css);
+/* @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200,300;400;500;600;700;800&display=swap"); */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap"); */
+
+
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    letter-spacing: -0.018em;
+}
+
+:root {
+    --font: -apple-system, system-ui !important;
+    --font: "inter", -apple-system, system-ui !important;
+    --title-font: "wix madefor text", var(--font), -apple-system, system-ui !important;
+    
+    --h: 56px;
+    --h0: 52px;
+    
+    --h1-wght: 600;
+    /* --h1-size: 2rem; */
+    /* --h1-size: 2.488rem; */
+    --h1-lineh: 1.4em;
+    --h1-lineh: 1.28em;
+    --h1: var(--h1-wght, 700) var(--h1-size, 1.9375rem) / var(--h1-lineh) var(--title-font);
+    
+    --h1-1: var(--h1-wght, 700) var(--h1-size, 2.625rem) / 1.4em var(--title-font); /* 42px */
+    
+    --h1-2: var(--h1-wght, 700) var(--h1-size, 3rem) / 1.4em var(--title-font); /* 48px */
+    
+    --h2: 500 1.75rem / normal var(--title-font);
+    --h2: 600 26px / normal var(--title-font);
+    --h2-1: 500 2rem / normal var(--title-font); /* 32px */
+    --h2-2: 500 28.5px / normal var(--title-font);
+    
+    --h3: 1.5rem;
+    --h3-2: 1.875rem; /* 30px */
+    --h3-2: 500 24px / normal var(--title-font);;
+
+    --h4: 1.25rem;
+    --h4-2: 18px;
+
+    --h5: 1.125rem;
+    --h5-2: 1.25rem; /* 20px */
+
+    --h6: 1rem;
+    --h6-2: 1.125rem; /* 18px */
+
+    --p: 400 16.6px / 1.66 var(--font);
+    --p: 400 16.9px / 1.6 var(--font);
+    --p-1: 400 16.9px / 1.64em var(--font);
+    --p-2: 400 16.9px / 1.64em var(--font);
+
+
+    --p0: 18px;
+    --p0-1: 17px;
+    --p1: 16;
+    --p1-2: 15px;
+    --p2: 14px;
+    --p2-3: 13.5px;
+    --p3: 13px;
+    --p3-4: 12.5px;
+    --p4: 12px;
+    --p5: 11px;
+    --p6: 10px;
+}
+
+@media (min-width: 680px) {
+    :root {
+        --h1: var(--h1-1);
+        --h2: var(--h2-1);
+
+        --h3: 1.75rem; /* 28px */
+        --h3: var(--h3-1);
+
+        --h4: 1.375rem; /* 22px */
+        --h4: var(--h4-1);
+
+        --h5: 1.125rem; /* 18px */
+        --h5: var(--h5-1);
+
+        --h6: 1rem; /* 16px */
+        --h6: var(--h6-1);
+
+        --p: var(--p-1);
+    }
+}
+
+@media (min-width: 980px) {
+    :root {
+        --h1: var(--h1-2);
+        --h2: var(--h2-2);
+        --h3: var(--h3-2);
+        --h4: var(--h4-2);
+        --h5: var(--h5-2);
+        --h6: var(--h6-2);
+    
+        --p: var(--p-2);
+    }
+}
+
+h1{ font: var(--h1);}
+h2{ font: var(--h2);}
+h3{ font: var(--h3);}
+h4{ font: var(--h4);}
+h5{ font: var(--h5);}
+h6{ font: var(--h6);}
+p{ font: var(--p);}
+
+@media (max-width: 679px) {
+    :root{
+        --font: -apple-system, system-ui !important;
+        /* --title-font: -apple-system, system-ui !important; */
+    }
+}
