@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Wix Madefor Text';
+    src: url(../fonts/Wix_Madefor_Text/WixMadeforText-VariableFont_wght.woff2) format("woff2-variations");
+    font-weight: 100 1000;
+    font-display: swap;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0, 'wght' 100;
+}
+@font-face {
+    font-family: 'Inter';
+    /* src: url(../fonts/Inter/Inter-VariableFont_slnt_wght.ttf) format("truetype-variations"); */
+    src: url(../fonts/Inter/Inter-VariableFont_slnt_wght.woff2) format("woff2-variations");
+    font-weight: 100 1000;
+    font-display: swap;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0, 'wght' 100;
+}

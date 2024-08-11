@@ -1,0 +1,4 @@
+.social-links img, .social-links svg, .social-links i, .other-links img, .other-links svg, .other-links i {
+    filter: invert();
+    opacity: 0.5;
+}

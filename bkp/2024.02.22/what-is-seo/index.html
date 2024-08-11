@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What is SEO? | xetindustries</title>
+  <!-- ===============SITE ICON=============== -->
+  <link rel="icon" type="image/x-icon" href="res/logo/xet-white-favicon.svg">
+
+  <!-- Meta -->
+  <link rel="canonical" href="/blog/what-is-seo/"/>
+  <!-- Meta-End -->
+
+  <!-- Google Tag Manager -->
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4ZM2NDC');</script> -->
+  <!-- End Google Tag Manager -->
+
+  <!-- =============== LOCAL STYLE SHEET=============== -->
+  <link rel="stylesheet" type="text/css" href="res/css/style.css">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Boxicons -->
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+
+  <!-- google icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- theme manager -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const brandLogo = document.querySelector('.brandLogo');
+
+      // Check user's preferred theme
+      if (localStorage.getItem("theme") === "themeDark") {
+        document.body.classList.add("themeDark");
+        brandLogo.src = 'res/logo/xet-white-logo.svg'; // Change to white version
+      }
+
+      // Toggle theme on button click
+      document.getElementById("themeSwitch").addEventListener("click", function () {
+        document.body.classList.toggle("themeDark");
+
+        // Save user's theme preference
+        const theme = document.body.classList.contains("themeDark") ? "themeDark" : "light";
+        localStorage.setItem("theme", theme);
+
+        // Switch the logo based on the theme
+        if (theme === 'themeDark') {
+          brandLogo.src = 'res/logo/xet-white-logo.svg'; // Change to white version
+        } else {
+          brandLogo.src = 'res/logo/xet-black-logo.svg'; // Change to black version
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4ZM2NDC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <div class="navbar">
+
+      <!-- Brand Logo -->
+      <div class="brand">
+        <a href="/#"><img class="brandLogo" src="res/logo/xet-black-logo.svg" alt="Xetindustries"></a>
+        <div class="line-v"></div>
+        <div class="sub-brand">
+          <a href="blog">Blog</a>
+        </div>
+      </div>
+
+      <div class="navbar_r">
+        <!--  Menu -->
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <div class="current-menu">
+                <a href="blog/" class="current-menu">Blog</a>
+              </div>
+              <div class="initbar"></div>
+            </li>
+            <li><a href="pages/product">Product</a></li>
+            <li><a href="pages/about">About</a></li>
+            <li><a href="pages/support">Support</a></li>
+            <li><a href="pages/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Theme Button -->
+        <section>
+          <button id="themeSwitch">
+            <span class="themeIcon themeLightIcon"
+              style="display: var(--themeLightIconDisplay); opacity: var(--themeLightIconOpacity);"><i
+                class="bx bx-sun"></i></span>
+            <span class="themeIcon themeDarkIcon"
+              style="display: var(--themeDarkIconDisplay); opacity: var(--themeDarkIconOpacity);"><i
+                class="bx bx-moon"></i></span>
+
+          </button>
+        </section>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ------------------------------------------------------------------------------------------------ -->
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="#" class="text-gray-600 ">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path
+          d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+      </svg>
+    </a>
+
+    <span> / </span>
+
+    <a href="#"> Blog </a>
+
+    <span> / </span>
+
+    <a href="#" class="active"> What is SEO? </a>
+  </div>
+  <!-- --------------------- -->
+
+  <div class="sticky-social">
+    <a href="#"><i class='bx bxl-instagram'></i></a>
+
+    <a href="#"><i class='bx bxl-twitter'></i></a>
+
+    <a href="#"><i class='bx bxl-linkedin'></i></a>
+
+    <a href="#"><i class='bx bx-link-alt'></i></a>
+
+  </div>
+
+  <!-- Main wrapper -->
+  <main class="main-wrapper">
+
+
+    <!-- Blog-wrapper -->
+    <div class="wrapper-blog wrapper ">
+      <div class=" con con-blog">
+        <div class="blog-category">
+          <a href="">MARKETING INSIGHTS</a>
+        </div>
+        <div class="blog-title">
+          What is SEO? A beginner’s guide to search engine optimization
+        </div>
+
+        <!-- END-Breadcrumb -->
+        <ul class="blog-meta">
+          <li> Amanda Weiner </li>
+          <li> <span class="seperator"></span> </li>
+          <li>Dec 5, 2022 </li>
+          <li> <span class="seperator"></span> </li>
+          <li> 14 min read </li>
+        </ul>
+        <div class="blog-hero">
+          <img data-src="res/aset-blog/what-is-seo/img/hero.webp" class="lazyload" alt="what-is-seo">
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ------------------------------------------------------------------------------------------------ -->
+
+  <!-- Footer -->
+  <footer class="footer-wrapper">
+    <div class="footer">
+      <div class="newsletter-wrapper">
+        <div class="newsletter">
+          <!-- Newsletter Title & Description -->
+          <div class="banner">
+            <div class="n-title">
+              <span>Weekly&#160;</span> <span>Newspaper.</span>
+            </div>
+
+            <div class="n-list">
+              <div class="nl-item"><img
+                  src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605c6a99f6276e3eb7baa930_checkmark.svg"
+                  loading="lazy" alt="" class="nli-icon-check">
+                <div class="nli-text">Travel discounts</div>
+              </div>
+              <div class="nl-item"><img
+                  src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605c6a99f6276e3eb7baa930_checkmark.svg"
+                  loading="lazy" alt="" class="nli-icon-check">
+                <div class="nli-text">Business posts</div>
+              </div>
+              <div class="nl-item"><img
+                  src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605c6a99f6276e3eb7baa930_checkmark.svg"
+                  loading="lazy" alt="" class="nli-icon-check">
+                <div class="nli-text">Best of culinary</div>
+              </div>
+              <div class="nl-item"><img
+                  src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605c6a99f6276e3eb7baa930_checkmark.svg"
+                  loading="lazy" alt="" class="nli-icon-check">
+                <div class="nli-text">Updated tech news</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter Emailform-wrapper -->
+          <div class="n-emailform">
+            <!-- Newsleter Form-input Name -->
+            <div class="nef-name">
+              <input type="text" class="nef-input" maxlength="256" name="Newsletter-name-2"
+                data-name="Newsletter-Name-2" placeholder="Name" id="Newsletter-name-2">
+            </div>
+            <!-- Newsleter Form-input Email -->
+            <div class="nef-email">
+              <input type="email" class="nef-input" maxlength="256" name="Newsletter-email-2"
+                data-name="Newsletter-Email-2" placeholder="Email" id="Newsletter-email-2">
+
+              <!-- Newsletter Submit -->
+              <div class="nef-submit">
+                <input type="submit" value="" data-wait="Please wait..." class="nefs-button"><img
+                  src="res/icon/arrow-right-dark.svg" loading="lazy" alt="ico-sub" class="nefs-icon">
+              </div>
+            </div>
+
+            <div class="nef-success">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+
+            <div class="nef-err">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <!-- Site Links -->
+        <div class="site-links tag">
+          <a href="/home/home-1-light">Home</a>
+          <a href="/post-grids/2-col-sidebar-light">Posts</a>
+          <a href="/about/about-light">About</a>
+          <a href="/contact-2/contact-light">Services</a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links tag">
+          <a href="http://www.twitter.com" target="_blank">
+            <img
+              src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22bfdeaf266bfbc017_twitter%20-%20light.png"
+              loading="lazy" alt="">
+          </a>
+          <!-- <a href="http://www.facebook.com" target="_blank">
+              <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d228bff5114fee6b7d6_facebook%20-%20light.png" loading="lazy" alt="">
+            </a> -->
+          <a href="http://www.instagram.com" target="_blank">
+            <img
+              src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22afd8bd32d4220b0b_instagram%20-%20light.png"
+              loading="lazy" alt="">
+          </a>
+          <!-- <a href="http://www.spotify.com" target="_blank">
+              <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22b8ab6349f47d2e57_spotify%20-%20light.png" loading="lazy" alt="">
+            </a> -->
+          <a href="http://www.youtube.com" target="_blank">
+            <img
+              src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22a064d81aceb83d58_youtube%20-%20light.png"
+              loading="lazy" alt="">
+          </a>
+          <a href="http://www.pinterest.com" target="_blank">
+            <img
+              src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d2109dd4901b630721a_pinterest%20-%20light.png"
+              loading="lazy" alt="">
+          </a>
+        </div>
+
+        <!-- Other Links -->
+        <div class="tag other-links">
+          <a href="https://github.com" target="_blank">
+            <img
+              src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973ddd931304595a882b0_icon__github--black.svg"
+              loading="eager" alt="" class="tag-icon">
+            <div>Github</div>
+          </a>
+          <a href="https://threads.net">
+            <img
+              src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973e73a288dd4fc132723_icon__threads--black.svg"
+              loading="eager" alt="" class="tag-icon">
+            <div>Threads</div>
+          </a>
+          <a href="mailto:youremail@email.com?subject=Define%20-%20Contact">
+            <img
+              src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973f3c489a49f48894b71_icon__email--black.svg"
+              loading="eager" alt="" class="tag-icon">
+            <div>Contact</div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+<!-- =============== LOCAL LIBS=============== -->
+<script src="res/lib/google/ajax/jquery.min.js"></script>
+<script src="res/script/script.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23MMMZRSHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-23MMMZRSHB');
+</script>
+
+</html>
