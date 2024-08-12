@@ -52,7 +52,7 @@ body.themeDark {
 .blog-wrap {
     display: grid;
     font-family: var(--blog-font);
-    color: var(--colr-txt2);
+    /* color: var(--colr-txt2); */
     margin-bottom: 0;
     transition-duration: 0s;
 }
@@ -106,9 +106,12 @@ body.themeDark {
     box-shadow: var(--post-image-box-shadow);
 }
 
+.blog-con:is(h1,h2,h3,h4,h5,h6,p,ol,ul){
+    text-wrap: pretty;
+}
 .blog-con h1 {
     padding: 0.5em 0.26em 0.5em 0px;
-    color: var(--h1-color);
+    color: var(--h1-color, var(--blog-h1-color));
 }
 
 .blog-con h2 {

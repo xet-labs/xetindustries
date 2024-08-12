@@ -12,5 +12,6 @@
     font-style: normal;
     font-display: swap;
     font-weight: 1 999;
-    font-variation-settings: 'slnt' 0, 'wght' 100;
+    /* font-variation-settings: 'slnt' 0, 'wght' 100; */
+    font-variation-settings: "liga", "calt";
 }
