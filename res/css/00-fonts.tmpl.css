@@ -61,6 +61,11 @@ h1, h2, h3, h4 {
     --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font);
     --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
 
+    --p-2: var(--p-wghtt, 400) 1.125rem / 1.7777778em var(--font);
+    /* --p-2: var(--p-wghtt, 400) 1.25rem / 1.8em var(--font); */
+
+
+
 
     --p0: 18px;
     --p0-1: 17px;
