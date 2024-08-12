@@ -16,6 +16,7 @@ h1, h2, h3, h4 {
     letter-spacing: -0.018em;
 }
 
+
 :root {
     --font: -apple-system, system-ui !important;
     --font: "inter", -apple-system, system-ui !important;
@@ -55,9 +56,12 @@ h1, h2, h3, h4 {
     --p: var(--p-wght, 400) 16.6px / 1.66 var(--font);
     --p: var(--p-wght, 400) 16.9px / 1.6 var(--font);
     --p-1: var(--p-wght, 400) 16.9px / 1.64em var(--font);
-    --p-2: var(--p-wghtt, 430) 16.9px / 1.64em var(--font);
-    --p-2: var(--p-wghtt, 400) 17.5px / 1.65em var(--font);
-    --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font);
+    /* stable */
+    --p-2: var(--p-wghtt, 400) 16.9px / 1.64em var(--font);
+    /* stable */
+    /* --p-2: var(--p-wghtt, 430) 16.9px / 1.64em var(--font); */
+    /* --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font); */
+    /* --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
 
 
     --p0: 18px;
