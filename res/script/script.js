@@ -2,10 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // Check user's preferred theme
-  const brandLogo = document.querySelector('.brandLogo');
   if (localStorage.getItem("theme") === "themeDark") {
     document.body.classList.add("themeDark");
-    brandLogo.src = 'res/brand/xet-white-logo.svg';
   }
 
   // Toggle theme on button click
@@ -15,13 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Save user's theme preference
     const theme = document.body.classList.contains("themeDark") ? "themeDark" : "light";
     localStorage.setItem("theme", theme);
-
-    // Switch the logo based on the theme
-    // if (theme === 'themeDark') {
-    //   brandLogo.src = 'res/brand/xet-white-logo.svg';
-    // } else {
-    //   brandLogo.src = 'res/brand/xet-black-logo.svg';
-    // }
   });
 });
 
@@ -137,10 +128,29 @@ $(window).scroll(function(){
 
 // observer.observe(document.getElementById(".sAnim"))
 
-
-
-// 
-
+// Function to handle h2 scroll on-click
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the root font size once
+  const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const offset = 1.5 * rootFontSize; // 1.5em converted to pixels
+  
+  // Function to handle the scroll
+  function scrollToHeading(event) {
+      const heading = event.target;
+      const elementTop = heading.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementTop - offset;
+      
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  }
+  
+  // Attach click event listener to each <h2> element
+  document.querySelectorAll('h2').forEach(heading => {
+      heading.addEventListener('click', scrollToHeading);
+  });
+});
 
 
 /* -lazysizes - v5.3.2 */

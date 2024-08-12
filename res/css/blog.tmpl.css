@@ -19,8 +19,8 @@
     --blog-p-m-b: 0;
     --blog-p-m: var(--blog-p-m-t) 0 var(--blog-p-m-b);
     
-    --blog-p-m: 0;
-    --blog-p-pd: 0.75rem 0;
+    /* --blog-p-m: 0.75rem 0; */
+    /* --blog-p-pd: 0.75rem 0; */
     --blog-p-size: 1.125rem;
     --blog-p-lineh: 1.625em;
 
@@ -117,7 +117,7 @@ body.themeDark {
 .blog-con h2 {
     margin: var(--blog-h2-m);
     color: var(--h1-color);
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
 .blog-con h2 a:hover {
     transition-duration: 0s;

@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
     /* stable */
     --p-2: var(--p-wghtt, 400) 16.9px / 1.64em var(--font);
     /* stable */
-    /* --p-2: var(--p-wghtt, 430) 16.9px / 1.64em var(--font); */
+    /* --p-2: var(--p-wghtt, 425) 16.9px / 1.64em var(--font); */
     /* --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font); */
     /* --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
 
