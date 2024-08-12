@@ -79,7 +79,8 @@
     --colr-txt: #191c1f;
     --colr-txt: #1f2937;
     --colr-txt: #26272e;
-    /* --colr-txt: #333;     */
+    /* --colr-txt: #111; */
+    /* --colr-txt: #333;    */
     /* --colr-txt: #0b0d10; */
 
 
@@ -93,7 +94,6 @@
 
     --con-bg: var(--body-bg);
     --con-bg: transparent;
-    --con-bg: #fff;
     --con-media-bg: #f6f7f7;
     --con-media-bg: transparent;
 

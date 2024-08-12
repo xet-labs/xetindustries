@@ -37,7 +37,7 @@ h1, h2, h3, h4 {
     --h2: 500 1.75rem / normal var(--title-font);
     --h2: 600 26px / normal var(--title-font);
     --h2-1: 500 2rem / normal var(--title-font);
-    --h2-2: 500 28.5px / normal var(--title-font);
+    --h2-2: 600 28.5px / normal var(--title-font);
     
     --h3: 1.5rem;
     --h3-2: 1.875rem;
@@ -56,12 +56,10 @@ h1, h2, h3, h4 {
     --p: var(--p-wght, 400) 16.6px / 1.66 var(--font);
     --p: var(--p-wght, 400) 16.9px / 1.6 var(--font);
     --p-1: var(--p-wght, 400) 16.9px / 1.64em var(--font);
-    /* stable */
     --p-2: var(--p-wghtt, 400) 16.9px / 1.64em var(--font);
-    /* stable */
-    /* --p-2: var(--p-wghtt, 425) 16.9px / 1.64em var(--font); */
-    /* --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font); */
-    /* --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
+    /* --p-2: var(--p-wghtt, 425) 16.9px / 1.64em var(--font);
+    --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font);
+    --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
 
 
     --p0: 18px;
