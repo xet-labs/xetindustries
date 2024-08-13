@@ -3,24 +3,28 @@
     /* --blog-p-colr: #444;
     --blog-p-colr: #333; */
 
-
+    
+    --blog-media-m: 1.6568em 0 1.7em;
+    /* --blog-media-m: 1.66em 0 1.7em 0; */
     /* --con-blog-padding-lr: 1.5rem; */
-
     --blog-con-max-width: 46.25rem;
     /* --blog-con-max-width: 790px; */
-    --blog-h2-m: 1.8245em 0 .70175em;
-    --blog-h2-m: 3rem 0 0.5rem;
-    --blog-media-m: 1.6568em 0 1.7em ;
-    /* --blog-media-m: 1.66em 0 1.7em 0; */
 
-    
+    /* --blog-h2-m: 1.8245em 0 .70175em; */
+    --blog-h2-m: 3rem 0 0.5rem;
+
+    /* tmpl-1
+    --blog-p-pd: 0.75rem 0;
+    --blog-h2-m: 3rem 0 0.5rem; */
     --blog-p-m-t: 1.3201em;
-    /* --blog-p-m-b: .9467em; */
-    --blog-p-m-b: 0;
+    --blog-p-m-b: .9467em;
     --blog-p-m: var(--blog-p-m-t) 0 var(--blog-p-m-b);
-    
-    /* --blog-p-m: 0.75rem 0; */
-    /* --blog-p-pd: 0.75rem 0; */
+    --blog-p-m: 0.75rem 0;
+    --blog-p-m: unset;
+    --blog-p-pd: 1rem 0 1rem;
+    --blog-p-pd: 0.75rem 0;
+    /* --blog-p-pd: unset; */
+
     --blog-p-size: 1.125rem;
     --blog-p-lineh: 1.625em;
 
@@ -117,7 +121,7 @@ body.themeDark {
 .blog-con h2 {
     margin: var(--blog-h2-m);
     color: var(--h1-color);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .blog-con h2 a:hover {
     transition-duration: 0s;

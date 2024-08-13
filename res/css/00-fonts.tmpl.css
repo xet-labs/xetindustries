@@ -28,41 +28,55 @@ h1, h2, h3, h4 {
     /* --h1-wght: 600; */
     /* --h1-size: 2rem; */
     /* --h1-size: 2.488rem; */
+    --h1-size: 2.986rem;
+
     --h1-lineh: 1.4em;
     --h1-lineh: 1.28em;
+    --h1-lineh: 1.15em;
+    --h1-letsp: -0.025em;
+    --h1-letsp: -0.018em;
     --h1: var(--h1-wght, 700) var(--h1-size, 1.9375rem) / var(--h1-lineh) var(--title-font);
     --h1-1: var(--h1-wght, 700) var(--h1-size, 2.625rem) / 1.4em var(--title-font);
-    --h1-2: var(--h1-wght, 700) var(--h1-size, 3rem) / 1.4em var(--title-font);
+    --h1-2: var(--h1-wght, 700) var(--h1-size, 3rem) / var(--h1-lineh, 1.4em) var(--title-font);
     
-    --h2: 500 1.75rem / normal var(--title-font);
-    --h2: 600 26px / normal var(--title-font);
-    --h2-1: 500 2rem / normal var(--title-font);
-    --h2-2: 600 28.5px / normal var(--title-font);
+    --h2-size: 1.802rem;
+    --h2-letsp: -0.022em;
+    --h2-letsp: -0.025em;
+
+    --h2: 500 var(--h2-size, 1.75rem) / normal var(--title-font);
+    --h2: 600 var(--h2-size, 26px) / normal var(--title-font);
+    --h2-1: 500 var(--h2-size, 2rem) / normal var(--title-font);
+    --h2-2: 500 var(--h2-size, 1.802rem) / normal var(--title-font);
     
+    --h3-letsp: ;
     --h3: 1.5rem;
     --h3-2: 1.875rem;
     --h3-2: 500 24px / normal var(--title-font);;
 
+    --h4-letsp: ;
     --h4: 1.25rem;
     --h4-2: 18px;
 
+    --h5-letsp: ;
     --h5: 1.125rem;
     --h5-2: 1.25rem;
 
+    --h6-letsp: ;
     --h6: 1rem;
     --h6-2: 1.125rem;
 
-    --p-wght: 430;
+    /* --p-wght: 430; */
+    --p-letsp: -0.00418em;
     --p: var(--p-wght, 400) 16.6px / 1.66 var(--font);
     --p: var(--p-wght, 400) 16.9px / 1.6 var(--font);
     --p-1: var(--p-wght, 400) 16.9px / 1.64em var(--font);
-    --p-2: var(--p-wghtt, 400) 16.9px / 1.64em var(--font);
-    /* --p-2: var(--p-wghtt, 425) 16.9px / 1.64em var(--font);
-    --p-2: var(--p-wghtt, 400) 17px / 1.65em var(--font);
-    --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
-
-    --p-2: var(--p-wghtt, 400) 1.125rem / 1.7777778em var(--font);
+    --p-2: var(--p-wghtt, 425) 16.9px / 1.64em var(--font);
+    --p-2: var(--p-wghtt, 400) 17.2px / 1.65em var(--font);
+    /* --p-2: var(--p-wghtt, 400) 17.5px / 1.65em var(--font); */
+    /* --p-2: var(--p-wghtt, 400) 1.125rem / 1.625em var(--font); */
+    /* --p-2: var(--p-wghtt, 400) 1.125rem / 1.7777778em var(--font); */
     /* --p-2: var(--p-wghtt, 400) 1.25rem / 1.8em var(--font); */
+
 
 
 
@@ -114,13 +128,34 @@ h1, h2, h3, h4 {
     }
 }
 
-h1{ font: var(--h1);}
-h2{ font: var(--h2);}
-h3{ font: var(--h3);}
-h4{ font: var(--h4);}
-h5{ font: var(--h5);}
-h6{ font: var(--h6);}
-p{ font: var(--p);}
+h1{ 
+    font: var(--h1);
+    letter-spacing: var(--h1-letsp);
+}
+h2{ 
+    font: var(--h2);
+    letter-spacing: var(--h2-letsp);
+}
+h3{ 
+    font: var(--h3);
+    letter-spacing: var(--h3-letsp);
+}
+h4{ 
+    font: var(--h4);
+    letter-spacing: var(--h4-letsp);
+}
+h5{ 
+    font: var(--h5);
+    letter-spacing: var(--h5-letsp);
+}
+h6{ 
+    font: var(--h6);
+    letter-spacing: var(--h6-letsp);
+}
+p{ 
+    font: var(--p);
+    /* letter-spacing: var(--p-letsp) */
+}
 
 @media (max-width: 679px) {
     :root{

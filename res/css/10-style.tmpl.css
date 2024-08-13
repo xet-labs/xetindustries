@@ -74,15 +74,18 @@
     --body-media-bg: #f8f7f4;
     --body-media-bg: #f6f6f6;
     --body-media-bg: #f7f7f7;
-    /* --body-media-bg: #fff; */
+    /* --body-media-bg: #f3f4f6; */
+    --body-media-bg: #fff;
 
     --colr-txt: #191c1f;
     --colr-txt: #1f2937;
     --colr-txt: #26272e;
-    /* --colr-txt: #222;*/
-    /* --colr-txt: #333;*/
-    /* --colr-txt: #111; */
-    /* --colr-txt: #0b0d10; */
+    --colr-txt: #333;
+    --colr-txt: #222;
+    --colr-txt: #111;
+    /* --colr-txt: #0b0d10;
+    --colr-txt: #080808; */
+
 
 
     --colr-txt2: #333;
@@ -140,7 +143,7 @@
     --post-bg: transparent;
     --post-media-bg: transparent;
 
-    --con-blog-bg: #f3f4f6;
+    /* --con-blog-bg: #f3f4f6; */
 
     --search-bar-bg: #fff;
     --search-bar-bg: #00000006;
@@ -566,7 +569,7 @@ nav {
     border-bottom: .16px solid var(--colr-line);
     background: var(--nav-bg, var(--body-bg));
     color: var(--nav-colr);
-    box-shadow: var(--shadow-large);
+    /* box-shadow: var(--shadow-large); */
 
     /* overflow: hidden; */
         
