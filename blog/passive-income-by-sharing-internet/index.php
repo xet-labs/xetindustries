@@ -142,7 +142,7 @@
             </a>
           </h2>
           <p>
-            Mysterium Network is a decentralized network of computers that provides peer-to-peer proxy services. It allows the Node runners to share unused internet bandwidth and earn through the MYST crypto while simultaneously contributing the mysterium network to grow. 
+            Mysterium Network is a decentralized network of computers that provides P2P services. It allows the Node runners to share unused internet bandwidth and earn “MYST” crypto while simultaneously contributing the mysterium network to grow. 
           </p>
           <p>
             <b><b>Rate: </b></b>Varies with services being utilised by clients.
@@ -295,9 +295,9 @@
             <br>
             <b><b>Platform: </b></b>Android, Windows, Linux, MacOS.
             <br>
-            <b><b>Payout: </b></b>PayPal | Crypto (Jmpt)
+            <b><b>Payout: </b></b>PayPal, Crypto (Jmpt)
             <br>
-            <b><b>Min payout: </b></b> $20 (PayPal) | Crypto (no min limit)
+            <b><b>Min payout: </b></b> $20 (PayPal), Crypto (no min limit)
             <br>
             <b><b>Requisite: </b></b> Internet connection.
           </p>
@@ -363,7 +363,7 @@
             <br>
             <b><b>Platform: </b></b>Android, Windows, Linux, MacOS.
             <br>
-            <b><b>Payout: </b></b>PayPal | VISA | Crypto (BTC)
+            <b><b>Payout: </b></b>PayPal, VISA, Crypto (BTC)
             <br>
             <b><b>Min payout: </b></b>$5
             <br>
