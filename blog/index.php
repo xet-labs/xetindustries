@@ -206,15 +206,6 @@
       <!-- Posts Wrapper -->
       <div class="wrapper con posts-wrapper" id="posts-wrapper">
 
-        <!-- <div class="main-title">
-          <a href="">
-            <span>TECH</span>
-            <span class="subtitle">
-              latest news about technology
-            </span>
-          </a>
-        </div> -->
-
         <!-- Post Category -->
         <div class="posts-category">
           <div class="category-menu">
@@ -225,26 +216,12 @@
 
         <!-- Posts Grid -->
         <div class="posts-grid" id="BlogCards">
-          <!-- cards -->
+          
         </div>
 
         <div class="bouncy-loader" id="blogCards_loading"> <div></div><div></div><div></div> </div>
-
-      <!-- posts wrapper END -->
+      
       </div>
-
-      <!-- Sidebar Wrapper -->
-      <div class="sidebar-wrapper">
-
-        <!-- Sidebar-V-Line -->
-        <div class="sidebar-v-line"></div>
-        
-        <div class="sidebar">
-
-        </div>
-
-      </div>
-
 
     </div>
   </main>

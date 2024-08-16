@@ -1,39 +1,71 @@
-  <?php include_once("res/php/conf/config.php"); ?>
+  <?php //include_once("../conf/config.php"); ?>
 
-  <?php include_once($TMPL['head']); ?>
+
+  <?php 
+    $Page = [
+      "title" => "Mysterium Node backup & restore - XetIndustries Blog",
+      "meta" => [
+        'servername' => "localhost",
+        'username' => "XIu",
+        'pass' => "$XIpass",
+        'db' => "XI"
+      ],
+      "rel" =>[
+        'canonical' => "localhost",
+        'username' => "XIu_t",
+        'pass' => "uTestDbPass",
+        'db' => "XI_t"
+      ]
+    ];
+
+    include_once($TMPL['head']); 
+  ?>
   
   
-  <title>Mysterium Node backup & restore - Xet Industries Blog</title>
+  <title><?php echo htmlspecialchars($Page['title']); ?></title>
 
   <!-- =============== Meta-Begin =============== -->
-  <meta name="author" content="Rishikesh Prasad" />
-  <!-- <link rel='shortlink' href='' /> -->
-  <link rel="canonical" href="https://xet.ilovekulhad.com/blog/mysterium-node-backup-and-restore/#" />
+  <meta data-rh="true" name="title" content="Automating backups on Mac OS X with Borg and cron | by John Wheeler | Mac O’Clock | Medium" />
   <meta name="description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization.">
+  <meta data-rh="true" name="author" content="Rishikesh Prasad" />
+  <meta data-rh="true" name="referrer" content="unsafe-url" />
+  <meta data-rh="true" name="robots" content="index,noarchive,follow,max-image-preview:large" />
+
+  <link data-rh="true" rel="canonical" href="https://xet.ilovekulhad.com/blog/mysterium-node-backup-and-restore/" />
+  <link data-rh="true" rel="author" href="https://jswheeler.medium.com" />
+  <meta data-rh="true" property="article:published_time" content="2021-04-15T02:26:30.641Z" />
+
   <meta name="keywords" content="how to make money online, ways to make maney online, Xet, Xet Industries, XetIndustries, XetIndustries blog, Rishikesh Prasad, Web Developer, Blogger, Content Writer" />
 
-  <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+  <meta name="generator" content="Webflow" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:locale" content="en" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Xet Industries" />
+  <meta property="og:url" content="/blog/mysterium-node-backup-and-restore/#" />
   <meta property="og:title" content="What is SEO?" />
   <meta property="og:description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization." />
-  <meta property="og:url" content="/blog/mysterium-node-backup-and-restore/#" />
-  <meta property="og:image" content="asset/img/mysterium-node-backup-and-restore.webp" />
-  <meta property="og:image:width" content="740" />
-	<meta property="og:image:height" content="423" />
+  <meta property="og:image:secure_url" content="asset/img/mysterium-node-backup-and-restore.webp" />
+  <!-- <meta property="og:image:width" content="740" /> -->
+	<!-- <meta property="og:image:height" content="423" /> -->
   <meta property="og:image:type" content="image/webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Xet Industries" />
   
+  <!-- Twitter -->
+  <meta name="twitter:url" content="https://webflow.com/blog/fonts-for-web-design">
   <meta name="twitter:title" content="What is SEO?">
   <meta name="twitter:description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization.">
-	<meta name="twitter:creator" content="@xetindustries" />
-  <meta name="twitter:site" content="@xetindustries" />
   <meta name="twitter:image" content="asset/img/mysterium-node-backup-and-restore.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" value="webflow.com" />
+  <meta name="twitter:site" content="@xetindustries" />
+	<meta name="twitter:creator" content="@xetindustries" />
 	<meta name="twitter:label1" content="Written by" />
 	<meta name="twitter:data1" content="Rishikesh Prasad" />
-	<meta name="twitter:label2" content="Estimated reading time" />
-	<meta name="twitter:data2" content="3 minutes" />
-  <!-- <meta name="twitter:card" content="summary_large_image" /> -->
+  <meta name="twitter:label2" value="Category" />
+  <meta name="twitter:data2" value="Design" />
+  <meta name="twitter:label3" value="Published on" />
+  <meta name="twitter:data3" value="Jan 25, 2023" />
 
   <script type="application/ld+json">
     {
@@ -100,7 +132,7 @@
           </ul>
         </div>
 
-        <div class="blog-cnt">
+        <div class="blog-main">
           <div class="blog-hero">
             <img data-src="asset/img/mysterium-node-backup-and-restore.webp" class="lazyload" alt="Xet Industries mysterium-node-backup-and-restore">
           </div>

@@ -1,0 +1,111 @@
+@media (min-width: 460px) {
+    :root {
+        --body-bg: var(--body-media-bg);
+        --nav-bg: var(--nav-media-bg);
+    }
+    footer {
+        border-top-left-radius: var(--border-radius2);
+        border-top-right-radius: var(--border-radius2);
+    }
+    .posts-wrapper {
+        --post-wrapper-max-width: 460px;
+    }
+    .con {
+        --con-padding-tb: 1.5rem;
+        --con-padding-lr: 1.5rem;
+        --con-bg: var(--con-media-bg);
+        --con-box-shadow: var(--con-media-box-shadow);
+    }
+}
+
+@media screen and (min-width: 680px) {
+    .wrapper {
+        --wrapper-margin-tb: 1rem;
+        --wrapper-margin: var(--wrapper-margin-tb) 0;
+    }
+    .main-wrapper {
+        --main-padding: 0rem 2.6rem;
+    }
+
+    .posts-wrapper {
+        --post-wrapper-max-width: unset;
+    }
+
+    .highlights-wrapper {
+        --highlights-wrapper-display: grid;
+    }
+
+    .highlights-grid .post:nth-child(3) {
+        display: none;
+    }
+
+    .highlights-grid {
+        --highlights-grid-template: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 980px) {
+    .main-wrapper {
+        --main-padding: 0rem 3rem;
+    }
+    .highlights-wrapper {
+        --highlights-wrapper-display: grid;
+    }
+    .highlights-grid {
+        --highlights-grid-template: repeat(3, minmax(0, 1fr));
+    }
+
+    .highlights-grid .post:nth-child(3) {
+        display: block;
+    }
+
+    .con-postsidebar {
+        flex-direction: row;
+    }
+
+    .sidebar-v-line {
+        --sidebar-v-line-display: var(--sidebar-media-v-line-display);
+    }
+
+    .sidebar-wrapper {
+        --sidebar-display-direction: ;
+        max-width: var(--sidebar-media-width-max);
+        margin: var(--sidebar-media-margin);
+        padding: var(--sidebar-media-padding);
+    }
+
+    .newsletter {
+        grid-template-columns: .8fr 1fr;
+    }
+
+    .newsletter .banner {
+        justify-self: flex-end;
+    }
+
+    .newsletter .n-title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .newsletter .n-emailform {
+        justify-self: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: row;
+    }
+
+    .footer-links .site-links {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1215px) {
+    .main-wrapper {
+        --main-padding: 0rem 2rem;
+    }
+}
+
+
+
+

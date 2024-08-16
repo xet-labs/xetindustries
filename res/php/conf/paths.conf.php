@@ -74,7 +74,7 @@
         if (!is_array($directories)) {
             $directories = [$directories];
         }
-
+        
         switch ($type) {
             case 1:
                 $_genFilesArray = '_genFilesUrlArray';
@@ -84,19 +84,26 @@
                 break;
         }
         
+        $files = [];
         $fileArray = [];
-        foreach ($directories as $directory) {
-            if (!is_dir($directory)) { continue; }
+        foreach ($directories as $dir) {
+            if (!is_dir($dir)) { continue; }
             
-            // Get all files with the specified extension in the directory
-            $files = glob($directory . "/*.$fileExtension");
-            
+            if (is_dir($dir . "/inc")) {
+                // $dirsToProcess[] = $directory . "/inc";
+                $files = array_merge($files, glob("$dir/inc/*.$fileExtension"));
+            }
+
+            // -get files with matching extension in the directory
+            $files = glob("$dir/*.$fileExtension");
+            // -get directories with matching extension
+            $subdirs = glob("$dir/*.$fileExtension.d", GLOB_ONLYDIR);
+            foreach ($subdirs as $subdir) {
+                $files = array_merge($files, glob("$subdir/*.$fileExtension"));
+            }
+                
             $fileArray = array_merge($fileArray, $_genFilesArray($files, $fileExtension));
             
-            if (!is_dir($directory. "/inc")) { ;
-                $files = glob($directory . "/inc" . "/*.$fileExtension");
-                $fileArray = array_merge($fileArray, $_genFilesArray($files, $fileExtension));
-            } 
         }
         return $fileArray;
     }

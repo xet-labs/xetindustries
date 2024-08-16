@@ -13,9 +13,10 @@
 
 
 /* Sidebar */
-.sidebar-wrapper {
-    display: var(--sidebar-wrapper-display);
-    width: 100%;
+.sidebar-wrap {
+    display: var(--sidebar-wrapper-displa, block);
+    width: calc(( (100vw - var(--blog-con-max-width)) - (4 * var(--blog-conSidebar-gap)) - ( 2 * var(--con-blog-padding-lr, var(--con-padding-lr))) - 6px ) / 2);
+    box-sizing: border-box;
 }
 
 .sidebar-v-line {

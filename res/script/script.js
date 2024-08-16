@@ -85,7 +85,7 @@ function  BlogCards_fetch(){
   // -show loading anim
   $("#blogCards_loading").show().css("opacity", 1);
 
-  $.post("res/php/inc/blog_cards_gen.php",{ BlogsPage: Blogs_Page, BlogsLimit: Blogs_Limit },(response)=>{
+  $.post("res/php/inc/gen-blog_cards.php",{ BlogsPage: Blogs_Page, BlogsLimit: Blogs_Limit },(response)=>{
     // $("#BlogCards").append(response);
 
     response = JSON.parse(response);

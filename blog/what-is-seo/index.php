@@ -63,7 +63,7 @@
 
 </head>
 
-<body>
+<body class="blog-body">
 
   <!-- nav -->
   <?php 
@@ -75,10 +75,10 @@
   <?php include_once($TMPL['sticky_social']); ?>
 
 
-  <!-- Main wrapper -->
-  <main class="main-wrapper">
+  <!-- Main wrap -->
+  <main class="main-wrapper blog-main-wrap">
 
-    <!-- Blog-wrapper -->
+    <!-- Blog-wrap -->
     <div class="blog-wrap wrapper ">
       <div class=" con blog-con">
         
@@ -198,6 +198,21 @@
           <div class="line-h"></div>
         </div>
           
+      </div>
+
+      <!-- Sidebar-wrap -->
+      <div class="sidebar-wrap con">
+        
+        <div class="sidebar-v-line"></div>
+
+        <div class="sidebar">
+
+        </div>
+
+        <div class="blogEnd">
+          <div class="line-h"></div>
+        </div>
+        
       </div>
 
     </div>
