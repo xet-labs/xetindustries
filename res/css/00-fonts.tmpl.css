@@ -42,12 +42,12 @@ h1, h2, h3, h4 {
     /* --h2-size: 1.802rem; */
     --h2-letsp: -0.022em;
     --h2-letsp: -0.025em;
-
+    --h2-wght: 600;
     --h2: 600 var(--h2-size, 1.75rem) / normal var(--title-font);
     --h2: 600 var(--h2-size, 26px) / normal var(--title-font);
     --h2-1: 600 var(--h2-size, 2rem) / normal var(--title-font);
     --h2-2: 600 var(--h2-size, 1.802rem) / normal var(--title-font);
-    --h2-2: 540 var(--h2-size, 1.65rem) / normal var(--title-font);
+    --h2-2: 600 var(--h2-size, 1.65rem) / normal var(--title-font);
 
     
     --h3-letsp: ;

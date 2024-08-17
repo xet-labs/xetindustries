@@ -25,47 +25,45 @@
   <title><?php echo htmlspecialchars($Page['title']); ?></title>
 
   <!-- =============== Meta-Begin =============== -->
-  <meta data-rh="true" name="title" content="Automating backups on Mac OS X with Borg and cron | by John Wheeler | Mac O’Clock | Medium" />
-  <meta name="description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization.">
-  <meta data-rh="true" name="author" content="Rishikesh Prasad" />
-  <meta data-rh="true" name="referrer" content="unsafe-url" />
-  <meta data-rh="true" name="robots" content="index,noarchive,follow,max-image-preview:large" />
-
-  <link data-rh="true" rel="canonical" href="https://xet.ilovekulhad.com/blog/mysterium-node-backup-and-restore/" />
-  <link data-rh="true" rel="author" href="https://jswheeler.medium.com" />
-  <meta data-rh="true" property="article:published_time" content="2021-04-15T02:26:30.641Z" />
-
+  <meta name="title" content="A<?php echo htmlspecialchars($Page['title']); ?>" />
+  <meta name="description" content="<?php echo htmlspecialchars($Page['excerpt']); ?>">
+  <meta name="author" content="<?php echo htmlspecialchars($Page['author']); ?>" />
+  <meta name="robots" content="index,noarchive,follow,max-image-preview:large" />
+  <meta name="referrer" content="unsafe-url" />
+  <meta name="generator" content="<?php echo htmlspecialchars($Page['generator']); ?>" />
   <meta name="keywords" content="how to make money online, ways to make maney online, Xet, Xet Industries, XetIndustries, XetIndustries blog, Rishikesh Prasad, Web Developer, Blogger, Content Writer" />
 
-  <meta name="generator" content="Webflow" />
+  <link rel="canonical" href="<?php echo htmlspecialchars($Page['canonical']); ?>" />
+  <link rel="author" href="<?php echo htmlspecialchars($Page['author']); ?>" />
+  <meta property="article:published_time" content="<?php echo htmlspecialchars($Page['created_at']); ?>" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:locale" content="en" />
-  <meta property="og:url" content="/blog/mysterium-node-backup-and-restore/#" />
-  <meta property="og:title" content="What is SEO?" />
-  <meta property="og:description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization." />
-  <meta property="og:image:secure_url" content="asset/img/mysterium-node-backup-and-restore.webp" />
+  <meta property="og:url" content="<?php echo htmlspecialchars($Page['cnonical']); ?>" />
+  <meta property="og:title" content="<?php echo htmlspecialchars($Page['title']); ?>" />
+  <meta property="og:description" content="<?php echo htmlspecialchars($Page['excerpt']); ?>" />
+  <meta property="og:image:secure_url" content="<?php echo htmlspecialchars($Page['featured_img']); ?>" />
   <!-- <meta property="og:image:width" content="740" /> -->
 	<!-- <meta property="og:image:height" content="423" /> -->
-  <meta property="og:image:type" content="image/webp" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Xet Industries" />
+  <!-- <meta property="og:image:type" content="image/webp" /> -->
+  <meta property="og:type" content="<?php echo htmlspecialchars($Page['type']); ?>" />
+  <meta property="og:site_name" content="<?php echo htmlspecialchars($Page['site_name']); ?>" />
   
   <!-- Twitter -->
-  <meta name="twitter:url" content="https://webflow.com/blog/fonts-for-web-design">
-  <meta name="twitter:title" content="What is SEO?">
-  <meta name="twitter:description" content="A beginner's guide to understanding and implementing (SEO) Search Engine Optimization.">
-  <meta name="twitter:image" content="asset/img/mysterium-node-backup-and-restore.webp">
+  <meta name="twitter:url" content="<?php echo htmlspecialchars($Page['canonical']); ?>">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($Page['title']); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($Page['excerpt']); ?>">
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($Page['featured_img']); ?>">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:domain" value="webflow.com" />
-  <meta name="twitter:site" content="@xetindustries" />
-	<meta name="twitter:creator" content="@xetindustries" />
+  <meta name="twitter:domain" value="<?php echo htmlspecialchars($Page['site_domain']); ?>" />
+  <meta name="twitter:site" content="<?php echo htmlspecialchars($Page[x['site']]); ?>" />
+	<meta name="twitter:creator" content="<?php echo htmlspecialchars($Page[x['creator']]); ?>" />
 	<meta name="twitter:label1" content="Written by" />
-	<meta name="twitter:data1" content="Rishikesh Prasad" />
+	<meta name="twitter:data1" content="<?php echo htmlspecialchars($Page['author']); ?>" />
   <meta name="twitter:label2" value="Category" />
-  <meta name="twitter:data2" value="Design" />
+  <meta name="twitter:data2" value="<?php echo htmlspecialchars($Page[x['category']]); ?>" />
   <meta name="twitter:label3" value="Published on" />
-  <meta name="twitter:data3" value="Jan 25, 2023" />
+  <meta name="twitter:data3" value="<?php echo htmlspecialchars($Page['created_at_h']); ?>" />
 
   <script type="application/ld+json">
     {

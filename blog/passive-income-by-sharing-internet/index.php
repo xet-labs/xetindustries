@@ -237,7 +237,7 @@
             </a>
           </h2>
           <p>
-            Earnapp allows users to earn money by sharing their internet bandwidth with businesses in need of network resources.Your device works as a proxy service enabling clients to route traffic through your device.
+            Earnapp allows users to earn money by sharing their internet bandwidth with businesses in need of network resources. Your device works as a proxy service enabling clients to route traffic through your device.
           </p>
           <p>
             <b><b>Rate: </b></b>$1 / 10GB
@@ -301,8 +301,10 @@
             <br>
             <b><b>Requisite: </b></b> Internet connection.
           </p>
-          <p><b>Setup:</b> <a href="https://r.honeygain.me/RISHI0A188" target="_blank" class="th-1">Sign up for Honeygain</a> and install the app for your device. 
+          <p>
+            <b>Setup:</b> <a href="https://r.honeygain.me/RISHI0A188" target="_blank" class="th-1">Sign up for Honeygain</a> and install the app for your device. 
             <br>
+            <b>App:</b>
             <a href="https://download.honeygain.com/android-app/honeygain_app.apk" target="_blank">Android</a> | 
             <a href="https://download.honeygain.com/windows-app/Honeygain_install.exe" target="_blank">Windows</a> | 
             <a href="https://hub.docker.com/r/honeygain/honeygain" target="_blank">Linux</a> | 
