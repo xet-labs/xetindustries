@@ -14,16 +14,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="apple-touch-icon" href="res/brand/favicon-180x180.png" />
+	<link rel="apple-touch-icon" href="res/static/brand/favicon-180x180.png" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="icon" type="image/png" sizes="96x96" href="res/brand/favicon-192x192.png" />
-	<link rel="icon" type="image/png" sizes="48x48" href="res/brand/favicon-180x180.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="res/brand/favicon-180x180.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="res/brand/favicon-48x48.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="res/static/brand/favicon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="48x48" href="res/static/brand/favicon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="res/static/brand/favicon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="res/static/brand/favicon-48x48.png" />
 	<link rel="manifest" href="/manifest.json" />
 	<meta name="msapplication-TileColor" content="#ff9700" />
-	<meta name="msapplication-TileImage" content="res/brand/xet-color-logo-hr2.svg" />
+	<meta name="msapplication-TileImage" content="res/static/brand/xet-color-logo-hr2.svg" />
 
 
 	<!-- == Style-Sheet == -->

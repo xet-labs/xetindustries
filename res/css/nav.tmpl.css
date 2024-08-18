@@ -21,7 +21,7 @@ nav {
     width: 100%;
     margin: 0 auto;
     border-bottom: .16px solid var(--colr-line);
-    background: var(--nav-bg, var(--body-bg));
+    background: var(--nav-bg, var(--bg));
     color: var(--nav-colr);
     /* box-shadow: var(--shadow-large); */
 

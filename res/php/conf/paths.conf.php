@@ -13,7 +13,8 @@
         'php'  => DIR_ROOT . '/res/php',
         'cls'  => DIR_ROOT . '/res/php/cls',
         'inc'  => DIR_ROOT . '/res/php/inc',
-        'tmpl' => DIR_ROOT . '/res/php/tmpl'
+        'tmpl' => DIR_ROOT . '/res/php/tmpl',
+        'page' => DIR_ROOT . '/res/php/page'
     ];
     
     // - Generate paths using $DIR[]
@@ -29,10 +30,11 @@
     }
 
     // - Generate files path
-    $CSS = genFilesArray(0, [$PATH['css'], $PATH['css']."/inc"], 'css');
+    $CSS = genFilesArray(0, [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
     $CLS = genFilesArray(0, $PATH['cls'], 'cls.php');
     $INC = genFilesArray(0, $PATH['inc'], 'inc.php');
     $TMPL = genFilesArray(0, $PATH['tmpl'], 'tmpl.php');
+    $PAGE = genFilesArray(0, $PATH['page'], 'page.php');
 
     // - Generate files URL
     $INC_URL = genFilesArray(1, $PATH['inc'], 'inc.php');
@@ -43,6 +45,8 @@
 
 
 
+    
+    //---------------------------------------------------------------------------------- 
 
 
     // - Helper to generate files-path array

@@ -5,7 +5,7 @@
     --posts-grid-template: repeat(1, minmax(0, 1fr));
     --posts-grid-gap: 2.6rem;
     --posts-media-grid-gap: 2.5rem 2.4rem;
-    /* --posts-media-grid-gap: 2.5rem 2rem; */
+    --posts-media-grid-gap: 2.5rem 2rem;
 
     --post-after-display: flex;
     --post-media-after-display: none;

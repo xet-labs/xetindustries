@@ -9,7 +9,7 @@
 
 	// -algo for getting cards data
 	$BlogsOffset=($BlogsPage-1)*$BlogsLimit;
-	$Blogs = DB_DATA($DBconf['XI'], $DBquery['XI']['Blogs']."LIMIT $BlogsOffset,$BlogsLimit", $id=['blog_id']);
+	$Blogs = DB_DATA($DBconf['XI'], $DBquery['XI']['Blogs']."LIMIT $BlogsOffset,$BlogsLimit");
 
 	// -intentional delay :D
 	sleep(0.8);
@@ -35,7 +35,7 @@
 		<div class="post-img-wrap">
 			<a href="<?php echo htmlspecialchars($Blog['path']); ?>" >
 				<div class="post-img">
-					<img data-src="<?php echo htmlspecialchars($Blog['featured_image']); ?>" class="lazyload" alt="<?php echo htmlspecialchars($Blog['short_title']??$Blog['title']); ?>">
+					<img data-src="<?php echo htmlspecialchars($Blog['featured_img']); ?>" alt="<?php echo htmlspecialchars($Blog['title']); ?>" loading="lazy" class="lazyload">
 					<div class="post-img-overlay"></div>
 				</div>
 				<!-- post category -->
@@ -49,7 +49,9 @@
 		
 		<div class="post-info">
 
-			<a href="<?php echo htmlspecialchars($Blog['path']); ?>" class="post-title"><?php echo htmlspecialchars($Blog['short_title']??$Blog['title']); ?></a>
+			<a href="<?php echo htmlspecialchars($Blog['path']); ?>" class="post-title">
+				<?php echo htmlspecialchars($Blog['short_title']??$Blog['title']); ?>
+			</a>
 
 			<p class="post-excerpt">
 				<?php echo htmlspecialchars($Blog['excerpt']); ?>
@@ -68,13 +70,13 @@
 			
 			<div class="post-meta">
 				<span>
-				<i class="icon fa-regular fa-clock fa-lg"></i>
-				<?php echo htmlspecialchars($Blog['created_at']); ?>
+					<i class="icon fa-regular fa-clock fa-lg"></i>
+					<?php echo htmlspecialchars($Blog['created_at']); ?>
 				</span>
 
 				<span>
-				<i class="icon fa-regular fa-comments fa-lg"></i>
-				0
+					<i class="icon fa-regular fa-comments fa-lg"></i>
+					0
 				</span>
 			</div>
 		

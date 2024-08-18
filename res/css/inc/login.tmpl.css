@@ -39,7 +39,7 @@
     padding: 2rem 1.5rem 2.5rem;
     row-gap: 1.25rem;
     text-align: center;
-    background: var(--body-bg);
+    background: var(--login-bg, var(--bg));
     border-radius: var(--border-radius2);
     box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
 }

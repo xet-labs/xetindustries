@@ -1,0 +1,27 @@
+:root{
+    --blog-meta-img-size: 32px;
+}
+
+.blog-meta2{
+    padding: .8rem 0 10px ;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.blog-meta2 .meta-img{}
+
+.blog-meta2 .meta-img img{
+    border: 0;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    margin: 0px;
+    position: relative;
+    -webkit-background-size: var(--blog-meta-img-size);
+    background-size: var(--blog-meta-img-size);
+    height: var(--blog-meta-img-size);
+    width: var(--blog-meta-img-size);
+}

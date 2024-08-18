@@ -1,0 +1,40 @@
+
+.blog-con>*,
+.blog-con a>*,
+.blog-con h1 a>*,
+.blog-con h1,
+.blog-con h2 a>*,
+.blog-con h2,
+.blog-con h3 a>*,
+.blog-con h3,
+.blog-con h4 a>*,
+.blog-con h4,
+.blog-con h5 a>*,
+.blog-con h5,
+.blog-con h6 a>*,
+.blog-con h6{
+    /* transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease; */
+    transition-duration: 0.5s;
+}
+.blog-con h1>*,
+.blog-con h2>*,
+.blog-con h3>*,
+.blog-con h4>*,
+.blog-con h5>*,
+.blog-con h6>*,
+.blog-con li {
+    transition-duration: 0s;
+}
+.blog-con li ol>*,
+.blog-con li ul>* {
+    /* transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease; */
+    transition-duration: 0s;
+}
+
+.blog-header {
+    transition-duration: 0s;
+    font-family: var(--title-font);
+}
+.blog-header>* {
+    transition-duration: 0.5s;
+}

@@ -68,19 +68,19 @@
     
     /* DRIBBLE  #f8f7f4 */
 
-    /* --body-bg: #f7f8f4; */
-    --body-bg: #f7f7f7;
-    --body-media-bg: #f5f7fa;
-    --body-media-bg: #f8f7f4;
-    --body-media-bg: #f6f6f6;
-    --body-media-bg: #f7f7f7;
-    /* --body-media-bg: #f3f4f6; */
-    /* --body-media-bg: #fff; */
+    /* --bg: #f7f8f4; */
+    --bg: #f7f7f7;
+    --media-bg: #f5f7fa;
+    --media-bg: #f8f7f4;
+    --media-bg: #f6f6f6;
+    --media-bg: #f7f7f7;
+    /* --media-bg: #f3f4f6; */
+    /* --media-bg: #fff; */
 
     --colr-txt: #191c1f;
     --colr-txt: #1f2937;
+    --colr-txt: #26272e;
     --colr-txt: #333;
-    /* --colr-txt: #26272e; */
 
     /* --colr-txt: #222; */
     /* --colr-txt: #111; */
@@ -94,10 +94,10 @@
     
     --colr-txt3: #282828;
 
-    --nav-bg: var(--body-bg);
+    /* --nav-bg: var(--bg); */
     --nav-colr: var(--colr-txt);
 
-    --con-bg: var(--body-bg);
+    --con-bg: var(--bg);
     --con-bg: transparent;
     --con-media-bg: #f6f7f7;
     --con-media-bg: transparent;
@@ -220,8 +220,8 @@ body.themeDark {
     --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
     --shadow-large: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #6666660d;
     
-    --body-bg: #111827;--nav-bg: #161d27;
-    --body-bg: #131313;--nav-bg: #1d1d1d;
+    --bg: #111827;--nav-bg: #161d27;
+    --bg: #131313;--nav-bg: #1d1d1d;
     
     
     /* --con-bg: #ffffff08; */
@@ -283,7 +283,7 @@ body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 
-    background: var(--body-bg);
+    background: var(--bg);
     font-family: var(--font);
     color: var(--colr-txt);
     /* font-size: var(--font-size); */
@@ -683,7 +683,7 @@ input, button {
     column-gap: .5rem;
     background-color: hsl(230, 100%, 97%);
 
-    /* background: var(--body-bg); */
+    /* background: var(--bg); */
     /* border-radius: var(--border-radius2); */
     border-radius: 50px;
     box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);

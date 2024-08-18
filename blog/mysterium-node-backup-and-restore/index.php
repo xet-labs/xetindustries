@@ -114,15 +114,16 @@
             Backup & restore on Linux       
           </h2>
           <p>
-            Mysterium node stores its:
-            <br>
-            <b><b>Config:</b></b> /etc/mysterium-node
-            <br>
-            <b><b>Data:</b></b> /var/lib/mysterium-node
-            <br>
+            Mysterium node's config includes active services, account API, current theme etc, while data includes configs, node’s public address, encrypted private key and its encryption details, Message Authentication Code, file id, version etc.
           </p>
           <p>
-            The <b>config includes</b>  active services, account API, current theme etc, while <b>data includes</b> configs, node’s public address, encrypted private key and its encryption details, Message Authentication Code, file id, version etc.
+            <!-- <br> -->
+            <!-- Mysterium node stores its: -->
+            <!-- <br> -->
+            <b><b>Config:</b></b> /etc/mysterium-node/*
+            <br>
+            <b><b>Data:</b></b> /var/lib/mysterium-node/*
+            <br>
           </p>
           <p>
             Copy the contents of “/var/lib/mysterium-node/*”

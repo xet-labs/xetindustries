@@ -20,6 +20,7 @@
 		"XI" => [
 			'Users' => "SELECT * FROM Users ORDER BY created_at DESC ",
 			'Blogs' => "SELECT * FROM Blogs WHERE status = 'published' ORDER BY created_at DESC ",
+			'Blog' => "SELECT Blogs.*, Users.name FROM Blogs JOIN Users ON Blogs.uid = Users.uid WHERE Blogs.blogId = ",
 			'Blogs_raw' => "SELECT * FROM Blogs WHERE "
 		]
 	];
@@ -84,7 +85,6 @@
 	}
 
 
-
 	function DB_DATA($db_conf, $db_query, $id = ['id',1]) {
 		global $conn;
 
@@ -110,16 +110,6 @@
 		return $db_data;
 	}
 
-	function userctl() {
-		// working on this function
-	}
-
 	__dbDconn($conn);
 
 ?>
-
-<?php 
-	// -managing users
-
-
-?> 

@@ -1,12 +1,12 @@
 <?php
-    require_once("../conf/config.php");
     header('Content-Type: text/css');
+    require_once("../conf/config.php");
     
-
 
     $combinedCss = '/* combined css */' . "\n";
     $combinedCssFile = $PATH['css'] . "/styles.css";
 
+    // -merge css files 
     foreach ($CSS as $cssFile) {
         if (file_exists($cssFile) && pathinfo($cssFile, PATHINFO_EXTENSION) === 'css' && strpos(basename($cssFile), '.tmpl') !== false) {
             $cssFileName = basename($cssFile);
@@ -15,8 +15,6 @@
     }
 
     // $minifiedCss = \Minify_CSS::minify($combinedCss);
-
-
 
     echo $combinedCss;
     // file_put_contents($combinedCssFile, $combinedCss);

@@ -1,7 +1,11 @@
 :root{
+    --blog-bg: var(--bg);
+    --blog-colr: var(--colr-txt);
+
     --blog-bg: #f7f7f7;
     --blog-bg: #fff;
-    /* --body-bg: #fff; */
+    --blog-colr: #2f2f2f;
+    --blog-colr: #333;
 
 
 
@@ -63,11 +67,11 @@
 body.themeDark {
     --blog-p-colr: var(--body-txt);
 }
-.blog-body,
-.blog-body nav{
-    --body-bg: var(--blog-bg);
-}
 
+.blog-body{
+    --bg: var(--blog-bg);
+    --colr-txt: var(--blog-colr);
+}
 .blog-body main{
     margin-left: 0;
     margin-right: 0;
@@ -76,20 +80,17 @@ body.themeDark {
     max-width: unset;
 }
 .blog-wrap {
-    box-sizing: border-box;
-
     display: flex;
+    width: 100%;
     font-family: var(--blog-font);
     /* color: var(--colr-txt2); */
     margin-bottom: 0;
     transition-duration: 0s;
     grid-gap: var(--blog-conSidebar-gap);
-    width: 100%;
+    justify-content: center;
 }
 
 .blog-con {
-    box-sizing: border-box;
-
     font-family: var(--blog-font);
     justify-self: center;
     width: 100%;
@@ -99,8 +100,9 @@ body.themeDark {
     padding-right: var(--con-blog-padding-lr, var(--con-padding-lr));
     position: relative;
     border: transparent;
-    margin-left: auto;
-    margin-right: auto;
+
+    /* margin-left: auto; */
+    /* margin-right: auto; */
 }
 
 .blog-category {
@@ -154,6 +156,7 @@ body.themeDark {
     margin: var(--blog-h2-m);
     color: var(--h1-color);
     /* text-decoration: underline; */
+    cursor: pointer;
 }
 .blog-con h2 a{
     font-weight: inherit;
@@ -457,17 +460,14 @@ body.themeDark {
     .blog-con h1 {
         line-height: 1.136em;
     }
-    .blog-meta {
-        /* padding-top: 1.75rem; */
-    }
 }
 
 
 @media (min-width: 980px) {
     .blog-wrap {
         /* display: grid; */
-        flex-direction: row;
-        justify-content: right;
+        /* flex-direction: row;
+        justify-content: right; */
         /* grid-template-columns: minmax(auto, 70%) 1fr */
     }
 }
@@ -475,44 +475,4 @@ body.themeDark {
 
 
 
-/* ----------------------------------------------- */
 
-.blog-con>*,
-.blog-con a>*,
-.blog-con h1 a>*,
-.blog-con h1,
-.blog-con h2 a>*,
-.blog-con h2,
-.blog-con h3 a>*,
-.blog-con h3,
-.blog-con h4 a>*,
-.blog-con h4,
-.blog-con h5 a>*,
-.blog-con h5,
-.blog-con h6 a>*,
-.blog-con h6{
-    /* transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease; */
-    transition-duration: 0.5s;
-}
-.blog-con h1>*,
-.blog-con h2>*,
-.blog-con h3>*,
-.blog-con h4>*,
-.blog-con h5>*,
-.blog-con h6>*,
-.blog-con li {
-    transition-duration: 0s;
-}
-.blog-con li ol>*,
-.blog-con li ul>* {
-    /* transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease; */
-    transition-duration: 0s;
-}
-
-.blog-header {
-    transition-duration: 0s;
-    font-family: var(--title-font);
-}
-.blog-header>* {
-    transition-duration: 0.5s;
-}

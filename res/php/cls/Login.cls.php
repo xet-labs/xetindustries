@@ -34,7 +34,7 @@ class Login {
 
                     } else if ($pwdCheck === true) {
 						session_start();
-						$_SESSION["userId"] = $row["user_id"];
+						$_SESSION["userId"] = $row["userId"];
 						$_SESSION["userUid"] = $row["uid"];
 
                         util::redirect('login=success', $this->destUrl);

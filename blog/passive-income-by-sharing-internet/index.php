@@ -397,12 +397,9 @@
             <br>
             <b><b>Requisite: </b></b> Internet connection.
           </p>
-          <p><b>Setup:</b> <a href="https://app.traffmonetizer.com/sign-up" target="_blank" class="th-1">Sign up for Traffmonetizer</a> and install the app for your device.</p>
-
-
-          <div class="blog-con-yt nodis">
-            <iframe src="https://www.youtube-nocookie.com/embed/C-UeBdtopdA?si=VhkHRKvqISKOVGvT?&rel=0" title="XetIndustries YouTube video"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          <p>
+            <b>Setup:</b> <a href="https://app.traffmonetizer.com/sign-up" target="_blank" class="th-1">Sign up for Traffmonetizer</a> and install the app for your device.
+          </p>
         </div>
 
         <div class="blogEnd">
