@@ -1,11 +1,24 @@
+<?php 
+	// $Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $Page['id']);
+?>
+
 <div class="blog-header">
     <!-- Blog Category -->
     <div class="blog-category">
-        <?php //foreach(array_slice($Blog['categories'], 0, 4) as $category): ?>
-            <a href="<?php echo htmlspecialchars($category); ?>">
-                <?php echo htmlspecialchars($category); ?>
+        <?php if (!empty($Blog['categories'])): ?>
+            <?php $categories = array_slice($Blog['categories'], 0, 4); 
+                foreach ($categories as $category): 
+            ?>
+                <a href="<?php echo htmlspecialchars($category); ?>">
+                    <?php echo htmlspecialchars($category); ?>
+                </a>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <a href="">
+                No cat
             </a>
-        <?php //endforeach; ?>
+        <?php endif; ?>
+
         
     </div>
 
@@ -26,7 +39,8 @@
             <div class="blog-meta-author">
                 <span>
                     <a href="">
-                        <?php echo htmlspecialchars($Blog['author']); ?>
+                        <?php //echo htmlspecialchars($Blog['author']); ?>
+                        <?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
                     </a>
                 </span>
             </div>
@@ -42,7 +56,7 @@
 
     <ul class="blog-meta">
         <li> 
-            <a href=""><?php echo htmlspecialchars($Blog['author']); ?></a>
+            <a href="" style="font-weight:inherit"><?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?></a>
         </li>
 
         <li> <span class="seperator"></span> </li>
@@ -60,6 +74,6 @@
 
     <figure class="blog-hero">
         <!-- <img data-src="asset/img/mysterium-node-backup-and-restore.webp" class="lazyload" alt="Xet Industries mysterium-node-backup-and-restore"> -->
-        <img srcset="<?php echo htmlspecialchars($Blog['featured_img']); ?>" alt="<?php echo htmlspecialchars($Blog['title']); ?>">
+        <img src="<?php echo htmlspecialchars($Blog['featured_img']); ?>" alt="<?php echo htmlspecialchars($Blog['title']); ?>">
     </figure>
 </div>

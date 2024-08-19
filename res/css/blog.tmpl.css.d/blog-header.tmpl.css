@@ -9,6 +9,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 14px;
+    display: none;
 }
 
 .blog-meta2 .meta-img{}

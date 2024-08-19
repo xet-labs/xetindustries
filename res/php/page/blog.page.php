@@ -1,17 +1,8 @@
 <?php 
-  include_once("../conf/config.php");
-
 	include_once($CLS['__dbctl']);
-
-
 	$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $Page['id']);
-  
+  $Blog = $Blog[0];
 ?>
-
-<pre><?php 
-  var_dump($Blog); 
-  var_dump($TMPL); 
-?></pre>
 
 <?php include_once($TMPL['head']); ?>
 
