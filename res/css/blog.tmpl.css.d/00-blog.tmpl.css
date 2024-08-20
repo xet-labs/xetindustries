@@ -3,7 +3,7 @@
     --blog-colr: var(--colr-txt);
 
     --blog-bg: #f7f7f7;
-    --blog-bg: #fff;
+    /* --blog-bg: #fff; */
     --blog-colr: #2f2f2f;
     --blog-colr: #333;
 
@@ -190,6 +190,7 @@ body.themeDark {
 }
 
 .blog-con a:hover {
+    transition-duration: 0s;
     text-decoration: underline;
     color: var(--blog-a-h-colr);
 }

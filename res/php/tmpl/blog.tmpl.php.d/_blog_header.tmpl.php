@@ -1,13 +1,17 @@
+<pre>
 <?php 
 	// $Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $Page['id']);
+    // var_dump($Blog)
 ?>
+</pre>
 
 <div class="blog-header">
     <!-- Blog Category -->
-    <div class="blog-category">
-        <?php if (!empty($Blog['categories'])): ?>
-            <?php $categories = array_slice($Blog['categories'], 0, 4); 
-                foreach ($categories as $category): 
+    <div class="category">
+        <?php $blogCategories = json_decode($Blog['category'], true);
+        if (is_array($blogCategories)): ?>
+            <?php $blogCategories = array_slice($blogCategories, 0, 4); 
+            foreach ($blogCategories as $category): 
             ?>
                 <a href="<?php echo htmlspecialchars($category); ?>">
                     <?php echo htmlspecialchars($category); ?>

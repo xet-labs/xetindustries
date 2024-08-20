@@ -58,8 +58,8 @@ nav {
     border: none;
 }
 
-.navbar .brand img,
-.navbar .brand svg  {
+nav .navbar .brand img,
+nav .navbar .brand svg  {
     max-width: unset;
     object-fit: cover;
     max-height: 1.8rem;
@@ -69,6 +69,7 @@ nav {
     fill: inherit;
     color: var(--colr-txt);
     color: var(--colr);
+    opacity: 1;
 }
 
 .navbar .sub-brand {
