@@ -2,6 +2,34 @@
     --blog-meta-img-size: 32px;
 }
 
+.blog-header .category{
+    display: flex;
+    flex-direction: row;
+    margin: 0 .5rem;
+    padding: 1.2rem 0 0;
+    grid-gap: .35em;
+    font-size: 14px;
+    /* color: var(--colr-stxt); */
+}
+.blog-header .category a,
+.blog-header .category a:first-child {
+    margin-left: -.5em;
+}
+.blog-header .category a{
+    transition-duration: .3s;
+    margin: 0;
+    padding: 0 .5em;
+    font-weight: 500;
+    /* font-weight: unset; */
+    border-radius: 50em;
+    align-items: center;
+    text-transform: uppercase;
+}
+.blog-con .blog-header .category a:hover{
+    transition-duration: 0s;
+    background: #00000008;
+}
+
 .blog-meta2{
     padding: .8rem 0 10px ;
     display: flex;
@@ -12,43 +40,37 @@
     /* display: none; */
 }
 
-.blog-meta2 .meta-img{}
+.blog-meta2 .meta-img-wrap{
+    position: relative;
+    overflow: hidden;
+    width: var(--blog-meta-img-size);
+    width: 38px;
+    width: 37px;
+    width: 40px;
+}
 
-.blog-meta2 .meta-img img{
+.blog-meta2 .meta-img-wrap img{
+    position: relative;
     border: 0;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    display: block;
-    margin: 0px;
-    position: relative;
     -webkit-background-size: var(--blog-meta-img-size);
     background-size: var(--blog-meta-img-size);
-    height: var(--blog-meta-img-size);
-    width: var(--blog-meta-img-size);
+    width: 100%;
+    aspect-ratio: 6/6;
+    object-fit: cover;
+}
+.blog-meta-info{
+    margin-left: 1em;
+}
+.blog-meta2 .meta-author a{
+    /* font-weight: 400; */
+    /* font-weight: unset; */
+    text-decoration: unset;
+    text-transform: capitalize;
 }
 
-.blog-con .blog-header .category{
-    display: flex;
-    flex-direction: row;
-    margin: 0 .5rem;
-    padding: 1.2rem 0 0;
-    grid-gap: .5em;
-    font-size: 14px;
-    /* color: #000000bf; */
-}
-.blog-con .blog-header .category a{
-    margin: 0;
-    /* padding: 0 .45em; */
-    font-weight: 500;
-    /* font-weight: unset; */
-    /* border: 1px solid var(--colr-stxt); */
-    border-radius: 50em;
-    /* text-decoration: none; */
-    align-items: center;
-    transition-duration: .35s;
-    text-transform: capitalize;
-    text-transform: uppercase;
-}
-.blog-meta-author span a{
-    text-transform: capitalize;
+.meta-date{
+    color: var(--colr-stxt);
+    /* font-size: small; */
 }

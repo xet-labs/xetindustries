@@ -71,7 +71,10 @@
 			<div class="post-meta">
 				<span>
 					<i class="icon fa-regular fa-clock fa-lg"></i>
-					<?php echo htmlspecialchars($Blog['created_at']); ?>
+					<?php
+						// echo htmlspecialchars(date('F j, Y', strtotime($Blog['created_at'])));
+						util::getTimeAgo($Blog['created_at']);
+					?>
 				</span>
 
 				<span>

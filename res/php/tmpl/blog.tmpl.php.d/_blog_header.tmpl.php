@@ -1,15 +1,15 @@
 <pre>
 <?php 
-	// $Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $Page['id']);
     // var_dump($Blog)
 ?>
 </pre>
 
 <div class="blog-header">
+    
     <!-- Blog Category -->
-    <div class="category">
-        <?php $blogCategories = json_decode($Blog['category'], true);
-        if (is_array($blogCategories)): ?>
+    <?php $blogCategories = json_decode($Blog['category'], true);
+    if (is_array($blogCategories)): ?>
+        <div class="category">
             <?php $blogCategories = array_slice($blogCategories, 0, 4); 
             foreach ($blogCategories as $category): 
             ?>
@@ -17,14 +17,14 @@
                     <?php echo htmlspecialchars($category); ?>
                 </a>
             <?php endforeach; ?>
-        <?php else: ?>
-            <a href="">
-                No cat
-            </a>
-        <?php endif; ?>
+        </div>
+    <?php else: ?>
+        <!-- <a href="">
+            No cat
+        </a> -->
+    <?php endif; ?>
 
         
-    </div>
 
     <!-- Blog Headline -->
     <h1>
@@ -33,14 +33,14 @@
 
     <!-- Blog Meta -->
     <div class="blog-meta2">
-        <div class="blog-meta-img">
+        <div class="meta-img-wrap">
             <a href="">
-                <img src="<?php echo htmlspecialchars($Blog['author-img']); ?>" alt="<?php echo htmlspecialchars($Blog['author']); ?>" loading="lazy" fetchpriority="low">
+                <img src="<?php echo htmlspecialchars($Blog['profile_img']); ?>" alt="<?php echo htmlspecialchars($Blog['author']); ?>" loading="lazy" fetchpriority="low">
             </a>
         </div>
         <div class="blog-meta-info">
 
-            <div class="blog-meta-author">
+            <div class="meta-author">
                 <span>
                     <a href="">
                         <?php //echo htmlspecialchars($Blog['author']); ?>
@@ -49,16 +49,19 @@
                 </span>
             </div>
 
-            <div class="blog-meta-date">
+            <div class="meta-date">
                 <span>
-                    <?php echo htmlspecialchars($Blog['created_at']); ?>
+                    <?php
+                        echo htmlspecialchars(date('F j, Y, g:i A', strtotime($Blog['created_at'])));
+                    ?>
                 </span>
             </div>
         
         </div>
     </div>
 
-    <ul class="blog-meta">
+<div class="nodis">
+<ul class="blog-meta">
         <li> 
             <a href="" style="font-weight:inherit"><?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?></a>
         </li>
@@ -75,6 +78,7 @@
             14 min read
         </li>
     </ul>
+</div>
 
     <figure class="blog-hero">
         <!-- <img data-src="asset/img/mysterium-node-backup-and-restore.webp" class="lazyload" alt="Xet Industries mysterium-node-backup-and-restore"> -->

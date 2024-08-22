@@ -4,7 +4,7 @@
 
     --blog-bg: #f7f7f7;
     /* --blog-bg: #fff; */
-    --blog-colr: #2f2f2f;
+    --blog-colr: #2a2a2a;
     --blog-colr: #333;
 
 
@@ -24,6 +24,8 @@
 
     --blog-conSidebar-gap: 10px;
 
+    --blog-h1-pd: 0.5em 0.26em 0.5em 0px;
+    --blog-h1-pd: 0.5em 0.3em 0.5em 0px;
     --blog-h2-m: 1.8245em 0 .70175em;
     --blog-h2-m: 3rem 0 0.5rem;
     --blog-h3-m: 1rem 0 0.5rem;
@@ -120,7 +122,7 @@ body.themeDark {
     text-overflow: ellipsis;
     font-size: 14px;
 }
-.blog-meta .seperator {
+.seperator {
     width: 2px;
     height: 2px;
     border-radius: 50%;
@@ -148,7 +150,7 @@ body.themeDark {
     text-wrap: pretty;
 }
 .blog-con h1 {
-    padding: 0.5em 0.26em 0.5em 0px;
+    padding: var(--blog-h1-pd);
     color: var(--h1-color, var(--blog-h1-color));
 }
 
@@ -457,6 +459,7 @@ body.themeDark {
 @media screen and (min-width: 680px) {
     .blog-hero {
         margin: 1rem 0 1.687rem;
+        /* margin-top: 1.4em; */
     }
     .blog-con h1 {
         line-height: 1.136em;
