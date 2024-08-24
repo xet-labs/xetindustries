@@ -94,6 +94,9 @@
     
     --colr-txt3: #282828;
 
+    --colr-a-hover: #0078d4;
+    --colr-a-hover: #0b57d0;
+    
     /* --nav-bg: var(--bg); */
     --nav-colr: var(--colr-txt);
 
@@ -298,7 +301,11 @@ body.themeDark .themeInv svg{
     /* filter: invert(); */
 }
 
-
+a:hover {
+    transition-duration: 0s;
+    text-decoration: underline;
+    color: var(--colr-a-hover);
+}
 /* ----------------------Helpers-------------------- */
 .underlayCheckbox{
     display: none;
@@ -343,7 +350,7 @@ body.themeDark .themeInv svg{
     box-shadow: var(--con-box-shadow);
     border-radius: var(--border-radius2);
     border: 1px solid var(--colr-con-border);
-    border: 1px solid var(--colr-line);
+    /* border: 1px solid var(--colr-line); */
 }
 
 .sep-circle {

@@ -13,9 +13,6 @@
     /* --blog-p-colr: #444;
     --blog-p-colr: #333; */
 
-    --blog-a-h-colr: #0078d4;
-    --blog-a-h-colr: #0b57d0;
-
     
     --blog-media-m: 1.6568em 0 1.7em;
     /* --blog-media-m: 1.66em 0 1.7em 0; */
@@ -191,11 +188,6 @@ body.themeDark {
     text-decoration: underline;
 }
 
-.blog-con a:hover {
-    transition-duration: 0s;
-    text-decoration: underline;
-    color: var(--blog-a-h-colr);
-}
 
 .blog-con blockquote{
     margin: 1.8245em 0;
@@ -230,9 +222,8 @@ body.themeDark {
     /* border-radius: 8px; */
     font-size: 94.5%;
     background: #ebeffd;
-    /* background: var(--blog-a-h-colr); */
     /* backdrop-filter: blur(5px); */
-    color: var(--blog-a-h-colr);
+    color: var(--colr-a-hover);
     text-decoration: none;
     font-size: 92.6%;
 

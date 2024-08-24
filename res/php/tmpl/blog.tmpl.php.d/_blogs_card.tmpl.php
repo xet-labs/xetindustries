@@ -41,8 +41,8 @@
                 <div class="meta-author">
                     <span>
                         <a href="">
-                            <?php //echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
-                            <?php echo htmlspecialchars($Blog['uid']); ?>
+                            <?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
+                            <!-- <?php echo htmlspecialchars($Blog['uid']); ?> -->
                         </a>
                     </span>
                 </div>
@@ -58,21 +58,6 @@
             
             </div>
 
-
-            <div class="old-meta nodis">
-
-                <span>
-                    <i class="icon fa-regular fa-clock fa-lg"></i>
-                    <?php
-                        // echo htmlspecialchars(date('F j, Y', strtotime($Blog['created_at'])));
-                        ?>
-                </span>
-                
-                <span>
-                    <i class="icon fa-regular fa-comments fa-lg"></i>
-                    0
-                </span>
-            </div>
         </div>
         <!-- </div> -->
     

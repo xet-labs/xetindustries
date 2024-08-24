@@ -1,4 +1,6 @@
 :root{
+    /* --colr-stxt1: #606060; */
+
 
     --posts-wrapper-padding: 0;
     --posts-grid-margin: 0;
@@ -39,7 +41,7 @@
     --post-title-font: "wix madefor text";
     --post-title-font-size: 21.5px;
     --post-media-title-font-size: 18.5px;
-    /* --post-media-title-font-size: 17px; */
+    --post-media-title-font-size: 18.4px;
     --post-title-weight: 700;
     --post-media-title-weight: 600;
     --post-media-title-weight: 580;
@@ -50,9 +52,11 @@
     /* --post-excerpt-display: none; */
     --post-media-excerpt-display: -webkit-box;
     /* --post-media-excerpt-display: none; */
-    --post-excerpt-padding: 8px 0 0;
     --post-excerpt-line-limit: 2;
-    --post-excerpt-font-size: 14.5px;
+    --post-excerpt-padding: 8px 0 0;
+    /* --post-excerpt-font-size: 14.5px; */
+    --post-excerpt-font-size: 0.90625;
+
     --post-media-excerpt-font-size: 13px;
     --post-media-excerpt-font-size: 0.8343rem;
 
@@ -180,7 +184,6 @@
 
 .post .post-title {
     transition-duration: 0.5s;
-    justify-self: flex-start;
     font-family: var(--post-title-font);
     font-size: var(--post-title-font-size);
     font-weight: var(--post-title-weight);
@@ -190,30 +193,27 @@
     transition-duration: 0s;
     color: var(--colr-secondary);
     color: #474843;
-    /* text-decoration: underline; */
-}
-.post-info.post-title:hover ~ .post-img-wrap{
-    --post-img-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
-    box-shadow: var(--post-img-shadow, var(--post-image-box-shadow))
+    color: unset;
+    text-decoration: unset;
 }
 
 .post .post-excerpt {
     display: var(--post-excerpt-display);
-    padding: var(--post-excerpt-padding);
-    text-overflow: ellipsis;
+    /* display: none; */
     overflow: hidden;
+    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--post-excerpt-line-limit);
     line-clamp: var(--post-excerpt-line-limit);
+    
+    margin-bottom: auto;
+    padding: var(--post-excerpt-padding);
+    
     font-weight: var(--post-excerpt-font-weight);
     font-size: var(--post-excerpt-font-size);
     line-height: var(--post-excerpt-line-height);
     /* letter-spacing: var(--post-excerpt-letter-spacing); */
     color: var(--colr-stxt1);
-    margin-bottom: auto;
-}
-.post-author{
-    
 }
 
 /* .post .post-meta {
@@ -237,51 +237,64 @@
 } */
 
 .post-meta{
-    padding: .8rem 0 10px ;
     display: flex;
     align-items: center;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 13px;
+    
+    padding: .8rem 0 .625rem;
+    padding: .6rem 0 .625rem;
+
+    /* padding-bottom: 0; */
+    /* 14px: .875rem*/
+    font-size: .875rem;
+    /* 20px: 1.25rem */
+    line-height: 1.25rem;
+    
     color: var(--colr-stxt1);
 }
 
 .post-meta .meta-author-img{
     position: relative;
     overflow: hidden;
+    margin-right: .75rem;
+    margin-right: 1rem;
     width: var(--blog-meta-img-size);
     width: 34px;
+    width: 35px;
+    /* width: 36px; */
 }
 
 .post-meta .meta-author-img img{
+    object-fit: cover;
     position: relative;
-    border: 0;
+    width: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
+    
     -webkit-background-size: var(--blog-meta-img-size);
     background-size: var(--blog-meta-img-size);
-    width: 100%;
     aspect-ratio: 6/6;
-    object-fit: cover;
 }
 .post-meta .meta-info{
-    margin-left: 1em;
     display: flex;
     flex-direction: column;
     /* gap: .875rem; */
 }
 .post-meta .meta-author{
-    margin: 0;
-    padding: 0;
+    font-weight: 550;
+    /* font-weight: 600; */
 
 }
 .post-meta .meta-author a{
     text-decoration: unset;
-    text-transform: capitalize;
+}
+.post-meta .meta-author a:hover{
+    color: var(--colr-txt);
 }
 
 .post-meta .meta-date{
-    color: var(--colr-stxt);
+    text-decoration: unset;
 }
 
 
