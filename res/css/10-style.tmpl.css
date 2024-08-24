@@ -644,64 +644,8 @@ main {
 
 
 
-/* ======================= SEARCH ======================= */
-input, button {
-    border: none;
-    outline: none;
-}
 
-.search{
-    z-index: 2000;
-    position: fixed;
-    width: 80%;
-    /* transform: translate(-50%,-60%);top: 50%; */
-    transform: translate(-50%);top: 14%;
-    left: 50%;
-    opacity: 0;
-    transition: .25s;
-    pointer-events: none;
-}
-#SearchSwitch:checked ~ *{
-    pointer-events: none;
-}
-#SearchSwitch:checked ~ .search{
-    opacity: 1;
-    top: 15.5%;
-    transition: .35s;
-    pointer-events: initial;
-}
-#SearchSwitch:checked ~ .underlay{
-    opacity: 1;
-    pointer-events: initial;
-    cursor: pointer;
-}
 
-.search_form {
-    display: flex;
-    align-items: center;
-    padding-inline: 1rem;
-    column-gap: .5rem;
-    background-color: hsl(230, 100%, 97%);
-
-    /* background: var(--bg); */
-    /* border-radius: var(--border-radius2); */
-    border-radius: 50px;
-    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
-    overflow: hidden;
-}
-.search .search_form > .search_icon {
-    font-size: 1.25rem;
-    color: #1f2937;
-}
-.search_input {
-    width: 100%;
-    padding-block: 1rem;
-    background-color: transparent;
-    color: var(--text-color,hsl(230, 12%, 40%));
-}
-.search_input::placeholder {
-    color: var(--text-color,hsl(230, 12%, 40%));
-}
 
 
 /* =============================================== */

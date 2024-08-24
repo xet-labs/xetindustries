@@ -216,7 +216,7 @@
     
 }
 
-.post .post-meta {
+/* .post .post-meta {
     display: flex;
     flex-direction: row;
     padding: var(--post-meta-padding);
@@ -225,20 +225,64 @@
     font-size: var(--post-meta-font-size);
     font-weight: var(--post-meta-font-weight);
     color: var(--colr-stxt1);
-}
+} */
 
-.post .post-meta span {
+/* .post .post-meta span {
     cursor: pointer;
 }
 
 .post .post-meta span i {
     margin-right: .225rem;
     font-size: .94rem;
+} */
+
+.post-meta{
+    padding: .8rem 0 10px ;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: var(--colr-stxt1);
 }
 
-.post .post-meta .post-date {}
+.post-meta .meta-author-img{
+    position: relative;
+    overflow: hidden;
+    width: var(--blog-meta-img-size);
+    width: 34px;
+}
 
-.post .post-meta .post-comments {}
+.post-meta .meta-author-img img{
+    position: relative;
+    border: 0;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-background-size: var(--blog-meta-img-size);
+    background-size: var(--blog-meta-img-size);
+    width: 100%;
+    aspect-ratio: 6/6;
+    object-fit: cover;
+}
+.post-meta .meta-info{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    /* gap: .875rem; */
+}
+.post-meta .meta-author{
+    margin: 0;
+    padding: 0;
+
+}
+.post-meta .meta-author a{
+    text-decoration: unset;
+    text-transform: capitalize;
+}
+
+.post-meta .meta-date{
+    color: var(--colr-stxt);
+}
 
 
 @media screen and (min-width: 680px) {

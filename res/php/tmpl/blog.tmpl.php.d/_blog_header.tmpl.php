@@ -33,17 +33,16 @@
 
     <!-- Blog Meta -->
     <div class="blog-meta2">
-        <div class="meta-img-wrap">
+        <div class="meta-author-img">
             <a href="">
                 <img src="<?php echo htmlspecialchars($Blog['profile_img']); ?>" alt="<?php echo htmlspecialchars($Blog['author']); ?>" loading="lazy" fetchpriority="low">
             </a>
         </div>
-        <div class="blog-meta-info">
+        <div class="meta-info">
 
             <div class="meta-author">
                 <span>
                     <a href="">
-                        <?php //echo htmlspecialchars($Blog['author']); ?>
                         <?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
                     </a>
                 </span>
@@ -60,8 +59,8 @@
         </div>
     </div>
 
-<div class="nodis">
-<ul class="blog-meta">
+    <div class="nodis">
+    <ul class="blog-meta">
         <li> 
             <a href="" style="font-weight:inherit"><?php echo htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?></a>
         </li>
@@ -78,7 +77,7 @@
             14 min read
         </li>
     </ul>
-</div>
+    </div>
 
     <figure class="blog-hero">
         <!-- <img data-src="asset/img/mysterium-node-backup-and-restore.webp" class="lazyload" alt="Xet Industries mysterium-node-backup-and-restore"> -->

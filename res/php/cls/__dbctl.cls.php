@@ -20,6 +20,7 @@
 		"XI" => [
 			'Users' => "SELECT * FROM Users ORDER BY created_at DESC ",
 			'Blogs' => "SELECT * FROM Blogs WHERE status = 'published' ORDER BY created_at DESC ",
+			'Blogs_card' => "SELECT Blogs.*, Users.name, Users.name_l, Users.profile_img FROM Blogs JOIN Users ON Blogs.uid = Users.uid WHERE Blogs.status = 'published' ORDER BY Blogs.created_at DESC ",
 			'Blog' => "SELECT Blogs.*, Users.name, Users.name_l, Users.profile_img FROM Blogs JOIN Users ON Blogs.uid = Users.uid WHERE Blogs.blogId = ",
 			'Blogs_raw' => "SELECT * FROM Blogs WHERE "
 		]

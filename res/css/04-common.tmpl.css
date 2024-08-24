@@ -36,6 +36,11 @@ textarea {
     padding: 0;
 }
 
+input, button {
+    border: none;
+    outline: none;
+}
+
 [type=button],
 [type=reset],
 [type=submit],
