@@ -228,7 +228,7 @@ body.themeDark {
     
     
     /* --con-bg: #ffffff08; */
-    --con-media-bg: #ffffff03;
+    /* --con-media-bg: #ffffff03; */
 
     --con-blog-bg: var(--con-bg);
     --colr-con-border: #ffffff0a;
@@ -303,7 +303,6 @@ body.themeDark .themeInv svg{
 
 a:hover {
     transition-duration: 0s;
-    text-decoration: underline;
     color: var(--colr-a-hover);
 }
 /* ----------------------Helpers-------------------- */
