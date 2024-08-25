@@ -29,7 +29,7 @@
         <?php include_once($TMPL['_blog_header']); ?>
 
         <div class="blog-main blog-cnt">
-          <?php echo $Page['cnt']; ?>
+          <?php include_once $ThisDir . '/content.php'; ?>
         </div>
 
         <div class="blogEnd">

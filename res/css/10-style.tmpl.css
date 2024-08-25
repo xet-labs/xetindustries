@@ -1,4 +1,7 @@
 :root {
+    --bg-selection: #ffcc00;
+    --colr-selection: #000;
+
     --font-size-xs: 0.875rem;
     --font-size-base: 1rem;
     --font-size-copy: 1.125rem;
@@ -77,21 +80,20 @@
     /* --media-bg: #f3f4f6; */
     /* --media-bg: #fff; */
 
+    /* --colr-txt: #080808; */
+    /* --colr-txt: #0b0d10; */
+    --colr-txt: #111;
     --colr-txt: #191c1f;
     --colr-txt: #1f2937;
+    --colr-txt: #222;
     --colr-txt: #26272e;
     /* --colr-txt: #333; */
-
-    /* --colr-txt: #222; */
-    /* --colr-txt: #111; */
-    /* --colr-txt: #0b0d10;
-    --colr-txt: #080808; */
+    /* --colr-txt: #1a1a1a; */
 
 
 
     --colr-txt2: #333;
     --colr-txt2: #26272e;
-    
     --colr-txt3: #282828;
 
     --colr-a-hover: #0078d4;
@@ -104,6 +106,8 @@
     --con-bg: transparent;
     --con-media-bg: #f6f7f7;
     --con-media-bg: transparent;
+    /* --con-media-bg: var(--bg-selection); */
+
 
     /* --con-media-box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a; */
 
@@ -219,6 +223,9 @@
 }
 
 body.themeDark {
+    --bg-selection: #6666ff;
+    --colr-selection: #fff;
+    
     --shadow-small: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
     --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
     --shadow-large: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #6666660d;
@@ -277,6 +284,15 @@ body.themeDark {
     --themeLightIconDisplay: none;
     --themeDarkIconDisplay: inline;
 }
+
+::selection {background-color: var(--bg-selection); color: var(--colr-selection);}
+::-webkit-selection {background-color: var(--bg-selection); color: var(--colr-selection);}
+::-webkit-scrollbar {width: var(--scrollbar-width);}
+::-webkit-scrollbar-track {background-color: var(--scrollbar-track-bg);}
+::-webkit-scrollbar-thumb {background: var(--scrollbar-bg);border-radius: var(--scrollbar-border-radius);}
+/* ::-webkit-scrollbar-thumb:vertical {transition: background-color 1s ease-in-out;} */
+::-webkit-scrollbar-thumb:hover:vertical {background-color: var(--scrollbar-bg-hover);}
+
 body {
     overflow-x: hidden;
     /* display: block; */
@@ -558,6 +574,7 @@ main {
 .highlights-wrapper {
     display: var(--highlights-wrapper-display);
     width: 100%;
+    display: none;
 }
 
 .highlights {
@@ -585,6 +602,10 @@ main {
     grid-template-columns: var(--highlights-grid-template);
     grid-gap: var(--highlights-grid-gap);
     gap: var(--highlights-grid-gap);
+}
+
+.highlights-grid .post-meta{
+    padding: .6rem 0 .625rem;
 }
 
 .highlights-grid .post .post-img-wrap .post-img img {

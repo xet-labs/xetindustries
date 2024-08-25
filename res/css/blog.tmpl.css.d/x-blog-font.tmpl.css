@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    /* font-family: Arial, sans-serif; */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #1a1a1a;
+}
+
+/* Container */
+.blog-con {
+    /* width: 80%; */
+    /* max-width: 1200px; */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5em; /* 40px */
+    margin-bottom: 20px;
+    color: #26272e; /* Dark charcoal for headings */
+}
+
+h2 {
+    font-size: 2em; /* 32px */
+    margin-bottom: 18px;
+    color: #26272e;
+}
+
+h3 {
+    font-size: 1.75em; /* 28px */
+    margin-bottom: 16px;
+    color: #26272e;
+}
+
+h4 {
+    font-size: 1.5em; /* 24px */
+    margin-bottom: 14px;
+    color: #26272e;
+}
+
+h5 {
+    font-size: 1.25em; /* 20px */
+    margin-bottom: 12px;
+    color: #26272e;
+}
+
+h6 {
+    font-size: 1em; /* 16px */
+    margin-bottom: 10px;
+    color: #26272e;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1em; /* 16px */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Bold and Strong Text */
+b, strong {
+    font-weight: bold;
+    color: #1a1a1a; /* Dark text color */
+}
+
+
+/* Lists */
+ul, ol {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Blockquotes */
+blockquote {
+    font-size: 1.2em; /* 19px */
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 4px solid #26272e; /* Dark border on the left */
+    background-color: #f0f0f0; /* Light background for the blockquote */
+    color: #26272e; /* Dark text color */
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Figures */
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.875em; /* 14px */
+    color: #666666; /* Gray for captions */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.75em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.25em; }
+    h5 { font-size: 1em; }
+    h6 { font-size: 0.875em; }
+    
+    p { font-size: 0.9em; }
+}

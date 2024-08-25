@@ -32,7 +32,7 @@
     </h1>
 
     <!-- Blog Meta -->
-    <div class="blog-meta2">
+    <div class="blog-meta">
         <div class="meta-author-img">
             <a href="">
                 <img src="<?php echo htmlspecialchars($Blog['profile_img']); ?>" alt="<?php echo htmlspecialchars($Blog['author']); ?>" loading="lazy" fetchpriority="low">
