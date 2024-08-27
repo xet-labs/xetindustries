@@ -43,6 +43,7 @@
 .blog-meta .meta-author-img{
     position: relative;
     overflow: hidden;
+    margin-right: 1em;
     width: var(--blog-meta-img-size);
     width: 38px;
     /* width: 37px; */
@@ -61,7 +62,7 @@
     object-fit: cover;
 }
 .blog-meta .meta-info{
-    margin-left: 1em;
+    
 }
 .blog-meta .meta-author a{
     /* font-weight: 400; */

@@ -89,12 +89,17 @@ nav .navbar .brand svg  {
     /* width: 100%; */
     min-width: fit-content;
 }
-
+.navbar .navbar_m ul,
+.navbar .navbar_m ol {
+    margin: 0;
+    padding: 0;
+}
 .navbar li {
     /* display: inline-block; */
     display: block;
     float: left;
     position: relative;
+    margin: 0;
 }
 
 .navbar .menu {

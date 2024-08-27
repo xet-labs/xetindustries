@@ -43,17 +43,18 @@ h1, h2, h3, h4 {
     --h2-letsp: -0.022em;
     --h2-letsp: -0.025em;
     --h2-wght: 600;
+    --h2-wght: 500;
     --h2: 600 var(--h2-size, 1.75rem) / normal var(--title-font);
     --h2: 600 var(--h2-size, 26px) / normal var(--title-font);
     --h2-1: 600 var(--h2-size, 2rem) / normal var(--title-font);
-    --h2-2: 600 var(--h2-size, 1.802rem) / normal var(--title-font);
-    --h2-2: 600 var(--h2-size, 1.65rem) / normal var(--title-font);
+    --h2-2: var(--h2-wght, 500) var(--h2-size, 1.802rem) / normal var(--title-font);
+    /* --h2-2: 600 var(--h2-size, 1.65rem) / normal var(--title-font); */
 
     
     --h3-letsp: ;
     --h3: 1.5rem;
     --h3-2: 1.875rem;
-    --h3-2: 500 24px / normal var(--title-font);;
+    --h3-2: 500 24px / normal var(--title-font);
 
     --h4-letsp: ;
     --h4: 1.25rem;
@@ -67,16 +68,25 @@ h1, h2, h3, h4 {
     --h6: 1rem;
     --h6-2: 1.125rem;
 
-    --p-wght: 400;
+    --p-wght: 500;
     --p-letsp: -0.00418em;
     --p-letsp: 0em;
     --p: var(--p-wght, 400) 16.6px / 1.66 var(--font);
     --p: var(--p-wght, 400) 16.9px / 1.6 var(--font);
     --p-1: var(--p-1-wght, 400) 16.9px / 1.64em var(--font);
-    --p-2: var(--p-1-wght, 425) 16.9px / 1.64em var(--font);
+    --p-2-wght: 410;
     --p-2-wght: 400;
-    --p-2: var(--p-2-wght, 400) 17px / 1.7em var(--font);
-    --p-2: var(--p-2-wght, 400) 17px / 1.8em var(--font);
+    --p-2: var(--p-2-wght, 425) 16.9px / 1.64em var(--font);
+    /* --p-2: var(--p-2-wght, 400) 16.9px / 1.7em var(--font); */
+    /* --p-2: var(--p-2-wghtt, 400) 17px / 1.7em var(--font); */
+    /* --p-2: var(--p-2-wght, 400) 17px / 1.8em var(--font); */
+    /* --p-2: var(--p-2-wghtt, 400) 1.125rem / 1.7em var(--font); */
+
+    /* --p-2: var(--p-2-wghtt, 400) 1.15rem / 1.75em var(--font); */
+    /* --p-2: var(--p-2-wght, 400) 18px / 28px var(--font); */
+
+
+
 
     /* --p-2: var(--p-wght, 400) 17.2px / 1.65em var(--font); */
     /* --p-2: var(--p-wght, 400) 17.5px / 1.65em var(--font); */

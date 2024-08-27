@@ -1,7 +1,5 @@
 :root{
     --colr-stxt1: #606060;
-    /* --colr-stxt1: #6b7250; */
-
 
     --posts-wrapper-padding: 0;
     --posts-grid-margin: 0;
@@ -9,10 +7,11 @@
     --posts-grid-gap: 2.6rem;
     --posts-media-grid-gap: 2.5rem 2.4rem;
     --posts-media-grid-gap: 2.5rem 2rem;
-    /* --posts-media-grid-gap: 2.3rem 2rem; */
+    --posts-media-grid-gap: 2.3rem 2rem;
+    /* --posts-media-grid-gap: 2.3rem 1.8rem; */
+    /* --posts-media-grid-gap: 2.2rem 1.8rem; */
 
     --post-after-display: flex;
-    --post-media-after-display: none;
     --post-after-line-width: calc(100vw - 1em);
     --post-after-line-width: 102%;
     --post-after-line-height: 1.5px;
@@ -109,7 +108,6 @@
     transition-duration: 0s;
 }
 .post:hover {
-    /* transition: all 0.5s ease-in-out; */
     /* box-shadow: var(--post-hover-box-shadow); */
 }
 
@@ -147,9 +145,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    /* background: #1a202c12;
-    background: #1a202c0a; */
-    /* display: none; */
 }
 .post .post-img-wrap:hover .post-img-overlay {
     transition-duration: 0.2s;
@@ -229,8 +224,7 @@
     
     padding: .8rem 0 .625rem;
     padding: .6rem 0 .625rem;
-    
-    
+        
     /* 14px: .875rem*/
     font-size: .875rem;
     /* 20px: 1.25rem */
@@ -238,10 +232,6 @@
     /* padding: .45rem 0 .625rem; */
 
     color: var(--colr-stxt1);
-
-    /* padding: var(--post-excerpt-padding); */
-    /* line-height: 1.4857; */
-    /* padding-bottom: .625rem; */
 }
 
 .post-info-wrap .meta-author-img{
@@ -277,10 +267,10 @@
 
 }
 .post-meta .meta-author a{
-    text-decoration: unset;
+    /* text-decoration: unset; */
 }
 .post-meta .meta-author a:hover{
-    color: var(--colr-txt);
+    /* color: var(--colr-txt); */
 }
 
 .post-meta .meta-date{
@@ -299,7 +289,7 @@
 
         --post-box-shadow: var(--post-media-box-shadow);
         --post-hover-box-shadow: var(--post-media-hover-box-shadow);
-        --post-after-display: var(--post-media-after-display);
+        --post-after-display: none;
     }
 
     .post .post-img-wrap {

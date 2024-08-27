@@ -76,7 +76,7 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: ui--apple-system, system-ui, -apple-system, system-ui, -apple-system, system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: ui--apple-system, system-ui;
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent;
@@ -85,7 +85,9 @@ html {
     /* max-width: 100vp; */
 }
 
-
+body{
+    /* text-rendering: geometricPrecision; */
+}
 a {
     font-size: inherit;
     color: inherit;
