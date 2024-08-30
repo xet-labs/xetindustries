@@ -17,17 +17,14 @@
     </div>
     
     <div class="post-info-wrap">
-        <!-- <div class="meta-author-img">
-            <a href="">
-                <img src="<?php echo htmlspecialchars($Blog['profile_img']); ?>" alt="<?php echo htmlspecialchars($Blog['author']); ?>" loading="lazy" fetchpriority="low">
-            </a>
-        </div> -->
     
         <div class="post-info">
 
-            <a href="<?php echo htmlspecialchars($Blog['path']); ?>" class="post-title">
-                <?php echo htmlspecialchars($Blog['short_title']??$Blog['title']); ?>
-            </a>
+            <h3 class="post-title">
+                <a href="<?php echo htmlspecialchars($Blog['path']); ?>">
+                    <?php echo htmlspecialchars($Blog['short_title']??$Blog['title']); ?>
+                </a>
+            </h3>
 
             <p class="post-excerpt">
                 <?php echo htmlspecialchars($Blog['excerpt']); ?>

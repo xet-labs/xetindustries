@@ -3,24 +3,21 @@
     --colr-title: var(--colr-title, var(--colr-txt));
     --colr-h1: var(--colr-h1, var(--colr-title));
 
-
     /* --bg-blog: #f1f1f1; */
     --bg-blog: #f7f7f7;
     /* --bg-blog: #fff; */
-
+    
     --colr-blog: #222;
     --colr-blog: #26272e;
     --colr-blog: #1a1a1a;
-    
+
     --colr-h1: #26272e;
     --colr-title: var(--colr-h1);
 }
 body.themeDark {
-    
-    --colr-blog: #d1d1d1;;
+    --colr-blog: #d1d1d1;
     /* --colr-h1: #ccc; */
     /* --colr-title: var(--colr-h1); */
-
 }
 
 :root{
@@ -30,7 +27,6 @@ body.themeDark {
     --blog-con-max-width: 46.25rem;
 
     --blog-conSidebar-gap: 10px;
-
 
     --blog-li-p-size: 16.05;
     /* --blog-li-p-lineh: 1.5em; */
@@ -83,20 +79,11 @@ body.themeDark {
     padding-right: var(--con-blog-padding-lr, var(--con-padding-lr));
     position: relative;
     border: 0px transparent;
-
-    /* margin-left: auto; */
-    /* margin-right: auto; */
 }
 .blog-con a {
     font-weight: 500;
     text-decoration: underline;
 }
-.blog-category {
-    margin: 0 .5rem;
-    padding: 1.2rem 0 0;
-    font-size: 14px;
-}
-
 .blog-meta {
     padding: .8rem 0 10px ;
     display: flex;

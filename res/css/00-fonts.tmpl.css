@@ -68,7 +68,7 @@ h1, h2, h3, h4 {
     --h6: 1rem;
     --h6-2: 1.125rem;
 
-    --p-wght: 500;
+    --p-wght: 400;
     --p-letsp: -0.00418em;
     --p-letsp: 0em;
     --p: var(--p-wght, 400) 16.6px / 1.66 var(--font);

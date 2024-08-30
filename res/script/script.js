@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Toggle theme on button click
-  document.getElementById("themeSwitch").addEventListener("click", function () {
+  document.getElementById("id-themeSwitch").addEventListener("click", function () {
     document.body.classList.toggle("themeDark");
 
     // Save user's theme preference

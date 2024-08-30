@@ -1,25 +1,36 @@
-<div class="search-bar-wrap">
-    <div class="search-bar">
 
+<span style="display:flex;gap:.5em;">
+
+</span>
+
+<!-- <div class="searchbar-wrap " style="background:grey;"> -->
+<div class="searchbar-wrap " >
+
+    <div class="searchbar">
+        <input type="checkbox" class="underlayCheckbox" id="id-searchbar">
+        <label for="id-searchbar" class="underlay"></label>
+        
         <!-- search-widget Btn-->
-        <input type="checkbox" class="underlayCheckbox" id="SearchSwitch">
-        <label for="SearchSwitch" class="underlay"></label>
-        <label for="SearchSwitch" class="button icon">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <label for="id-searchbar" class="icon button">
+            <svg class="search-icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><circle cx="116" cy="116" fill="none" r="84" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="175.4" x2="224" y1="175.4" y2="224"/></svg>
         </label>
-
-        <!-- search-widget -->
-        <div class="search" id="Search">
-            <form action="" class="search_form">
-                <i class="fa-solid fa-magnifying-glass search_icon" id="Search-btn"></i>
-                <input type="search" placeholder="What are you looking for?" class="search_input" autofocus>
-            </form>
-        </div>
-
+        
+        <!-- search-bar-->
         <form action="" method="get" class="search-form">
-            <input type="text" class="search-input" maxlength="256" name="search" placeholder="Search.." id="id_search-input">
+            <input type="text" class="search-input" maxlength="256" name="search" placeholder="Search.." id="id-search_input">
             <button type="reset" class="search-reset"></button>
         </form>
 
+
+        <!-- search-widget -->
+        <div class="search-wdgt" id="id-search-wdgt">
+            <form class="search-wdgt-form"  action="">
+
+                <svg class="search-icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><circle cx="116" cy="116" fill="none" r="84" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="175.4" x2="224" y1="175.4" y2="224"/></svg>
+
+                <input class="search-wdgt-input" type="search" placeholder="What are you looking for?">
+            </form>
+        </div>
     </div>
 </div>
+
