@@ -7,9 +7,10 @@
     --bg-blog: #f7f7f7;
     /* --bg-blog: #fff; */
     
-    --colr-blog: #222;
     --colr-blog: #26272e;
-    --colr-blog: #1a1a1a;
+    --colr-blog: #222;
+    /* --colr-blog: #111; */
+    /* --colr-blog: #1a1a1a; */
 
     --colr-h1: #26272e;
     --colr-title: var(--colr-h1);

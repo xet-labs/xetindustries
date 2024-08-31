@@ -18,6 +18,7 @@ h1, h2, h3, h4 {
 
 
 :root {
+    --cfont: inter;
     --font: -apple-system, system-ui !important;
     --font: "inter", -apple-system, system-ui !important;
     --title-font: "wix madefor text", var(--font), -apple-system, system-ui !important;
@@ -47,8 +48,8 @@ h1, h2, h3, h4 {
     --h2: 600 var(--h2-size, 1.75rem) / normal var(--title-font);
     --h2: 600 var(--h2-size, 26px) / normal var(--title-font);
     --h2-1: 600 var(--h2-size, 2rem) / normal var(--title-font);
-    --h2-2: var(--h2-wght, 500) var(--h2-size, 1.802rem) / normal var(--title-font);
-    /* --h2-2: 600 var(--h2-size, 1.65rem) / normal var(--title-font); */
+    --h2-2: 600 var(--h2-size, 1.65rem) / normal var(--title-font);
+    /* --h2-2: var(--h2-wght, 500) var(--h2-size, 1.802rem) / normal var(--title-font); */
 
     
     --h3-letsp: ;
@@ -77,7 +78,7 @@ h1, h2, h3, h4 {
     --p-2-wght: 410;
     --p-2-wght: 400;
     --p-2: var(--p-2-wght, 425) 16.9px / 1.64em var(--font);
-    /* --p-2: var(--p-2-wght, 400) 16.9px / 1.7em var(--font); */
+    --p-2: var(--p-2-wght, 400) 16.9px / 1.7em var(--font);
     /* --p-2: var(--p-2-wghtt, 400) 17px / 1.7em var(--font); */
     /* --p-2: var(--p-2-wght, 400) 17px / 1.8em var(--font); */
     /* --p-2: var(--p-2-wghtt, 400) 1.125rem / 1.7em var(--font); */

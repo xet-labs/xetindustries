@@ -11,8 +11,12 @@
     --nav-safe-icon-gap: var(--nav-safe-icon-gap-tb) var(--nav-safe-icon-gap-lr);
     --main-padding: 0 .5rem;
     --main-wrapper-width-max: 1280px;
-}
 
+    --themeLightIconDisplay: flex;--themeDarkIconDisplay: none;
+}
+body.themeDark {
+    --themeLightIconDisplay: none;--themeDarkIconDisplay: flex;
+}
 
 nav {
     z-index: 2000;
@@ -163,28 +167,21 @@ nav .navbar .brand svg  {
     /* justify-content: space-between; */
     /* overflow: hidden; */
 }
-/* .navbar .navbar_r > span:has(> svg), .navbar .navbar_r  i { */
 .navbar .navbar_r > * {
     padding: var(--nav-safe-icon-gap);
     padding-top: auto;
     padding-bottom: auto;
     /* margin: auto; */
 }
-.navbar .navbar_r svg,
-.navbar .navbar_r i{
-	transition: .5s;
+/* .navbar .navbar_r svg, */
+/* .navbar .navbar_r i>svg, */
+.navbar .navbar_r .icon{
     color: var(--colr-deco1);
-    opacity: .75;
+    opacity: .8;
 }
 
-#themeSwitch{
-    display: grid;
-    align-items: center;
-    transition:  0.25s ease;
-}
 .themeIcon svg{
     width: 1.2rem;
-    transition:  0.25s ease;
 }
 .themeLightIcon{
     display: var(--themeLightIconDisplay);
