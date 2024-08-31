@@ -97,8 +97,10 @@
 			<label for="navSidebarCheck" class="navSidebarUnderlay"></label>
 
 			<!-- nav-sidebar-btn -->
-			<label for="navSidebarCheck" class="navSidebarOpen button icon">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29"><path d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z" /></svg>
+			<label for="navSidebarCheck" class="navSidebarOpen button">
+				<i class="icon">
+					<svg width="1.7em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z" /></svg>
+				</i>
 			</label>
 
 			<!-- nav-idebar-menu-list -->

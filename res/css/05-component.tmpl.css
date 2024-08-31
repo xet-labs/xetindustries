@@ -1,3 +1,11 @@
+:root{
+    --icon-size-def: 1.6em;
+    /* --icon-size-def: 3em; */
+
+    --icon-bgz-def: 1.42;
+    /* --icon-bgz-def: 1.6; */
+
+}
 .nodis {
     display: none;
 }
@@ -8,29 +16,39 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: var(--icon-width, var(--icon-size, var(--icon-size-def)));
+    height: var(--icon-height, var(--icon-size, var(--icon-size-def)));
     border-radius: 50%;
     transition: color var(--theme-trns);
     color: var(--colr-txt);
 }
-
 .icon::before {
-    --icon-bg-size: 120%;
     content: '';
     z-index: -1;
     position: absolute;
     border-radius: 50%;
-    width: var(--icon-bg-size, 110%); height: var(--icon-bg-size, 110%);
-    top: 50%; left: 50%;
-    /* bottom: 50%; right: 50%; */
+    width: calc(var(--icon-width, var(--icon-size, var(--icon-size-def))) * var(--icon-bgz, var(--icon-bgz-def)));
+    height: calc(var(--icon-height, var(--icon-size, var(--icon-size-def))) * var(--icon-bgz, var(--icon-bgz-def)));
+    top: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%) scale(0.88);
     transition: transform 0.08s ease-in, background-color var(--icon-trns-bg);
 }
-
 .icon:hover::before {
     transform: translate(-50%, -50%) scale(1);
     background: var(--icon-bg-hov);
+}
+.icon svg {
+    /* position: relative; */
+    position: absolute;
+    display: block;
+    margin: auto;
+    /* width: var(--icon-svg-width, var(--icon-svgz, var(--icon-width, var(--icon-size, var(--icon-size-def)))));height: var(--icon-svg-height, var(--icon-svgz, var(--icon-height, var(--icon-size, var(--icon-size-def))))); */
+    width: var(--icon-svg-width, var(--icon-svgz, unset));
+    height: var(--icon-svg-height, var(--icon-svgz, unset));
+    font-size: var(--icon-svgfz, unset);
+    /* font-size: 6em; */
+
 }
 
 
@@ -54,10 +72,10 @@ label{
 }
 
 .filled-circle-avatar {
-    max-height: 32px;
-    max-width: 32px;
-    min-height: 32px;
-    min-width: 32px;
+    max-height: var(--icon-size-def);
+    max-width: var(--icon-size-def);
+    min-height: var(--icon-size-def);
+    min-width: var(--icon-size-def);
     background-color: rgba(0, 0, 0, 0);
     border-radius: 100%;
     justify-content: center;

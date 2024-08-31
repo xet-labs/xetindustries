@@ -9,33 +9,25 @@
     display: grid;
     position: fixed;
     min-height: fit-content;
-    transition: unset;
     top: 27.5%;
-    gap: 2.265625em;
-    margin-left: 42px;
+    top: 28.4%;
+    margin-left: 3.1em;
+    /* gap: 2.265625em; */
+    gap: 3.2em;
+
     color: var(--colr-title, var(--colr-txt));
+    transition: unset;
 }
 
-.sticky-social a {
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    margin: auto;
-    
+.sticky-social a.icon {
+    --icon-size: 1.56em;
+    /* --icon-size: 5em; */
+    --icon-bgz: 1.8;
     color: var(--colr-txt);
-
 }
 .sticky-social a:hover {
     /* background: var(--icon-bg-hov); */
     color: inherit;
-}
-
-.sticky-social a>* {
-    margin: auto;
-    position: relative;
-    z-index: 1;
 }
 
 @media (min-width: 980px) {
