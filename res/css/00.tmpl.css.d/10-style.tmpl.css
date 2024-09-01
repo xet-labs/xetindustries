@@ -3,15 +3,6 @@
     --colr-selection: #000;
     --theme-trns: .3s ease;
 
-    --icon-trns-durn: .18s;
-    --icon-trns: var(--icon-trns-durn) ease;
-    --icon-trns-bg-durn: .2s;
-    --icon-trns-bg: var(--icon-trns-bg-durn) ease;
-    --icon-bg: #00000006;
-    --icon-bg-hov: #13158d0c;
-    --icon-bg-hov: #00000015;
-
-
     --font-size-xs: 0.875rem;
     --font-size-base: 1rem;
     --font-size-copy: 1.125rem;
@@ -152,7 +143,6 @@
 body.themeDark {
     --bg-selection: #6666ff;
     --colr-selection: #fff;
-    --icon-bg-hov: #ffffff15;
 
     --shadow-small: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
     --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
@@ -610,7 +600,19 @@ main {
 }
 
 
+@media (min-width: 460px) {
+    :root {
+        --body-bg: var(--body-media-bg);
+        --nav-bg: var(--nav-media-bg);
+    }
 
+    .con {
+        --con-padding-tb: 1.5rem;
+        --con-padding-lr: 1.5rem;
+        --con-bg: var(--con-media-bg);
+        --con-box-shadow: var(--con-media-box-shadow);
+    }
+}
 @media screen and (min-width: 680px) {
     .wrapper {
         --wrapper-margin-tb: 1rem;
@@ -625,7 +627,6 @@ main {
     .main-wrapper {
         --main-padding: 0rem 3rem;
     }
-
 }
 
 @media (min-width: 1215px) {

@@ -15,7 +15,7 @@
 .nav .searchbar-wrap .search-icon{
     width: 1em;
     margin-inline: .06em -.05em;
-    padding-inline: var(--nav-safe-icon-gap-lr);
+    padding-inline: var(--nav-icon-pd-lr);
     font-size: 1.7em;
 }
 .nav .searchbar circle, 

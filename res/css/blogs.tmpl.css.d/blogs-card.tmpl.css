@@ -239,8 +239,19 @@
 }
 
 
+
+
+@media (min-width: 460px) {
+    .posts-wrapper {
+        --post-wrapper-max-width: 460px;
+    }
+}
+
 @media screen and (min-width: 680px) {
 
+    .posts-wrapper {
+        --post-wrapper-max-width: unset;
+    }
     .post {
         --post-bg: var(--post-media-bg);
 
@@ -252,7 +263,6 @@
         --post-hover-box-shadow: var(--post-media-hover-box-shadow);
         --post-after-display: none;
     }
-
     .post .post-img-wrap {
         --post-image-margin: var(--post-media-image-margin);
     }

@@ -1,10 +1,15 @@
 :root{
     --icon-size-def: 1.6em;
-    /* --icon-size-def: 3em; */
-
     --icon-bgz-def: 1.42;
-    /* --icon-bgz-def: 1.6; */
-
+    --icon-trns-durn: .18s;
+    --icon-trns: var(--icon-trns-durn) ease;
+    --icon-trns-bg-durn: .2s;
+    --icon-trns-bg: var(--icon-trns-bg-durn) ease;
+    --icon-bg: #00000006;
+    --icon-hov-bg: #3c404314;
+}
+body.themeDark {
+    --icon-hov-bg: #ffffff15;
 }
 .nodis {
     display: none;
@@ -20,7 +25,8 @@
     height: var(--icon-height, var(--icon-size, var(--icon-size-def)));
     border-radius: 50%;
     transition: color var(--theme-trns);
-    color: var(--colr-txt);
+    color: var(--icon-colr, unset);
+    fill: var(--icon-colr, unset);
 }
 .icon::before {
     content: '';
@@ -36,7 +42,7 @@
 }
 .icon:hover::before {
     transform: translate(-50%, -50%) scale(1);
-    background: var(--icon-bg-hov);
+    background: var(--icon-hov-bg);
 }
 .icon svg {
     /* position: relative; */
@@ -55,6 +61,8 @@
 .button{
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: auto;
     cursor: pointer;
 }
 label{
