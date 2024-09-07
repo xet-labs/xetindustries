@@ -1,6 +1,7 @@
 :root{
     --blog-meta-img-size: 38px;
     /* --blog-meta-img-size: 40px; */
+    /* --stxt1: #6b6b6b; */
 }
 
 .blog-header {
@@ -33,16 +34,18 @@
 }
 
 .blog-meta{
-    padding: .8em 0 .66em ;
     display: flex;
     align-items: center;
     white-space: nowrap;
     text-overflow: ellipsis;
+    padding: .8rem 0 10px ;
+    padding: .8em 0 .66em ;
     font-size: 14px;
     /* display: none; */
 }
 
 .blog-meta .meta-author-img{
+    /* display: none; */
     position: relative;
     overflow: hidden;
     margin-right: 1em;
@@ -51,22 +54,30 @@
     border-radius: 100%;
     aspect-ratio: 6/6;
 }
-
 .blog-meta .meta-author-img img{
     width: 100%;
     object-fit: cover;
 }
 .blog-meta .meta-info{
-    
+    font-weight: 500;
+}
+.blog-meta .meta-author{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
 }
 .blog-meta .meta-author a{
-    /* font-weight: 400; */
     text-decoration: unset;
-    text-transform: capitalize;
+}
+.blog-meta .meta-author .seperator{
+    background: var(--colr-stxt1);
+}
+.blog-meta .blog-u-follow{
+    color: var(--colr-stxt1);
+    transition: color var(--trns-theme);
 }
 
 .blog-meta .meta-date{
-    transition: color var(--theme-trns);
+    transition: color var(--trns-theme);
     color: var(--colr-stxt1);
-    /* font-size: small; */
 }

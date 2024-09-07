@@ -1,3 +1,17 @@
+:root{
+    --searchbar-hov-brdr-colr: #888888b6;
+    /* --searchbar-hov-brdr-colr: #1a73e8; */
+
+    --searchbar-focs-brdr-colr: #888888b6;
+    --searchbar-focs-brdr-colr: #1a73e8;
+}
+
+body.themeDark{
+    --searchbar-hov-brdr-colr: #888888b6;
+    --searchbar-focs-brdr-colr: #888888b6;
+}
+
+
 .nav .searchbar-wrap {
     display: flex;
     margin: 1.5px 0;
@@ -12,6 +26,7 @@
     max-width: fit-content;
     overflow: hidden;
 }
+
 .nav .searchbar-wrap .search-icon{
     width: 1em;
     margin-inline: .06em -.05em;
@@ -89,16 +104,22 @@
     color: var(--colr-text,hsl(230, 12%, 40%));
 }
 
+
+
 @media screen and (min-width: 680px) {
     .nav .searchbar-wrap {
         border: 1px solid transparent;
         border-radius: 50em;
         background-color: var(--searchbar-bg);
-        transition: border var(--icon-trns);
+        transition: border var(--trns-icon), .18s ease;
     }
-    .nav .searchbar-wrap:hover,
+    .nav .searchbar-wrap:hover {
+        border-color: var(--searchbar-hov-brdr-colr);
+        /* box-shadow: var(--shadow-m); */
+    }
     .nav .searchbar-wrap:focus-within {
-        border: 1px solid #888888b6;
+        border-color: var(--searchbar-focs-brdr-colr);
+        /* box-shadow: var(--shadow-s); */
     }
     .nav .searchbar-wrap .search-input {
         display: block;

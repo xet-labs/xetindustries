@@ -23,6 +23,7 @@
     --icon-size: 1.56em;
     --icon-bgz: 1.8;
     --icon-colr: var(--colr-txt);
+    --icon-hov-bg: transparent;
 }
 .sticky-social a:hover {
     /* background: var(--icon-bg-hov); */

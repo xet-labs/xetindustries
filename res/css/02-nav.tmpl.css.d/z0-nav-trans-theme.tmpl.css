@@ -1,0 +1,3 @@
+nav {
+    transition: background-color var(--trns-theme), border-color var(--trns-theme), top 0.22s;
+}

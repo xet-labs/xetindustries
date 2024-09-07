@@ -10,8 +10,8 @@
     --nav-icon-pd-tb: 0;
     --nav-icon-pd-lr: .25rem;
     --nav-icon-pd: var(--nav-icon-pd-tb) var(--nav-icon-pd-lr);
-    --main-padding: 0 .5rem;
-    --main-wrapper-width-max: 1280px;
+
+    --nav-font-wght: 500;
 
     --themeLightIconDisplay: flex;--themeDarkIconDisplay: none;
 }
@@ -34,9 +34,8 @@ nav {
         
     position: sticky;
     top: 0;
-    transition: background-color 0.5s ease, border-color 0.5s ease, color ease, top 0.24s;
+    transition: top 0.22s ease;
 }
-
 .navbar {
     display: flex;
     flex-direction: row;
@@ -48,21 +47,16 @@ nav {
     padding: var(--nav-pd);
     margin: 0 auto;
 }
-.navbar a{
-    transition-duration: .5s;
-}
 .navbar .brand {
     display: flex;
     align-items: center;
     margin-right: 1.6rem;
 }
-
 .navbar .brand a {
     display: flex;
     align-items: center;
     border: none;
 }
-
 nav .navbar .brand img,
 nav .navbar .brand svg  {
     max-width: unset;
@@ -115,16 +109,16 @@ nav .navbar .brand svg  {
     /* margin: .36rem 0; */
     padding: .36rem .9rem;
     cursor: pointer;
+    font: var(--nav-font-wght) var(--p2) / normal var(--nav-font);
     font-family: var(--nav-font);
-    font-weight: var(--nav-font-weight);
-    font-weight: 500;
+    font-weight: var(--nav-font-wght);
     font-size: var(--p2);
     opacity: .8;
 }
 .navbar .menu .current-menu a {
     opacity: 1;
 }
-.navbar .navbar_m .initbar {
+.navbar .initbar {
     position: absolute;
     /* -border-radius causes distortion at ends */
     /* border-radius: 4px; */
@@ -136,17 +130,13 @@ nav .navbar .brand svg  {
     background-color: var(--colr-primary);
 }
 
-
 .navbar .navbar_r .initbar {
     z-index: 10;
-    position: absolute;
-    width: 2.5px;
+    width: 2px;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 50em;
     top: 0;
-    left: 0;
-    transition: .5s;
-    background-color: var(--colr-primary);
+    transition: .32s;
 }
 
 

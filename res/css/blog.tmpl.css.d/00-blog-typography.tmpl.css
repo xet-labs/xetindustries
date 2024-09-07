@@ -29,12 +29,14 @@
 }
 
 .blog-con h2 {
+    display: block;
     margin: var(--blog-h2-m);
     /* text-decoration: underline; */
     cursor: pointer;
     color: var(--h2-colr, var(--colr-title));
+    /* margin-left: auto; */
 }
-.blog-con h2 a{
+.blog-con h2 a {
     font-weight: inherit;
     text-decoration: none;
 }
@@ -63,21 +65,4 @@
 .blog-con a {
     font-weight: 500;
     text-decoration: underline;
-}
-
-
-.blog-con blockquote{
-    margin: 1.8245em 0;
-    margin: 3.249875em 0;
-    padding-left: 1em;
-    padding: 0.15em 0 0.15em 1em;
-    padding: 0.15em 1em;
-    border-radius: .4em;
-    border-left: 3px solid;
-    background-color: #ebeffd;
-    box-shadow: var(--post-image-box-shadow);
-}
-.blog-con blockquote >*{
-    margin: 0;
-    padding: 0;
 }

@@ -1,32 +1,35 @@
 <?php
 
     // - Base variables
-    define('DIR_ROOT', '');
-    define('PATH_ROOT', __DIR__ . '/../../..' . DIR_ROOT);
-    define('URL_ROOT', '');
+    $ROOT = [
+        'dir' => '',
+        'url' => 'gg.com' 
+    ];
+    
+    $ROOT['path'] = __DIR__ . '/../../..' . $ROOT['dir']; // Must be assigned after initial array setup
 
     // - Define directories
     $DIR = [
-        'root' => DIR_ROOT,
-        'res'  => DIR_ROOT . '/res',
-        'css'  => DIR_ROOT . '/res/css',
-        'php'  => DIR_ROOT . '/res/php',
-        'cls'  => DIR_ROOT . '/res/php/cls',
-        'inc'  => DIR_ROOT . '/res/php/inc',
-        'tmpl' => DIR_ROOT . '/res/php/tmpl',
-        'page' => DIR_ROOT . '/res/php/page'
+        'root' => $ROOT['dir'],
+        'res'  => $ROOT['dir'] . '/res',
+        'css'  => $ROOT['dir'] . '/res/css',
+        'php'  => $ROOT['dir'] . '/res/php',
+        'cls'  => $ROOT['dir'] . '/res/php/cls',
+        'inc'  => $ROOT['dir'] . '/res/php/inc',
+        'tmpl' => $ROOT['dir'] . '/res/php/tmpl',
+        'page' => $ROOT['dir'] . '/res/php/page'
     ];
     
     // - Generate paths using $DIR[]
     $PATH = [];
     foreach ($DIR as $key => $dir) {
-        $PATH[$key] = PATH_ROOT . $dir;
+        $PATH[$key] = $ROOT['path'] . $dir;
     }
 
     // - Generate URLs using $DIR[]
     $URL = [];
     foreach ($DIR as $key => $dir) {
-        $URL[$key] = URL_ROOT . $dir;
+        $URL[$key] = $ROOT['url'] . $dir;
     }
 
     // - Generate files path
@@ -40,14 +43,7 @@
     $INC_URL = genFilesArray(1, $PATH['inc'], 'inc.php');
     $CSS_URL = genFilesArray(1, [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
 
-
-
-
-
-
-    
     //---------------------------------------------------------------------------------- 
-
 
     // - Helper to generate files-path array
     function _genFilesPathArray($files, $fileExtension) {
@@ -61,13 +57,14 @@
 
     // - Helper to generate files-url array
     function _genFilesUrlArray($files, $fileExtension) {
+        global $ROOT;  // Use global ROOT array here
         $fileArray = [];
         foreach ($files as $file) {
             // Get the relative path from the base directory
-            $relativePath = str_replace(PATH_ROOT, '', $file);
+            $relativePath = str_replace($ROOT['path'], '', $file);
             $relativePath = ltrim($relativePath, '/'); // Remove leading slash
             $key = basename($file, ".$fileExtension");
-            $fileArray[$key] = DIR_ROOT . '/' . $relativePath;
+            $fileArray[$key] = $ROOT['dir'] . '/' . $relativePath;
         }
         return $fileArray;
     }
@@ -94,12 +91,12 @@
             if (!is_dir($dir)) { continue; }
             
             if (is_dir($dir . "/inc")) {
-                // $dirsToProcess[] = $directory . "/inc";
                 $files = array_merge($files, glob("$dir/inc/*.$fileExtension"));
             }
 
             // -get files with matching extension in the directory
-            $files = glob("$dir/*.$fileExtension");
+            $files = array_merge($files, glob("$dir/*.$fileExtension"));
+            
             // -get directories with matching extension
             $subdirs = glob("$dir/*.$fileExtension.d", GLOB_ONLYDIR);
             foreach ($subdirs as $subdir) {
@@ -111,5 +108,5 @@
         }
         return $fileArray;
     }
-    
+
 ?>

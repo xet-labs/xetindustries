@@ -1,219 +1,16 @@
-:root{
-    --bg-selection: #ffcc00;
-    --colr-selection: #000;
-    --theme-trns: .3s ease;
-
-    --font-size-xs: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-copy: 1.125rem;
-    --font-size-s: 1.25rem;
-    --font-size-m: 1.375rem;
-    --font-size-l: 1.563rem;
-    --font-size-xl: 1.953rem;
-    --font-size-xxl: 2.441rem;
-    --color-sep: #ddd;
-    --color-bg: #f7f7f7;
-    --color-bg-alt: #e8e8e8;
-    --br: 10px;
-    --color-text: #26272e;
-    --color-link: #000;
-    --color-link-hover: #47484e;
-    --color-text-faded: #858585;
-    
-    --colr-primary: #002b75;
-    --colr-secondary: #525CEB;
-    --colr-secondary: #6D7ACF;
-    
-    --colr-deco1:#1f2937;
-
-
-    /* colors */
-    --bg: #f4f4f6;
-    --bg: #eaecee;
-
-    --txt: #3c3e41;
-    
-    /* #00000011 */
-    /* #ededed */
-
-    --chineseBlack: #141414;
-    --white: #fff;
-    --brightGray: #efefef;
-    --spanishGray: #979797;
-    --cultured: #f8f8f8;
-    --sonicSilver: #767676;
-    --lightSilver: #d8d8d8;
-    /* mix-blend-mode: exclusion; */
-    /* backdrop-filter: blur(30px); */
-    /* font: Nib pro */
-    --bg: #10100f; 
-    --txt: #f7f7f3; 
-
-    --bg: #fafafa; 
-    --txt: #101314; 
-    
-    --bg: #fffbf2; 
-    --txt: #212121; 
-    
-    --bg: #f0f0f0; 
-    --txt: #c7c7c7;
-    
-    --clr-2: #9d9d9d;
-    --txt: #e1e1e1;
-    --bg: #f3f4f6;
-    
-    /* gmail bg */
-    --bg: #f6f8fc;
-
-    
-    --bg: #efefef;
-    --bg: #f7f7f7; /* codrop */
-    --txt: #26272e;
-    
-    /* DRIBBLE  #f8f7f4 */
-
-    /* --bg: #f7f8f4; */
-    --bg: #f7f7f7;
-    --media-bg: #f5f7fa;
-    --media-bg: #f8f7f4;
-    --media-bg: #f6f6f6;
-    --media-bg: #f7f7f7;
-    /* --media-bg: #f3f4f6; */
-    /* --media-bg: #fff; */
-
-    /* --colr-txt: #080808; */
-    /* --colr-txt: #0b0d10; */
-    --colr-txt: #111;
-    --colr-txt: #191c1f;
-    --colr-txt: #1f2937;
-    --colr-txt: #222;
-    --colr-txt: #26272e;
-    /* --colr-txt: #333; */
-    /* --colr-txt: #1a1a1a; */
-
-
-
-    --colr-txt2: #333;
-    --colr-txt2: #26272e;
-    --colr-txt3: #282828;
-
-    --colr-a-hover: #0078d4;
-    --colr-a-hover: #0b57d0;
-    
-    /* --nav-bg: var(--bg); */
-    --nav-colr: var(--colr-txt);
-
-    --bg-con: var(--bg);
-    --bg-con: transparent;
-    --bg-con-media: #f6f7f7;
-    /* --bg-con-media: transparent; */
-    /* --con-media-box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a; */
-    
-    --main-title-colr: var(--colr-txt);
-    --main-title-colr: #232323;
-
-    --colr-h1: var(--colr-txt);
-    --colr-h1: #26272e;
-    --colr-title: #232323;
-
-    --colr-txt-dark: var(--color-text);
-    --colr-stxt: #4b5563;
-    --colr-stxt: #6b7280;
-    
-    --colr-stxt1: #6d6d6d;
-    --colr-stxt1: #767676;
-    /* --colr-stxt1: #4a4b50; */
-    /* --colr-stxt1: #6b7280; */
-    
-    --colr-stxt2: #757575;
-    --colr-stxt2-h: #dcdfe4;
-    
-    --colr-bg-s: #0d0d0d0f;
-    --colr-bg-s: #0d0d0d0f;
-
-
-    --colr-line: #dbdbdb;
-
-    --border-deco: 1px solid #ced4da;
-    
-    --bg-scolor: #554ad35e;
-
-    --colr: #000;--colr-inv: #fff;--colr-dark: #000;--colr-white: #fff;
-}
-body.themeDark {
-    --bg-selection: #6666ff;
-    --colr-selection: #fff;
-
-    --shadow-small: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
-    --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
-    --shadow-large: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #6666660d;
-    
-    --bg: #131313;--nav-bg: #1d1d1d;
-    
-    --bg: #111116;
-    --colr-txt: #f1f1f1;
-    --colr-txt: #E5E5E5;
-    --colr-txt: #d1d1d1;
-
-    --colr-a-hover: #4A90E2;
-
-    --nav-bg: var(--bg);
-    --nav-colr: #e5e7eb;
-
-    /* --bg-con: #ffffff08; */
-    /* --bg-con-media: #ffffff03; */
-
-    --colr-con-border: #ffffff0a;
-    
-    --searchbar-bg: #ffffff08;
-
-
-    --scrollbar-bg: #4b4b4bbd;
-    --scrollbar-bg-hover: #727272bd;
-    
-    --post-bg: transparent;
-    --post-media-bg: transparent;
-    
-    
-    --colr-primary: #4e3bf5;
-    /* --colr-primary: #0073ff; */
-    --colr-secondary: #2a21c9;
-    
-    --colr-dark: #000;
-    --colr-white: #fff;
-    
-    --colr: #fff;
-    --colr-inv: #000;
-    --colr-deco1:#d1d5db;
-
-    --colr-txt2: var(--colr-txt);
-    --colr-txt3: #d3d3d3;
-    --colr-h1: #f2f2f2;
-    --main-title-colr: #d1d5db;
-    --colr-title: #d1d5db;
-    
-    --body-colr1: #e5e7eb;
-    --colr-stxt1: #9ca3af;
-    /* --colr-stxt1: #5e5e5e; */
-    --colr-stxt2: #9ca3af;
-    /* --colr-stxt2: #5e5e5e; */
-    
-    --colr-line: #474747;
-    --colr-line: #64748b4d;
-    
-    --bg-color: #ece9e6;
-    --bg-scolor: #554ad35e;
-
-}
-
 :root {
-
-    --shadow-small: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
-    --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
-    --shadow-large: 0 10px 15px -3px #7c7c7c1a, 0 4px 6px -2px #6666660d;
-
-    --post-bg: transparent;
-    --post-media-bg: transparent;
+    --theme-trns: .3s ease;
+    --trns-theme-durn: .3s;
+    --trns-theme-type: ease;
+    --trns-theme: var(--trns-theme-durn) var(--trns-theme-type);
+    --trns-brdr-durn: ;
+    --trns-brdr: var(--trns-theme-durn);
+    --trns-sado-durn: ;
+    --trns-sado: var(--trns-theme-durn);
+    
+    --shadow-s: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
+    --shadow-m: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
+    --shadow-l: 0 10px 15px -3px #7c7c7c1a, 0 4px 6px -2px #6666660d;
 
     /* --con-blog-bg: #f3f4f6; */
 
@@ -238,7 +35,9 @@ body.themeDark {
     --wrapper-margin-tb: 1rem;
     --wrapper-margin: var(--wrapper-margin-tb) 0;
     --wrapper-border-radius: ;
-
+    
+    --main-padding: 0 .5rem;
+    --main-wrap-width-max: 1280px;
 
     --main-title-margin: 80px 0 35px;
     --main-title-font-size: 80px;
@@ -285,7 +84,11 @@ body.themeDark {
     --highlights-image-aspect-ratio: 16.4/9;
 
 }
-
+*,
+::after,
+::before {
+    transition: background-color var(--trns-theme), border-color var(--trns-theme), color var(--trns-theme-type);
+}
 
 ::selection {background-color: var(--bg-selection); color: var(--colr-selection);}
 ::-webkit-selection {background-color: var(--bg-selection); color: var(--colr-selection);}
@@ -368,7 +171,7 @@ a:hover {
 .main-title a {
     display: inline-flex;
     align-items: center;
-    transition: var(--transition-5s);
+    transition: color var(--trns-theme);
     font-family: var(--title-font);
     font-size: var(--main-title-font-size);
     font-weight: var(--main-title-weight);
@@ -412,7 +215,7 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: .315rem;
-    transition: var(--transition-5s);
+    transition: color var(--trns-theme);
 }
 
 .title>a img,
@@ -441,7 +244,7 @@ a:hover {
     border: 1px solid var(--tag-border-color);
     border-radius: 50rem;
     gap: 0.2835rem;
-    transition: var(--transition-5s);
+    transition: var(--trns-theme);
     background: var(--tag-bg);
     color: var(--tag-color);
     font-size: var(--tag-font-size);
@@ -496,7 +299,7 @@ main {
     /* position: relative; */
     margin: 0 auto;
     padding: var(--main-padding);
-    max-width: var(--main-wrapper-width-max);
+    max-width: var(--main-wrap-width-max);
     min-height: 100vh;
 }
 
@@ -549,56 +352,6 @@ main {
 }
 
 /* --- */
-
-.con-postsidebar {
-    display: flex;
-    flex-direction: column;
-}
-
-.posts-wrapper {
-    margin-bottom: 0;
-    max-width: var(--post-wrapper-max-width);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    /* transition: 0.5s; */
-    /* background: transparent;
-    box-shadow: none; */
-}
-
-.posts-category {
-    display: flex;
-    margin-bottom: 1.125rem;
-    font-size: var(--p2);
-    justify-content: space-between;
-    border-bottom-width: 1px;
-    border-color: var(--colr-line);
-}
-
-.category-menu {
-    /* display: flex; */
-    align-items: center;
-    padding: 0 .45rem;
-    padding-bottom: .09rem;
-    font-weight: 600;
-    color: var(--colr-primary);
-    border-bottom: 1px solid var(--colr-primary);
-    /* text-transform: uppercase; */
-}
-
-.category-menu a {
-    display: inline-block;
-}
-
-.posts-grid {
-    display: grid;
-    margin: var(--posts-grid-padding);
-    grid-template-columns: var(--posts-grid-template);
-    grid-gap: var(--posts-grid-gap);
-    gap: var(--posts-grid-gap);
-}
-
 
 @media (min-width: 460px) {
     :root {
