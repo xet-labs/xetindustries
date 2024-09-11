@@ -3,10 +3,11 @@
     // - Base variables
     $ROOT = [
         'dir' => '',
-        'url' => 'gg.com' 
+        'url' => 'xetindustries.com',
+        'domain' => 'xetindustries.com'
     ];
     
-    $ROOT['path'] = __DIR__ . '/../../..' . $ROOT['dir']; // Must be assigned after initial array setup
+    $ROOT['path'] = __DIR__ . '/../../..' . $ROOT['dir'];
 
     // - Define directories
     $DIR = [
@@ -33,79 +34,87 @@
     }
 
     // - Generate files path
-    $CSS = genFilesArray(0, [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
-    $CLS = genFilesArray(0, $PATH['cls'], 'cls.php');
-    $INC = genFilesArray(0, $PATH['inc'], 'inc.php');
-    $TMPL = genFilesArray(0, $PATH['tmpl'], 'tmpl.php');
-    $PAGE = genFilesArray(0, $PATH['page'], 'page.php');
+    $CSS = genFileArray('PATH', [$PATH['css'], $PATH['tmpl']], 'tmpl.css');
+    $CLS = genFileArray('PATH', $PATH['cls'], 'cls.php');
+    $INC = genFileArray('PATH', $PATH['inc'], 'inc.php');
+    $TMPL = genFileArray('PATH', $PATH['tmpl'], 'tmpl.php');
+    $PAGE = genFileArray('PATH', $PATH['page'], 'page.php');
 
     // - Generate files URL
-    $INC_URL = genFilesArray(1, $PATH['inc'], 'inc.php');
-    $CSS_URL = genFilesArray(1, [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
+    $INC_URL = genFileArray('URL', $PATH['inc'], 'inc.php');
+    // $CSS_URL = genFileArray('URL', [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
+
+
+
+
 
     //---------------------------------------------------------------------------------- 
 
-    // - Helper to generate files-path array
-    function _genFilesPathArray($files, $fileExtension) {
+    // - h.gen files-path array
+    function _genFilePathArray($files, $_fileExtension) {
         $fileArray = [];
         foreach ($files as $file) {
-            $key = basename($file, ".$fileExtension");
+            $key = basename($file, ".$_fileExtension");
             $fileArray[$key] = $file;
         }
         return $fileArray;
     }
 
-    // - Helper to generate files-url array
-    function _genFilesUrlArray($files, $fileExtension) {
+    // - h.gen files-url array
+    function _genFileUrlArray($files, $_fileExtension) {
         global $ROOT;  // Use global ROOT array here
         $fileArray = [];
         foreach ($files as $file) {
             // Get the relative path from the base directory
             $relativePath = str_replace($ROOT['path'], '', $file);
             $relativePath = ltrim($relativePath, '/'); // Remove leading slash
-            $key = basename($file, ".$fileExtension");
+            $key = basename($file, ".$_fileExtension");
             $fileArray[$key] = $ROOT['dir'] . '/' . $relativePath;
         }
         return $fileArray;
     }
 
     // - Generate files array (URL or Path)
-    function genFilesArray($type = 0, $directories, $fileExtension) {
-
-        if (!is_array($directories)) {
-            $directories = [$directories];
-        }
+    function genFileArray($_type = 'PATH', $_dirs, $_fileExtension, $_subdirs = []) {
         
-        switch ($type) {
-            case 1:
-                $_genFilesArray = '_genFilesUrlArray';
+        if (!is_array($_dirs)) { $_dirs = [$_dirs]; }
+
+        switch ($_type) {
+            case 'URL':
+                $_genFileArray = '_genFileUrlArray';
                 break;
             default:
-                $_genFilesArray = '_genFilesPathArray';
+                $_genFileArray = '_genFilePathArray';
                 break;
         }
-        
+            
         $files = [];
         $fileArray = [];
-        foreach ($directories as $dir) {
+        $subdirs = [];
+        foreach ($_dirs as $dir) {
+            
             if (!is_dir($dir)) { continue; }
             
-            if (is_dir($dir . "/inc")) {
-                $files = array_merge($files, glob("$dir/inc/*.$fileExtension"));
+            if (is_dir($dir . "/inc.d")) {
+                $subdirs = array_merge($subdirs, [$dir . "/inc.d"]);
             }
 
-            // -get files with matching extension in the directory
-            $files = array_merge($files, glob("$dir/*.$fileExtension"));
+            // -inc dirs with ".d"
+            $subdirs = array_merge($subdirs, glob("$dir/*.d", GLOB_ONLYDIR));
+            $subdirs = array_merge($subdirs, glob("$dir/*/*.d", GLOB_ONLYDIR));
+            //$subdirs = glob("$dir/*.$_fileExtension.d", GLOB_ONLYDIR); // -inc dirs with ."file_extnsn"
             
-            // -get directories with matching extension
-            $subdirs = glob("$dir/*.$fileExtension.d", GLOB_ONLYDIR);
+            // -get files with fileExtension in the dir
+            $files = array_merge($files, glob("$dir/*.$_fileExtension"));
+            
             foreach ($subdirs as $subdir) {
-                $files = array_merge($files, glob("$subdir/*.$fileExtension"));
+                $files = array_merge($files, glob("$subdir/*.$_fileExtension"));
             }
-                
-            $fileArray = array_merge($fileArray, $_genFilesArray($files, $fileExtension));
             
+            $fileArray = array_merge($fileArray, $_genFileArray($files, $_fileExtension));
+                   
         }
+        // echo "<pre>"; var_dump($_dirs);var_dump($fileArray); echo "</pre>";
         return $fileArray;
     }
 

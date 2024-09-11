@@ -8,7 +8,7 @@
 <meta name="description" content="<?php echo htmlspecialchars($Page['excerpt']); ?>">
 <meta name="robots" content="index,noarchive,follow,max-image-preview:large" />
 <meta name="referrer" content="unsafe-url" />
-<?php if( $Page['is_BLOG'] == true )(isset($Page['author'])): ?>
+<?php if( $Page['is_BLOG'] == true ): ?>
   <meta name="author" content="<?php echo htmlspecialchars($Page['author']); ?>" />
   <link rel="author" href="<?php echo htmlspecialchars($Page['author']); ?>" />
   <meta property="article:published_time" content="<?php echo htmlspecialchars($Page['created_at']); ?>" />
@@ -38,7 +38,7 @@
 <meta name="twitter:domain" value="<?php echo htmlspecialchars($Page['site_domain']); ?>" />
 <meta name="twitter:site" content="<?php echo htmlspecialchars($Page[x['site']]); ?>" />
 <meta name="twitter:creator" content="<?php echo htmlspecialchars($Page[x['creator']]); ?>" />
-<?php if( $Page['is_BLOG'] == true )(isset($Page['author'])): ?>
+<?php if( $Page['is_BLOG'] == true ): ?>
   <meta name="twitter:label1" content="Written by" />
   <meta name="twitter:data1" content="<?php echo htmlspecialchars($Page['author']); ?>" />
   <meta name="twitter:label2" value="Category" />

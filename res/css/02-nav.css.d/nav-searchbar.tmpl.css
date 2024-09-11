@@ -32,6 +32,10 @@ body.themeDark{
     margin-inline: .06em -.05em;
     padding-inline: var(--nav-icon-pd-lr);
     font-size: 1.7em;
+    --icon-bg: transparent;
+}
+.nav .searchbar-wrap .icon{
+    --icon-bg: transparent;
 }
 .nav .searchbar circle, 
 .nav .searchbar line {
@@ -111,7 +115,7 @@ body.themeDark{
         border: 1px solid transparent;
         border-radius: 50em;
         background-color: var(--searchbar-bg);
-        transition: border var(--trns-icon), .18s ease;
+        transition: border var(--trns-brdr);
     }
     .nav .searchbar-wrap:hover {
         border-color: var(--searchbar-hov-brdr-colr);

@@ -3,10 +3,12 @@
     --trns-theme-durn: .3s;
     --trns-theme-type: ease;
     --trns-theme: var(--trns-theme-durn) var(--trns-theme-type);
-    --trns-brdr-durn: ;
-    --trns-brdr: var(--trns-theme-durn);
-    --trns-sado-durn: ;
-    --trns-sado: var(--trns-theme-durn);
+
+    --trns-brdr-durn: .18s;
+    --trns-brdr: var(--trns-brdr-durn) ease;
+    
+    --trns-sado-durn: .18s;
+    --trns-sado: var(--trns-sado-durn) ease;
     
     --shadow-s: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
     --shadow-m: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
@@ -269,29 +271,6 @@ a:hover {
     opacity: 1;
 }
 
-.breadcrumb {
-    display: flex;
-    display: none;
-    padding: 1rem;
-    align-items: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 1.25rem;
-    font-size: 12px;
-    color: #4b5563;
-}
-.breadcrumb span {
-    color: #6b7280;
-}
-
-.breadcrumb .active {
-    color: rgb(37 99 235 / 1);
-}
-
-.breadcrumb a:hover {
-    text-decoration-line: underline;
-}
-
 
 
 /* --------------------Helpers-End------------------- */
@@ -304,54 +283,6 @@ main {
 }
 
 /* ----------------------- */
-
-.highlights-wrapper {
-    display: var(--highlights-wrapper-display);
-    width: 100%;
-    display: none;
-}
-
-.highlights {
-    display: flex;
-    justify-self: center;
-    flex-direction: column;
-    max-width: var(--highlights-wrapper-width-max);
-
-    padding: 1.5rem 1.5rem 1rem;
-}
-
-.highlights .h-title  {
-    font-family: var(--title2-font);
-}
-.highlights .h-title i,
-.highlights .h-title svg {
-    font-size: 1.53rem;
-    width: 1.53rem;
-    color: var(--colr-txt);
-    /* fill: var(--colr-txt); */
-    margin-right: .08em;
-}
-.highlights-grid {
-    display: grid;
-    grid-template-columns: var(--highlights-grid-template);
-    grid-gap: var(--highlights-grid-gap);
-    gap: var(--highlights-grid-gap);
-}
-
-.highlights-grid .post-meta{
-    padding: .6rem 0 .625rem;
-}
-
-.highlights-grid .post .post-img-wrap .post-img img {
-    aspect-ratio: var(--highlights-image-aspect-ratio);
-}
-
-.highlights-grid .post .post-info {
-    text-align: center;
-    padding-bottom: 0;
-}
-
-/* --- */
 
 @media (min-width: 460px) {
     :root {

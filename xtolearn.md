@@ -1,0 +1,7 @@
+cicd{
+    jenkins
+}
+
+confManagement{
+    ansible
+}

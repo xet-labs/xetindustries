@@ -8,5 +8,4 @@
 
     // Register the autoloader function
     spl_autoload_register('clsAutoloader');
-
 ?>

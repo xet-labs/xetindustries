@@ -61,7 +61,7 @@
   <!-- == Meta-End == -->
 </head>
 
-<body>
+<body class="blogs-body">
 
   <!-- nav -->
   <?php 
@@ -204,7 +204,7 @@
     <div class="con-postsidebar">
 
       <!-- Posts Wrapper -->
-      <div class="wrapper con posts-wrapper" id="posts-wrapper">
+      <div class="wrapper con posts-wrap" id="id-posts-wrap">
 
         <!-- Post Category -->
         <div class="posts-category">

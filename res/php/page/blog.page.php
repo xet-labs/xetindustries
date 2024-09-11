@@ -15,7 +15,7 @@
     $currentMenu=$subBrand='Blog';
     // -nav & sticky_social
     include_once($TMPL['nav']);
-    include_once($TMPL['sticky_social']);
+    include_once($TMPL['sticky-social']);
   ?>
 
 

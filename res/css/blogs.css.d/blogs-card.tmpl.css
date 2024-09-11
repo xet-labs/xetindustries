@@ -107,6 +107,10 @@
     right: 0;
     transition: background-color 0.2s ease;
 }
+.post:hover .post-img-wrap::after  {
+    background: transparent;
+    /* background: #ffffff17; */
+}
 .post .post-img-wrap:hover::after  {
     background: transparent;
     background: #ffffff17;
@@ -163,8 +167,7 @@
     color: unset;
 }
 .post .post-title a:hover {
-    transition: underline 0s ease;
-    text-decoration: underline;
+    /* transition: underline 0s ease;text-decoration: underline; */
     color: var(--colr-secondary);
     color: #474843;
     color: unset;
@@ -230,7 +233,8 @@
     /* text-decoration: unset; */
 }
 .post-meta .meta-author a:hover{
-    /* color: var(--colr-txt); */
+    color: inherit;
+    text-decoration: underline;
 }
 
 .post-meta .meta-date{
@@ -238,10 +242,6 @@
 }
 
 @media screen and (min-width: 680px) {
-
-    .posts-wrapper {
-        --post-wrapper-max-width: unset;
-    }
     .post {
         --post-bg: var(--post-media-bg);
 

@@ -32,15 +32,17 @@
     display: block;
     margin: var(--blog-h2-m);
     /* text-decoration: underline; */
-    cursor: pointer;
-    color: var(--h2-colr, var(--colr-title));
     /* margin-left: auto; */
+    /* cursor: pointer; */
+    color: var(--h2-colr, var(--colr-title));
 }
 .blog-con h2 a {
     font-weight: inherit;
     text-decoration: none;
+    width: fit-content;
 }
 .blog-con h2 a:hover {
+    color: inherit;
     transition-duration: 0s;
     text-decoration: underline;
 }
