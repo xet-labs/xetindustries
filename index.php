@@ -70,7 +70,7 @@
   
 
   <!-- Main wrapper -->
-  <main class="main-wrapper" >
+  <main class="main-wrap" >
 
     <h1 class="nodis">
 

@@ -25,8 +25,17 @@
 	<meta name="msapplication-TileColor" content="#ff9700" />
 	<meta name="msapplication-TileImage" content="res/static/brand/xet-color-logo-hr2.svg" />
 
-
+	
 	<!-- == Style-Sheet == -->
+
+	<!-- Font Awesome -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" > -->
+	<!-- <link rel="stylesheet" href="/res/lib/fontawesome-free-6.5.1-web/css/all.min.css"> -->
+
+	<!-- Tailwind -->
+	<link rel="stylesheet" href="/res/lib/tailwind.css">
+	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
 	<?php if(file_exists('xstyle.css')){ ?><link rel="stylesheet" href="xstyle.css"><?php }; ?>
 
 	<?php if(file_exists($INC['style'])){ ?><link rel="stylesheet" href="<?php echo $INC_URL['style'];?>">
@@ -34,13 +43,6 @@
 
 	<?php if(file_exists('style.css')){ ?><link rel="stylesheet" type="text/css" href="style.css"><?php }; ?>
 	
-
-	<!-- Font Awesome -->
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" > -->
-	<!-- <link rel="stylesheet" href="/res/lib/fontawesome-free-6.5.1-web/css/all.min.css"> -->
-
-	<!-- Tailwind -->
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 	<!-- == End-Style-Sheet == -->
 

@@ -4,23 +4,22 @@
   $Blog = $Blog[0];
 ?>
 
+
 <?php include_once($TMPL['head']); ?>
 
-
 </head>
+
 
 <body class="blog-body">
 
   <?php 
     $currentMenu=$subBrand='Blog';
-    // -nav & sticky_social
     include_once($TMPL['nav']);
     include_once($TMPL['sticky-social']);
   ?>
 
 
-  <!-- Main wrapper -->
-  <main class="main-wrapper">
+  <main class="main-wrap">
 
     <!-- Blog-wrapper -->
     <div class="blog-wrap wrapper ">

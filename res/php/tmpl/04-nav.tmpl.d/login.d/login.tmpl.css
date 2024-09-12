@@ -1,0 +1,133 @@
+.signuplogin {
+  z-index: 2000;
+  position: fixed;
+  opacity: 0;
+  top: 50%;left: 50%;
+  transform: translate(-50%, -52.6%);
+  width: 80%;
+  /* width: clamp(420px, 80%, 400px); */
+  transition: .25s;
+  pointer-events: none;
+
+  padding: 2.4rem 1.5rem;
+  row-gap: 1.25rem;
+  text-align: center;
+  background: var(--signuplogin-bg, var(--bg));
+  border-radius: var(--border-radius2);
+  /* border-radius: 22px; */
+
+  box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+}
+
+.signuplogin,
+#signuplogin-btn:checked~.signuplogin {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: .35s;
+  pointer-events: initial;
+}
+#signuplogin-btn ~.underlay,
+#signuplogin-btn:checked~.underlay {
+  opacity: 1;
+  pointer-events: initial;
+  cursor: pointer;
+  /* background: var(--signuplogin-bg, var(--bg)); */
+}
+
+.signuplogin-brand {
+  display: flex;
+  justify-content: center;
+}
+/* .signuplogin-brand img, */
+.signuplogin-brand svg{
+  max-width: unset;
+  object-fit: cover;
+  max-height: 2.2em;
+  width: 80%;
+  margin: 0.1836rem 0;
+  color: inherit;
+  fill: inherit;
+  color: var(--colr);
+  opacity: 1;
+}
+
+.signuplogin-title {
+  margin-top: .26em;
+  /* margin-top: 12px; */
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--colr-txt);
+}
+
+.signuplogin .login,
+.signuplogin .signup {
+  color: #4b5563;
+}
+.signuplogin form {
+  margin-top: 1.4em;
+}
+
+.signuplogin-form label {
+  margin-top: 1em;
+  color: #4b5563;
+  display: block;
+  margin-bottom: .25rem;
+  text-align: initial;
+  color: var(--deco-color1);
+  font-weight: var(--font-medium, 500);
+}
+.signuplogin-form input {
+  /* margin-top: 1em; */
+  color: #4b5563;
+}
+
+.login__input {
+  width: 100%;
+  background-color: hsl(230, 100%, 97%);
+  border: 2px solid hsl(230, 25%, 80%);
+  padding: 1rem;
+  border-radius: .5rem;
+  color: var(--text-color, hsl(230, 12%, 40%));
+}
+
+.login__input::placeholder {
+  color: var(--text-color, hsl(230, 12%, 40%));
+}
+
+.login__signup {
+  margin-bottom: .5rem;
+}
+
+.login__signup a {
+  color: var(--first-color, hsl(230, 75%, 56%));
+}
+
+.login__forgot {
+  display: inline-block;
+  color: var(--first-color, hsl(230, 75%, 56%));
+  margin-bottom: 1.25rem;
+}
+
+.login__button {
+  display: inline-block;
+  background-color: var(--first-color, hsl(230, 75%, 56%));
+  width: 100%;
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+
+.login__button:hover {
+  box-shadow: 0 4px 24px hsla(230, 75%, 40%, .4);
+}
+
+
+@media screen and (min-width: 680px) {
+  .signuplogin {
+    width: 400px;
+    width: 420px;
+
+  }
+}

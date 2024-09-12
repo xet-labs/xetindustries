@@ -11,14 +11,15 @@
 
     // - Define directories
     $DIR = [
-        'root' => $ROOT['dir'],
-        'res'  => $ROOT['dir'] . '/res',
-        'css'  => $ROOT['dir'] . '/res/css',
-        'php'  => $ROOT['dir'] . '/res/php',
-        'cls'  => $ROOT['dir'] . '/res/php/cls',
-        'inc'  => $ROOT['dir'] . '/res/php/inc',
-        'tmpl' => $ROOT['dir'] . '/res/php/tmpl',
-        'page' => $ROOT['dir'] . '/res/php/page'
+        'root'  => $ROOT['dir'],
+        'res'   => $ROOT['dir'] . '/res',
+        'brand' => $ROOT['dir'] . '/res/static/brand',
+        'css'   => $ROOT['dir'] . '/res/css',
+        'php'   => $ROOT['dir'] . '/res/php',
+        'cls'   => $ROOT['dir'] . '/res/php/cls',
+        'inc'   => $ROOT['dir'] . '/res/php/inc',
+        'tmpl'  => $ROOT['dir'] . '/res/php/tmpl',
+        'page'  => $ROOT['dir'] . '/res/php/page'
     ];
     
     // - Generate paths using $DIR[]
@@ -34,6 +35,7 @@
     }
 
     // - Generate files path
+    $BRAND = genFileArray('PATH', [$PATH['brand']], 'svg');
     $CSS = genFileArray('PATH', [$PATH['css'], $PATH['tmpl']], 'tmpl.css');
     $CLS = genFileArray('PATH', $PATH['cls'], 'cls.php');
     $INC = genFileArray('PATH', $PATH['inc'], 'inc.php');
@@ -42,7 +44,6 @@
 
     // - Generate files URL
     $INC_URL = genFileArray('URL', $PATH['inc'], 'inc.php');
-    // $CSS_URL = genFileArray('URL', [$PATH['css'], $PATH['css']."/inc"], 'tmpl.css');
 
 
 
