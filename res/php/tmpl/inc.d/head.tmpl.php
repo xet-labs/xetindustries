@@ -25,7 +25,9 @@
 	<meta name="msapplication-TileColor" content="#ff9700" />
 	<meta name="msapplication-TileImage" content="res/static/brand/xet-color-logo-hr2.svg" />
 
-	
+	<!-- FONTS -->
+	<link rel="preload" href="/res/static/fonts/Inter/Inter-VariableFont_slnt_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="/res/static/fonts/Wix_Madefor_Text/WixMadeforText-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 	<!-- == Style-Sheet == -->
 
 	<!-- Font Awesome -->
@@ -36,12 +38,21 @@
 	<link rel="stylesheet" href="/res/lib/tailwind.css">
 	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-	<?php if(file_exists('xstyle.css')){ ?><link rel="stylesheet" href="xstyle.css"><?php }; ?>
+	<?php if(file_exists('xstyle.css')){ ?>
+		<link rel="preload" href="xstyle.css" as="stylesheet"><link rel="stylesheet" href="xstyle.css">
+	<?php } ?>
 
-	<?php if(file_exists($INC['style'])){ ?><link rel="stylesheet" href="<?php echo $INC_URL['style'];?>">
-	<?php } else { ?><link rel="stylesheet" href="<?php echo $CSS['styles'];?>"><?php }; ?>
+	<?php if(file_exists($INC['style'])){ ?>
+		<link rel="preload" href="<?php echo $INC_URL['style'];?>" as="stylesheet">
+		<link rel="stylesheet" href="<?php echo $INC_URL['style'];?>">
+	<?php } else { ?>
+		<link rel="preload" href="<?php echo $CSS['styles'];?>" as="stylesheet">
+		<link rel="stylesheet" href="<?php echo $CSS['styles'];?>">
+	<?php }; ?>
 
-	<?php if(file_exists('style.css')){ ?><link rel="stylesheet" type="text/css" href="style.css"><?php }; ?>
+	<?php if(file_exists('style.css')){ ?>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	<?php }; ?>
 	
 
 	<!-- == End-Style-Sheet == -->

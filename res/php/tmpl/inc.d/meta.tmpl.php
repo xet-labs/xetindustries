@@ -36,13 +36,13 @@
 <meta name="twitter:image" content="<?php echo htmlspecialchars($Page['featured_img']); ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:domain" value="<?php echo htmlspecialchars($Page['site_domain']); ?>" />
-<meta name="twitter:site" content="<?php echo htmlspecialchars($Page[x['site']]); ?>" />
-<meta name="twitter:creator" content="<?php echo htmlspecialchars($Page[x['creator']]); ?>" />
+<meta name="twitter:site" content="<?php echo htmlspecialchars($Page['x'['site']]); ?>" />
+<meta name="twitter:creator" content="<?php echo htmlspecialchars($Page['x'['creator']]); ?>" />
 <?php if( $Page['is_BLOG'] == true ): ?>
   <meta name="twitter:label1" content="Written by" />
   <meta name="twitter:data1" content="<?php echo htmlspecialchars($Page['author']); ?>" />
   <meta name="twitter:label2" value="Category" />
-  <meta name="twitter:data2" value="<?php echo htmlspecialchars($Page[x['category']]); ?>" />
+  <meta name="twitter:data2" value="<?php echo htmlspecialchars($Page['x'['category']]); ?>" />
   <meta name="twitter:label3" value="Published on" />
   <meta name="twitter:data3" value="<?php echo htmlspecialchars($Page['created_at_h']); ?>" />
 <?php endif ?>

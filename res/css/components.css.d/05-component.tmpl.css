@@ -49,8 +49,7 @@ body.themeDark {
     border-radius: 50%;
     width: calc(var(--icon-width, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
     height: calc(var(--icon-height, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
-    top: 50%; 
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.88);
     transition: transform 0.08s ease-in, background-color var(--icon-trns-bg);
 }

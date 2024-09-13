@@ -3,13 +3,13 @@
   position: fixed;
   opacity: 0;
   top: 50%;left: 50%;
-  transform: translate(-50%, -52.6%);
   width: 80%;
   /* width: clamp(420px, 80%, 400px); */
-  transition: .25s;
+  transform: translate(-50%, -50%) scale(.98);
+  transition: .08s;
   pointer-events: none;
 
-  padding: 2.4rem 1.5rem;
+  padding: 2.4em 1.8em;
   row-gap: 1.25rem;
   text-align: center;
   background: var(--signuplogin-bg, var(--bg));
@@ -19,14 +19,14 @@
   box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
 }
 
-.signuplogin,
+/* .signuplogin, */
 #signuplogin-btn:checked~.signuplogin {
   opacity: 1;
-  transform: translate(-50%, -50%);
-  transition: .35s;
+  transform: translate(-50%, -50%) scale(1);
+  transition: .22s;
   pointer-events: initial;
 }
-#signuplogin-btn ~.underlay,
+/* #signuplogin-btn ~.underlay, */
 #signuplogin-btn:checked~.underlay {
   opacity: 1;
   pointer-events: initial;
@@ -51,9 +51,10 @@
   opacity: 1;
 }
 
-.signuplogin-title {
-  margin-top: .26em;
+.signuplogin h3 {
+  margin-top: .16em;
   /* margin-top: 12px; */
+  font-family: var(--font);
   font-size: 1.6em;
   font-weight: 600;
   color: var(--colr-txt);
