@@ -34,24 +34,24 @@ if (isset($_SESSION["userId"])) { ?>
             
             <form class="signuplogin-form" method="post" action="<?php echo htmlspecialchars($INC_URL['formctl']); ?>">
                 <input type="hidden" name="currentUrl" value="<?php echo htmlspecialchars($currentUrl); ?>">
-                <div class="login__group">
-                    <div>
-                        <label for="email" class="login__label">Email</label>
-                        <input type="text" name="user-id" placeholder="Username / Email" id="email" class="login__input" autofocus>
-                    </div>
-                    <div>
-                        <label for="password" class="login__label">Password</label>
-                        <input type="password" name="user-pass" placeholder="Password" id="password" class="login__input">
-                    </div>
+                
+                <div class="imput-wrap">
+                    <label for="email" class="login__label">Email</label>
+                    <input type="text" name="user-id" id="email" class="input" aria-label="Email Address" placeholder="Username / Email">
                 </div>
+                <div class="imput-wrap">
+                    <label for="password" class="login__label">Password</label>
+                    <input type="password" name="user-pass" id="password" class="input" aria-label="Email Password" placeholder="Password">
+                </div>
+
                 <div>
-                    <p class="login__signup">
+                    <p class="login-signup">
                         You do not have an account? <a href="#">Sign up</a>
                     </p>
-                    <a href="#" class="login__forgot">
+                    <a href="#" class="login-forgot">
                         You forgot your password
                     </a>
-                    <button type="submit" name="submit-login" class="login__button">Log In</button>
+                    <button type="submit" name="submit-login" class="login-btn">Log In</button>
                 </div>
             </form>
         </div>
