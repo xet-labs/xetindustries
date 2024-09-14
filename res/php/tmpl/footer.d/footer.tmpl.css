@@ -23,6 +23,7 @@ footer {
     background: var(--footer-wrapper-bg);
     color: var(--footer-wrapper-color);
     margin-top: var(--wrapper-margin-tb);
+    pointer-events: var(--footer-pointer-event);
 }
 
 .footer {

@@ -32,15 +32,13 @@ nav {
     color: var(--nav-colr);
     background: var(--nav-bg, var(--bg));
     border-bottom: 1px solid var(--colr-line);
-    /* box-shadow: var(--shadow-large); */
+    box-shadow: var(--shadow-large);
     
     transition: top 0.22s ease;
+    transition: background-color var(--trns-theme), border-color var(--trns-theme), top 0.22s;
     
-    /* height: 3.6em; */
     border-color: transparent;
     /* border-color: #4242422d; */
-
-    /* margin-bottom: 3em; */
 }
 .navbar {
     display: flex;

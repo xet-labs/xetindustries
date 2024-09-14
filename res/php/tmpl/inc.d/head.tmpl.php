@@ -1,6 +1,4 @@
 <?php
-	// require_once("../conf/config.php");
-
 	session_start();
 	$currentUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
@@ -32,27 +30,33 @@
 
 	<!-- Font Awesome -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" > -->
-	<!-- <link rel="stylesheet" href="/res/lib/fontawesome-free-6.5.1-web/css/all.min.css"> -->
 
-	<!-- Tailwind -->
-	<link rel="stylesheet" href="/res/lib/tailwind.css">
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+	
+	<?php if ($Page['lib']['tw'] ?? false) { ?>
+		<!-- Tailwind CSS -->
+		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    	<link href="/res/lib/tailwind.css" rel="preload" as="stylesheet">
+    	<link href="/res/lib/tailwind.css" rel="stylesheet">
+	<?php } ?>
+
+
 
 	<?php if(file_exists('xstyle.css')){ ?>
-		<link rel="preload" href="xstyle.css" as="stylesheet"><link rel="stylesheet" href="xstyle.css">
+		<link href="xstyle.css" rel="preload" as="stylesheet">
+		<link href="xstyle.css" rel="stylesheet">
 	<?php } ?>
 
 	<?php if(file_exists($INC['style'])){ ?>
-		<link rel="preload" href="<?php echo $INC_URL['style'];?>" as="stylesheet">
-		<link rel="stylesheet" href="<?php echo $INC_URL['style'];?>">
+		<link href="<?php echo $INC_URL['style'];?>" rel="preload" as="stylesheet">
+		<link href="<?php echo $INC_URL['style'];?>" rel="stylesheet">
 	<?php } else { ?>
-		<link rel="preload" href="<?php echo $CSS['styles'];?>" as="stylesheet">
-		<link rel="stylesheet" href="<?php echo $CSS['styles'];?>">
-	<?php }; ?>
+		<link href="<?php echo $CSS['styles'];?>" rel="preload" as="stylesheet">
+		<link href="<?php echo $CSS['styles'];?>" rel="stylesheet">
+	<?php } ?>
 
 	<?php if(file_exists('style.css')){ ?>
 		<link rel="stylesheet" href="style.css" type="text/css">
-	<?php }; ?>
+	<?php } ?>
 	
 
 	<!-- == End-Style-Sheet == -->

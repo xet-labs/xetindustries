@@ -25,6 +25,9 @@
     --transition-5s: .5s;
 
     /* ------------------------------- */
+    --body-pointer-event: initial;
+    --footer-pointer-event: initial;
+    
     --con-padding-tb: 1.5rem;
     --con-padding-lr: .5rem;
     --border-radius2: 22px;
@@ -113,6 +116,7 @@ body {
     font-family: var(--font);
     color: var(--colr-txt);
     /* font-size: var(--font-size); */
+    pointer-events: var(--body-pointer-event);
 }
 
 

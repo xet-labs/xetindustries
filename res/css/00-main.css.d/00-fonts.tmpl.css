@@ -37,6 +37,7 @@ h1, h2, h3, h4 {
     --cfont: inter;
     --font: -apple-system, system-ui !important;
     --font: "inter", -apple-system, system-ui !important;
+    --title-font: var(--font), -apple-system, system-ui !important;
     --title-font: "wix madefor text", var(--font), -apple-system, system-ui !important;
     
     --h: 56px;

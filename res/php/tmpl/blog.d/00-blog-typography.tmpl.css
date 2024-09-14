@@ -33,7 +33,7 @@
     margin: var(--blog-h2-m);
     /* text-decoration: underline; */
     /* margin-left: auto; */
-    /* cursor: pointer; */
+    cursor: pointer;
     color: var(--h2-colr, var(--colr-title));
 }
 .blog-con h2 a {
