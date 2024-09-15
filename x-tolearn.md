@@ -1,4 +1,5 @@
 cicd{
+    circl-ci
     jenkins
 }
 
@@ -9,9 +10,10 @@ confManagement{
 x {
     c++
     php
+    go
+    ruby
     java
     javascript
     rust
-    go
     figma
 }

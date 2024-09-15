@@ -32,7 +32,7 @@ nav {
     color: var(--nav-colr);
     background: var(--nav-bg, var(--bg));
     border-bottom: 1px solid var(--colr-line);
-    box-shadow: var(--shadow-large);
+    /* box-shadow: var(--shadow-large); */
     
     transition: top 0.22s ease;
     transition: background-color var(--trns-theme), border-color var(--trns-theme), top 0.22s;
@@ -175,85 +175,6 @@ nav .navbar .brand svg  {
 }
 .themeDarkIcon{
     display: var(--themeDarkIconDisplay);
-}
-
-#id-navSidebarCheck{
-    display: none;
-}
-
-.navSidebarUnderlay{
-    z-index: 100;
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    backdrop-filter: blur(24px);
-    transition: .4s;
-}
-#id-navSidebarCheck:checked ~ .navSidebarUnderlay{
-    top: 0;bottom: 0;right: 0;left: 0;
-    opacity: 1;
-    cursor: pointer;
-}
-.navbar .navbar_r .navSidebarOpen{
-    padding-right: 0;
-}
-.navbar .navbar_r .navSidebar{
-    z-index: 999;
-    display: flex;
-    position: fixed;
-    height: 100vh;
-    width: 70%;
-    max-width: 300px;
-    top: 0;
-    right: -70%;
-    padding: 0;
-    transition: .5s all;
-    background: var(--nav-bg);
-    box-shadow: var(--shadow-large);
-    pointer-events: none;
-}
-#id-navSidebarCheck:checked ~ .navSidebar{
-    right: 0;
-    transition: .5s all;
-    pointer-events: initial;
-}
-.navbar .navbar_r ul li.navSidebarClose{
-    display: flex;
-    border-bottom: .16px solid var(--colr-line);
-    padding: var(--nav-pd);
-    height: calc(var(--nav-height) + .5px);
-    margin: 0 0 .8rem;
-}
-.navbar .navbar_r ul li.navSidebarClose a{
-    padding: 0;
-}
-.navbar .navbar_r ul li.navSidebarClose a:hover{    
-    /* background: unset; */
-}
-.navbar .navbar_r ul li.navSidebarClose label{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.navbar .navbar_r .navSidebar ul{
-    flex-direction: column;
-    list-style: none;
-    width: 100%;
-}
-.navbar .navbar_r .navSidebar ul li{
-    width: 100%;
-}
-.navbar .navbar_r .navSidebar ul a{
-    margin: 0;
-    width: 100%;
-    padding: .6rem .9rem;
-    padding-left: 1.8rem;
-}
-.navbar .navbar_r .navSidebar ul a:hover{
-    /* background-color: var(--con-bg); */
 }
 
 

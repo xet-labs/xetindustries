@@ -7,7 +7,7 @@
 <div class="searchbar-wrap " >
 
     <div class="searchbar">
-        <input type="checkbox" class="underlayCheckbox" id="id-searchbar">
+        <input type="checkbox" class="underlay-btn" id="id-searchbar">
         <label for="id-searchbar" class="underlay"></label>
         
         <!-- search-widget Btn-->

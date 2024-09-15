@@ -124,27 +124,6 @@ a:hover {
     transition-duration: 0s;
     color: var(--colr-a-hover);
 }
-/* ----------------------Helpers-------------------- */
-.underlayCheckbox{
-    display: none;
-}
-.underlay{
-    /* display: none; */
-    position: fixed;
-    top: 0;bottom: 0;right: 0;left: 0;
-    z-index: 1000;
-    background-color: hsla(230, 75%, 15%, .1);
-    backdrop-filter: blur(24px);
-    opacity: 0;
-    transition: opacity .3s;
-    pointer-events: none;
-}
-
-/* .underlay:checked{
-    opacity: 1;
-    transition: .35s;
-    pointer-events: initial;
-} */
 
 .inherit-color{
     color: inherit;

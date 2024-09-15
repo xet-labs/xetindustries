@@ -8,7 +8,7 @@
     <b>SEO is the strategic art of enhancing a website's visibility on search engines like Google, Bing, and Yahoo.</b> It involves optimizing various elements to rank higher in search results, driving organic traffic and, ultimately, increasing the chances of converting visitors into customers. 
 </p>
 <h2>
-    The Pillars of SEO:
+    The Pillars of SEO
 </h2>
 <p>
     Once you have the foundations of your site ready, you’ll need to pay attention to many small details such as metadata and linking, which can help improve your rankings. This article will cover what it takes to implement those details and make sure that they are meeting SEO standards and eventually SEO ROI.
