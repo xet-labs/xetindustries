@@ -1,5 +1,3 @@
-<?php $XIpass="1019@xI.db#1o1"?>
-
 <?php
 	$DBconf = [
 		"XI" => [
@@ -53,14 +51,6 @@
 	
 		return $conn;
 	}
-	// example
-	// try {
-	// 	$conn = __dbConn($db_conf, 0);
-	// 	// Do something with the connection
-	// } catch (Exception $e) {
-	// 	echo "Error: " . $e->getMessage();
-	// }
-	
 
 	function __dbDconn($conn) {
 		global $conn;

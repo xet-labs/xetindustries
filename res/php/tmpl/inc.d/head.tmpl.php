@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	$currentUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 
 <!DOCTYPE html>

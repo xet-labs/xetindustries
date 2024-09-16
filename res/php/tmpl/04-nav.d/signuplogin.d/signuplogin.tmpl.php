@@ -29,7 +29,7 @@ if (isset($_SESSION["userId"])) { ?>
     <div class="signuplogin-wrap">
         <div class="signuplogin">
 
-            <a class="signuplogin-brand" href="/#"><?php echo file_get_contents($BRAND['brand']); ?></a>
+            <a class="signuplogin-brand" href="/#" rel="noopener noreferrer"><?php echo file_get_contents($BRAND['brand']); ?></a>
             
             <div class="login">
 
@@ -44,7 +44,7 @@ if (isset($_SESSION["userId"])) { ?>
                             <p class="label">Email</p>
                         </div>
 
-                        <input type="text" name="user-id" id="email" class="input" aria-label="Email Address" placeholder="email or username">
+                        <input type="text" name="user-id" id="email" aria-label="Email Address" required placeholder="email or username">
                     </div>
                     
                     <div class="field-wrap">
@@ -54,50 +54,20 @@ if (isset($_SESSION["userId"])) { ?>
                             <a class="" href="">Forgot password?</a>
                         </div>
 
-                        <input type="password" name="user-pass" id="password" class="input" aria-label="Email Password" placeholder="password">
+                        <input type="password" name="user-pass" id="password" aria-label="Email Password" required placeholder="password">
                     </div>
 
                     <div >
-                        <button type="submit" name="submit-login" class="submit-login-btn">Log In</button>
+                        <button type="submit" name="submit-login" class="submit-login-btn" tabindex="0" aria-label="Submit Login">Log In</button>
                         <div class="tosignuplogin">
-                            <p>Don't have an account? <label for="id-signup-btn" aria-label="Sign Up">Sign Up</label></p>
+                            <p>Don't have an account? <label for="id-signup-btn" aria-label="Sign Up">Sign up</label></p>
                         </div>
                     </div>
                 </form>
-                <!-- ========================================================= -->
-                <!-- <h3>Log in</h3>
-                
-                <form class="signuplogin-form" method="post" action="<?php echo htmlspecialchars($INC_URL['formctl']); ?>">
-                    <input type="hidden" name="currentUrl" value="<?php echo htmlspecialchars($currentUrl); ?>">
-                    
-                    <div class="field-wrap">
-
-                        <div class="label-wrap">
-                            <p class="label">Email</p>
-                        </div>
-
-                        <input type="text" name="user-id" id="email" class="input" aria-label="Email Address" placeholder="Email or username">
-                    </div>
-                    
-                    <div class="field-wrap">
-
-                        <div class="label-wrap">
-                            <p class="label">Password</p>
-                            <a class="" href="">Forgot password?</a>
-                        </div>
-
-                        <input type="password" name="user-pass" id="password" class="input" aria-label="Email Password" placeholder="Password">
-                    </div>
-
-                    <div >
-                        <button type="submit" name="submit-login" class="submit-login-btn">Log In</button>
-                        <div class="tosignuplogin">
-                            <p>Don't have an account? <label for="id-signup-btn" aria-label="Sign Up">Sign Up</label></p>
-                        </div>
-                    </div>
-                </form> -->
+     
             </div>
         
+            
             <div class="signup">
 
                 <h3>Sign up</h3>
@@ -109,25 +79,25 @@ if (isset($_SESSION["userId"])) { ?>
                         <div class="label-wrap">
                             <p class="label">Name</p>
                         </div>
-                        <input type="text" name="user-id" id="id-name" class="input" aria-label="Name" placeholder="navlin ohio">
+                        <input type="text" name="user-name" id="name" class="input" aria-label="Name" required placeholder="navlin ohio">
                     </div>
 
                     <div class="field-wrap">
                         <div class="label-wrap">
                             <p class="label">Email</p>
                         </div>
-                        <input type="text" name="user-id" id="email" class="input" aria-label="Email Address" placeholder="navlin44@gmail.com">
+                        <input type="email" name="user-email" id="email" class="input" aria-label="Email Address" required placeholder="navlin44@gmail.com">
                     </div>
                 
                     <div class="field-wrap">
                         <div class="label-wrap">
                             <p class="label">Password</p>
                         </div>
-                        <input type="password" name="user-pass" id="password" class="input" aria-label="Email Password" placeholder="p455w0rd">
+                        <input type="password" name="user-pass" id="password" class="input" aria-label="Email Password" required placeholder="p455w0rd">
                     </div>
 
                     <div>
-                        <button type="submit" name="submit-login" class="submit-login-btn">Sign Up</button>
+                        <button type="submit" name="submit-signup" class="submit-signup-btn" tabindex="0" aria-label="Submit Signup">Sign Up</button>
                         <div class="tosignuplogin">
                             <p>Already have an account? <label for="id-login-btn" aria-label="Log In">Log in</label></p>
                         </div>

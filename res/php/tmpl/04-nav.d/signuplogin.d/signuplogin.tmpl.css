@@ -29,10 +29,11 @@
 }
 .signuplogin .login,
 .signuplogin .signup {
-    color: #4b5563;
+    /* opacity: 0; */
     display: none;
     pointer-events: initial;
     transition: width .2s;
+    color: #4b5563;
 }
 
 /* #id-login-btn~.underlay {opacity: 1; pointer-events: initial;}#id-login-btn~.signuplogin-wrap, */
@@ -46,12 +47,14 @@
 
 #id-signup-btn:checked~.signuplogin-wrap .signup-wrap,
 #id-signup-btn:checked~.signuplogin-wrap .signup {
+    opacity: 1;
     display: flex;
     flex-direction: column;
     pointer-events: initial;
 }
 #id-login-btn:checked~.signuplogin-wrap .login-wrap,
 #id-login-btn:checked~.signuplogin-wrap .login {
+    opacity: 1;
     display: flex;
     flex-direction: column;
     pointer-events: initial;
@@ -73,7 +76,7 @@
     object-fit: cover;
     max-height: 2.2em;
     width: 80%;
-    margin: 0.1836rem 0;
+    margin: 0.125em 0 0;
     /* color: var(--colr); */
     opacity: 1;
 }
@@ -142,12 +145,14 @@
     cursor: pointer;
     padding: .75rem;
     width: 100%;
-    color: #fff;
+    font-weight: 500;
     color: var(--colr-inv);
     background-color: var(--first-color, hsl(230, 75%, 56%));
     transition: box-shadow .3s;
   }
+  .signuplogin .submit-login-btn:focus,
   .signuplogin .submit-login-btn:hover,
+  .signuplogin .submit-signup-btn:focus, 
   .signuplogin .submit-signup-btn:hover {
     box-shadow: 0 4px 24px hsla(230, 75%, 40%, .4);
   }
@@ -163,8 +168,9 @@
 }
 
 .signuplogin .tosignuplogin a,
-.signuplogin .tosignuplogin label {
-    font-weight: 550;
+.signuplogin .tosignuplogin label,
+.signuplogin .tosignuplogin button {
+    font-weight: 500;
     color: var(--colr-a);
     cursor: pointer;
 }
