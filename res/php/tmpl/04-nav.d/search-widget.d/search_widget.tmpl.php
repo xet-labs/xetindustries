@@ -1,9 +1,3 @@
-
-<span style="display:flex;gap:.5em;">
-
-</span>
-
-<!-- <div class="searchbar-wrap " style="background:grey;"> -->
 <div class="searchbar-wrap " >
 
     <div class="searchbar">

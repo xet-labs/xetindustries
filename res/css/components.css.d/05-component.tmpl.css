@@ -18,11 +18,15 @@ body.themeDark {
 .nodis {
     display: none;
 }
-
-.no-pointer {
+.nopointer {
     pointer-events: none;
 }
-
+.disblock {
+    display: block;
+}
+.disflex {
+    display: flex;
+}
 .seperator {
     width: 2px;
     height: 2px;
