@@ -40,8 +40,8 @@ input, button {
 }
 
 [type=button],
-[type=reset],
 [type=submit],
+[type=reset],
 button {
     appearance: button;
     -webkit-appearance: button;
@@ -80,16 +80,16 @@ html {
     -webkit-tap-highlight-color: transparent;
     
     scroll-behavior: smooth; 
-    /* max-width: 100vp; */
 }
 
 body{
     /* text-rendering: geometricPrecision; */
 }
 a {
+    text-decoration: inherit;
     font-size: inherit;
     color: inherit;
     fill: inherit;
-    text-decoration: inherit;
+    width: fit-content;
 }
 

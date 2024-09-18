@@ -41,17 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // hide/reveal nav on scroll
-let lastScrollTop = 0; // Keeps track of the last scroll position
+let lastScrollTop = 0;
 const nav = document.querySelector('nav');
+const navHeight = nav.offsetHeight; 
 
 window.addEventListener('scroll', function () {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
   if (currentScroll > lastScrollTop) {
-    // Scrolling down
-    nav.style.top = '-60px'; // Adjust the value to the height of your nav
+    nav.style.top = `-${navHeight + 5}px`;
   } else {
-    // Scrolling up
     nav.style.top = '0';
   }
 

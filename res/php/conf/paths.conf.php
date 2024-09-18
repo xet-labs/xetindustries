@@ -13,14 +13,16 @@
     $DIR = [
         'root'  => $ROOT['dir'],
         'res'   => $ROOT['dir'] . '/res',
-        'brand' => $ROOT['dir'] . '/res/static/brand',
+        'lib'   => $ROOT['dir'] . '/res/lib',
         'css'   => $ROOT['dir'] . '/res/css',
+        'js'   => $ROOT['dir'] . '/res/js',
         'php'   => $ROOT['dir'] . '/res/php',
         'cls'   => $ROOT['dir'] . '/res/php/cls',
         'inc'   => $ROOT['dir'] . '/res/php/inc',
         'tmpl'  => $ROOT['dir'] . '/res/php/tmpl',
-        'page'  => $ROOT['dir'] . '/res/php/page'
-    ];
+        'page'  => $ROOT['dir'] . '/res/php/page',
+        'brand' => $ROOT['dir'] . '/res/static/brand'
+   ];
     
     // - Generate paths using $DIR[]
     $PATH = [];
@@ -44,6 +46,8 @@
 
     // - Generate files URL
     $INC_URL = genFileArray('URL', $PATH['inc'], 'inc.php');
+    $JS_URL = genFileArray('URL', $PATH['js'], 'js');
+
 
 
 

@@ -9,15 +9,24 @@ confManagement{
 
 x {
     c           #em-system network
+    c++         #em-system gui
     rust        #em-system gui backend
-    c++         #em-system gui games backend
-    go          #network backend cli
-    javascript  #backend gui scripting
-    java        #backend gui android
+    go          #backend network cli
+    java        #android backend gui
+    javascript  #frntend backend gui scripting
+    python
     php         #backend scripting
-    ruby        #backend scripting
     figma
 }
+
+Embed-sys:  C, C++, Rust, Python.
+Frontend:   JavaScript (React, Vue, Angular).
+Backend:    Go, Java, Python, PHP, Rust, Node.js.
+GUI Apps:   C++, C#, Java, Python, Rust.
+System:     C, C++, Rust, Go, Java.
+Android:    Kotlin, Java, Rust.
+Game Dev:   C++, C#, Rust, Java.
+Network:    Go, Rust, C, Python.
 
 | Language   | Primary Use Case             | Secondary Use Case       | Relevant Fields                                                                                                                   | Complexity  |
 |------------|------------------------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-------------|

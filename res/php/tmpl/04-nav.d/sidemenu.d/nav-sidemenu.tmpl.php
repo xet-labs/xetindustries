@@ -10,21 +10,21 @@
     </label>
 
     <input type="radio" name="nav-sidemenu-btn-grp" id="id-nav-sidemenuClose-btn">
-    <label for="id-nav-sidemenuClose-btn" class="underlay"></label>
+    <label for="id-nav-sidemenuClose-btn" class="underlay" title="Close"></label>
 
-    <div class="navSidebar menu">
+    <div class="navSidebar">
 
-        <ul>
-            <li class="navSidebarClose">
-
-                <a href="/#" class="brand"><?php include_once($BRAND['brand']); ?></a>
-                
-                <label for="id-nav-sidemenuClose-btn" class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-                </label>
-
-            </li>
-
+        <div class="navSidebar-head">
+            
+            <a href="/#" class="brand"><?php include_once($BRAND['brand']); ?></a>
+            
+            <label for="id-nav-sidemenuClose-btn" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+            
+        </div>
+        
+        <ul class="navSidebar-main menu">
             <?php
             // -loop through $menu_items
             foreach ($menu_items as $label => $href) { ?>

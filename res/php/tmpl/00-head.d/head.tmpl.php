@@ -32,42 +32,33 @@
 
 	
 	<?php if ($Page['lib']['tw'] ?? false) { ?>
-		<!-- Tailwind CSS -->
 		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    	<link href="/res/lib/tailwind.css" rel="preload" as="stylesheet">
+    	<link href="/res/lib/tailwind.css" rel="preload" as="style">
     	<link href="/res/lib/tailwind.css" rel="stylesheet">
 	<?php } ?>
 
 
 
 	<?php if(file_exists('xstyle.css')){ ?>
-		<link href="xstyle.css" rel="preload" as="stylesheet">
+		<link href="xstyle.css" rel="preload" as="style">
 		<link href="xstyle.css" rel="stylesheet">
 	<?php } ?>
 
 	<?php if(file_exists($INC['style'])){ ?>
-		<link href="<?php echo $INC_URL['style'];?>" rel="preload" as="stylesheet">
-		<link href="<?php echo $INC_URL['style'];?>" rel="stylesheet">
+		<link href="<?php echo $INC_URL['style']; ?>" rel="preload" as="style">
+		<link href="<?php echo $INC_URL['style']; ?>" rel="stylesheet">
 	<?php } else { ?>
-		<link href="<?php echo $CSS['styles'];?>" rel="preload" as="stylesheet">
-		<link href="<?php echo $CSS['styles'];?>" rel="stylesheet">
+		<link href="<?php echo $CSS['styles']; ?>" rel="preload" as="style">
+		<link href="<?php echo $CSS['styles']; ?>" rel="stylesheet">
 	<?php } ?>
 
 	<?php if(file_exists('style.css')){ ?>
-		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="style.css" rel="preload" as="style">
+		<link href="style.css" rel="stylesheet">
 	<?php } ?>
 	
 
-	<!-- == End-Style-Sheet == -->
-
 
 	<!-- Google-Tag-Manager -->
-	<script>(function (w, d, s, l, i) {
-	w[l] = w[l] || []; w[l].push({
-		'gtm.start':
-		new Date().getTime(), event: 'gtm.js'
-	}); var f = d.getElementsByTagName(s)[0],
-		j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-		'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-	})(window, document, 'script', 'dataLayer', 'GTM-NSG89CVQ');</script>
+	<script>(function (w, d, s, l, i) {w[l] = w[l] || []; w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);})(window, document, 'script', 'dataLayer', 'GTM-NSG89CVQ');</script>
 	<!-- END-Google-Tag-Manager -->
