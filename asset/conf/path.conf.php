@@ -3,23 +3,24 @@
 // Base variables
 $BASE = [
     'domain'=> 'xetindustries.com',
-    'root'  => realpath(__DIR__ . '/../../..'),
-    'public'=> realpath(__DIR__ . '/../../..') . '/public',
+    'root'  => realpath(__DIR__ . '/../..'),
+    'public'=> realpath(__DIR__ . '/../..') . '/public',
 ];
 
 $DIR = [
-    'cls'   => '/asset/php/cls',
-    'inc'   => '/asset/php/inc',
-    'page'  => '/asset/php/view/page',
-    'prtl'  => '/asset/php/view/partial',
-    'tmpl'  => '/asset/php/view/tmpl',
-    'css'   => '/asset/css',
-    'js'    => '/asset/js',
+    'cls'   => '/asset/app/cls',
+    'cntr'  => '/asset/app/cntr',
+    'inc'   => '/asset/app/inc',
+    'page'  => '/asset/res/view/page',
+    'tmpl'  => '/asset/res/view/tmpl',
+    'prtl'  => '/asset/res/view/partial',
+    'css'   => '/asset/res/css',
+    'js'    => '/asset/res/js',
 ];
 
 $DIR_url = [
     'pagex' => '/page',
-    'incx'  => '/res/php/inc',
+    'incx'  => '/res/inc',
     'cssx'  => '/res/css',
     'jsx'   => '/res/js',
     'libx'  => '/res/lib',
@@ -40,14 +41,16 @@ $PATH_url = array_merge(
 
 
 $VIEW = [
-    'TMPL'  => genFilePath('PATH', $PATH['tmpl'], 'tmpl.php'),
     'PAGE'  => genFilePath('PATH', [$PATH['page'], $PATH['pagex']], 'page.php'),
     'PAGEx' => genFilePath('PATH', $PATH['pagex'], 'page.php'),
+    'TMPL'  => genFilePath('PATH', $PATH['tmpl'], 'tmpl.php'),
     'PRTL'  => genFilePath('PATH', $PATH['prtl'], 'prtl.php'),
 ];
 
 $FILE = [
     'CLS'   => genFilePath('PATH', $PATH['cls'], 'cls.php'),
+    'CNTR'  => genFilePath('PATH', $PATH['cntr'], 'cntr.php'),
+    'MODL'  => genFilePath('PATH', $PATH['cntr'], 'modl.php'),
     'INC'   => genFilePath('PATH', $PATH['inc'], 'inc.php'),
     'INCx'  => genFilePath('PATH', $PATH['incx'], 'inc.php'),
     'CSS'   => genFilePath('PATH', [$PATH['css'], $PATH['cssx'], $PATH['prtl']], 'prtl.css'),

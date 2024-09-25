@@ -1,5 +1,8 @@
 <?php
-	global $XIpass;
+	$XIpass="1019@xI.db#1o1"
+?>
+
+<?php
 	$DBconf = [
 		"XI" => [
 			'servername' => "localhost",

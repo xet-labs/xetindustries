@@ -1,4 +1,6 @@
-
+<?php 
+    use xet\Loc;
+?>
 <!-- =============== Local Libs=============== -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
@@ -7,13 +9,20 @@
 <!-- <script src="res/lib/jquery/jquery-3.7.1.slim.min.js"></script> -->
 
 
-<?php if (file_exists('xscript.js')){ ?><script src="xscript.js" defer></script><?php } ?>
-
-<?php if(file_exists($FILE['JSx']['script'])){ ?>
-    <script src="<?php echo $FILE_url['JS']['script'];?>" defer></script>
+<?php if (file_exists('asset/js/xscript.js')){ ?>
+    <script src="asset/js/xscript.js" defer></script>
 <?php } ?>
 
-<?php if (file_exists('script.js')){ ?><script src="script.js" defer></script><?php } ?>
+<?php if(file_exists(Loc::file('JSx','script'))){ ?>
+    <!-- <script src="<? //echo Loc::filex('JS','script'); ?>" defer></script> -->
+    <script>
+        <?php readfile(Loc::file('JSx','script')); ?>
+    </script>
+<?php } ?>
+
+<?php if (file_exists('asset/js/script.js')){ ?>
+    <script src="asset/js/script.js" defer></script>
+<?php } ?>
 <!-- =============== Local Libs-End=============== -->
 
 

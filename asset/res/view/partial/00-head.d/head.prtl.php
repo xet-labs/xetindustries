@@ -1,5 +1,6 @@
-<?php
+<?php 
 	session_start();
+    use xet\Loc;
 ?>
 
 <!DOCTYPE html>
@@ -33,17 +34,20 @@
 	
 	<?php if ($Page['lib']['tw'] ?? false) { ?><!-- <script src="https://cdn.tailwindcss.com"></script> --><link href="/res/lib/tailwind.css" rel="preload" as="style"><link href="/res/lib/tailwind.css" rel="stylesheet"><?php } ?>
 
-	<?php if(file_exists('xstyle.css')){ ?><link href="xstyle.css" rel="preload" as="style"><link href="xstyle.css" rel="stylesheet"><?php } ?>
-
-	<?php if(file_exists($FILE['INC']['style'])){ ?>
-		<link href="/styles" rel="preload" as="style"><link href="/styles" rel="stylesheet">
-	<?php } else { ?>
-		<link href="<?php echo $FILE_url['CSS']['styles']; ?>" rel="preload" as="style"><link href="<?php echo $FILE_url['CSS']['styles']; ?>" rel="stylesheet">
+	<?php if(file_exists('asset/css/xstyle.css')){ ?>
+		<link href="asset/css/xstyle.css" rel="preload" as="style">
+		<link href="asset/css/xstyle.css" rel="stylesheet">
 	<?php } ?>
 
-	<?php if(file_exists('style.css')){ ?>
-		<link href="style.css" rel="preload" as="style">
-		<link href="style.css" rel="stylesheet">
+	<?php if(file_exists(Loc::file('CNTR','style'))){ ?>
+		<link href="/style" rel="preload" as="style"><link href="/style" rel="stylesheet">
+	<?php } else { ?>
+		<link href="<?php echo Loc::filex('CSS','styles'); ?>" rel="preload" as="style"><link href="<?php echo Loc::file('CSS','styles'); ?>" rel="stylesheet">
+	<?php } ?>
+
+	<?php if(file_exists('asset/css/style.css')){ ?>
+		<link href="asset/css/style.css" rel="preload" as="style">
+		<link href="asset/css/style.css" rel="stylesheet">
 	<?php } ?>
 	
 

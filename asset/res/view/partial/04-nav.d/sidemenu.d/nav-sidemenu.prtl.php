@@ -1,3 +1,6 @@
+<?php 
+    use xet\Loc;
+?>
 
 <div class="nav-sidemenu-wrap">
 
@@ -16,7 +19,7 @@
 
         <div class="navSidebar-head">
             
-            <a href="/#" class="brand"><?php readfile($FILE['BRAND']['brand']); ?></a>
+            <a href="/#" class="brand"><?php readfile(Loc::FILE('BRAND','brand')); ?></a>
             
             <label for="id-nav-sidemenuClose-btn" class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>

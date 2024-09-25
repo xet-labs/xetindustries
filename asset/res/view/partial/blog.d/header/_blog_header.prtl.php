@@ -1,9 +1,3 @@
-<pre>
-<?php 
-    // var_dump($Blog)
-?>
-</pre>
-
 <div class="blog-header">
     
     <!-- Blog Category -->

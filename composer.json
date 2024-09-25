@@ -22,7 +22,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "asset/app/cls/autoload.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

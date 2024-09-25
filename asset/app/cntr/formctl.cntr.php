@@ -1,6 +1,10 @@
 <?php
-    require_once($FILE['CLS']['__dbctl']);
 
+    use xet\Loc;
+
+    require_once(Loc::file('CLS', 'Dbctl'));
+
+    
     if (isset($_POST["submit-signup"])) {
         $signup = new UserAuth($DBconf['XI']);
         $signup->signup($_POST["user-name"],$_POST["user-email"], $_POST["user-pass"]);

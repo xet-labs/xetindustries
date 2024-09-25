@@ -1,5 +1,4 @@
 <?php
-include_once("../asset/php/conf/config.php");
 
 // Define routes and corresponding handlers
 $routes = [

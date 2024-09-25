@@ -1,4 +1,7 @@
-<?php
+<?php 
+    use xet\Loc;
+
+	
     $subBrand = isset($subBrand) ? $subBrand : "";
     $currentMenu = isset($currentMenu) ? $currentMenu : 'Home';  // Default to 'Home' if not set
 
@@ -19,7 +22,7 @@
 		
 		<!-- Brand Logo -->
 		<div class="brand">
-			<a href="/#"><?php readfile($FILE['BRAND']['brand']); ?></a>
+			<a href="/#"><?php readfile(Loc::FILE('BRAND','brand')); ?></a>
 
 			<?php if (!$subBrand == "") { ?>
 				<!-- Sub Brand -->
@@ -63,13 +66,13 @@
 		<div class="navbar_r">
 
 			<!-- Search bar -->
-			<?php include_once($FILE['PRTL']['search_widget']) ?>
+			<?php include_once(Loc::FILE('PRTL','search_widget')) ?>
 			
 			<!-- toast test -->
-			<?php include_once($FILE['PRTL']['toast']) ?>
+			<?php //include_once(Loc::FILE('PRTL','toast')) ?>
 
 			<!-- ===== Login / Signup ===== -->
-			<?php include_once($FILE['PRTL']['signuplogin']) ?>
+			<?php include_once(Loc::FILE('PRTL','signuplogin')) ?>
 
 
 			<!-- Theme Button -->
@@ -85,7 +88,7 @@
 
 
 			<!-- nav-idebar-menu-list -->
-			<?php include_once($FILE['PRTL']['nav-sidemenu']); ?>
+			<?php include_once(Loc::FILE('PRTL','nav-sidemenu')); ?>
 
 		</div>
 	</div>

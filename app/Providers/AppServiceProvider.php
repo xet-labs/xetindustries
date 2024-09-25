@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        define('URL', "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+        define('SITE_NAME', "Xet Industries");
+
     }
 }

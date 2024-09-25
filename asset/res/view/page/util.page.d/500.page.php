@@ -1,4 +1,6 @@
-<?php
+<?php 
+    use xet\Loc;
+    
     global $page, $uri, $requestUri;
     echo "<pre>
 
