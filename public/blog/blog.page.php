@@ -5,5 +5,5 @@
   ];
 
   $currentMenu=$subBrand='Blog';
-  include_once(Loc::FILE('PAGE','page'));
+  include_once(Loc::FILE('TMPL','page'));
 ?>

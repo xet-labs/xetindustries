@@ -2,12 +2,14 @@
 
 namespace xet;
 
-class Loc {
+class Loc
+{
     private static $BASE = null, $DIR = null, $DIRx = null, $PATH = null, $PATHx = null, $FILE = null, $FILEx = null;
 
 
     // Method to initialize arrays
-    private static function init() {
+    private static function init()
+    {
         if (self::$BASE === null) {
             self::$BASE = [
                 'domain' => 'xetindustries.com',
@@ -61,68 +63,106 @@ class Loc {
                 'CSS'   => self::genFilePath('PATH', [self::$PATH['css'], self::$PATH['cssx'], self::$PATH['prtl']], 'prtl.css'),
                 'CSSx'  => self::genFilePath('PATH', self::$PATH['cssx'], 'prtl.css'),
                 'JS'    => self::genFilePath('PATH', [self::$PATH['js'], self::$PATH['jsx']], 'js'),
-                'JSx'   => self::genFilePath('PATH', [self::$PATH['js'], self::$PATH['jsx']], 'js'),
+                'JSx'   => self::genFilePath('PATH', self::$PATH['jsx'], 'js'),
                 'BRAND' => self::genFilePath('PATH', self::$PATH['brand'], 'svg')
             ];
             self::$FILEx = [
-                'PAGE'  => self::genFilePath('PATH', self::$PATH['pagex'], 'page.php'),
-                'CSS'   => self::genFilePath('PATH', self::$PATH['cssx'], 'css'),
-                'JS'   => self::genFilePath('PATH', self::$PATH['jsx'], 'js'),
-                'BRAND' => self::genFilePath('PATH', self::$PATH['brand'], 'svg')
+                'PAGE'  => self::genFilePath('URL', self::$PATH['pagex'], 'page.php'),
+                'CSS'   => self::genFilePath('URL', self::$PATH['cssx'], 'css'),
+                'JS'    => self::genFilePath('URL', self::$PATH['jsx'], 'js'),
+                'BRAND' => self::genFilePath('URL', self::$PATH['brand'], 'svg')
             ];
         }
     }
-    public static function get(...$keys) {
+
+
+    public static function path(...$keys)
+    {
+        return self::getArray('PATH', $keys);
+    }
+
+    public static function pathUrl(...$keys)
+    {
+        return self::getArray('PATHx', $keys);
+    }
+
+
+    public static function file(...$keys)
+    {
+        return self::getArray('FILE', $keys);
+    }
+    public static function filei(...$keys)
+    {
+        include self::getArray('FILE', $keys);
+    }
+    public static function fileio(...$keys)
+    {
+        include_once self::getArray('FILE', $keys);
+    }
+    public static function filer(...$keys)
+    {
+        require self::getArray('FILE', $keys);
+    }
+    public static function filero(...$keys)
+    {
+        require_once self::getArray('FILE', $keys);
+    }
+
+    public static function fileUrl(...$keys)
+    {
+        return self::getArray('FILEx', $keys);
+    }
+
+
+    // Static method to dynamically access arrays
+    private static function getArray($type, $keys)
+    {
+        self::init();
+        if (empty($keys) || (count($keys) == 1 && $keys[0] === '')) {
+            return self::$$type;
+        }
+        return self::arrayGet(self::$$type, $keys);
+    }
+
+
+    public static function get(...$keys)
+    {
         self::init(); // Ensure arrays are initialized
 
         $rootKey = array_shift($keys); // First key is the root array name (e.g., 'FILE', 'PATH')
-        
+
         if (isset(self::$$rootKey)) {
             return self::arrayGet(self::$$rootKey, $keys); // Traverse the array
         }
 
         return null; // Root key doesn't exist
     }
-    // Dynamic access method for 'path', 'pathx', 'file', 'filex'
-    public static function path(...$keys) {
-        return self::getArray('PATH', $keys);
-    }
-
-    public static function pathx(...$keys) {
-        return self::getArray('PATHx', $keys);
-    }
-
-    public static function file(...$keys) {
-        return self::getArray('FILE', $keys);
-    }
-
-    public static function filex(...$keys) {
-        return self::getArray('FILEx', $keys);
-    }
-
-    // Static method to dynamically access arrays
-    private static function getArray($type, $keys) {
-        self::init();
-        if (empty($keys) || (count($keys) == 1 && $keys[0] === '')) {
-            return self::$$type; // Return the entire array if no key is passed
-        }
-        return self::arrayGet(self::$$type, $keys);
-    }
-
     // Helper method to traverse arrays
-    private static function arrayGet($array, $keys) {
+    private static function arrayGet($array, $keys)
+    {
         foreach ($keys as $key) {
             if (isset($array[$key])) {
                 $array = $array[$key];
             } else {
-                return null; // Key doesn't exist
+                return null;
             }
         }
         return $array;
     }
+    
+    // Helper method to generate file paths
+    private static function _genFilePath($files, $fileExtension, $isUrl = false)
+    {
+        $fileArray = [];
+        foreach ($files as $file) {
+            $key = basename($file, ".$fileExtension");
+            $fileArray[$key] = $isUrl ? '/' . ltrim(str_replace([self::$PATH['public'], self::$PATH['root']], '', $file), '/') : $file;
+        }
+        return $fileArray;
+    }
 
-    // Helper for generating file paths
-    private static function genFilePath($type, $dirs, $fileExtension) {
+    private static function genFilePath($type = 'PATH', $dirs, $fileExtension)
+    {
         $dirs = (array) $dirs;
         $files = [];
 
@@ -138,33 +178,6 @@ class Loc {
             }
         }
 
-        return self::_genFilePath($files, $fileExtension);
-    }
-
-    // Access file directly by filename
-    public static function thefile($filename) {
-        return self::getFileFromPaths(self::$FILE, $filename);
-    }
-
-    public static function filexByName($filename) {
-        return self::getFileFromPaths(self::$FILEx, $filename);
-    }
-
-
-    private static function _genFilePath($files, $fileExtension, $isUrl = false) {
-        $fileArray = [];
-        foreach ($files as $file) {
-            $key = basename($file, ".$fileExtension");
-            $fileArray[$key] = $isUrl ? '/' . ltrim(str_replace([self::$PATH['public'], self::$BASE['root']], '', $file), '/') : $file;
-        }
-        return $fileArray;
-    }
-    private static function getFileFromPaths($array, $filename) {
-        foreach ($array as $files) {
-            if (isset($files[$filename])) {
-                return $files[$filename];
-            }
-        }
-        return null;
+        return self::_genFilePath($files, $fileExtension, $type === 'URL');
     }
 }

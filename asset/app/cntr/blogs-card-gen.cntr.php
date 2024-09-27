@@ -1,5 +1,6 @@
 <?php
-	include_once($FILE['CLS']['__dbctl']);
+use xet\Loc;
+	include_once(Loc::file('CLS','Dbctl'));
 
 	// Set default values for optional variables
 	$blogsCardEncode = $blogsCardEncode ?? 1;
@@ -25,7 +26,7 @@
 		$blogsCardBuffer ? ob_start() : '';
 
 		foreach ($Blogs as $Blog) {
-			include($FILE['PRTL']['blogs-card']);
+			include(Loc::file('PRTL','blogs-card'));
 		}
 
 		$blogsCardBuffer ? $response['html'] = ob_get_clean() : '';

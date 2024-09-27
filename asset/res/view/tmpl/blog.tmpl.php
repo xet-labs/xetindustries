@@ -1,10 +1,9 @@
 <?php
 
 use xet\Loc;
-?>
-<?php
-require(Loc::file('CLS', '__dbctl'));
-$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $Page['id']);
+
+require(Loc::file('CLS', 'Dbctl'));
+$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $PAGE['id']);
 $Blog = $Blog[0];
 ?>
 
@@ -29,7 +28,7 @@ $Blog = $Blog[0];
 		<div class="blog-wrap wrapper ">
 			<div class="con blog-con">
 
-				<?php require(Loc::file('PRTL', '_blog_header')); ?>
+				<?php require(Loc::file('PRTL', 'blog-header')); ?>
 
 				<div class="blog-main blog-cnt">
 					<?php

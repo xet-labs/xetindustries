@@ -14,10 +14,7 @@
 <?php } ?>
 
 <?php if(file_exists(Loc::file('JSx','script'))){ ?>
-    <!-- <script src="<? //echo Loc::filex('JS','script'); ?>" defer></script> -->
-    <script>
-        <?php readfile(Loc::file('JSx','script')); ?>
-    </script>
+    <script src="<?php echo Loc::fileurl('JS','script'); ?>" defer></script>
 <?php } ?>
 
 <?php if (file_exists('asset/js/script.js')){ ?>

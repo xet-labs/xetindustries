@@ -38,11 +38,11 @@ use xet\Loc;
 			// Include the generic cnt.php file if it exists
 			require($callDir . '/cnt.php');
 		}
-		echo "<pre>";
-		echo $callFile;
-		echo "\n";
-		echo $callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php';
-		echo "</pre>";
+		// echo "<pre>";
+		// echo $callFile;
+		// echo "\n";
+		// echo $callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php';
+		// echo "</pre>";
 		?>
 
 	</main>

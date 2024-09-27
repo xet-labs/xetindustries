@@ -1,6 +1,7 @@
 <?php
 
     use xet\Loc;
+    use xet\UserAuth;
 
     require_once(Loc::file('CLS', 'Dbctl'));
 

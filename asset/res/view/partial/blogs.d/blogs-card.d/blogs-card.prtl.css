@@ -112,8 +112,8 @@
     background: #ffffff17;
 }
 .post .post-img-wrap:hover::after  {
+    background: #ffffff17;
     background: transparent;
-    /* background: #ffffff17; */
 }
 .post .post-img-wrap:hover .post-img {
     /* transform-style: preserve-3d; */

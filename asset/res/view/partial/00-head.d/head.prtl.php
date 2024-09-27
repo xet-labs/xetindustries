@@ -42,7 +42,7 @@
 	<?php if(file_exists(Loc::file('CNTR','style'))){ ?>
 		<link href="/style" rel="preload" as="style"><link href="/style" rel="stylesheet">
 	<?php } else { ?>
-		<link href="<?php echo Loc::filex('CSS','styles'); ?>" rel="preload" as="style"><link href="<?php echo Loc::file('CSS','styles'); ?>" rel="stylesheet">
+		<link href="<?php echo Loc::fileurl('CSS','styles'); ?>" rel="preload" as="style"><link href="<?php echo Loc::file('CSS','styles'); ?>" rel="stylesheet">
 	<?php } ?>
 
 	<?php if(file_exists('asset/css/style.css')){ ?>
@@ -50,7 +50,9 @@
 		<link href="asset/css/style.css" rel="stylesheet">
 	<?php } ?>
 	
-
+	
+	
+	<meta name="csrf-token" content="<?php echo csrf_token(); ?>">
 
 	<!-- Google-Tag-Manager -->
 	<script>(function (w, d, s, l, i) {w[l] = w[l] || []; w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);})(window, document, 'script', 'dataLayer', 'GTM-NSG89CVQ');</script>

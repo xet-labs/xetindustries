@@ -2,31 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use xet\Loc;
-
-route::get('/d', function () {
-    echo "<pre>";
-    
-    debug_backtrace()[0]['file'];
-    echo "--=--=--=--=--=--=--=--=--=--=--=--=--=--=--";
-    var_dump(Loc::pathx());
-    echo "--=--=--=--=--=--=--=--=--=--=--=--=--=--=--";
-    var_dump(Loc::path());
-    echo "--=--=--=--=--=--=--=--=--=--=--=--=--=--=--";
-    var_dump(Loc::filex());
-    echo "--=--=--=--=--=--=--=--=--=--=--=--=--=--=--";
-    var_dump(Loc::file());
-    
-    echo "</pre>";
-});
+use App\Http\Controllers\BlogController;
 
 
+route::post('/blog/get-cards', function () { require(Loc::file('CNTR', 'blogs-card-gen')); });
+Route::get('/blog/{slug}', [BlogController::class, 'blogPost']);
+route::resource('/blog', BlogController::class);
 
-Route::get('/dbg', function () { require(Loc::file('PAGE', 'debug')); });
+route::post('/form', function () { require(Loc::file('CNTR', 'formctl')); });
+route::get('/style', function () { require(Loc::file('CNTR', 'style')); });
 
-Route::get('/style', function () { require(Loc::file('CNTR', 'style')); });
+route::get('/', function () { require(Loc::file('CNTR', 'formctl')); });
 
-Route::post('/formctl', function () { require(Loc::file('CNTR', 'formctl')); });
-
-Route::get('/', function () { return view('welcome'); });
-
-
+route::get('/dev/dbg', function () { require(Loc::file('PAGE', 'debug')); });

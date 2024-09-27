@@ -1,9 +1,10 @@
-<?php 
+<?php
+  use xet\Loc;
+  
   $PAGE = [
     'id' => 3,
-    'drill' => false,
   ];
 
   $currentMenu=$subBrand='Blog';
-  include_once($FILE['PAGE']['blog']);
+  include_once(Loc::FILE('TMPL','blog'));
 ?>

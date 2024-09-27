@@ -1,5 +1,5 @@
 <?php
-
+namespace xet;
 
 class UserAuth {
     private $dbConn;

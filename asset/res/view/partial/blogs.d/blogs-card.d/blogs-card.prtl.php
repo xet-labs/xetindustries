@@ -1,3 +1,6 @@
+<?php
+use xet\util;
+?>
 <div class="post">
 		
     <!-- post image -->

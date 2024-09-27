@@ -1,3 +1,5 @@
+// Add CSRF token to every AJAX request
+$.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
 
 document.addEventListener('DOMContentLoaded', function () {
   const loginBtn = document.getElementById('id-login-btn');
@@ -101,13 +103,13 @@ var noMoreBlogs = false;
 
 function BlogCards_fetch() {
 
-  if (noMoreBlogs || blogCardsFetching) {return};
+  if (noMoreBlogs || blogCardsFetching) { return; }
 
-  blogCardsFetching=true;
+  blogCardsFetching = true;
   // -show loading anim
   $("#blogCards_loading").show().css("opacity", 1);
 
-  $.post("/blog/card-gen", { BlogsPage: Blogs_Page, BlogsLimit: Blogs_Limit }, (response) => {
+  $.post("/blog/get-cards", { BlogsPage: Blogs_Page, BlogsLimit: Blogs_Limit }, (response) => {
 
     response = JSON.parse(response);
     if (response.noMoreBlogs) {
@@ -121,9 +123,9 @@ function BlogCards_fetch() {
     // -hide loading anim
     $("#blogCards_loading").css("opacity", 0).hide();
     blogCardsFetching = false;
-    //Blogs_Page++;
   });
 }
+
 
 BlogCards_fetch()
 $(window).scroll(function () {
