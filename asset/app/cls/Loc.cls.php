@@ -24,6 +24,7 @@ class Loc
                 'inc'  => '/asset/app/inc',
                 'modl' => '/asset/app/modl',
                 'page' => '/asset/res/view/page',
+                'views'=> '/resources/views',
                 'tmpl' => '/asset/res/view/tmpl',
                 'prtl' => '/asset/res/view/partial',
                 'css'  => '/asset/res/css',
@@ -51,13 +52,20 @@ class Loc
                 array_map(fn($DIRx) => self::$BASE['public'] . $DIRx, self::$DIRx)
             );
 
+            self::$FILEx = [
+                'PAGE'  => self::genFilePath(self::$PATH['pagex'], 'blade.php', 'URL'),
+                'CSS'   => self::genFilePath(self::$PATH['cssx'], 'css', 'URL'),
+                'JS'    => self::genFilePath(self::$PATH['jsx'], 'js', 'URL'),
+                'BRAND' => self::genFilePath(self::$PATH['brand'], 'svg', 'URL')
+            ];
+            
             self::$FILE = [
                 'CLS'   => self::genFilePath(self::$PATH['cls'], 'cls.php'),
                 'CNTR'  => self::genFilePath(self::$PATH['cntr'], 'cntr.php'),
                 'INC'   => self::genFilePath(self::$PATH['inc'], 'inc.php'),
                 'MODL'  => self::genFilePath(self::$PATH['modl'], 'modl.php'),
-                'PAGE'  => self::genFilePath([self::$PATH['page'], self::$PATH['pagex']], 'page.php'),
-                'PAGEx' => self::genFilePath(self::$PATH['pagex'], 'page.php'),
+                'PAGE'  => self::genFilePath([self::$PATH['page'], self::$PATH['views'], self::$PATH['pagex']], 'blade.php'),
+                'PAGEx' => self::genFilePath(self::$PATH['pagex'], 'blade.php'),
                 'TMPL'  => self::genFilePath(self::$PATH['tmpl'], 'tmpl.php'),
                 'PRTL'  => self::genFilePath(self::$PATH['prtl'], 'prtl.php'),
                 'CSS'   => self::genFilePath([self::$PATH['css'], self::$PATH['cssx'], self::$PATH['prtl']], 'prtl.css'),
@@ -65,12 +73,6 @@ class Loc
                 'JS'    => self::genFilePath([self::$PATH['js'], self::$PATH['jsx']], 'js'),
                 'JSx'   => self::genFilePath(self::$PATH['jsx'], 'js'),
                 'BRAND' => self::genFilePath(self::$PATH['brand'], 'svg')
-            ];
-            self::$FILEx = [
-                'PAGE'  => self::genFilePath(self::$PATH['pagex'], 'page.php', 'URL'),
-                'CSS'   => self::genFilePath(self::$PATH['cssx'], 'css', 'URL'),
-                'JS'    => self::genFilePath(self::$PATH['jsx'], 'js', 'URL'),
-                'BRAND' => self::genFilePath(self::$PATH['brand'], 'svg', 'URL')
             ];
         }
     }

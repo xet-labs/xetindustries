@@ -5,19 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use xet\Loc;
 
-class BlogController extends Controller
+class BlogsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        require(Loc::path('public'). "/blog/blog.page.php");
+        require(Loc::path('public'). "/blog/blog.blade.php");
     }
 
     public function blogPost($slug) {
         $filePath = Loc::path('public') . "/blog/{$slug}/index.php";
         if (file_exists($filePath)) { include $filePath; } else { abort(404); }
+    }
+
+    public function blogGetCards() {
+        require(Loc::file('CNTR', 'blogs-get-card'));
     }
 
     /**

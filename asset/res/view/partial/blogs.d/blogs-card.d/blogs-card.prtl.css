@@ -85,7 +85,10 @@
 .post:hover {
     /* box-shadow: var(--post-hover-box-shadow); */
 }
-
+.post a:has(.post-img-wrap) {
+    width: auto;
+    width: 100%;
+} 
 .post .post-img-wrap {
     position: relative;
     overflow: hidden;
@@ -224,7 +227,7 @@
 .post-meta .meta-author{
     display: flex;
     flex-direction: row;
-    font-weight: 450;
+    font-weight: 500;
 
 }
 .post-meta .meta-author a{

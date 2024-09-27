@@ -129,7 +129,8 @@ a:hover {
     color: inherit;
 }
 
-.wrapper {
+.wrapper,
+.wrap {
     margin: var(--wrapper-margin);
     border-radius: var(--wrapper-border-radius);
 }

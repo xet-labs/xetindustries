@@ -1,6 +1,7 @@
 <?php
 use xet\Loc;
 ?>
+
 <h1 class="nodis">
     Discover cutting-edge insights in the realms of Technology, Linux, Servers, Microcontrollers, How-To guides, Troubleshooting, and innovative projects. Dive into the world of expertise with Xet Industries Blog, seamlessly integrated into our main site.
 </h1>
@@ -12,7 +13,7 @@ use xet\Loc;
 <div class="con-postsidebar">
 
     <!-- Posts Wrapper -->
-    <div class="wrap con wrapper posts-wrap" id="id-posts-wrap">
+    <div class="wrap con posts-wrap" id="id-posts-wrap">
 
     <!-- Post Category -->
     <div class="posts-category">
@@ -25,7 +26,7 @@ use xet\Loc;
     <!-- Posts Grid -->
     <div class="posts-grid" id="BlogCards">
         <?php 
-            $blogsCardEncode = 0; $blogsCardBuffer = 0;include_once(Loc::file('CNTR','blogs-card-gen'));
+            $blogsCardEncode = 0; $blogsCardBuffer = 0;include_once(Loc::file('CNTR','blogs-get-card'));
         ?>
     </div>
 

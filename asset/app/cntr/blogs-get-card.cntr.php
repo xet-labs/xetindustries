@@ -15,7 +15,7 @@ use xet\Loc;
 	$Blogs = DB_DATA($DBconf['XI'], "{$DBquery['XI']['Blogs_card']} LIMIT $BlogsOffset, $BlogsLimit");
 	
 	// -intentional delay :D
-	$blogsCardBuffer ? sleep(0.8) : '';
+	// $blogsCardBuffer ? sleep(0.8) : '';
 	
 	$response = [
 		'noMoreBlogs' => empty($Blogs) ? 1 : 0

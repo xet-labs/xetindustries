@@ -39,7 +39,7 @@
     pointer-events: initial;
     transform: translate(-50%, -50%) scale(1);
     transition-duration: 0s;
-    transition: .14s ease;
+    transition: .12s ease-in;
 }
 
 .signuplogin .login-wrap,

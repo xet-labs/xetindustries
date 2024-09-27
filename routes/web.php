@@ -2,16 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use xet\Loc;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ResController;
+use App\Http\Controllers\BlogsController;
 
+route::get('/style',    [ResController::class, 'style']);
+route::post('/form',    [ResController::class, 'form']);
 
-route::post('/blog/get-cards', function () { require(Loc::file('CNTR', 'blogs-card-gen')); });
-Route::get('/blog/{slug}', [BlogController::class, 'blogPost']);
-route::resource('/blog', BlogController::class);
+route::get('/blog/{slug}',      [BlogsController::class, 'blogPost']);
+route::post('/blog/get-cards',  [BlogsController::class, 'blogGetCards']);
+route::resource('/blog',         BlogsController::class);
 
-route::post('/form', function () { require(Loc::file('CNTR', 'formctl')); });
-route::get('/style', function () { require(Loc::file('CNTR', 'style')); });
+// route::get('/', function () { require(Loc::file('PAGE', 'main')); });
+route::get('/', function () { return view('main'); });
 
-route::get('/', function () { require(Loc::file('PAGE', 'main')); });
 
 route::get('/dev/dbg', function () { require(Loc::file('PAGE', 'debug')); });
+route::get('/dev/d', function () { return view('d'); });
