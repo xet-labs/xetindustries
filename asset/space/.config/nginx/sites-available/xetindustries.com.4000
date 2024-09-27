@@ -1,0 +1,78 @@
+# -custom log format for upstream logging
+log_format upstream_log '$remote_addr - $remote_user [$time_local] '
+                      '"$request" $status $body_bytes_sent '
+                      '"$http_referer" "$http_user_agent" '
+                      '$request_time $upstream_response_time $pipe '
+                      '$upstream_addr $upstream_status';
+
+upstream backends {
+    server localhost:4000 max_fails=3 fail_timeout=60s;   # mx
+    #server mf:4000 max_fails=3 fail_timeout=30s;    # mf
+    #server 10.42.10.1:4000 max_fails=3 fail_timeout=30s;    # mf
+    #server mf1:4000 max_fails=3 fail_timeout=30s;    # mf1
+
+    # Optional backup server
+    # server rpmf:4000 backup;
+}
+
+
+server {
+    listen 4000;
+    server_name www.xetindustries.com xetindustries.com xi;
+
+    # -SSL configuration
+    # -Uncomment and configure the following lines if you have SSL certificates
+    # ssl_certificate /etc/letsencrypt/live/xetindustries.com/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/xetindustries.com/privkey.pem;
+    # include /etc/letsencrypt/options-ssl-nginx.conf;
+    # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    root /var/www/xetindustries/public;
+    index index.html index.htm index.php;
+
+
+    location / {
+
+        #try_files $uri /index.php?$args;
+        try_files $uri /index.php?$query_string;
+        #try_files $uri $uri/ /index.php?$args;
+        #try_files $uri $uri/ /index.php?$query_string;
+        
+        #proxy_pass http://backends;
+        #proxy_set_header Host $host;
+        #proxy_set_header X-Real-IP $remote_addr;
+        #proxy_set_header X-Forwarded-Proto $scheme;
+        #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        
+        #proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        
+        autoindex on;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;     
+  
+        include fastcgi_params;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+
+    # -Logging
+    error_log /var/log/nginx/xetindustries.com.4000.error.log;
+    access_log /var/log/nginx/xetindustries.com.4000.access.log upstream_log;
+}
+
+# Redirect HTTP to HTTPS
+#server {
+#    listen 80;
+#    server_name xetindustries.com www.xetindustries.com xi.com xi;
+#
+#    return 301 http://xetindustries.com:4000$request_uri;
+#}
+#

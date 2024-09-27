@@ -12,6 +12,6 @@ route::resource('/blog', BlogController::class);
 route::post('/form', function () { require(Loc::file('CNTR', 'formctl')); });
 route::get('/style', function () { require(Loc::file('CNTR', 'style')); });
 
-route::get('/', function () { require(Loc::file('CNTR', 'formctl')); });
+route::get('/', function () { require(Loc::file('PAGE', 'main')); });
 
 route::get('/dev/dbg', function () { require(Loc::file('PAGE', 'debug')); });
