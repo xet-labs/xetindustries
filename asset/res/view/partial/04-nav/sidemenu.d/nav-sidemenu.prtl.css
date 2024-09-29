@@ -25,14 +25,14 @@ nav .navSidebar{
     box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
     top: 0; right: 0;
     transform: translateX(.4rem) scale(1);
-    transform: translateX(.4rem) scale(.988);
+    transform: translateX(.3rem) scale(.988);
     transition: .12s ease-in;
-    transition: .12s ease;
+    transition: .18s ease;
 }
 #id-nav-sidemenuOpen-btn:checked ~ .navSidebar{
     opacity: 1;
-    transition: .18s ease-out;
     transform: translateX(0) scale(1);
+    transition: .12s ease-out;
     pointer-events: initial;
 }
 nav .nav-sidemenu-wrap .underlay {

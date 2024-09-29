@@ -30,9 +30,9 @@
     padding: 2em 1.75em;
 }
 
-/* label[for="id-signuplogin-close-btn"].underlay {
-    --underlay-bg: #ffffffa8;
-} */
+label[for="id-signuplogin-close-btn"].underlay {
+    /* --underlay-blur: 0px; */
+}
 /* #id-login-btn~.underlay {opacity: 1; pointer-events: initial;}#id-login-btn~.signuplogin-wrap, */
 #id-signup-btn:checked~.signuplogin-wrap, #id-login-btn:checked~.signuplogin-wrap {
     opacity: 1;
