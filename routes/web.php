@@ -2,19 +2,68 @@
 
 use Illuminate\Support\Facades\Route;
 use xet\Loc;
-use App\Http\Controllers\ResController;
-use App\Http\Controllers\BlogsController;
-
-route::get('/style',    [ResController::class, 'style']);
-route::post('/form',    [ResController::class, 'form']);
-
-route::get('/blog/{slug}',      [BlogsController::class, 'blogPost']);
-route::post('/blog/get-cards',  [BlogsController::class, 'blogGetCards']);
-route::resource('/blog',         BlogsController::class);
-
-// route::get('/', function () { require(Loc::file('PAGE', 'main')); });
-route::get('/', function () { return view('main'); });
+use App\Http\Controllers\ResCntr;
+use App\Http\Controllers\UserCntr;
+use App\Http\Controllers\BlogsCntr;
+use App\Models\User; 
 
 
-route::get('/dev/dbg', function () { require(Loc::file('PAGE', 'debug')); });
-route::get('/dev/d', function () { return view('d'); });
+route::get('/style',    [ResCntr::class, 'style']);
+
+route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);
+route::post('/blog/get-cards',  [BlogsCntr::class, 'blogGetCards']);
+route::resource('/blog',         BlogsCntr::class);
+
+route::get('/signup',   [UserCntr::class, 'signupForm'])->name('user.signupForm');
+route::get('/login',    [UserCntr::class, 'loginForm'])->name('user.loginForm');
+route::post('/signup',  [UserCntr::class, 'signup'])->name('user.signup');
+route::post('/login',   [UserCntr::class, 'login'])->name('user.login');
+route::post('/logout',  [UserCntr::class, 'logout'])->name('user.logout');
+
+route::get('/', function () { Loc::filer('PAGE', 'main'); });
+
+
+
+route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->name('user.update.profile-img');
+route::get('/acc/update',   [UserCntr::class, 'updateName']);
+
+route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+route::get('/dev/de', function () { Loc::filer('PAGE', 'debug'); });
+route::get('/dev/d', function () { 
+    echo "<pre style=\"margin-top:2rem;font-size:13.5px;color:var(--colr)\">";
+    
+    $data = session()->all();
+    var_dump(session()->all());
+    
+    echo User::all();
+    
+    
+    $callFile = debug_backtrace()[0]['file'];
+    $callBy = basename($callFile); $callDir = dirname($callFile);
+        
+    echo (var_dump($callFile));
+    echo "\n\n--=--=--=--=--=--=--=--=--=--=--=--=--=--=--\n\n";
+    var_dump(Loc::pathurl());
+    echo "\n\n--=--=--=--=--=--=--=--=--=--=--=--=--=--=--\n\n";
+    var_dump(Loc::path());
+    echo "\n\n--=--=--=--=--=--=--=--=--=--=--=--=--=--=--\n\n";
+    var_dump(Loc::fileurl());
+    echo "\n\n--=--=--=--=--=--=--=--=--=--=--=--=--=--=--\n\n";
+    var_dump(Loc::file());
+        
+    echo "</pre>"; });

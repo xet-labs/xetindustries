@@ -3,7 +3,7 @@
 use xet\Loc;
 
 require(Loc::file('CLS', 'Dbctl'));
-$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['Blog'] . $PAGE['id']);
+$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['blog'] . $PAGE['id']);
 $Blog = $Blog[0];
 ?>
 
@@ -45,6 +45,9 @@ $Blog = $Blog[0];
 				} elseif (isset($PAGE['cnt_path']) && $PAGE['cnt_path']) {
 					require($PAGE['cnt_path']);
 
+				} elseif (file_exists($callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php')) {
+					require($callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php');
+					
 				} elseif (file_exists($callDir . '/content.php')) {
 					require($callDir . '/content.php');
 					

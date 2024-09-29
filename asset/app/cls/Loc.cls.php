@@ -2,6 +2,10 @@
 
 namespace xet;
 
+use \RecursiveIteratorIterator;
+use \RecursiveDirectoryIterator;
+use \FilesystemIterator;
+
 class Loc
 {
     private static $BASE = null, $DIR = null, $DIRx = null, $PATH = null, $PATHx = null, $FILE = null, $FILEx = null;
@@ -152,9 +156,15 @@ class Loc
         return $array;
     }
     
-    // Helper method to generate file paths
-    private static function _genFilePath($files, $fileExtension, $isUrl = false)
-    {
+    private static function dd ($var, $exit = '0', $varName = 'var'){
+        echo '<pre>';
+        echo htmlspecialchars($varName) . ": ";
+        var_dump($var);
+        echo '</pre>';
+        $exit ? exit : ''; 
+    }
+    // -Helper method to generate file paths
+    private static function _genFilePath($files, $fileExtension, $isUrl = false) {
         $fileArray = [];
         foreach ($files as $file) {
             $key = basename($file, ".$fileExtension");
@@ -163,23 +173,34 @@ class Loc
         return $fileArray;
     }
 
-    private static function genFilePath($dirs, $fileExtension, $type = 'PATH')
-    {
+    private static function genFilePath($dirs, $fileExtension, $type = 'PATH') {
         $dirs = (array) $dirs;
         $files = [];
 
         foreach ($dirs as $dir) {
-            if (!is_dir($dir)) continue;
+            if (!is_dir($dir)) { continue; }
+            
             $files = array_merge($files, glob("$dir/*.$fileExtension"));
             $subdirs = array_merge(
-                glob("$dir/*.d", GLOB_ONLYDIR),
-                glob("$dir/*/*.d", GLOB_ONLYDIR)
+                glob("$dir/*", GLOB_ONLYDIR),
+                glob("$dir/*/*", GLOB_ONLYDIR)
             );
+
             foreach ($subdirs as $subdir) {
-                $files = array_merge($files, glob("$subdir/*.$fileExtension"));
+                if (basename($subdir)[0] === '.' || !is_dir($subdir)) { continue; }
+                
+                $subdirFiles = glob("$subdir/*.$fileExtension");
+                $subdirFiles = array_filter($subdirFiles, function ($file) {
+                    return basename($file)[0] !== '.';
+                });
+                
+                // $files = array_merge($files, glob("$subdir/*.$fileExtension"));
+                $files = array_merge($files, $subdirFiles);
             }
         }
 
         return self::_genFilePath($files, $fileExtension, $type === 'URL');
     }
+
+
 }

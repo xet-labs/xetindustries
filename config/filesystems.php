@@ -29,6 +29,13 @@ return [
     */
 
     'disks' => [
+        
+        'pool' => [
+            'driver' => 'local',
+            'root' => 'asset/storage/pool',
+            'url' => env('APP_URL').'/pool',
+            'visibility' => 'public',
+        ],
 
         'local' => [
             'driver' => 'local',

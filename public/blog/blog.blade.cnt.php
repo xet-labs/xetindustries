@@ -13,10 +13,10 @@ use xet\Loc;
 <div class="con-postsidebar">
 
     <!-- Posts Wrapper -->
-    <div class="wrap con posts-wrap" id="id-posts-wrap">
+    <div class="wrap con blogs-wrap" id="id-blogs-wrap">
 
     <!-- Post Category -->
-    <div class="posts-category">
+    <div class="blogs-category">
         <div class="category-menu">
         <a href="#">Server</a>
         </div>
@@ -24,9 +24,9 @@ use xet\Loc;
     </div>
 
     <!-- Posts Grid -->
-    <div class="posts-grid" id="BlogCards">
+    <div class="blogs-grid" id="BlogCards">
         <?php 
-            $blogsCardEncode = 0; $blogsCardBuffer = 0;include_once(Loc::file('CNTR','blogs-get-card'));
+            $blogsCardEncode = 0; $blogsCardBuffer = 0;require(Loc::file('CNTR','blogs-get-card'));
         ?>
     </div>
 

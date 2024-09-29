@@ -30,6 +30,8 @@ use xet\Loc;
 
 		} elseif (file_exists($callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php')) {
 			require($callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php');
+			// readfile($callDir . '/' . pathinfo($callBy, PATHINFO_FILENAME) . '.cnt.php');
+
 
 		} elseif (file_exists($callDir . '/content.php')) {
 			require($callDir . '/content.php');
