@@ -7,11 +7,14 @@
     --nav-height: fit-content;
 
     --nav-icon-gap: .9em;
+    --nav-icon-gap: 1em;
+
     --nav-icon-pd-tb: 0;
     --nav-icon-pd-lr: .25rem;
     --nav-icon-pd: var(--nav-icon-pd-tb) var(--nav-icon-pd-lr);
 
     --nav-font-wght: 500;
+    /* --nav-font-wght: 450; */
 
     --themeLightIconDisplay: flex;--themeDarkIconDisplay: none;
 }
@@ -57,6 +60,8 @@ nav .brand {
     display: flex;
     align-items: center;
     margin-right: 1.6rem;
+    /* margin-right: 1.25em; */
+
 }
 nav .brand a {
     display: flex;
@@ -67,14 +72,18 @@ nav .brand img,
 nav .brand svg  {
     height: 1.76em;
     height: 1.7em;
+    /* height: 2.14em; */
     width: unset;
     /* margin: 0.1836rem 0; */
     color: var(--colr);
     opacity: 1;
 }
-
+nav .sub-brand-wrap {
+    display: flex;
+    flex-direction: row;
+    /* display: none; */
+}
 nav .sub-brand {
-    /* color: var(--colr-txt); */
     font-size: .9rem;
     opacity: .8;
 }
@@ -124,6 +133,7 @@ nav .sub-brand a:hover {
 }
 .navbar .menu .current-menu a {
     opacity: 1;
+    font-weight: 500;
 }
 .navbar .initbar {
     position: absolute;

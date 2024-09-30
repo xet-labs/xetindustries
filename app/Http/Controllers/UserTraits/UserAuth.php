@@ -50,7 +50,7 @@ trait UserAuth
             'password'  => Hash::make($request->signup_pass),
         ]);
         
-        // echo 'signup success: '.$signup_username.' | '.$request->signup_name.' | '.$request->signup_email.' | '.$request->signup_pass;
+        setToast('success', 'Sign up succesful. Please log in..');
         return redirect('/')->with('success', 'Registration successful! Please log in.');
     }
     
@@ -68,16 +68,18 @@ trait UserAuth
         ];
     
         if (Auth::attempt($credentials)) {
-            // echo 'login success';
+            toast('success', 'Heyy there, wlcm back..');
             return redirect()->back()->with('message', 'Login successful.');
         } else {
             // echo 'login err: '.$loginField.' | '.$request->login_id.' | '.$request->login_pass;
+            toast('warn', 'Invalid credentials..');
             return redirect()->back()->withErrors(['message' => 'Invalid credentials. Please try again.']);
         }
     }
     
     public function logout() {
         Auth::logout();
+        toast('success', 'See ya, bye byee..');
         return redirect()->back()->with('message', 'Logout successful.');
     }
     

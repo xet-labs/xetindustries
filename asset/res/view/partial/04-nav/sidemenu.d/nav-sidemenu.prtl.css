@@ -25,7 +25,7 @@ nav .navSidebar{
     box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
     top: 0; right: 0;
     transform: translateX(.4rem) scale(1);
-    transform: translateX(.3rem) scale(.988);
+    transform: translateX(.22rem) scale(.988);
     transition: .12s ease-in;
     transition: .18s ease;
 }

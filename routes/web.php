@@ -7,7 +7,7 @@ use App\Http\Controllers\UserCntr;
 use App\Http\Controllers\BlogsCntr;
 use App\Models\User; 
 
-
+// toast('success', 'Heyy there, wlcm back..');
 route::get('/style',    [ResCntr::class, 'style']);
 
 route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);

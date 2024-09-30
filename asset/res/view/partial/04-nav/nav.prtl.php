@@ -3,7 +3,7 @@
 
 	
     $subBrand = isset($subBrand) ? $subBrand : "";
-    $currentMenu = isset($currentMenu) ? $currentMenu : 'null';  // Default to 'Home' if not set
+    $currentMenu = isset($currentMenu) ? $currentMenu : 'null';
 
 	$menu_items = array(
 		"Home" => "/",
@@ -22,13 +22,20 @@
 		
 		<!-- Brand Logo -->
 		<div class="brand">
-			<a href="/#"><?php readfile(Loc::FILE('BRAND','brand')); ?></a>
+			<a href="/#">
+				<?php
+				readfile(Loc::FILE('BRAND','brand'));
+				// readfile(Loc::FILE('BRAND','logo'));
+				?>
+			</a>
 
 			<?php if (!$subBrand == "") { ?>
 				<!-- Sub Brand -->
-				<div class="line-v"></div>
-				<div class="sub-brand">
-					<a href="<?php echo $menu_items["$subBrand"]; ?>"><?php echo $subBrand; ?></a>
+				<div class="sub-brand-wrap">
+					<div class="line-v"></div>
+					<div class="sub-brand">
+						<a href="<?php echo $menu_items["$subBrand"]; ?>"><?php echo $subBrand; ?></a>
+					</div>
 				</div>
 			<?php } ?>
 		
@@ -66,7 +73,7 @@
 			<?php include_once(Loc::FILE('PRTL','search_widget')) ?>
 			
 			<!-- toast test -->
-			<?php //include_once(Loc::FILE('PRTL','toast')) ?>
+			<?php include_once(Loc::FILE('PRTL','toast')) ?>
 
 			<!-- ===== Login / Signup ===== -->
 			<?php include_once(Loc::FILE('PRTL','signuplogin')) ?>
