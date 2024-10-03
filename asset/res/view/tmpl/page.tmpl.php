@@ -6,6 +6,7 @@ use xet\Loc;
 </head>
 
 <body class="body">
+	<?php require(Loc::file('PRTL', 'body-scripts')); ?>
 
 	<?php
 	require(Loc::file('PRTL','nav'));

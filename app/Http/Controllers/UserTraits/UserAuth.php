@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\UserTraits;
 
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -11,28 +10,30 @@ use App\Models\User;
 
 trait UserAuth
 {
+    // Show the signup form
     public function signupForm() {
         return view('auth.signup');
     }
 
-    public function loginForm(Request $request) {
+    // Show the login form
+    public function loginForm() {
         return view('auth.login');
     }
 
-    public function userAuth(Request $request) {
+    // Handle authentication actions (login, signup, logout)
+    public function handleAuth(Request $request) {
         if ($request->has('submit-signup')) {
             return $this->signup($request);
-        }
-
-        if ($request->has('submit-login')) {
+        } elseif ($request->has('submit-login')) {
             return $this->login($request);
+        } elseif ($request->has('submit-logout')) {
+            return $this->logout($request);
         }
-
-        if ($request->has('submit-logout')) {
-            return $this->logout();
-        }
+        
+        return redirect()->back()->withErrors(['message' => 'Invalid action.']);
     }
 
+    // Sign up a new user
     public function signup(Request $request) {
         $request->validate([
             'signup_name' => 'required',
@@ -50,49 +51,60 @@ trait UserAuth
             'password'  => Hash::make($request->signup_pass),
         ]);
         
-        setToast('success', 'Sign up succesful. Please log in..');
-        return redirect('/')->with('success', 'Registration successful! Please log in.');
+        toast('success', 'Sign up succesful. Please log in..');
+        return redirect()->back()->with('success', 'Registration successful! Please log in.');
     }
-    
+
+    // Log in the user
     public function login(Request $request) {
-        $request->validate([
+        // Validate user input
+        $validated = $request->validate([
             'login_id' => 'required',
             'login_pass' => 'required',
         ]);
-    
-        $loginField = filter_var($request->input('login_id'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username'; 
-    
+
+        // Determine if the login ID is an email or username
+        $loginField = filter_var($validated['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
         $credentials = [
-            $loginField => $request->login_id,
-            'password' => $request->login_pass
+            $loginField => $validated['login_id'],
+            'password'  => $validated['login_pass'],
         ];
-    
+
+        // Attempt to log in
         if (Auth::attempt($credentials)) {
-            toast('success', 'Heyy there, wlcm back..');
-            return redirect()->back()->with('message', 'Login successful.');
+            $request->session()->regenerate();
+            toast('success', 'Logged in as <b>' . Auth::user()->name . '</b> .');
+            return redirect()->back()->with('message', 'Logged in as ' . htmlspecialchars(Auth::user()->name) . '.');
         } else {
-            // echo 'login err: '.$loginField.' | '.$request->login_id.' | '.$request->login_pass;
-            toast('warn', 'Invalid credentials..');
-            return redirect()->back()->withErrors(['message' => 'Invalid credentials. Please try again.']);
+            toast('warning', 'Invalid credentials. Please try again.');
+            return redirect()->back()->withInput($request->only('login_id'))->withErrors([
+                'login_id' => 'Invalid credentials.',
+            ]);
         }
     }
-    
-    public function logout() {
+
+    // Log out the user
+    public function logout(Request $request) {
         Auth::logout();
-        toast('success', 'See ya, bye byee..');
-        return redirect()->back()->with('message', 'Logout successful.');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        toast('success', 'Logged out successfully.');
+        return redirect()->back()->with('message', 'You have been logged out.');
     }
-    
+
+    // Generate a unique username
     private function genUsername($baseUsername) {
         $username = $baseUsername;
         $count = 1;
-    
-        // Check for uniqueness
+
+        // Check if the username exists, append a number if it does
         while (User::where('username', $username)->exists()) {
-            $username = $baseUsername . $count; // Append a number to the username
+            $username = $baseUsername . $count;
             $count++;
         }
-    
+
         return $username;
     }
 }

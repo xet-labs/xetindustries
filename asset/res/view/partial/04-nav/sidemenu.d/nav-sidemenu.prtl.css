@@ -10,14 +10,16 @@ nav .navSidebar{
     position: fixed;
     display: flex;
     flex-direction: column;
-    pointer-events: none;
-
+    
     z-index: 4000;
     opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    tabindex: -1;
+    aria-hidden: true;
     height: fit-content; max-height: 100%;
     height: 100%;
     width: fit-content; max-width: 300px;
-    
     background: var(--nav-bg, var(--bg));
     --border-radius2: 14px;
     border-top-left-radius: var(--border-radius2); border-bottom-left-radius: var(--border-radius2);
@@ -31,9 +33,12 @@ nav .navSidebar{
 }
 #id-nav-sidemenuOpen-btn:checked ~ .navSidebar{
     opacity: 1;
+    pointer-events: initial;
+    visibility: visible;
+    tabindex: -1;
+    aria-hidden: false;
     transform: translateX(0) scale(1);
     transition: .12s ease-out;
-    pointer-events: initial;
 }
 nav .nav-sidemenu-wrap .underlay {
     --underlay-blur: 0px;

@@ -24,27 +24,49 @@ body.themeDark {
     cursor: pointer;
     width: var(--icon-width, var(--icon-size, var(--def-icon-size)));
     height: var(--icon-height, var(--icon-size, var(--def-icon-size)));
-    border-radius: 50%;
+    border-radius: 100%;
     transition: color var(--trns-theme);
     color: var(--icon-colr, unset);
     fill: var(--icon-colr, unset);
 }
+.icon:focus {
+    outline: transparent;
+}
+
+.icon::after,
 .icon::before {
     content: '';
     z-index: -1;
     position: absolute;
-    border-radius: 50%;
+    border-radius: 100%;
     width: calc(var(--icon-width, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
     height: calc(var(--icon-height, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
     top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.88);
     transition: transform 0.08s ease-in, background-color var(--icon-trns-bg);
 }
-.icon:focus::before,
-.icon:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    background: var(--icon-hov-bg);
+.icon:hover {
+    --icon-focus-bg: transparent;
 }
+.icon:hover::before {
+    background: var(--icon-hov-bg);
+    transform: translate(-50%, -50%) scale(1);
+}
+.icon::after {
+    opacity: 0;
+    transition: transform 0.044s;
+    outline: 1px solid;
+    outline-offset: 0px;
+    background: var(--icon-focus-bg, var(--icon-hov-bg));
+    transform: translate(-50%, -50%) scale(.92);
+}
+.icon:focus::after {
+    opacity: .5;
+    /* transition: transform 0.044s; */
+    background: var(--icon-focus-bg, var(--icon-hov-bg));
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .icon svg {
     display: block;
     /* position: relative; */

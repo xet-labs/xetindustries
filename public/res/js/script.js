@@ -26,13 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // -Theme-Manager
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Check user's preferred theme
-  if (localStorage.getItem("theme") === "themeDark") {
-    document.body.classList.add("themeDark");
-  }
+  document.body.classList.add(localStorage.getItem("theme"));
 
   // Toggle theme on button click
-  document.getElementById("id-themeSwitch").addEventListener("click", function () {
+  document.getElementById("id-themeswitch").addEventListener("click", function () {
     document.body.classList.toggle("themeDark");
 
     // Save user's theme preference

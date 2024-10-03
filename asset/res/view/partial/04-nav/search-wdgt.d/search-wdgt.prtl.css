@@ -12,6 +12,11 @@ body.themeDark{
 }
 
 
+/* .search-wdgt-input[type="search"]::-webkit-search-cancel-button, */
+.search-input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 .nav .searchbar-wrap {
     display: flex;
     margin: 1.5px 0;
@@ -64,24 +69,18 @@ body.themeDark{
     position: fixed;
     z-index: 2000;
     opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
     width: 80%;
     left: 50%;
     transform: translate(-50%);top: 14%;
-    pointer-events: none;
     color: var(--colr-txt-dark);
 }
-#id-searchbar:checked ~ *{
-    pointer-events: none;
-}
-#id-searchbar:checked ~ .underlay{
-    pointer-events: initial;
+
+#id-searchWdgt-btn:checked ~ .search-wdgt {
     opacity: 1;
-    cursor: pointer;
-    transition: .25s;
-}
-#id-searchbar:checked ~ .search-wdgt {
     pointer-events: initial;
-    opacity: 1;
+    visibility: visible;
     top: 15%;
     transition: .2s;
 }

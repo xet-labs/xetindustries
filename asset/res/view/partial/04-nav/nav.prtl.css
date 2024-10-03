@@ -15,11 +15,8 @@
 
     --nav-font-wght: 500;
     /* --nav-font-wght: 450; */
-
-    --themeLightIconDisplay: flex;--themeDarkIconDisplay: none;
 }
 body.themeDark {
-    --themeLightIconDisplay: none;--themeDarkIconDisplay: flex;
 }
 
 nav {
@@ -70,7 +67,6 @@ nav .brand a {
 }
 nav .brand img,
 nav .brand svg  {
-    height: 1.76em;
     height: 1.7em;
     /* height: 2.14em; */
     width: unset;
@@ -175,22 +171,11 @@ nav .sub-brand a:hover {
     gap: var(--nav-icon-gap);
     /* overflow: hidden; */
 }
-.navbar .navbar_r .icon{
+.navbar .navbar_r .icon {
     padding-inline: var(--nav-icon-pd-lr);
     color: var(--colr-deco1);
     opacity: .8;
 }
-
-.themeIcon svg{
-    width: 1.2rem;
-}
-.themeLightIcon{
-    display: var(--themeLightIconDisplay);
-}
-.themeDarkIcon{
-    display: var(--themeDarkIconDisplay);
-}
-
 
 /* --responsive - nav-- */
 @media (min-width: 980px) {

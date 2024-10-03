@@ -4,6 +4,8 @@
     --underlay-bg: hsla(230, 75%, 15%, .1);
     --underlay-trns-durn-in-def: .28s;
     --underlay-trns-durn-out-def: .2s;
+    --underlay-trns-durn-in-def: .24s;
+    --underlay-trns-durn-out-def: .2s;
 
     --underlay-display: none;
     --underlay-opacity: 0;
@@ -24,6 +26,7 @@
     z-index: 1000;
     top: 0;bottom: 0;left: 0;right: 0;
     opacity: 0;
+    /* visibility: hidden; */
     cursor: var(--underlay-cursor);
     pointer-events: var(--underlay-pointer-event);
     transition: opacity var(--underlay-trns-durn-out, var(--underlay-trns-durn, var(--underlay-trns-durn-out-def)));
@@ -33,6 +36,7 @@
 
 .underlay-btn:checked ~.underlay{
     opacity: var(--underlay-active-opacity);
+    /* visibility: visible; */
     --underlay-cursor: crosshair;
     --underlay-pointer-event: initial;
     transition: opacity var(--underlay-trns-durn-in, var(--underlay-trns-durn, var(--underlay-trns-durn-in-def)));

@@ -38,7 +38,7 @@ route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
 
 
 
-
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -47,15 +47,16 @@ route::get('/dev/de', function () { Loc::filer('PAGE', 'debug'); });
 route::get('/dev/d', function () { 
     echo "<pre style=\"margin-top:2rem;font-size:13.5px;color:var(--colr)\">";
     
-    $data = session()->all();
     var_dump(session()->all());
     
-    echo User::all();
+    echo Auth::user()->username;
+    echo Auth::user()->name;
+    Auth::user()->name;
+    
     
     
     $callFile = debug_backtrace()[0]['file'];
     $callBy = basename($callFile); $callDir = dirname($callFile);
-        
     echo (var_dump($callFile));
     echo "\n\n--=--=--=--=--=--=--=--=--=--=--=--=--=--=--\n\n";
     var_dump(Loc::pathurl());

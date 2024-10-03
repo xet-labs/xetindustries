@@ -10,6 +10,7 @@
     overflow: hidden;
 
     opacity: 0;
+    visibility: hidden;
     z-index: 2000;
     width: 80%;
     max-height: 88vh;
@@ -33,9 +34,14 @@
 label[for="id-signuplogin-close-btn"].underlay {
     /* --underlay-blur: 0px; */
 }
+#id-signup-btn:hover~.signuplogin-wrap, #id-login-btn:hover~.signuplogin-wrap {
+visibility: visible;
+}
+
 /* #id-login-btn~.underlay {opacity: 1; pointer-events: initial;}#id-login-btn~.signuplogin-wrap, */
 #id-signup-btn:checked~.signuplogin-wrap, #id-login-btn:checked~.signuplogin-wrap {
     opacity: 1;
+    visibility: visible;
     transform: translate(-50%, -50%) scale(1);
     transition: .12s ease-out;
     pointer-events: initial;

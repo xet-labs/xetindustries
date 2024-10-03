@@ -14,6 +14,7 @@ $Blog = $Blog[0];
 
 
 <body class="blog-body">
+	<?php require(Loc::file('PRTL', 'body-scripts')); ?>
 
 	<?php
 	$currentMenu = $subBrand = 'Blog';
@@ -28,7 +29,7 @@ $Blog = $Blog[0];
 		<div class="blog-wrap wrap ">
 			<div class="con blog-con">
 
-				<?php require(Loc::file('PRTL', 'blog-header')); ?>
+				<?php require(Loc::file('PRTL', 'header.blog')); ?>
 
 				<div class="blog-main blog-cnt">
 					

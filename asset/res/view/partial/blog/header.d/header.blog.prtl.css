@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     margin: 0 .5em;
-    padding: 1em 0 0;
+    /* padding: 1em 0 0; */
     grid-gap: .35em;
     font-size: 14px;
 }
@@ -68,6 +68,10 @@
 }
 .blog-meta .meta-author a{
     text-decoration: unset;
+}
+.blog-meta a.meta-author-name:hover {
+    text-decoration: underline;
+    color: inherit;
 }
 .blog-meta .meta-author .seperator{
     background: var(--colr-stxt1);

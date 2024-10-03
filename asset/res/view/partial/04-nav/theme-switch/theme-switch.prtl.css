@@ -1,0 +1,17 @@
+:root {
+    --themeLightIconDisp: flex;
+    --themeLightIconVis: visible;
+}
+body.themeDark {
+    --themeDarkIconDisp: flex;  --themeLightIconDisp: none;
+    --themeDarkIconVis: visible; --themeLightIconVis: hidden;
+}
+
+.theme-light-icon {
+    display: var(--themeLightIconDisp);
+    visibility: var(--themeLightIconVis);
+}
+.theme-dark-icon {
+    display: var(--themeDarkIconDisp, none);
+    visibility: var(--themeDarkIconVis, hidden);
+}

@@ -1,1 +1,1 @@
-<input type="hidden" name="currentUrl" value="<?php echo htmlspecialchars(URL); ?>">
+<input type="hidden" name="currentUrl" value="<?= htmlspecialchars(URL); ?>">
