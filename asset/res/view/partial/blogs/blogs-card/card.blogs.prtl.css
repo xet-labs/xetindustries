@@ -167,8 +167,8 @@
 }
 .post .post-title:hover {
     transition: all 0.12s;
-    color: #3a3a39;
-    /* opacity: .98; */
+    /* color: #3a3a39; */
+    opacity: .84;
     /* color: var(--colr-secondary); */
 }
 
