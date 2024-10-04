@@ -10,6 +10,8 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate
 
+php artisan storage:link
+
 php artisan config:clear
 php artisan config:cache
 php artisan route:clear
