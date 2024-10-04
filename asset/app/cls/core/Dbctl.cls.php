@@ -21,7 +21,7 @@
 	$DBquery = [
 		"XI" => [
 			'Users' => "SELECT * FROM users ORDER BY created_at DESC ",
-			'blogs-card' 	=> "SELECT blogs.*, users.name, users.name_l, users.verified, users.profile_img FROM blogs JOIN users ON blogs.uid = users.username WHERE blogs.status = 'published' ORDER BY blogs.created_at DESC ",
+			'blogs-card' 	=> "SELECT blogs.*, users.username, users.name, users.name_l, users.verified, users.profile_img FROM blogs JOIN users ON blogs.uid = users.username WHERE blogs.status = 'published' ORDER BY blogs.created_at DESC ",
 			'blog'      	=> "SELECT blogs.*, users.name, users.name_l, users.verified, users.profile_img FROM blogs JOIN users ON blogs.uid = users.username WHERE blogs.blogId = ",
 		]
 	];

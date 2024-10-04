@@ -25,7 +25,7 @@ use xet\Loc;
 		$blogsCardBuffer ? ob_start() : '';
 
 		foreach ($Blogs as $Blog) {
-			include(Loc::file('PRTL','blogs-card'));
+			include(Loc::file('PRTL','card.blogs'));
 		}
 
 		$blogsCardBuffer ? $response['html'] = ob_get_clean() : '';

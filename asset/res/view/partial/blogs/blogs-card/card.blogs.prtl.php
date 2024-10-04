@@ -2,8 +2,8 @@
 use xet\Loc;
 use xet\util;
 ?>
-<!-- <a href="<?= htmlspecialchars($Blog['path']); ?>" class="post"> -->
-<div class="post">
+
+<div class="post"  data-href="<?= htmlspecialchars($Blog['path']); ?>" tabindex="0" role="link" aria-label="Read more about <?= htmlspecialchars($Blog['title']); ?>">
 		
     <a href="<?= htmlspecialchars($Blog['path']); ?>" class="post-img-wrap">
         <div class="post-img">
@@ -14,8 +14,8 @@ use xet\util;
     <div class="post-info-wrap">
         <div class="post-info">
 
-            <h3 class="post-title">
-                <a href="<?= htmlspecialchars($Blog['path']); ?>" title="<?= htmlspecialchars($Blog['title']); ?>">
+            <h3 class="post-title" title="<?= htmlspecialchars($Blog['title']); ?>">
+                <a href="<?= htmlspecialchars($Blog['path']); ?>">
                     <?= htmlspecialchars($Blog['short_title'] ?? $Blog['title']); ?>
                 </a>
             </h3>
@@ -37,14 +37,14 @@ use xet\util;
 
                         <div class="meta-author">
                             <span>
-                                <a href="/profile/<?= htmlspecialchars($Blog['uid']); ?>" title="<?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>">
+                                <a href="/profile/<?= htmlspecialchars($Blog['uid']); ?>" title="@<?= htmlspecialchars($Blog['username']); ?>">
                                     <?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
                                 </a>
                             </span>
 
                             <?php if($Blog['verified']):?>
                                 <div class="meta-verified">
-                                    <?= htmlspecialchars($Blog['uid']); ?>
+                                    ☑️
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -64,4 +64,3 @@ use xet\util;
     </div>
 
 </div>
-<!-- </a> -->

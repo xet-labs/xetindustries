@@ -15,31 +15,33 @@ nav .navSidebar{
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    tabindex: -1;
-    aria-hidden: true;
+
     height: fit-content; max-height: 100%;
     height: 100%;
     width: fit-content; max-width: 300px;
+   
+    top: 0; right: 0;
+    transform: translate(.22rem, 0);
+    scale: .988;
+    transition: .18s ease;
+
+
     background: var(--nav-bg, var(--bg));
     --border-radius2: 14px;
     border-top-left-radius: var(--border-radius2); border-bottom-left-radius: var(--border-radius2);
     border-radius: var(--border-radius2);
     box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
-    top: 0; right: 0;
-    transform: translateX(.4rem) scale(1);
-    transform: translateX(.22rem) scale(.988);
-    transition: .12s ease-in;
-    transition: .18s ease;
 }
-#id-nav-sidemenuOpen-btn:checked ~ .navSidebar{
+#id-nav-sidemenuOpen-btn:checked ~ .navSidebar {
     opacity: 1;
     pointer-events: initial;
     visibility: visible;
-    tabindex: -1;
-    aria-hidden: false;
-    transform: translateX(0) scale(1);
+
+    transform: translate(0, 0) scale(1);
+    scale: 1;
     transition: .12s ease-out;
 }
+
 nav .nav-sidemenu-wrap .underlay {
     --underlay-blur: 0px;
     /* --underlay-bg: #1b1d3d25; */

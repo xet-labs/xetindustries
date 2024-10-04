@@ -51,7 +51,7 @@ trait UserAuth
             'password'  => Hash::make($request->signup_pass),
         ]);
         
-        toast('success', 'Sign up succesful. Please log in..');
+        toast('success', 'Sign up succesful. Please log in');
         return redirect()->back()->with('success', 'Registration successful! Please log in.');
     }
 
@@ -74,12 +74,12 @@ trait UserAuth
         // Attempt to log in
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            toast('success', 'Logged in as <b>' . Auth::user()->name . '</b> .');
-            return redirect()->back()->with('message', 'Logged in as ' . htmlspecialchars(Auth::user()->name) . '.');
+            toast('success', 'Logged in as @<b>' . Auth::user()->username . '</b> ');
+            return redirect()->back()->with('message', 'Logged in as @' . htmlspecialchars(Auth::user()->username));
         } else {
-            toast('warning', 'Invalid credentials. Please try again.');
+            toast('warning', 'Invalid credentials!! Please try again');
             return redirect()->back()->withInput($request->only('login_id'))->withErrors([
-                'login_id' => 'Invalid credentials.',
+                'login_id' => 'Invalid credentials',
             ]);
         }
     }
@@ -90,7 +90,7 @@ trait UserAuth
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        toast('success', 'Logged out successfully.');
+        toast('success', 'Log out successfull');
         return redirect()->back()->with('message', 'You have been logged out.');
     }
 

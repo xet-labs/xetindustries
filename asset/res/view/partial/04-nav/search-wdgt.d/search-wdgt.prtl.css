@@ -37,10 +37,10 @@ body.themeDark{
     margin-inline: .06em -.05em;
     padding-inline: var(--nav-icon-pd-lr);
     font-size: 1.7em;
-    --icon-bg: transparent;
 }
 .nav .searchbar-wrap .icon{
-    --icon-bg: transparent;
+    --icon-hov-bg: transparent;
+    --icon-active-outln-opacity: 0;
 }
 .nav .searchbar circle, 
 .nav .searchbar line {

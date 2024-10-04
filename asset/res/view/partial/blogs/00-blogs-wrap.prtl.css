@@ -6,12 +6,11 @@
     --blogs-grid-margin: 0;
     --blogs-grid-template: repeat(1, minmax(0, 1fr));
     --blogs-grid-gap: 2.6rem;
-    --posts-media-grid-gap: 2.5rem 2.4rem;
     --posts-media-grid-gap: 2.5rem 2rem;
     /* def */
     --posts-media-grid-gap: 2.3rem 2rem;
 
-    /* --posts-media-grid-gap: 2.3rem 1.8rem; */
+    --posts-media-grid-gap: 2.6rem 1.8rem;
     /* --posts-media-grid-gap: 2.2rem 1.8rem; */
 }
 body.themeDark {

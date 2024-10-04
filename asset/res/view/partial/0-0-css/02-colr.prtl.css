@@ -86,7 +86,7 @@
     --colr-txt: #111;
     --colr-txt: #191c1f;
     --colr-txt: #1f2937;
-    --colr-txt: #222;
+    --colr-txt1: #222;
     --colr-txt: #26272e;
     /* --colr-txt: #333; */
     /* --colr-txt: #1a1a1a; */
@@ -152,6 +152,7 @@ body.themeDark {
     --colr-txt: #f1f1f1;
     --colr-txt: #E5E5E5;
     --colr-txt: #d1d1d1;
+    --colr-txt1: var(--colr-txt);
 
     --colr-a-hover: #4A90E2;
 

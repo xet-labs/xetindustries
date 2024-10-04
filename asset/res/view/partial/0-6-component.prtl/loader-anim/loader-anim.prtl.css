@@ -57,7 +57,7 @@
     animation: circle .45s alternate infinite ease;
 }
 
-@keyframes circle{
+@keyframes circle {
     0%{
         top:60px;
         height:5px;
