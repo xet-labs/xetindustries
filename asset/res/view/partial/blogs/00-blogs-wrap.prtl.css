@@ -1,0 +1,101 @@
+:root {
+    --post-bg: transparent;
+    --post-media-bg: transparent;
+
+    --blogs-wrap-pd: 0;
+    --blogs-grid-margin: 0;
+    --blogs-grid-template: repeat(1, minmax(0, 1fr));
+    --blogs-grid-gap: 2.6rem;
+    --posts-media-grid-gap: 2.5rem 2rem;
+    /* def */
+    --posts-media-grid-gap: 2.3rem 2rem;
+
+    --posts-media-grid-gap: 2.6rem 1.8rem;
+    /* --posts-media-grid-gap: 2.2rem 1.8rem; */
+}
+body.themeDark {
+    --post-bg: transparent;
+    --post-media-bg: transparent;
+}
+body.blogs-body .con {
+    /* border: 1px solid transparent; */
+}
+.con-postsidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.blogs-wrap {
+    margin-bottom: 0;
+    max-width: var(--blogs-wrap-max-width);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* background: transparent;
+    box-shadow: none; */
+}
+
+.blogs-category {
+    display: flex;
+    margin-bottom: 1.125rem;
+    font-size: var(--p2);
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-color: var(--colr-line);
+}
+
+.category-menu {
+    /* display: flex; */
+    align-items: center;
+    padding: 0 .45rem;
+    padding-bottom: .09rem;
+    font-weight: 600;
+    color: var(--colr-primary);
+    border-bottom: 1px solid var(--colr-primary);
+    /* text-transform: uppercase; */
+}
+
+.category-menu a {
+    display: inline-block;
+}
+
+.blogs-grid {
+    display: grid;
+    margin: var(--blogs-grid-padding);
+    grid-template-columns: var(--blogs-grid-template);
+    grid-gap: var(--blogs-grid-gap);
+    gap: var(--blogs-grid-gap);
+}
+
+
+
+
+@media (min-width: 460px) {
+    .blogs-wrap {
+        --blogs-wrap-max-width: 460px;
+    }
+}
+
+@media screen and (min-width: 680px) {
+    .blogs-wrap {
+        --blogs-wrap-max-width: unset;
+    }
+}
+
+@media (min-width: 980px) {
+    .blogs-grid {
+        --blogs-grid-template: repeat(2, minmax(0, 1fr));
+        --blogs-grid-gap: var(--posts-media-grid-gap);
+        /* overflow: unset; */
+    }
+    /* .blogs-grid {
+        --blogs-grid-template: repeat(3, minmax(0, 1fr));
+    } */
+}
+
+@media (min-width: 1215px) {
+    .blogs-grid {
+        --blogs-grid-template: repeat(3, minmax(0, 1fr));
+    }
+}

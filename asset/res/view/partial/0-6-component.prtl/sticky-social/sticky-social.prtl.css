@@ -1,0 +1,42 @@
+.sticky-social-wrap {
+    display: none;
+    position: absolute;
+    transition-duration: unset;
+}
+
+.sticky-social {
+    z-index: 10;
+    display: grid;
+    position: fixed;
+    min-height: fit-content;
+    top: 27.5%;
+    top: 28.4%;
+    margin-left: 3.1em;
+    /* gap: 2.265625em; */
+    gap: 3.2em;
+
+    color: var(--colr-title, var(--colr-txt));
+    transition: unset;
+}
+
+.sticky-social a.icon {
+    --icon-size: 1.56em;
+    --icon-bgz: 1.8;
+    --icon-colr: var(--colr-txt);
+    /* --icon-hov-bg: transparent; */
+    /* --icon-outln-bg: unset; */
+    --icon-brdr-rad: 40%;
+    --icon-active-outln-opacity: .3;
+}
+.sticky-social a:hover {
+    /* background: var(--icon-bg-hov); */
+    color: inherit;
+}
+
+@media (min-width: 980px) {
+    .sticky-social-wrap {
+        display: unset;
+    }
+}
+
+
