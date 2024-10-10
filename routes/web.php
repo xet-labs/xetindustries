@@ -49,11 +49,6 @@ route::get('/dev/d', function () {
     
     var_dump(session()->all());
     
-    echo Auth::user()->username;
-    echo Auth::user()->name;
-    Auth::user()->name;
-    
-    
     
     $callFile = debug_backtrace()[0]['file'];
     $callBy = basename($callFile); $callDir = dirname($callFile);
