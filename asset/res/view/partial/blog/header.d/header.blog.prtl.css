@@ -1,6 +1,4 @@
 :root{
-    --blog-meta-img-size: 38px;
-    /* --blog-meta-img-size: 40px; */
     /* --stxt1: #6b6b6b; */
 }
 
@@ -8,29 +6,37 @@
     color: var(--colr-h1,var(--colr-title));
     transition: color var(--theme-trns);
 }
-.blog-header .category{
+.blog-header .blog-category{
     display: flex;
     flex-direction: row;
     margin: 0 .5em;
-    /* padding: 1em 0 0; */
     grid-gap: .35em;
-    font-size: 14px;
 }
-.blog-header .category a,
-.blog-header .category a:first-child {
+.blog-header .blog-category a,
+.blog-header .blog-category a:first-child {
     margin-left: -.5em;
 }
-.blog-header .category a{
+.blog-header .blog-category a{
+    align-items: center;
     margin: 0;
     padding: 0 .5em;
+
+    font-size: 14px;
     font-weight: 500;
-    border-radius: 50em;
-    align-items: center;
+    font-weight: 470;
+    text-decoration: none;
     text-transform: uppercase;
-    transition: backgroud-color 0s ease;
+    
+    color: var(--colr-stxt1);
+    background: var(--bg-icon);
+    border-radius: 50em;
+    transform: translateZ(0);
+    transition: color 0s ease, backgroud-color 0s ease;
 }
-.blog-con .blog-header .category a:hover{
-    background-color: #00000008;
+.blog-header .blog-category a:hover{
+    color: var(--colr-a-hov);
+    transition: color 0s ease, backgroud-color 0s ease;
+
 }
 
 .blog-meta{
@@ -49,7 +55,7 @@
     position: relative;
     overflow: hidden;
     margin-right: 1em;
-    width: var(--blog-meta-img-size);
+    width: var(--blog-meta-author-imgz, 40px);
     -webkit-border-radius: 100%;
     border-radius: 100%;
     aspect-ratio: 6/6;

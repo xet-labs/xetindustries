@@ -90,7 +90,7 @@ trait UserAuth
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        toast('success', 'Log out successfull');
+        toast('success', 'Logged out successfully..');
         return redirect()->back()->with('message', 'You have been logged out.');
     }
 

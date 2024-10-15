@@ -14,16 +14,6 @@
     --shadow-m: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
     --shadow-l: 0 10px 15px -3px #7c7c7c1a, 0 4px 6px -2px #6666660d;
 
-    /* --con-blog-bg: #f3f4f6; */
-
-    --searchbar-bg: #fff;
-    --searchbar-bg: #00000006;
-
-
-    /* ------------------------------- */
-    --transition-2s: .2s;
-    --transition-5s: .5s;
-
     /* ------------------------------- */
     --body-pointer-event: initial;
     --footer-pointer-event: initial;
@@ -68,9 +58,7 @@
     --tag-hover-bg: var(--bg-scolor);
 
     --scrollbar-width: .35rem;
-    --scrollbar-track-bg: #ece9e600;
-    --scrollbar-bg: #aaaaaae0;
-    --scrollbar-bg-hover: #4b4b4bbd;
+
     --scrollbar-border-radius: 3px;
 
     --nav-font-weight: 600;
@@ -95,13 +83,14 @@
     transition: background-color var(--trns-theme), border-color var(--trns-theme), color var(--trns-theme-type);
 }
 
-::selection {background-color: var(--bg-selection); color: var(--colr-selection);}
 ::-webkit-selection {background-color: var(--bg-selection); color: var(--colr-selection);}
 ::-webkit-scrollbar {width: var(--scrollbar-width);}
-::-webkit-scrollbar-track {background-color: var(--scrollbar-track-bg);}
-::-webkit-scrollbar-thumb {background: var(--scrollbar-bg);border-radius: var(--scrollbar-border-radius);}
+::-webkit-scrollbar-track {background: var(--bg-scrollbar-track, transparent);}
+::-webkit-scrollbar-thumb {background: var(--bg-scrollbar);border-radius: var(--scrollbar-border-radius);}
 /* ::-webkit-scrollbar-thumb:vertical {transition: background-color 1s ease-in-out;} */
-::-webkit-scrollbar-thumb:hover:vertical {background-color: var(--scrollbar-bg-hover);}
+::-webkit-scrollbar-thumb:hover:vertical {background-color: var(--bg-scrollbar-hov);}
+
+::selection {background-color: var(--bg-selection); color: var(--colr-selection);}
 
 body {
     overflow-x: hidden;

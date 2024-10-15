@@ -163,6 +163,7 @@ class Loc
         echo '</pre>';
         $exit ? exit : ''; 
     }
+    
     // -Helper method to generate file paths
     private static function _genFilePath($files, $fileExtension, $isUrl = false) {
         $fileArray = [];

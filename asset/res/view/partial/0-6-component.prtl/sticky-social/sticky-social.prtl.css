@@ -20,11 +20,9 @@
 }
 
 .sticky-social a.icon {
-    --icon-size: 1.56em;
+    --iconz: 1.56em;
     --icon-bgz: 1.8;
-    --icon-colr: var(--colr-txt);
-    /* --icon-hov-bg: transparent; */
-    /* --icon-outln-bg: unset; */
+    /* --icon-colr: var(--colr-txt); */
     --icon-brdr-rad: 40%;
     --icon-active-outln-opacity: .3;
 }

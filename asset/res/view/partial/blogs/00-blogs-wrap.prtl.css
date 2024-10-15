@@ -11,7 +11,7 @@
     --posts-media-grid-gap: 2.3rem 2rem;
 
     --posts-media-grid-gap: 2.6rem 1.8rem;
-    /* --posts-media-grid-gap: 2.2rem 1.8rem; */
+    --posts-media-grid-gap: 2.2rem 20px;
 }
 body.themeDark {
     --post-bg: transparent;

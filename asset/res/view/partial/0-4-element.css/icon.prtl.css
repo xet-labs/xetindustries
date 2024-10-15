@@ -1,31 +1,19 @@
 :root{
-    --def-icon-size: 1.6em;
-    --def-icon-bgz: 1.4;
+    --iconz: 1em;
+    --icon-bgz: 1.4;
 
-    --icon-trns-durn: .18s;
-    --icon-trns: var(--trns-icon), var(--icon-trns-durn) ease;
-    
-    --icon-trns-bg-durn: .2s;
-    --icon-trns-bg: var(--trns-icon-bg, var(--icon-trns-bg-durn) ease);
-    
-    --icon-bg: #00000000;
-    --icon-hov-bg: #3c404314;
+    --icon-trns: var(--trns-icon), var(--icon-trns-durn, .18s) ease;
+    --icon-trns-bg: var(--trns-icon-bg, var(--icon-trns-bg-durn, .2s) ease);
 
     --icon-brdr-rad: 100%;
-    --icon-brdr-rad: 40.5%;
+    --icon-brdr-rad: 40%;
     
-    --icon-ab-scale: 0.88;
-    --icon-outln-scale: .92;
-    --icon-outln-opacity: 0;
-    --icon-outln-bg: transparent
+    --icon-bg-scale: 0.88;
+    --icon-brdr-scale: .92;
+
 }
 body.themeDark {
-    --icon-hov-bg: #ffffff15;
-}
-
-
-.icon:focus {
-    outline: transparent;
+    /* --icon-hov-bg: #ffffff15; */
 }
 
 .icon {
@@ -33,70 +21,68 @@ body.themeDark {
     position: relative;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    width: var(--icon-width, var(--icon-size, var(--def-icon-size)));
-    height: var(--icon-height, var(--icon-size, var(--def-icon-size)));
+    cursor: var(--icon-cursor, pointer);
+    width: var(--icon-width, var(--iconz));
+    height: var(--icon-height, var(--iconz));
     
     border-radius: var(--icon-brdr-rad);
     color: var(--icon-colr, unset);
-    background: var(--icon-bg);
     fill: var(--icon-colr, unset);
     transition: color var(--trns-theme);
 }
 .icon svg,
 .icon img,
 .icon i {
+    z-index: 10;
+    opacity: var(--icon-opacity, 1);
     display: block;
-    /* position: relative; */
     position: absolute;
-    margin: auto;
-    /* width: var(--icon-svg-width, var(--icon-svgz, var(--icon-width, var(--icon-size, var(--def-icon-size)))));height: var(--icon-svg-height, var(--icon-svgz, var(--icon-height, var(--icon-size, var(--def-icon-size))))); */
     width: var(--icon-svg-width, var(--icon-svgz, unset));
     height: var(--icon-svg-height, var(--icon-svgz, unset));
     font-size: var(--icon-svgfz, unset);
-    transform: scale(var(--icon-scale));
+    transform: translate(0, 0) scale(var(--icon-scale));
 }
 
 .icon::after,
 .icon::before {
-    content: '';
-    z-index: -1;
+    z-index: 1; content: '';
     position: absolute;
-    width: calc(var(--icon-width, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
-    height: calc(var(--icon-height, var(--icon-size, var(--def-icon-size))) * var(--icon-bgz, var(--def-icon-bgz)));
+    width: calc(var(--icon-width, var(--iconz)) * var(--icon-bgz));
+    height: calc(var(--icon-height, var(--iconz)) * var(--icon-bgz));
     
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(var(--icon-ab-scale));
-    
-    border-radius: var(--icon-brdr-rad);
+    top: 50%; left: 50%; 
     transition: transform 0.08s ease-in, background-color var(--icon-trns-bg);
 }
-.icon:hover {
-    --icon-active-outln-bg: transparent;
-    --icon-scale: var(--icon-hov-scale, var(--icon-scale));
-}
-.icon:active {
-    --icon-scale: var(--icon-active-scale, var(--icon-scale));
-}
-.icon:hover::before {
-    background: var(--icon-hov-bg);
-    transform: translate(-50%, -50%) scale(1);
+.icon::before {
+    opacity: var(--icon-bg-opacity, 1);
+    background: var(--icon-bg);
+    border-radius: var(--icon-bg-rad, var(--icon-brdr-rad));
+    transform: translate(-50%, -50%) scale(var(--icon-bg-scale));
 }
 .icon::after {
-    opacity: var(--icon-outln-opacity);
-
-    outline: 1px solid;
-    outline-offset: 0px;
-    
-    border-radius: var(--icon-outln-rad, var(--icon-brdr-rad));
-    background: var(--icon-outln-bg, var(--icon-hov-bg));
-    transform: translate(-50%, -50%) scale(var(--icon-outln-scale, var(--icon-ab-scale)));
+    opacity: var(--icon-brdr-opacity, 0);
+    background: var(--icon-outln-bg, var(--icon-bg, transparent));
+    border: 1px solid var(--icon-brdr-colr, var(--colr-txt));
+    border-radius: var(--icon-brdr-rad);
+    transform: translate(-50%, -50%) scale(var(--icon-brdr-scale, var(--icon-bg-scale)));
     transition: transform 0.044s;
 }
-.icon:active::after {
-    --icon-outln-opacity: var(--icon-active-outln-opacity, .4);
-    --icon-outln-scale: 1;
-    --icon-outln-bg: var(--icon-active-outln-bg, var(--icon-hov-bg));
+.icon:hover {
+    --icon-brdr-opacity: var(--icon-hov-brdr-opacity, var(--icon-brdr-opacity));
+    --icon-scale: var(--icon-hov-scale, 1);
+    --icon-bg-scale: var(--icon-hov-bg-scale, 1);
+    /* --icon-brdr-scale: var(--icon-hov-brdr-scale, var(--icon-init-brdr-scale)); */
+    /* --icon-brdr-scale: 0.5; */
+    /* --icon-brdr-opacity: 1; */
+
+    --icon-bg: var(--icon-hov-bg, var(--bg-icon));
+    --icon-outln-bg: var(--icon-hov-outln-bg);
 }
+.icon:active {
+    --icon-brdr-opacity: var(--icon-active-brdr-opacity, .34);
+    --icon-scale: var(--icon-active-scale, 1);
+    --icon-brdr-scale: var(--icon-active-brdr-scale, 1);
 
-
+    /* --icon-bg: var(--icon-active-bg, var(--bg-icon)); */
+    --icon-outln-bg: var(--icon-active-outln-bg, 1);
+}

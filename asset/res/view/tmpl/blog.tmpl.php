@@ -14,7 +14,7 @@ $Blog = $Blog[0];
 
 
 <body class="blog-body">
-	<?php require(Loc::file('PRTL', 'body-scripts')); ?>
+	<?php require(Loc::file('PRTL', 'scripts.body')); ?>
 
 	<?php
 	$currentMenu = $subBrand = 'Blog';

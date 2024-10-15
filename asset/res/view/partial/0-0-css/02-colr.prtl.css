@@ -24,13 +24,6 @@
     --colr-secondary: #6D7ACF;
     
     --colr-deco1:#1f2937;
-
-
-    /* colors */
-    --bg: #f4f4f6;
-    --bg: #eaecee;
-
-    --txt: #3c3e41;
     
     /* #00000011 */
     /* #ededed */
@@ -74,12 +67,6 @@
     /* --bg: #f7f8f4; */
     --bg: #f7f7f7;
     /* --bg: #fff; */
-    --media-bg: #f5f7fa;
-    --media-bg: #f8f7f4;
-    --media-bg: #f6f6f6;
-    --media-bg: #f7f7f7;
-    /* --media-bg: #f3f4f6; */
-    /* --media-bg: #fff; */
 
     /* --colr-txt: #080808; */
     /* --colr-txt: #0b0d10; */
@@ -98,10 +85,13 @@
     --colr-a-hover: #0078d4;
     --colr-a: #0b57d0;
     --colr-a-hover: #0b57d0;
-    
-    /* --nav-bg: var(--bg); */
-    --nav-colr: var(--colr-txt);
+    --colr-a-hov: var(--colr-a-hover);
 
+    
+    --searchbar-bg: #fff;
+    --bg-icon: #00000008;
+    
+    /* --con-blog-bg: #f3f4f6; */
     --bg-con: var(--bg);
     --bg-con: transparent;
     --bg-con-media: #f6f7f7;
@@ -136,6 +126,10 @@
     
     --bg-scolor: #554ad35e;
 
+    --bg-scrollbar: #aaaaaae0;
+    --bg-scrollbar-track: #ece9e600;
+    --bg-scrollbar-hov: #4b4b4bbd;
+
     --colr: #000;--colr-inv: #fff;--colr-dark: #000;--colr-white: #fff;
 }
 body.themeDark {
@@ -146,7 +140,7 @@ body.themeDark {
     --shadow-medium: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
     --shadow-large: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #6666660d;
     
-    --bg: #131313;--nav-bg: #1d1d1d;
+    --bg: #131313;
     
     --bg: #111116;
     --colr-txt: #f1f1f1;
@@ -154,20 +148,23 @@ body.themeDark {
     --colr-txt: #d1d1d1;
     --colr-txt1: var(--colr-txt);
 
+    /* --nav-bg: var(--bg);Z */
+    --nav-colr: #e5e7eb;
     --colr-a-hover: #4A90E2;
 
-    --nav-bg: var(--bg);
-    --nav-colr: #e5e7eb;
+    /* --nav-bg: var(--bg);
+    --nav-colr: #e5e7eb; */
 
     /* --bg-con: #ffffff08; */
     /* --bg-con-media: #ffffff03; */
 
+    --bg-icon: #ffffff08;
     --colr-con-border: #ffffff0a;
     
-    --searchbar-bg: #ffffff08;
 
-    --scrollbar-bg: #4b4b4bbd;
-    --scrollbar-bg-hover: #727272bd;
+    --bg-scrollbar: #4b4b4bbd;
+    --bg-scrollbar-hov: #727272bd;
+    
     
     --colr-primary: #4e3bf5;
     /* --colr-primary: #0073ff; */

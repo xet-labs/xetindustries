@@ -2,8 +2,8 @@
     
     <!-- Blog Category -->
     <?php $blogCategories = json_decode($Blog['category'], true);
-    if (is_array($blogCategories)): ?>
-        <div class="category">
+    if (is_array($blogCategories)){ ?>
+        <div class="blog-category">
             <?php $blogCategories = array_slice($blogCategories, 0, 4); 
             foreach ($blogCategories as $category): 
             ?>
@@ -12,11 +12,8 @@
                 </a>
             <?php endforeach; ?>
         </div>
-    <?php else: ?>
-        <!-- <a href="">
-            No cat
-        </a> -->
-    <?php endif; ?>
+    <?php //else: ?>
+    <?php } ?>
 
         
 
@@ -37,20 +34,19 @@
         <div class="meta-info">
 
             <div class="meta-author">
-                <span>
+                <!-- <span> -->
                     <a class="meta-author-name" href="">
-                    <!-- <a class="meta-author-name" href="" title="<?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>"> -->
                         <?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
                     </a>
-                </span>
+                <!-- </span> -->
 
                 <span class="seperator"></span>
                 
-                <span>
+                <!-- <span> -->
                     <a href="" class="blog-u-follow">
                         Follow
                     </a>
-                </span>
+                <!-- </span> -->
             </div>
 
             <div class="meta-date">
@@ -64,7 +60,37 @@
 
 
     <figure class="blog-hero">
-        <!-- <img data-src="asset/img/mysterium-node-backup-and-restore.webp" class="lazyload" alt="Xet Industries mysterium-node-backup-and-restore"> -->
-        <img src="<?= htmlspecialchars($Blog['featured_img']); ?>" alt="<?= htmlspecialchars($Blog['title']); ?>">
+        <img src="<?= htmlspecialchars($Blog['featured_img']); ?>" alt="<?= htmlspecialchars($Blog['title']); ?>" class="lazyload">
     </figure>
 </div>
+
+
+
+
+
+<script>
+    // Function to handle h2 scroll on-click
+    document.addEventListener('DOMContentLoaded', () => {
+    // Get the root font size once
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const offset = 1.5 * rootFontSize; // 1.5em converted to pixels
+
+    // Function to handle the scroll
+    function scrollToHeading(event) {
+        const heading = event.target;
+        const elementTop = heading.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementTop - offset;
+
+        window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+        });
+    }
+
+    // Attach click event listener to each <h2> element
+    document.querySelectorAll('h2').forEach(heading => {
+        heading.addEventListener('click', scrollToHeading);
+    });
+    });
+
+</script>

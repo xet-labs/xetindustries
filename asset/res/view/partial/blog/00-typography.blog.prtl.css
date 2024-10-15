@@ -1,38 +1,18 @@
 :root{
-    /* --blog-h1-m: 0 0 .2rem; */
-    --blog-h1-pd: 0.5em 0.26em 0.5em 0px;
-    --blog-h1-pd: 0.5em 0.3em 0.5em 0px;
-    --blog-h2-m: 1.8245em 0 .70175em;
-    /* --blog-h2-m: 3rem 0 0.5rem; */
-    --blog-h3-m: 1rem 0 0.5rem;
-
-    /* tmpl-1
-    --blog-p-pd: 0.75rem 0;
-    --blog-h2-m: 3rem 0 0.5rem; */
-    --blog-p-m-t: 1.3201em;
-    --blog-p-m-b: .9467em;
+    --blog-p-m-t: .75rem; --blog-p-m-b: 1.5rem;
     --blog-p-m: var(--blog-p-m-t) 0 var(--blog-p-m-b);
-    --blog-p-m: 0.75rem 0;
-    --blog-p-m: .75rem 0 1.5rem;
-    /* --blog-p-m: unset; */
-    --blog-p-pd: 1rem 0;
-    --blog-p-pd: 0.75rem 0;
-    --blog-p-pd: unset;
-
-    --blog-p-lineh: 1.625em;
 }
 
 .blog-con h1 {
     margin: var(--blog-h1-m);
-    padding: var(--blog-h1-pd);
+    padding: var(--blog-h1-pd, 0.5em 0.3em 0.5em 0px);
     color: var(--colr-h1, var(--colr-title));
 }
 
 .blog-con h2 {
     display: block;
-    margin: var(--blog-h2-m);
+    margin: var(--blog-h2-m, 1.8245em 0 .70175em);
     /* text-decoration: underline; */
-    /* margin-left: auto; */
     cursor: pointer;
     color: var(--h2-colr, var(--colr-title));
 }
@@ -40,20 +20,21 @@
     font-weight: inherit;
     text-decoration: none;
     width: fit-content;
+    width: 100%;
 }
 .blog-con h2 a:hover {
-    /* color: inherit; */
+    color: inherit;
     transition-duration: 0s;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .blog-con h3 {
-    margin: var(--blog-h3-m);
+    margin: var(--blog-h3-m, 1rem 0 0.5rem);
 }
 
 .blog-con p {
     margin: var(--blog-p-m);
-    padding: var(--blog-p-pd);
+    padding: var(--blog-p-pd, unset);
     color: var(--blog-p-colr);
 }
 
