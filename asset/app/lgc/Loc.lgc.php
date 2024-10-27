@@ -23,7 +23,7 @@ class Loc
             self::$BASE['public'] = self::$BASE['root'] . '/public';
 
             self::$DIR = [
-                'cls'  => '/asset/app/cls',
+                'lgc'  => '/asset/app/lgc',
                 'cntr' => '/asset/app/cntr',
                 'inc'  => '/asset/app/inc',
                 'modl' => '/asset/app/modl',
@@ -64,7 +64,7 @@ class Loc
             ];
             
             self::$FILE = [
-                'CLS'   => self::genFilePath(self::$PATH['cls'], 'cls.php'),
+                'LGC'   => self::genFilePath(self::$PATH['lgc'], 'lgc.php'),
                 'CNTR'  => self::genFilePath(self::$PATH['cntr'], 'cntr.php'),
                 'INC'   => self::genFilePath(self::$PATH['inc'], 'inc.php'),
                 'MODL'  => self::genFilePath(self::$PATH['modl'], 'modl.php'),

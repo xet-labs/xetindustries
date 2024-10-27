@@ -1,6 +1,6 @@
 <?php
 use xet\Loc;
-	include_once(Loc::file('CLS','Dbctl'));
+	include_once(Loc::file('LGC','Dbctl'));
 
 	// Set default values for optional variables
 	$blogsCardEncode = $blogsCardEncode ?? 1;

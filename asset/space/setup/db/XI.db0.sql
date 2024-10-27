@@ -1,3 +1,4 @@
+/*M!999999\- enable the sandbox mode */ 
 -- MariaDB dump 10.19-11.4.3-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: XI
@@ -18,10 +19,6 @@
 --
 -- Table structure for table `blogs`
 --
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `XI` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `XI`;
 
 DROP TABLE IF EXISTS `blogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -121,7 +118,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(1,'xet','Rishikesh','Prasad','rishikeshprasad@xetindustries.com',1,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:05:01','2024-09-29 12:31:56',NULL,'active','/pool/img/profile/xet.webp',NULL,NULL,NULL,NULL,NULL),
+(1,'xet','Rishikesh','Prasad','rishikeshprasad@xetindustries.com',1,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:05:01','2024-10-11 13:34:57',NULL,'active','/pool/img/profile/xet.jpg',NULL,NULL,NULL,NULL,NULL),
 (2,'zet','Zet','Ohio','zet@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:51',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
 (3,'t1','t1',NULL,'t1@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:43',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
 (4,'cristine','Cristine','Lepcha','cr@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:32:00',NULL,'active','/pool/img/profile/cristine.jpg',NULL,NULL,NULL,NULL,NULL),
@@ -141,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2024-10-10 19:23:14
+-- Dump completed on 2024-10-23 20:22:25

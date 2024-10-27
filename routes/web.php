@@ -8,7 +8,6 @@ use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
-// toast('success', 'Heyy there, wlcm back..');
 route::get('/style',    [ResCntr::class, 'style']);
 
 route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);
@@ -29,10 +28,6 @@ route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->
 route::get('/acc/update',   [UserCntr::class, 'updateName']);
 
 route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
-
-
-
-
 
 
 

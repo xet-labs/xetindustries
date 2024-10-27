@@ -8,7 +8,7 @@
             foreach ($blogCategories as $category): 
             ?>
                 <a href="<?= htmlspecialchars($category); ?>">
-                    <?= htmlspecialchars($category); ?>
+                    <span><?= htmlspecialchars($category); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -34,19 +34,15 @@
         <div class="meta-info">
 
             <div class="meta-author">
-                <!-- <span> -->
-                    <a class="meta-author-name" href="">
-                        <?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
-                    </a>
-                <!-- </span> -->
+                <a class="meta-author-name" href="">
+                    <?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
+                </a>
 
                 <span class="seperator"></span>
                 
-                <!-- <span> -->
-                    <a href="" class="blog-u-follow">
-                        Follow
-                    </a>
-                <!-- </span> -->
+                <a href="" class="blog-u-follow">
+                    Follow
+                </a>
             </div>
 
             <div class="meta-date">

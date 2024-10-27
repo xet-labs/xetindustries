@@ -2,7 +2,7 @@
 
 use xet\Loc;
 
-require(Loc::file('CLS', 'Dbctl'));
+require(Loc::file('LGC', 'Dbctl'));
 $Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['blog'] . $PAGE['id']);
 $Blog = $Blog[0];
 ?>

@@ -15,7 +15,7 @@ spl_autoload_register(function ($class) {
     $relative_class = substr($class, $len);
 
     // Convert namespace separators to directory separators
-    $file = str_replace('\\', '/', $relative_class) . '.cls.php';
+    $file = str_replace('\\', '/', $relative_class) . '.lgc.php';
 
     // Search for the file in the base directory and subdirectories
     $fullFilePath = recursiveClassSearch($baseDir, $file);
