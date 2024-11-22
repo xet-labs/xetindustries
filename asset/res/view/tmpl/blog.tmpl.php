@@ -1,10 +1,5 @@
 <?php
-
 use xet\Loc;
-
-require(Loc::file('LGC', 'Dbctl'));
-$Blog = DB_DATA($DBconf['XI'], $DBquery['XI']['blog'] . $PAGE['id']);
-$Blog = $Blog[0];
 ?>
 
 
@@ -22,14 +17,16 @@ $Blog = $Blog[0];
 	require(Loc::file('PRTL', 'sticky-social'));
 	?>
 
-
 	<main class="main-wrap">
 
 		<!-- Blog-wrapper -->
 		<div class="blog-wrap wrap ">
 			<div class="con blog-con">
-
-				<?php require(Loc::file('PRTL', 'header.blog')); ?>
+				
+				<?php
+				require(Loc::file('CNTR', 'get-data.blog'));
+				require(Loc::file('PRTL', 'header.blog'));
+				?>
 
 				<div class="blog-main blog-cnt">
 					

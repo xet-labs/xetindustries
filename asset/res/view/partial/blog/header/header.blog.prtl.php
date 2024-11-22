@@ -63,15 +63,13 @@
 
 
 
-
 <script>
-    // Function to handle h2 scroll on-click
+    // --handle h2 scroll-at-top on-click
     document.addEventListener('DOMContentLoaded', () => {
-    // Get the root font size once
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    const offset = 1.5 * rootFontSize; // 1.5em converted to pixels
+    const offset = 1.5 * rootFontSize;
 
-    // Function to handle the scroll
+    // -Function main
     function scrollToHeading(event) {
         const heading = event.target;
         const elementTop = heading.getBoundingClientRect().top + window.scrollY;
@@ -83,10 +81,9 @@
         });
     }
 
-    // Attach click event listener to each <h2> element
+    // -event listener for each <h2> element
     document.querySelectorAll('h2').forEach(heading => {
         heading.addEventListener('click', scrollToHeading);
     });
     });
-
 </script>
