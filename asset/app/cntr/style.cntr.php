@@ -18,7 +18,7 @@ if (is_array($cssFiles)) {
     // file_put_contents(Loc::path('public') . "/styles.css", $css);
 } else {
     echo "// nuii css'o fendoz";
-    // -what i meant was no <filename>.prtl.css files were found in the array
+    // -what i mean is no <filename>.prtl.css files were found in the array
 }
 
 

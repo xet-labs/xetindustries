@@ -27,12 +27,20 @@ nav {
     width: 100%;
     /* overflow: hidden; */
     
-    
     top: 0;
-    transition: top 0.22s ease;
-    transition: background-color var(--trns-theme), border-color var(--trns-theme), top 0.22s;
+    transition: color var(--trns-theme),
+        background-color var(--trns-theme),
+        border-color var(--trns-theme),
+        top 0.22s;
     
 }
+nav .icon {
+    --iconz: 1.6em;
+    --icon-opacity: .8;
+    padding-inline: var(--nav-icon-pd-lr);
+    color: var(--colr-deco1);
+}
+
 .navbar {
     display: flex;
     /* flex-direction: row; */
@@ -41,12 +49,12 @@ nav {
     width: 100%;
     height: var(--nav-height);
 
-    color: var(--nav-colr);
+    color: var(--colr-nav, var(--colr-txt));
     background: var(--nav-bg, var(--bg));
     
-    border-bottom: 1px solid var(--colr-line);
-    border-color: transparent;
-    /* border-color: #4242422d; */
+    --nav-brdr-b-colr: #4242422d;
+    --nav-brdr-b-colr: var(--colr-line);
+    /* border-bottom: 1px solid var(--nav-brdr-b-colr, transparent); */
 
     /* overflow-x: auto;
     overflow-y: visible;
@@ -133,14 +141,15 @@ nav .sub-brand a:hover {
 }
 .navbar .initbar {
     position: absolute;
-    /* -border-radius causes distortion at ends */
-    /* border-radius: 4px; */
-    height: 2px;
     width: 100%;
+    height: 2px;
     left: 0;
     /* bottom: 0; */
-    transition: .5s;
+    
     background-color: var(--colr-primary);
+    /* -border-radius causes distortion at ends */
+    /* border-radius: 4px; */
+    transition: .5s;
 }
 
 .navbar .navbar_r .initbar {
@@ -161,8 +170,7 @@ nav .sub-brand a:hover {
 .navbar .menu .current-menu {
     color: var(--colr-primary);
 }
-
-.navbar .navbar_r{
+.navbar .navbar_r {
     display: flex;
     margin-left: auto;
     min-width: fit-content;
@@ -170,11 +178,6 @@ nav .sub-brand a:hover {
     gap: .65rem;
     gap: var(--nav-icon-gap);
     /* overflow: hidden; */
-}
-.navbar .navbar_r .icon {
-    padding-inline: var(--nav-icon-pd-lr);
-    color: var(--colr-deco1);
-    opacity: .8;
 }
 
 /* --responsive - nav-- */

@@ -23,7 +23,7 @@ class BlogsCntr extends Controller
 
     public function blogGetCards()
     {
-        require(Loc::file('CNTR', 'blogs-get-card'));
+        require(Loc::file('CNTR', 'get-card.blogs'));
     }
 
     /**

@@ -9,7 +9,6 @@
 		"Home" => "/",
 		"Blog" => "/blog",
 		"Product" => "pages/product",
-		"About" => "pages/about",
 		"Support" => "pages/support",
 		"Contact" => "pages/contact",
 	);

@@ -1,0 +1,9 @@
+.renderer.container.mx-auto{
+    height: 100vh;
+    min-width: 78vw;
+    margin-top: 260px;
+}
+
+.blogs-grid:has(.sf-dump){
+    --blogs-grid-template: repeat(1, minmax(0, 1fr));
+}

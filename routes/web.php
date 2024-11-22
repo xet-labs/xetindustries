@@ -5,9 +5,9 @@ use xet\Loc;
 use App\Http\Controllers\ResCntr;
 use App\Http\Controllers\UserCntr;
 use App\Http\Controllers\BlogsCntr;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
-// toast('success', 'Heyy there, wlcm back..');
 route::get('/style',    [ResCntr::class, 'style']);
 
 route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);
@@ -38,22 +38,11 @@ route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
 
 
 
-use Illuminate\Support\Facades\Auth;
-
-
-
-
-route::get('/dev/de', function () { Loc::filer('PAGE', 'debug'); });
-route::get('/dev/d', function () { 
+route::get('/de', function () { Loc::filer('PAGE', 'debug'); });
+route::get('/d', function () { 
     echo "<pre style=\"margin-top:2rem;font-size:13.5px;color:var(--colr)\">";
     
     var_dump(session()->all());
-    
-    echo Auth::user()->username;
-    echo Auth::user()->name;
-    Auth::user()->name;
-    
-    
     
     $callFile = debug_backtrace()[0]['file'];
     $callBy = basename($callFile); $callDir = dirname($callFile);

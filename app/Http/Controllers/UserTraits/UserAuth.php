@@ -74,7 +74,7 @@ trait UserAuth
         // Attempt to log in
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            toast('success', 'Logged in as @<b>' . Auth::user()->username . '</b> ');
+            toast('success', 'Loged in as @<b>' . Auth::user()->username . '</b> ');
             return redirect()->back()->with('message', 'Logged in as @' . htmlspecialchars(Auth::user()->username));
         } else {
             toast('warning', 'Invalid credentials!! Please try again');
@@ -90,7 +90,7 @@ trait UserAuth
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        toast('success', 'Log out successfull');
+        toast('success', 'Logged out..');
         return redirect()->back()->with('message', 'You have been logged out.');
     }
 
