@@ -8,11 +8,18 @@ use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
+
 route::get('/style',    [ResCntr::class, 'style']);
 
-route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);
-route::post('/blog/get-cards',  [BlogsCntr::class, 'blogGetCards']);
-route::resource('/blog',         BlogsCntr::class);
+route::get('/img/{filename}',   [ImgCntr::class, 'get'])->name('img.get');
+route::post('/img',             [ImgCntr::class, 'store'])->name('img.store');
+
+route::post('/blog/get-cards',          [BlogsCntr::class, 'getCards']);
+Route::get('/blog/@{username}',         [BlogsCntr::class, 'show']);
+Route::get('/blog/@{username}/{slug}',  [BlogsCntr::class, 'show']);
+route::get('/blog/{slug}',              [BlogsCntr::class, 'blogPost']);
+route::resource('/blog',                BlogsCntr::class);
+
 
 route::get('/signup',   [UserCntr::class, 'signupForm'])->name('user.signupForm');
 route::get('/login',    [UserCntr::class, 'loginForm'])->name('user.loginForm');
@@ -20,12 +27,13 @@ route::post('/signup',  [UserCntr::class, 'signup'])->name('user.signup');
 route::post('/login',   [UserCntr::class, 'login'])->name('user.login');
 route::post('/logout',  [UserCntr::class, 'logout'])->name('user.logout');
 
+
 route::get('/', function () { Loc::filer('PAGE', 'main'); });
 
 
 
 route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->name('user.update.profile-img');
-route::get('/acc/update',   [UserCntr::class, 'updateName']);
+route::get('/acc/update',               [UserCntr::class, 'updateName']);
 
 route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
 

@@ -1,3 +1,4 @@
+SET foreign_key_checks = 0;
 /*M!999999\- enable the sandbox mode */ 
 -- MariaDB dump 10.19-11.4.3-MariaDB, for debian-linux-gnu (x86_64)
 --
@@ -17,6 +18,54 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `uid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `name_l` varchar(80) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `verified` tinyint(1) NOT NULL DEFAULT 0,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','dev','user') DEFAULT 'user',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `last_login` datetime DEFAULT NULL,
+  `status` enum('active','inactive','suspended','deleted') DEFAULT 'active',
+  `profile_img` varchar(255) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `phone_no` varchar(20) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `config` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`config`)),
+  `remember_token` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES
+(1,'xet','Rishikesh','Prasad','rishikeshprasad@xetindustries.com',1,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:05:01','2024-10-11 13:34:57',NULL,'active','/pool/img/profile/xet.jpg',NULL,NULL,NULL,NULL,NULL),
+(2,'zet','Zet','Ohio','zet@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:51',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
+(3,'t1','t1',NULL,'t1@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:43',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
+(4,'cristine','Cristine','Lepcha','cr@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:32:00',NULL,'active','/pool/img/profile/cristine.jpg',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+--
 -- Table structure for table `blogs`
 --
 
@@ -24,10 +73,10 @@ DROP TABLE IF EXISTS `blogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blogs` (
-  `blogId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `status` enum('draft','published','archived') NOT NULL DEFAULT 'draft',
-  `category` text DEFAULT NULL,
-  `uid` int(10) unsigned NOT NULL ,
+  `tags` VARCHAR(255) DEFAULT NULL,
+  `uid` BIGINT UNSIGNED NOT NULL ,
   `title` varchar(255) NOT NULL,
   `short_title` varchar(255) DEFAULT NULL,
   `excerpt` text DEFAULT NULL,
@@ -40,7 +89,7 @@ CREATE TABLE `blogs` (
   `meta_keywords` text DEFAULT NULL,
   `meta_og` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`meta_og`)),
   `meta_ld` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`meta_ld`)),
-  PRIMARY KEY (`blogId`),
+  PRIMARY KEY (`id`),
   FOREIGN KEY (uid) REFERENCES users(uid) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -79,51 +128,7 @@ INSERT INTO `blogs` VALUES
 /*!40000 ALTER TABLE `blogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `users`
---
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `name_l` varchar(80) DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
-  `verified` tinyint(1) NOT NULL DEFAULT 0,
-  `password` varchar(255) NOT NULL,
-  `role` enum('admin','dev','user') DEFAULT 'user',
-  `created_at` datetime DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `last_login` datetime DEFAULT NULL,
-  `status` enum('active','inactive','suspended','deleted') DEFAULT 'active',
-  `profile_img` varchar(255) DEFAULT NULL,
-  `address` text DEFAULT NULL,
-  `phone_no` varchar(20) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `config` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`config`)),
-  `remember_token` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`uid`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES
-(1,'xet','Rishikesh','Prasad','rishikeshprasad@xetindustries.com',1,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:05:01','2024-10-11 13:34:57',NULL,'active','/pool/img/profile/xet.jpg',NULL,NULL,NULL,NULL,NULL),
-(2,'zet','Zet','Ohio','zet@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:51',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
-(3,'t1','t1',NULL,'t1@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:31:43',NULL,'active','/pool/img/profile/zet.jpg',NULL,NULL,NULL,NULL,NULL),
-(4,'cristine','Cristine','Lepcha','cr@g.com',0,'$2y$12$3zXdoKP91LvYctZUrN9cYOfBV8TyAEeoQK5ADAVQuBINSBt1nJRTK','user','2024-07-27 04:13:44','2024-09-29 12:32:00',NULL,'active','/pool/img/profile/cristine.jpg',NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -135,3 +140,47 @@ UNLOCK TABLES;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
 -- Dump completed on 2024-10-23 20:22:25
+
+
+
+
+DROP TABLE IF EXISTS `media`;
+CREATE TABLE media (
+    `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `type` ENUM('audio', 'image', 'video', 'document') NOT NULL,
+    `hash` VARCHAR(255) UNIQUE NOT NULL,
+    `filename` VARCHAR(255) NOT NULL,
+    `path` VARCHAR(255) NOT NULL,
+    `size` BIGINT UNSIGNED NOT NULL,
+    `format` VARCHAR(50) NOT NULL,
+    `width` INT UNSIGNED DEFAULT NULL,
+    `height` INT UNSIGNED DEFAULT NULL,
+    `duration` INT UNSIGNED DEFAULT NULL, 
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS `user_media`;
+CREATE TABLE user_media (
+    `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `uid` BIGINT UNSIGNED NOT NULL,
+    `media_id` BIGINT UNSIGNED NOT NULL,
+    `tags` VARCHAR(255) DEFAULT NULL,
+    `description` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE (uid, media_id),
+    FOREIGN KEY (uid) REFERENCES users(uid) ON DELETE CASCADE,
+    FOREIGN KEY (media_id) REFERENCES media(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS `blog_media`;
+CREATE TABLE blog_media (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    blog_id BIGINT UNSIGNED NOT NULL,
+    media_id BIGINT UNSIGNED NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (blog_id) REFERENCES blogs(id) ON DELETE CASCADE,
+    FOREIGN KEY (media_id) REFERENCES media(id) ON DELETE CASCADE
+);

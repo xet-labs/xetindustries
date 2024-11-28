@@ -12,7 +12,7 @@ $BlogsPage = (int) ($_POST['BlogsPage'] ?? 1);
 $BlogsLimit = (int) ($_POST['BlogsLimit'] ?? 4);
 $BlogsOffset = ($BlogsPage - 1) * $BlogsLimit;
 
-// Fetch blog data
+// Fetch blog data from DB
 $Blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 	->select(
 		'blogs.title', 
@@ -35,11 +35,7 @@ $Blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 	
 // $blogsCardBuffer ? sleep(0.8) : '';
 
-// dd($Blogs);
-
-$response = [
-    'noMoreBlogs' => $Blogs->isEmpty() ? 1 : 0
-];
+$response = [ 'noMoreBlogs' => $Blogs->isEmpty() ? 1 : 0 ];
 
 // Check if blogs exist and buffer the output if enabled
 if (!$response['noMoreBlogs']) {

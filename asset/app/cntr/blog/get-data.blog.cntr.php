@@ -2,7 +2,7 @@
 
 use App\Models\Blog;
 
-// Fetch blog data
+// Fetch blog data from DB
 $Blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
     ->select(
         'blogs.*',  
@@ -12,8 +12,6 @@ $Blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
         'users.verified', 
         'users.profile_img'
     )
-    ->where('blogs.blogId', $PAGE['id'])
+    ->where('blogs.id', $PAGE['id'])
     ->first();
-
-    // dd($Blog);
 ?>

@@ -2,24 +2,7 @@
 
 header('Content-Type: text/css');
 
-
 use xet\Loc;
-
-
-// Get array of CSS files
-$cssFiles = Loc::file('CSS');
-
-if (is_array($cssFiles)) {
-    $css = minifyCSS(combineFiles($cssFiles));
-    // $css = combineFiles($cssFiles);
-
-    echo $css;
-
-    // file_put_contents(Loc::path('public') . "/styles.css", $css);
-} else {
-    echo "// nuii css'o fendoz";
-    // -what i mean is no <filename>.prtl.css files were found in the array
-}
 
 
 function combineFiles($files = []) {
@@ -52,3 +35,17 @@ function minifyCSS($css) {
     return trim($minifiedCss);
 }
 
+
+//-main
+$cssFiles = Loc::file('CSS');
+
+if (is_array($cssFiles)) {
+    $css = minifyCSS(combineFiles($cssFiles));
+
+    echo $css;
+
+    // file_put_contents(Loc::path('public') . "/styles.css", $css);
+} else {
+    echo "// nuii css'o fendoz";
+    // -what i mean is no <filename>.prtl.css files were found in the array
+}

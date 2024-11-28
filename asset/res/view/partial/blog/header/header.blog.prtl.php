@@ -1,14 +1,13 @@
 <div class="blog-header">
     
     <!-- Blog Category -->
-    <?php $blogCategories = json_decode($Blog['category'], true);
-    if (is_array($blogCategories)){ ?>
+    <?php $blogTags = json_decode($Blog->tags, true);
+    if (is_array($blogTags)){ ?>
         <div class="blog-category">
-            <?php $blogCategories = array_slice($blogCategories, 0, 4); 
-            foreach ($blogCategories as $category): 
-            ?>
-                <a href="<?= htmlspecialchars($category); ?>">
-                    <span><?= htmlspecialchars($category); ?></span>
+            <?php $blogTags = array_slice($blogTags, 0, 4); 
+            foreach ($blogTags as $tag): ?>
+                <a href="<?= htmlspecialchars($tag); ?>">
+                    <span><?= htmlspecialchars($tag); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -19,7 +18,7 @@
 
     <!-- Blog Headline -->
     <h1>
-        <?= htmlspecialchars($Blog['title']); ?>
+        <?= htmlspecialchars($Blog->title); ?>
     </h1>
 
     <!-- Blog Meta -->
@@ -27,7 +26,7 @@
         
         <div class="meta-author-img">
             <a href="">
-                <img src="<?= htmlspecialchars($Blog['profile_img']); ?>" alt="<?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>" loading="lazy" fetchpriority="low">
+                <img src="<?= htmlspecialchars($Blog->profile_img); ?>" alt="<?= htmlspecialchars($Blog->name . " ". $Blog->name_l); ?>" loading="lazy" fetchpriority="low">
             </a>
         </div>
 
@@ -35,7 +34,7 @@
 
             <div class="meta-author">
                 <a class="meta-author-name" href="">
-                    <?= htmlspecialchars($Blog['name'] . " ". $Blog['name_l']); ?>
+                    <?= htmlspecialchars($Blog->name . " ". $Blog->name_l); ?>
                 </a>
 
                 <span class="seperator"></span>
@@ -47,7 +46,7 @@
 
             <div class="meta-date">
                 <span>
-                    <?= htmlspecialchars(date('F j, Y, g:i A', strtotime($Blog['created_at']))); ?>
+                    <?= htmlspecialchars(date('F j, Y, g:i A', strtotime($Blog->created_at))); ?>
                 </span>
             </div>
         
@@ -56,7 +55,7 @@
 
 
     <figure class="blog-hero">
-        <img src="<?= htmlspecialchars($Blog['featured_img']); ?>" alt="<?= htmlspecialchars($Blog['title']); ?>" class="lazyload">
+        <img src="<?= htmlspecialchars($Blog->featured_img); ?>" alt="<?= htmlspecialchars($Blog->title); ?>" class="lazyload">
     </figure>
 </div>
 
