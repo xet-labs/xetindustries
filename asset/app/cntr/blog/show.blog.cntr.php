@@ -6,19 +6,10 @@ use App\Models\User;
 
 $user = User::select('users.uid')->where('username', $username)->first();
 
-if (!$user) {
-    echo "404, 'User not found'";
-    abort(404, 'User not found');
-}
-// dd($user);
+$BlogCnt = storage_path("app/private/{$user->uid}/blogs/{$slug}/index.php");
 
-$blog = Blog::select('blogs.path','blogs.slug')->where('uid', $user->uid)->where('slug', $slug)->first();
-// dd($blog);
-
-// Handle case where blog is not found
-if (!$blog) {
-    echo "404, 'Blog not found'";
-    abort(404, 'Blog not found');
+if (!file_exists($BlogCnt)) {
+    abort(404, 'Blog content not found');
 }
 
-require(base_path().'/public/blog/'.$user->uid.'/'.$blog->slug.'/index.php');
+include($BlogCnt);

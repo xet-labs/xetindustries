@@ -6,31 +6,70 @@ use \RecursiveIteratorIterator;
 use \RecursiveDirectoryIterator;
 use \FilesystemIterator;
 
-class Loc
-{
+class Loc {
     private static $BASE = null, $DIR = null, $DIRx = null, $PATH = null, $PATHx = null, $FILE = null, $FILEx = null;
 
 
     // Method to initialize arrays
     private static function init()
     {
+        $cacheLoc = 1;
+        $cacheFile = storage_path('framework/cache/data/loc.cache.php');
+        $cacheDurn = 80;
+    
+        // Check if the cache file exists and is still valid
+        if ( self::$BASE === null || 
+        ($cacheLoc && file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheDurn) ) {
+            // \Log::info('--loc-cache-used');
+            $data = include $cacheFile;
+            self::$BASE = $data['BASE'];
+            self::$DIR = $data['DIR'];
+            self::$DIRx = $data['DIRx'];
+            self::$PATH = $data['PATH'];
+            self::$PATHx = $data['PATHx'];
+            self::$FILE = $data['FILE'];
+            self::$FILEx = $data['FILEx'];
+            return;
+        }
+
+        self::genArrays();
+
+        // Save arrays to the cache file
+        $cacheData = [
+            'BASE' => self::$BASE,
+            'DIR' => self::$DIR,
+            'DIRx' => self::$DIRx,
+            'PATH' => self::$PATH,
+            'PATHx' => self::$PATHx,
+            'FILE' => self::$FILE,
+            'FILEx' => self::$FILEx,
+        ];
+        
+        file_put_contents($cacheFile, '<?php return ' . var_export($cacheData, true) . ';');
+    }
+
+    private static function genArrays()
+    {
         if (self::$BASE === null) {
+            // \Log::info('--loc-regen');
+
             self::$BASE = [
                 'domain' => 'xetindustries.com',
-                'root'   => realpath(__DIR__ . '/../../..'),
+                'root' => base_path(),
+                'public' => public_path(),
+                // 'root'   => realpath(__DIR__ . '/../../..'),
             ];
-
-            self::$BASE['public'] = self::$BASE['root'] . '/public';
+            // self::$BASE['public'] = self::$BASE['root'] . '/public';
 
             self::$DIR = [
                 'lgc'  => '/asset/app/lgc',
                 'cntr' => '/asset/app/cntr',
                 'inc'  => '/asset/app/inc',
                 'modl' => '/asset/app/modl',
-                'page' => '/asset/res/view/page',
+                'page' => '/asset/res/page',
+                'prtl' => '/asset/res/partial',
+                'tmpl' => '/asset/res/tmpl',
                 'views'=> '/resources/views',
-                'tmpl' => '/asset/res/view/tmpl',
-                'prtl' => '/asset/res/view/partial',
                 'css'  => '/asset/res/css',
                 'js'   => '/asset/res/js',
             ];
@@ -44,7 +83,7 @@ class Loc
                 'brand' => '/res/static/brand',
             ];
 
-            // Initialize $PATH and $FILE arrays
+            // -init arrays - Begin
             self::$PATH = array_merge(
                 self::$BASE,
                 array_map(fn($dir) => self::$BASE['root'] . $dir, self::$DIR),
@@ -73,30 +112,34 @@ class Loc
                 'TMPL'  => self::genFilePath(self::$PATH['tmpl'], 'tmpl.php'),
                 'PRTL'  => self::genFilePath(self::$PATH['prtl'], 'prtl.php'),
                 'CSS'   => self::genFilePath([self::$PATH['css'], self::$PATH['cssx'], self::$PATH['prtl']], 'prtl.css'),
-                'CSSx'  => self::genFilePath(self::$PATH['cssx'], 'prtl.css'),
+                'CSSx'  => self::genFilePath(self::$PATH['cssx'], 'css'),
                 'JS'    => self::genFilePath([self::$PATH['js'], self::$PATH['jsx']], 'js'),
                 'JSx'   => self::genFilePath(self::$PATH['jsx'], 'js'),
                 'BRAND' => self::genFilePath(self::$PATH['brand'], 'svg')
             ];
+            // -init arrays - End
         }
     }
 
-
+    //-functions available 
     public static function path(...$keys)
     {
         return self::getArray('PATH', $keys);
     }
-
     public static function pathUrl(...$keys)
     {
         return self::getArray('PATHx', $keys);
     }
-
-
     public static function file(...$keys)
     {
         return self::getArray('FILE', $keys);
     }
+    public static function fileUrl(...$keys)
+    {
+        return self::getArray('FILEx', $keys);
+    }
+
+    
     public static function filei(...$keys)
     {
         include self::getArray('FILE', $keys);
@@ -112,11 +155,6 @@ class Loc
     public static function filero(...$keys)
     {
         require_once self::getArray('FILE', $keys);
-    }
-
-    public static function fileUrl(...$keys)
-    {
-        return self::getArray('FILEx', $keys);
     }
 
 
@@ -143,6 +181,8 @@ class Loc
 
         return null; // Root key doesn't exist
     }
+
+
     // Helper method to traverse arrays
     private static function arrayGet($array, $keys)
     {
@@ -156,13 +196,6 @@ class Loc
         return $array;
     }
     
-    private static function dd ($var, $exit = '0', $varName = 'var'){
-        echo '<pre>';
-        echo htmlspecialchars($varName) . ": ";
-        var_dump($var);
-        echo '</pre>';
-        $exit ? exit : ''; 
-    }
     
     // -Helper method to generate file paths
     private static function _genFilePath($files, $fileExtension, $isUrl = false) {

@@ -26,7 +26,9 @@ use xet\Loc;
     <!-- Posts Grid -->
     <div class="blogs-grid" id="BlogCards">
         <?php 
-            $blogsCardEncode = 0; $blogsCardBuffer = 0;require(Loc::file('CNTR','get-card.blogs'));
+            $blogsCardEncode = 0;
+            $blogsCardBuffer = 0;
+            require(Loc::file('CNTR','fetch-card.blogs'));
         ?>
     </div>
 

@@ -1,4 +1,6 @@
 <?php
+$GLOBALS['startT'] = microtime(true);
+
 
 use Illuminate\Support\Facades\Route;
 use xet\Loc;
@@ -8,16 +10,10 @@ use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
+route::get('/styles',    [ResCntr::class, 'style'])->name('styles.res');
 
-route::get('/style',    [ResCntr::class, 'style']);
-
-route::get('/img/{filename}',   [ImgCntr::class, 'get'])->name('img.get');
-route::post('/img',             [ImgCntr::class, 'store'])->name('img.store');
-
-route::post('/blog/get-cards',          [BlogsCntr::class, 'getCards']);
-Route::get('/blog/@{username}',         [BlogsCntr::class, 'show']);
+route::post('/blog/get-cards',          [BlogsCntr::class, 'fetchCards']);
 Route::get('/blog/@{username}/{slug}',  [BlogsCntr::class, 'show']);
-route::get('/blog/{slug}',              [BlogsCntr::class, 'blogPost']);
 route::resource('/blog',                BlogsCntr::class);
 
 
@@ -35,7 +31,7 @@ route::get('/', function () { Loc::filer('PAGE', 'main'); });
 route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->name('user.update.profile-img');
 route::get('/acc/update',               [UserCntr::class, 'updateName']);
 
-route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
+route::get('/t', function () { Loc::filer('PAGE', 'profile'); });
 
 
 
