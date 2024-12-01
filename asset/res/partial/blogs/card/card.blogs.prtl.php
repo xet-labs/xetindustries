@@ -39,9 +39,9 @@ $BlogCnt = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$bl
                     <div class="meta-info">
 
                         <div class="meta-author">
-                                <a href="/@<?= htmlspecialchars($blog->username); ?>" title="@<?= htmlspecialchars($blog->username); ?>">
-                                    <?= htmlspecialchars($blog->name . " ". $blog->name_l); ?>
-                                </a>
+                            <a href="/@<?= htmlspecialchars($blog->username); ?>" title="@<?= htmlspecialchars($blog->username); ?>">
+                                <?= htmlspecialchars($blog->name . " ". $blog->name_l); ?>
+                            </a>
 
                             <?php if($blog->verified):?>
                                 <i class="icon meta-verified">

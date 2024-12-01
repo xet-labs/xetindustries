@@ -86,16 +86,29 @@
 .blog-meta .meta-author a{
     text-decoration: unset;
 }
-.blog-meta a.meta-author-name:hover {
+.blog-meta .meta-author a:first-child:hover {
     text-decoration: underline;
     color: inherit;
 }
+
+.blog-meta .meta-author .meta-verified {
+    align-self: center;
+    margin-inline: .44em;
+    opacity: .6;
+    --icon-hov-bg: transparent;
+    --icon-active-brdr-opacity: 0;
+}
+.blog-meta .meta-author .meta-verified svg {
+    margin-bottom: 2.5px;
+}
+
 .blog-meta .meta-author .seperator{
     background: var(--colr-stxt1);
 }
-.blog-meta .blog-u-follow{
+.blog-meta .author-follow{
     color: var(--colr-stxt1);
     transition: color var(--trns-theme);
+    padding-right: .24em;
 }
 .blog-meta .meta-date{
     transition: color var(--trns-theme);

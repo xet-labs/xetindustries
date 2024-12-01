@@ -61,46 +61,6 @@ nav .icon {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; */
 }
-nav .brand {
-    display: flex;
-    align-items: center;
-    margin-right: 1.6rem;
-    /* margin-right: 1.25em; */
-
-}
-nav .brand a {
-    display: flex;
-    align-items: center;
-    border: none;
-}
-nav .brand img,
-nav .brand svg  {
-    height: 1.7em;
-    /* height: 2.14em; */
-    width: unset;
-    /* margin: 0.1836rem 0; */
-    color: var(--colr);
-    opacity: 1;
-}
-nav .sub-brand-wrap {
-    display: flex;
-    flex-direction: row;
-    /* display: none; */
-}
-nav .sub-brand {
-    font-size: .9rem;
-    opacity: .8;
-}
-nav .sub-brand a:hover {
-    color: var(--colr);
-
-    opacity: 1;
-}
-
-.navbar .brand .line-v {
-    margin: 0 .5rem;
-    height: 18px;
-}
 
 .navbar .navbar_m {
     display: none;
@@ -180,7 +140,6 @@ nav .sub-brand a:hover {
     /* overflow: hidden; */
 }
 
-/* --responsive - nav-- */
 @media (min-width: 980px) {
     .navbar .navbar_m{
         display: flex;

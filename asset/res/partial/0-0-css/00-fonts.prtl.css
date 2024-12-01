@@ -197,7 +197,7 @@ p{
 
 @media (max-width: 679px) {
     :root{
-        --font: -apple-system, system-ui !important;
+        /* --font: -apple-system, system-ui !important; */
         /* --title-font: -apple-system, system-ui !important; */
     }
 }

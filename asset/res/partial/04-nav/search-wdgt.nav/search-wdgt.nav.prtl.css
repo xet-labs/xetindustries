@@ -116,7 +116,7 @@ body.themeDark{
         /* transform: translateZ(0); */
         outline: none;
         border-color: transparent;
-        box-shadow: 0 0 0 1.4px var(--colr-a-hover);
+        box-shadow: 0 0 0 1.4px var(--colr-a-hov);
         --icon-active-brdr-opacity: 0;
     }
     .nav .searchbar-wrap .search-input {

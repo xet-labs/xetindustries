@@ -21,15 +21,17 @@
 
 
 .blogs-grid .post:after {
+    cursor: initial;
     content: '';
     position: absolute;
     display: var(--post-after-display);
     width: var(--post-after-line-width);
     height: 0;
     
-    top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
+
     bottom: calc(-1 * ((var(--post-after-height) - var(--post-after-line-height)) / 2));
     border-bottom: var(--post-after-line-height) solid var(--colr-line);
     background: transparent;
@@ -127,7 +129,7 @@
 }
 
 .post .post-title {
-    margin: var(--post-title-m, 1em .8em 0);
+    margin: var(--post-title-m, .8em 0 0);
 
     color: var(--colr-txt1);
     font: var(--post-title-wght, 700)
@@ -216,7 +218,13 @@
     align-self: center;
     margin-left: .55em;
     opacity: .78;
+    --icon-hov-bg: transparent;
+    --icon-active-brdr-opacity: 0;
 }
+.post .meta-verified svg {
+    margin-bottom: 2.5px;
+}
+
 .post .meta-date {
     text-decoration: unset;
 }

@@ -1,6 +1,4 @@
 <?php
-$GLOBALS['startT'] = microtime(true);
-
 
 use Illuminate\Support\Facades\Route;
 use xet\Loc;
@@ -10,11 +8,12 @@ use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
-route::get('/styles',    [ResCntr::class, 'style'])->name('styles.res');
 
-route::post('/blog/get-cards',          [BlogsCntr::class, 'fetchCards']);
-Route::get('/blog/@{username}/{slug}',  [BlogsCntr::class, 'show']);
-route::resource('/blog',                BlogsCntr::class);
+route::get('/res/css/styles.gen.css',   [ResCntr::class, 'style'])->name('styles.res');
+
+route::post('/blog/get-cards',                  [BlogsCntr::class, 'fetchCards']);
+Route::get('/blog/@{BlogAuthor}/{BlogSlug}',    [BlogsCntr::class, 'show']);
+route::resource('/blog',                        BlogsCntr::class);
 
 
 route::get('/signup',   [UserCntr::class, 'signupForm'])->name('user.signupForm');

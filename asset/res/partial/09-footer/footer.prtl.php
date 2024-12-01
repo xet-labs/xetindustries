@@ -41,11 +41,11 @@ use xet\Loc;
                     <form action="res/php/add.php" method="POST">
                         <!-- Newsleter Form-input Name -->
                         <div class="nef-name">
-                            <input type="text" class="nef-input" maxlength="256" name="name" data-name="newsletter-name" placeholder="Name" id="Newsletter-name-2">
+                            <input type="text" autocomplete="on"  class="nef-input" maxlength="256" name="name" data-name="newsletter-name" placeholder="Name" id="Newsletter-name-2">
                         </div>
                         <!-- Newsleter Form-input Email -->
                         <div class="nef-email">
-                            <input type="email" class="nef-input" maxlength="256" name="email" data-name="newsletter-email" placeholder="Email" id="Newsletter-email-2">
+                            <input type="email" autocomplete="on"  class="nef-input" maxlength="256" name="email" data-name="newsletter-email" placeholder="Email" id="Newsletter-email-2">
 
                             <!-- Newsletter Form-Submit -->
                             <div class="con-nef-submit">

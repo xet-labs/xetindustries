@@ -1,7 +1,7 @@
 <?php
   use xet\Loc;
   
-  $PAGE = [];
+  $Page = [];
 
   $currentMenu=$subBrand='Blog';
   

@@ -82,10 +82,10 @@
     --colr-txt2: #26272e;
     --colr-txt3: #282828;
 
-    --colr-a-hover: #0078d4;
     --colr-a: #0b57d0;
-    --colr-a-hover: #0b57d0;
-    --colr-a-hov: var(--colr-a-hover);
+    --colr-a-hov: #0078d4;
+    --colr-a-hov: #0b57d0;
+    --colr-a-hover: var(--colr-a-hov);
 
     
     --searchbar-bg: #fff;
@@ -150,7 +150,7 @@ body.themeDark {
 
     /* --nav-bg: var(--bg);Z */
     --nav-colr: #e5e7eb;
-    --colr-a-hover: #4A90E2;
+    --colr-a-hov: #4A90E2;
 
     /* --nav-bg: var(--bg);
     --nav-colr: #e5e7eb; */

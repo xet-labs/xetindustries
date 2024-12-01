@@ -22,7 +22,6 @@ require(Loc::file('PRTL', 'head')); ?>
 		<div class="con blog-con">
 			
 			<?php
-			require(Loc::file('CNTR', 'fetch-data.blog'));
 			require(Loc::file('PRTL', 'header.blog'));
 			?>
 

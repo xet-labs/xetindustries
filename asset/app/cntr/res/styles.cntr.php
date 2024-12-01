@@ -8,9 +8,7 @@ use xet\Loc;
 function combineFiles($files = []) {
     $combinedCss = '';
     foreach ($files as $file) {
-        // Check if the file exists and has the correct extension
-        if (is_file($file) && pathinfo($file, PATHINFO_EXTENSION) === 'css' && strpos(basename($file), '.prtl') !== false) {
-
+        if (is_file($file) && str_contains(basename($file), '.prtl')) {
             $combinedCss .= file_get_contents($file);
             // $combinedCss .= '/* ------ [' . basename($file) . ' STRT] ------ */' . "\n" . file_get_contents($file) . "\n" . '/* ------ [' . basename($file) . ' ENDS] ------ */' . "\n";
         }
@@ -20,19 +18,17 @@ function combineFiles($files = []) {
 
 function minifyCSS($css) {
     // Remove comments, whitespace, tabs, newlines, etc., and unnecessary semicolons
-    $minifiedCss = preg_replace([
-        '!/\*.*?\*/!s', // Remove comments
-        '/\s+/', // Remove extra whitespace
-        '/\s*([{};:,])\s*/', // Remove spaces around colons and semicolons
-        '/;}/' // Remove unnecessary semicolons
+    return preg_replace([
+        '!/\*.*?\*/!s',
+        '/\s+/',
+        '/\s*([{};:,])\s*/',
+        '/;}/'
     ], [
         '',
         ' ',
         '$1',
         '}'
     ], $css);
-    
-    return trim($minifiedCss);
 }
 
 
@@ -44,9 +40,8 @@ if (is_array($cssFiles)) {
     $css = minifyCSS(combineFiles($cssFiles));
     // file_put_contents(Loc::file('CSSx','styles'), $css);
     echo $css;
-    exit;
-
 } else {
     echo "// nuii css'o fendoz";
     // -so what i meant, no <filename>.prtl.css files were found in the array..
 }
+exit;

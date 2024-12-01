@@ -1,15 +1,19 @@
 <?php
 
-use Illuminate\Http\Request;
 use App\Models\Blog;
-use App\Models\User;
 
-$user = User::select('users.uid')->where('username', $username)->first();
+// $BlogAuthor, $BlogSlug
 
-$BlogCnt = storage_path("app/private/{$user->uid}/blogs/{$slug}/index.php");
+$blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
+    ->select(
+        'blogs.*',  
+        'users.username', 
+        'users.name', 
+        'users.name_l', 
+        'users.verified', 
+        'users.profile_img'
+    )
+    ->where('users.username', $BlogAuthor)->where('blogs.slug', $BlogSlug)->first(); 
 
-if (!file_exists($BlogCnt)) {
-    abort(404, 'Blog content not found');
-}
-
-include($BlogCnt);
+$blogCnt = storage_path("app/private/{$blog->uid}/blogs/{$blog->id}/index.php");
+file_exists($blogCnt) ? include($blogCnt) : abort(404, 'Blog content not found');

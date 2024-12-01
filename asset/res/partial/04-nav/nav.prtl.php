@@ -18,11 +18,8 @@
 	<div class="nav navbar">
 
 		<div class="brand">
-			<a href="/#">
-				<?php
-				readfile(Loc::FILE('BRAND','brand'));
-				?>
-			</a>
+			<a href="/#" class="b-logo icon"> <?= Loc::FILEo('BRAND','logo') ?> </a>
+			<a href="/#" class="b-brand"> <?= Loc::FILEo('BRAND','brand') ?> </a>
 
 			<?php if (!empty($subBrand)) { ?>
 				<div class="sub-brand-wrap">
