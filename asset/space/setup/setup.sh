@@ -24,7 +24,7 @@ function setup_db(){
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
     sudo mysql -u root -p XI < asset/space/setup/db/XI.sql
-    sudo mysql -u root -p < asset/space/setup/db/XI-init1.sql
+    sudo mysql -u root -p < asset/space/setup/db/XI-init99.sql
 }
 
 function setup_larvel(){
