@@ -1,0 +1,151 @@
+:root{
+    /* --nav-pd-tb: 0.9rem; */
+    --nav-pd-tb: 0.76rem;
+    --nav-pd-lr: .8rem;
+    --nav-pd: var(--nav-pd-tb) var(--nav-pd-lr) 0;
+    /* --nav-height: calc(2.25rem + var(--nav-pd-tb)); */
+    --nav-height: fit-content;
+
+    --nav-icon-gap: .9em;
+    --nav-icon-gap: 1em;
+
+    --nav-icon-pd-tb: 0;
+    --nav-icon-pd-lr: .25rem;
+    --nav-icon-pd: var(--nav-icon-pd-tb) var(--nav-icon-pd-lr);
+
+    --nav-font-wght: 500;
+    /* --nav-font-wght: 450; */
+}
+body.themeDark {
+}
+
+nav {
+    z-index: 2000;
+    position: sticky;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    /* overflow: hidden; */
+    
+    top: 0;
+    transition: color var(--trns-theme),
+        background-color var(--trns-theme),
+        border-color var(--trns-theme),
+        top 0.22s;
+    
+}
+nav .icon {
+    --iconz: 1.6em;
+    --icon-opacity: .8;
+    padding-inline: var(--nav-icon-pd-lr);
+    color: var(--colr-deco1);
+}
+
+.navbar {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    padding: var(--nav-pd);
+    width: 100%;
+    height: var(--nav-height);
+
+    color: var(--colr-nav, var(--colr-txt));
+    background: var(--nav-bg, var(--bg));
+    
+    --nav-brdr-b-colr: #4242422d;
+    --nav-brdr-b-colr: var(--colr-line);
+    /* border-bottom: 1px solid var(--nav-brdr-b-colr, transparent); */
+
+    /* overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; */
+}
+
+.navbar .navbar_m {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    min-width: fit-content;
+}
+.navbar .navbar_m ul,
+.navbar .navbar_m ol {
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    /* display: inline-block; */
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+}
+
+.navbar .menu {
+    display: inline-block;
+}
+.navbar .menu a {
+    display: flex;
+    /* margin: .36rem 0; */
+    padding: .36rem .9rem;
+    cursor: pointer;
+    font: var(--nav-font-wght) var(--p2) / normal var(--nav-font);
+    font-family: var(--nav-font);
+    font-weight: var(--nav-font-wght);
+    font-size: var(--p2);
+    opacity: .8;
+}
+.navbar .menu .current-menu a {
+    opacity: 1;
+    font-weight: 500;
+}
+.navbar .initbar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    /* bottom: 0; */
+    
+    background-color: var(--colr-primary);
+    /* -border-radius causes distortion at ends */
+    /* border-radius: 4px; */
+    transition: .5s;
+}
+
+.navbar .navbar_r .initbar {
+    z-index: 10;
+    width: 2px;
+    height: 100%;
+    border-radius: 50em;
+    top: 0;
+    transition: .32s;
+}
+
+
+.navbar .menu a:hover {
+    transition: .2s;
+    color: var(--colr-primary);
+}
+
+.navbar .menu .current-menu {
+    color: var(--colr-primary);
+}
+.navbar .navbar_r {
+    display: flex;
+    margin-left: auto;
+    min-width: fit-content;
+    align-items: center;
+    gap: .65rem;
+    gap: var(--nav-icon-gap);
+    /* overflow: hidden; */
+}
+
+@media (min-width: 980px) {
+    .navbar .navbar_m{
+        display: flex;
+    }
+	/* nav sidebar butto hide */
+    .navSidebarOpen, .navbar .navbar_r .navSidebar, #id-navSidebarCheck:checked ~ .navSidebar{
+        /* display: none; */
+    }
+}

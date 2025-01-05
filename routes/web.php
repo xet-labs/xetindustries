@@ -8,11 +8,13 @@ use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
-route::get('/style',    [ResCntr::class, 'style']);
 
-route::get('/blog/{slug}',      [BlogsCntr::class, 'blogPost']);
-route::post('/blog/get-cards',  [BlogsCntr::class, 'blogGetCards']);
-route::resource('/blog',         BlogsCntr::class);
+route::get('/res/css/styles.gen.css',   [ResCntr::class, 'style'])->name('styles.res');
+
+route::post('/blog/get-cards',                  [BlogsCntr::class, 'fetchCards']);
+Route::get('/blog/@{BlogAuthor}/{BlogSlug}',    [BlogsCntr::class, 'show']);
+route::resource('/blog',                        BlogsCntr::class);
+
 
 route::get('/signup',   [UserCntr::class, 'signupForm'])->name('user.signupForm');
 route::get('/login',    [UserCntr::class, 'loginForm'])->name('user.loginForm');
@@ -20,14 +22,15 @@ route::post('/signup',  [UserCntr::class, 'signup'])->name('user.signup');
 route::post('/login',   [UserCntr::class, 'login'])->name('user.login');
 route::post('/logout',  [UserCntr::class, 'logout'])->name('user.logout');
 
+
 route::get('/', function () { Loc::filer('PAGE', 'main'); });
 
 
 
 route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->name('user.update.profile-img');
-route::get('/acc/update',   [UserCntr::class, 'updateName']);
+route::get('/acc/update',               [UserCntr::class, 'updateName']);
 
-route::get('/u', function () { Loc::filer('PAGE', 'profile'); });
+route::get('/t', function () { Loc::filer('PAGE', 'profile'); });
 
 
 

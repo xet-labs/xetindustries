@@ -1,0 +1,68 @@
+nav .brand {
+    --iconz: 1.7em;
+    --icon-width: 2em;
+
+    display: flex;
+    align-items: center;
+    margin-right: 1.6rem;
+    /* margin-right: 1.25em; */
+
+}
+nav .brand a {
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+nav .brand img,
+nav .brand svg  {
+    height: var(--iconz);
+    width: unset;
+    /* margin: 0.1836rem 0; */
+    color: var(--colr);
+    opacity: 1;
+}
+
+nav .brand a.b-logo {
+    display: none;
+    /* display: flex; */
+}
+nav .brand a.icon svg {
+    height: 1.9em;
+}
+nav .brand a.b-brand {
+    /* display: none; */
+}
+
+nav .sub-brand-wrap {
+    display: flex;
+    display: none;
+    flex-direction: row;
+}
+nav .sub-brand {
+    font-size: .9rem;
+    opacity: .8;
+}
+nav .sub-brand a:hover {
+    color: var(--colr);
+
+    opacity: 1;
+}
+
+.navbar .brand .line-v {
+    margin: 0 .5rem;
+    height: 18px;
+}
+
+@media screen and (min-width: 460px) {
+    nav .sub-brand-wrap {
+        display: flex;
+    }
+
+    nav .brand a.b-logo {
+        display: none;
+    }
+    nav .brand a.b-brand {
+        display: flex;
+    }
+}

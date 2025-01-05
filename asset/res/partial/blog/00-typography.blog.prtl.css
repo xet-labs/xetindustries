@@ -1,0 +1,51 @@
+:root{
+    --blog-p-m-t: .75rem; --blog-p-m-b: 1.5rem;
+    --blog-p-m: var(--blog-p-m-t) 0 var(--blog-p-m-b);
+}
+
+.blog-con h1 {
+    margin: var(--blog-h1-m);
+    padding: var(--blog-h1-pd, 0.5em 0.3em 0.5em 0px);
+    color: var(--colr-h1, var(--colr-title));
+}
+
+.blog-con h2 {
+    display: block;
+    margin: var(--blog-h2-m, 1.8245em 0 .70175em);
+    /* text-decoration: underline; */
+    cursor: pointer;
+    color: var(--h2-colr, var(--colr-title));
+}
+.blog-con h2 a {
+    font-weight: inherit;
+    /* text-decoration: none; */
+    width: fit-content;
+    width: 100%;
+}
+.blog-con h2 a:hover {
+    color: inherit;
+    transition-duration: 0s;
+    /* text-decoration: underline; */
+}
+
+.blog-con h3 {
+    margin: var(--blog-h3-m, 1rem 0 0.5rem);
+}
+
+.blog-con p {
+    margin: var(--blog-p-m);
+    padding: var(--blog-p-pd, unset);
+    color: var(--blog-p-colr);
+}
+
+.blog-con .blog-cnt b {
+    font-weight: 500;
+}
+.blog-con .blog-cnt b>b{
+    font-weight: 600;
+}
+
+.blog-con a {
+    font-weight: 500;
+    text-decoration: underline;
+}
