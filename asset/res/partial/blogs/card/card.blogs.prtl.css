@@ -17,6 +17,7 @@
     --post-img-shadow: var(--post-image-wrap-shadow);
 
     --post-title-font: "wix madefor text";
+    /* --post-title-font: "inter"; */
 }
 
 
@@ -52,7 +53,6 @@
 
     cursor: pointer;
 }
-
 .post::before {
     opacity: 0;
     content: '';

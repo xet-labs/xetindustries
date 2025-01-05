@@ -3,6 +3,7 @@
   use xet\Loc;
   
   $Page = [
+    'title' => '',
     'jsFiles' => [
       Loc::Fileurl('JS','fetch-card-onscroll.blogs'),
       Loc::Fileurl('JS','clickable-card.blogs'),

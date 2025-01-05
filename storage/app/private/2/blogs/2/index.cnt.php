@@ -1,8 +1,8 @@
 <p>
-    The Internet has become an inseparable part of our lives that powers virtually every aspect of the modern economy, well what if you can <b>transform your Internet connection into a passive income stream</b> by merely sharing your Internet connection, Intrigued?
+    The Internet has become an inseparable part of our lives that powers virtually every aspect of modern economy, what if you could <b>transform your Internet connection into a passive income stream</b> by merely sharing your Internet, Intrigued?
 </p>
 <p>
-    Here’s a list of applications sorted by their earning potential.
+    Here’s a list of applications sorted by their earning potential (high to low).
 </p>
 
 <h2>
@@ -16,18 +16,18 @@
     </a>
 </h2>
 <p>
-    Mysterium Network is a decentralized network of computers that provides P2P services. It allows the Node runners to share unused internet bandwidth and earn “MYST” crypto while simultaneously contributing the mysterium network to grow. 
+    Mysterium Network is a decentralized network of computers that provides P2P services. It allows the Node runners to share internet bandwidth and earn “MYST” crypto while simultaneously contributing the mysterium network to grow. 
 </p>
 <p>
-    <b><b>Rate: </b></b>Varies with services being utilised by clients.
+    <b><b>Rate: </b></b>Varies with services being utilised.
     <br>
-    <b><b>Platform: </b></b>Android, iOS, Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Android, iOS, Windows, Linux, Mac.
     <br>
     <b><b>Payout: </b></b>Crypto (Myst).
     <br>
     <b><b>Requisite: </b></b> Internet connection (prefer ethernet).
 </p>
-<p><b>Setup:</b> To start earning, set up MystNodes on Android, iOS, Windows, Linux or MacOS.</p>
+<p><b>Setup:</b> To start earning, set up MystNodes on Android, iOS, Windows, Linux or Mac.</p>
 <ol class="">
     <li><div class="steps-wrap">
     <div class="steps"></div>
@@ -88,7 +88,7 @@
     Try <b>enabling additional services</b> on your NodeUI Dashboard.
     </li>
     <li>
-    <b>Uptime matters</b>; the moment you are disconnected from a client, they will be reconnected to a more competitive node.
+    <b>Uptime matters</b>, the moment you are disconnected from a client, they will be reconnected to a more competitive node.
     </li>
     <li>
     Your internet speed & <b>Geographical location matter</b>.
@@ -116,11 +116,11 @@
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>
-    <b><b><b>Platform: </b></b></b>Android, iOS, Windows, Linux, MacOS.
+    <b><b><b>Platform: </b></b></b>Android, iOS, Windows, Linux, Mac.
     <br>
-    <b><b>Payout: </b></b>PayPal, Amazon Gift Card, Wise
+    <b><b>Payout: </b></b>PayPal, Amazon Gift Card, Wise.
     <br>
-    <b><b>Min payout: </b></b>$2.5  (auto payment supported)
+    <b><b>Min payout: </b></b>$2.5  (auto payment supported).
     <br>
     <b><b>Requisite: </b></b> Internet connection.
 </p>
@@ -141,9 +141,9 @@
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>
-    <b><b>Platform: </b></b>Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Windows, Linux, Mac.
     <br>
-    <b><b>Payout: </b></b>PayPal
+    <b><b>Payout: </b></b>PayPal.
     <br>
     <b><b>Min payout: </b></b>$5
     <br>
@@ -163,13 +163,13 @@
     </a>
 </h2>
 <p>Honeygain has been a long-standing platform that enables users to monetize their unused internet bandwidth, users contribute to tasks like content delivery and market research, facilitating peer-to-peer (P2P) traffic through their devices.</p>
-<p>You also get a <b>$3 initial sign-up bonus, link below | coupon code RISHI0A188</b>.</p>
+<p>You also get a <b>$3 initial sign-up bonus</b>, link below.</p>
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>
-    <b><b>Platform: </b></b>Android, Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Android, Windows, Linux, Mac.
     <br>
-    <b><b>Payout: </b></b>PayPal, Crypto (Jmpt)
+    <b><b>Payout: </b></b>PayPal, Crypto (Jmpt).
     <br>
     <b><b>Min payout: </b></b> $20 (PayPal), Crypto (no min limit)
     <br>
@@ -182,7 +182,7 @@
     <a href="https://download.honeygain.com/android-app/honeygain_app.apk" target="_blank">Android</a> | 
     <a href="https://download.honeygain.com/windows-app/Honeygain_install.exe" target="_blank">Windows</a> | 
     <a href="https://hub.docker.com/r/honeygain/honeygain" target="_blank">Linux</a> | 
-    <a href="https://hub.docker.com/r/honeygain/honeygain" target="_blank">MacOS</a>
+    <a href="https://hub.docker.com/r/honeygain/honeygain" target="_blank">Mac</a>
 </p>
 
 
@@ -211,7 +211,7 @@
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>
-    <b><b>Platform: </b></b>Android, iOS, Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Android, iOS, Windows, Linux, Mac.
     <br>
     <b><b>Payout: </b></b>PayPal
     <br>
@@ -237,7 +237,7 @@
 <p>
     <b><b>Rate: </b></b>$2 / 10GB
     <br>
-    <b><b>Platform: </b></b>Android, Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Android, Windows, Linux, Mac.
     <br>
     <b><b>Payout: </b></b>PayPal, VISA, Crypto (BTC)
     <br>
@@ -263,7 +263,7 @@
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>
-    <b><b>Platform: </b></b>Android, Windows, Linux, MacOS.
+    <b><b>Platform: </b></b>Android, Windows, Linux, Mac.
     <br>
     <b><b>Payout: </b></b>Payoneer, BTC, Webmoney, Skrill, Payeer, USDT (TRC20)
     <br>

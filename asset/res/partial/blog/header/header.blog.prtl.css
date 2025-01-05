@@ -9,7 +9,7 @@
 
 .blog-header {
     display: flex; flex-direction: column;
-    gap: 1.2em; gap: 20px;
+    gap: 1.2em; gap: 20px; gap: 16px;
     color: var(--colr-h1,var(--colr-title));
     transition: color var(--theme-trns);
 }
@@ -60,7 +60,7 @@
     /* white-space: nowrap; text-overflow: ellipsis; */
     align-items: center;
     margin: .8em 0 .66em;
-    margin: 4px 0 ;
+    margin: 8px 0 4px;
     /* margin: 0; */
 
     font-size: 14px;

@@ -32,10 +32,7 @@ if (file_exists(public_path($currentDir . '/asset/js/script.js'))){ ?>
 <?php endforeach; endif; ?>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5P29JVNLQV"></script><script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-5P29JVNLQV'); </script>
-<!-- Google Tag Manager -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSG89CVQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSG89CVQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 <!-- End Google Tag Manager -->
 
 
