@@ -58,10 +58,10 @@ function setup_larvel(){
 
 function init_services(){
     echo "Enabling and restarting services..."
-    sudo systemctl enable mariadb nginx php8.2-fpm.service
-    sudo systemctl stop mariadb nginx php8.2-fpm.service
+    sudo systemctl enable nginx mariadb php8.2-fpm.service
+    sudo systemctl stop nginx mariadb php8.2-fpm.service
     sleep 4
-    sudo systemctl restart mariadb nginx php8.2-fpm.service
+    sudo systemctl restart nginx mariadb php8.2-fpm.service
 }
 
 
