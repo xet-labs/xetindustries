@@ -66,11 +66,52 @@ function init_services(){
 
 
 #-main script
-setup_pkg
-setup_nginx
-setup_db
-setup_larvel
-init_services
+
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -a|--all|all)
+            setup_pkg
+            setup_nginx
+            setup_db
+            setup_larvel
+            init_services
+
+            shift
+            ;;
+        --apt|apt)
+            setup_pkg
+            shift
+            ;;
+        --db|db)
+            setup_db
+            shift
+            ;;
+        --larvel|larvel)
+            setup_larvel
+            shift
+            ;;
+        --services|services)
+            init_services
+            shift
+            ;;
+        -b|b|basedir)
+            baseDir="$2"
+            shift 2
+            ;;
+        -h|help)
+            usage
+            exit 0
+            ;;
+        *)
+            alert "Error: Invalid option $1"
+            usage
+            exit 1
+            ;;
+    esac
+done
+
+
 
 if [ $? -eq 0 ]; then
     echo "Setup complete!"
