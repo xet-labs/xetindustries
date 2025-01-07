@@ -3,16 +3,16 @@ CURRENT_PATH=$(pwd)
 
 function setup_pkg(){
     echo "Installing required packages..."
-    sudo apt install -y git nginx keepalived openssl mariadb-server mariadb-client avahi-daemon avahi-utils curl composer php php-mysql php-fpm php-xml php-readline php-common php-gd php-mbstring php-curl php-zip php-cli php-json php-bcmath php-sqlite3 unzip
+    apt install -y git nginx keepalived openssl mariadb-server mariadb-client avahi-daemon avahi-utils curl composer php php-mysql php-fpm php-xml php-readline php-common php-gd php-mbstring php-curl php-zip php-cli php-json php-bcmath php-sqlite3 unzip
 }
 
 function setup_nginx(){
     NGINX_CONFIG="/xlvini/asset/proconf/mx/root.d/etc/nginx/sites-available/xi.com.4000"
     if [[ -e $NGINX_CONFIG ]]; then
         echo "Configuring Nginx for xi.com.4000..."
-        sudo cp $NGINX_CONFIG /etc/nginx/sites-available/xi.com.4000
-        sudo ln -sf /etc/nginx/sites-available/xi.com.4000 /etc/nginx/sites-enabled/
-        sudo systemctl reload nginx
+        cp $NGINX_CONFIG /etc/nginx/sites-available/xi.com.4000
+        ln -sf /etc/nginx/sites-available/xi.com.4000 /etc/nginx/sites-enabled/
+        systemctl reload nginx
     else
         echo "Nginx configuration file not found: $NGINX_CONFIG"
     fi
@@ -20,12 +20,12 @@ function setup_nginx(){
 
 function setup_db(){
     echo "-Importing databases..."
-    sudo mysql --skip-password < asset/space/setup/db/XI-init.sql
+    mysql --skip-password < asset/space/setup/db/XI-init.sql
     if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
-    sudo mysql --skip-password XI < asset/space/setup/db/XI.sql
-    sudo mysql --skip-password < asset/space/setup/db/XI-init99.sql
+    mysql --skip-password XI < asset/space/setup/db/XI.sql
+    mysql --skip-password < asset/space/setup/db/XI-init99.sql
 }
 
 function setup_composer(){
@@ -60,9 +60,9 @@ function setup_larvel(){
 
 function init_services(){
     echo "Enabling and restarting services..."
-    sudo systemctl enable nginx mariadb php8.2-fpm.service
+    systemctl enable nginx mariadb php8.2-fpm.service
     sleep 4
-    sudo systemctl restart nginx mariadb php8.2-fpm.service
+    systemctl restart nginx mariadb php8.2-fpm.service
 }
 
 function get_update(){
