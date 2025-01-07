@@ -27,7 +27,7 @@ function setup_db(){
     sudo mysql -u root -p < asset/space/setup/db/XI-init99.sql
 }
 
-function setup_larvel(){
+function setup_composer(){
     if [ "$(whoami)" != "$LOGNAME" ]; then
         echo "Switching to user: $LOGNAME"
         sudo exec su - "$LOGNAME" -c "$0 --continue"
@@ -37,7 +37,13 @@ function setup_larvel(){
     echo "-setting up Composer..."
     sudo composer install --no-dev --optimize-autoloader
     sudo composer update
+}
 
+function setup_larvel(){
+    if [ "$(whoami)" != "$LOGNAME" ]; then
+        echo "Switching to user: $LOGNAME"
+        sudo exec su - "$LOGNAME" -c "$0 --continue"
+    fi
     # Laravel setup
     echo "-setting up Laravel..."
     if [[ ! -e .env ]]; then
@@ -59,11 +65,18 @@ function setup_larvel(){
 function init_services(){
     echo "Enabling and restarting services..."
     sudo systemctl enable nginx mariadb php8.2-fpm.service
-    sudo systemctl stop nginx mariadb php8.2-fpm.service
     sleep 4
     sudo systemctl restart nginx mariadb php8.2-fpm.service
 }
 
+function get_update(){
+    git pull
+    # setup_pkg
+    setup_nginx
+    setup_db
+    setup_composer
+    setup_larvel
+}
 
 #-main script
 
@@ -74,12 +87,17 @@ while [[ $# -gt 0 ]]; do
             setup_pkg
             setup_nginx
             setup_db
+            setup_composer
             setup_larvel
             init_services
 
             shift
             ;;
-        --apt|apt)
+        -u|--update|update)
+            get_update
+            shift
+            ;;
+        --pkg|pkg)
             setup_pkg
             shift
             ;;
@@ -87,11 +105,15 @@ while [[ $# -gt 0 ]]; do
             setup_db
             shift
             ;;
+        --composer|composer)
+            setup_composer
+            shift
+            ;;
         --larvel|larvel)
             setup_larvel
             shift
             ;;
-        --services|services)
+        --service|service)
             init_services
             shift
             ;;
