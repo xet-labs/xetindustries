@@ -1,4 +1,5 @@
 #!/bin/bash
+CURRENT_PATH=$(pwd)
 
 function setup_pkg(){
     echo "Installing required packages..."
@@ -19,31 +20,26 @@ function setup_nginx(){
 
 function setup_db(){
     echo "-Importing databases..."
-    sudo mysql -u root -p < asset/space/setup/db/XI-init.sql
+    sudo mysql --skip-password < asset/space/setup/db/XI-init.sql
     if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
-    sudo mysql -u root -p XI < asset/space/setup/db/XI.sql
-    sudo mysql -u root -p < asset/space/setup/db/XI-init99.sql
+    sudo mysql --skip-password XI < asset/space/setup/db/XI.sql
+    sudo mysql --skip-password < asset/space/setup/db/XI-init99.sql
 }
 
 function setup_composer(){
     if [ "$(id -u)" -eq 0 ]; then
-        echo "Switching to www-data user..."
-        su -s /bin/bash www-data
+        echo "Switching to www-data user to run Composer..."
+        sudo -u www-data composer install --no-dev --optimize-autoloader
+        sudo -u www-data composer update
+    else
+        composer install --no-dev --optimize-autoloader
+        composer update
     fi
-
-    # Composer setup
-    echo "-setting up Composer..."
-    sudo composer install --no-dev --optimize-autoloader
-    sudo composer update
 }
 
 function setup_larvel(){
-    if [ "$(whoami)" != "$LOGNAME" ]; then
-        echo "Switching to user: $LOGNAME"
-        sudo exec su - "$LOGNAME" -c "$0 --continue"
-    fi
     # Laravel setup
     echo "-setting up Laravel..."
     if [[ ! -e .env ]]; then
@@ -79,7 +75,8 @@ function get_update(){
 }
 
 #-main script
-
+git config --global --add safe.directory $CURRENT_PATH
+chown www-data:www-data $CURRENT_PATH -R
 
 while [[ $# -gt 0 ]]; do
     case $1 in
