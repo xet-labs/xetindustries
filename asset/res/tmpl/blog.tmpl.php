@@ -9,7 +9,7 @@ require(Loc::file('PRTL', 'head')); ?>
 <body class="blog-body">
 
 	<?php
-	require(Loc::file('PRTL', 'scripts.body'));
+	require(Loc::file('PRTL', 'scripts-top.body'));
 	
 	$currentMenu = $subBrand = 'Blog';
 	require(Loc::file('PRTL', 'nav'));
