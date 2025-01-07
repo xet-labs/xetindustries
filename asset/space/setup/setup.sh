@@ -75,8 +75,10 @@ function get_update(){
 }
 
 #-main script
-git config --global --add safe.directory $CURRENT_PATH
-chown www-data:www-data $CURRENT_PATH -R
+if [[ -e $CURRENT_PATH/asset/space/setup/setup.sh ]]; then
+    git config --global --add safe.directory $CURRENT_PATH
+    chown www-data:www-data $CURRENT_PATH -R
+fi
 
 while [[ $# -gt 0 ]]; do
     case $1 in
