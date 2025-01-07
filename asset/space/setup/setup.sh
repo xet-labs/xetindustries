@@ -28,9 +28,9 @@ function setup_db(){
 }
 
 function setup_composer(){
-    if [ "$(whoami)" != "$LOGNAME" ]; then
-        echo "Switching to user: $LOGNAME"
-        sudo exec su - "$LOGNAME" -c "$0 --continue"
+    if [ "$(id -u)" -eq 0 ]; then
+        echo "Switching to www-data user..."
+        su -s /bin/bash www-data
     fi
 
     # Composer setup
