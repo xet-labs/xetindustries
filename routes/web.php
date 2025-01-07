@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
 
-route::get('/res/css/styles.gen.css',   [ResCntr::class, 'style'])->name('styles.res');
+route::get('/res/css/styles',   [ResCntr::class, 'style'])->name('styles.res');
 
 route::post('/blog/get-cards',                  [BlogsCntr::class, 'fetchCards']);
 Route::get('/blog/@{BlogAuthor}/{BlogSlug}',    [BlogsCntr::class, 'show']);
