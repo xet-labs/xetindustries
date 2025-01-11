@@ -3,9 +3,11 @@ use xet\Loc;
 
 ?>
 
-<title>
-    <?= htmlspecialchars($PAGE->title) . ( !empty($PAGE->author) ? ' | ' . htmlspecialchars($PAGE->author) : '') . ' | ' . e(config('app.name')) ?>
-</title>
+<title><?= 
+    !empty($PAGE->title) ? htmlspecialchars($PAGE->title) . 
+    (!empty($PAGE->username) ? ' | ' . htmlspecialchars($PAGE->username) : '') . ' | ' . e(config('app.name')) : 
+    e(config('app.name')) 
+?></title>
 
 
 <?= !empty($PAGE->canonical) ? '<link rel="canonical" href="' . htmlspecialchars((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) . '" />' : ''; ?>

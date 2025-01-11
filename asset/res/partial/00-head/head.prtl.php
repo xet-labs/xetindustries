@@ -2,6 +2,8 @@
 session_start();
 use xet\Loc;
 
+empty($PAGE) ? $PAGE = (object) null : '';
+
 function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="preload" as="style"><link href="' . $cssFile . '" rel="stylesheet">'; }
 ?>
 
