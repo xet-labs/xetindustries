@@ -1,10 +1,8 @@
 <?php 
-	session_start();
-    use xet\Loc;
-	
-	function linkStylesheet($cssFile) {
-		return '<link href="' . $cssFile . '" rel="preload" as="style"><link href="' . $cssFile . '" rel="stylesheet">';
-	}
+session_start();
+use xet\Loc;
+
+function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="preload" as="style"><link href="' . $cssFile . '" rel="stylesheet">'; }
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +10,15 @@
 
 <head>
 
-	<title>Xetindustries | </title>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	<?php require(Loc::file('PRTL', 'meta.head')); ?>
+
 	<link rel="apple-touch-icon" href="/res/static/brand/favicon-180x180.png" />
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="icon" type="image/png" sizes="96x96" href="/res/static/brand/favicon-192x192.png" />
 	<link rel="icon" type="image/png" sizes="48x48" href="/res/static/brand/favicon-180x180.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/res/static/brand/favicon-180x180.png" />
@@ -33,10 +32,8 @@
 	<link rel="preload" href="/res/static/fonts/Wix_Madefor_Text/WixMadeforText-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
 	<!-- == Style-Sheet == -->
-
 	<?= file_exists(Loc::file('CNTR', 'styles')) ? linkStylesheet(route('styles.res')) : linkStylesheet(Loc::fileurl('CSS', 'styles')); ?>
 
-	
 	<?php if (!empty($Page['link']) && $Page['link'] !== false) {
 		if (is_array($Page['link'])) { 
 			foreach ($Page['link'] as $link) { ?><?= linkStylesheet(htmlspecialchars($link)); ?><?php }
@@ -45,7 +42,7 @@
 
 	
 	<?= !empty($Page['lib']['tw']) ? linkStylesheet('/res/lib/tailwind.css') : ''; ?>
-	<?= !empty($Page['lib']['fa']) ? linkStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
+	<?= !empty($Page->lib->fa) ? linkStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
 	
 
 
@@ -58,3 +55,6 @@
 	 
 
 	<meta name="csrf-token" content="<?= csrf_token(); ?>">
+
+
+</head>

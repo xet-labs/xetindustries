@@ -10,7 +10,7 @@ class Loc {
     private static $BASE = null, $DIR = null, $DIRx = null, 
     $PATH = null, $PATHx = null, $FILE = null, $FILEx = null,
     $cache = 1,
-    $cacheDurn = 4,
+    $cacheDurn = 6,
     $cacheFile = null,
     $cacheLoc = 0;
 

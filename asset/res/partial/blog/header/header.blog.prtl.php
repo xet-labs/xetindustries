@@ -1,7 +1,7 @@
 <div class="blog-header">
     
     <!-- Blog Category -->
-    <?php $blogTags = json_decode($blog->tags, true);
+    <?php $blogTags = json_decode($PAGE->tags, true);
     if (is_array($blogTags)){ ?>
         <div class="blog-category">
             <?php $blogTags = array_slice($blogTags, 0, 4); 
@@ -18,29 +18,29 @@
 
     <!-- Blog Headline -->
     <h1>
-        <?= htmlspecialchars($blog->title); ?>
+        <?= htmlspecialchars($PAGE->title); ?>
     </h1>
 
     <!-- Blog Meta -->
     <div class="blog-meta">
         
         <div class="meta-author-img">
-            <a href="/@<?= htmlspecialchars($blog->username); ?>">
-                <img src="<?= htmlspecialchars($blog->profile_img); ?>" alt="<?= htmlspecialchars($blog->name . " ". $blog->name_l); ?>" loading="lazy" fetchpriority="low">
+            <a href="/@<?= htmlspecialchars($PAGE->username); ?>">
+                <img src="<?= htmlspecialchars($PAGE->profile_img); ?>" alt="<?= htmlspecialchars($PAGE->name . " ". $PAGE->name_l); ?>" loading="lazy" fetchpriority="low">
             </a>
         </div>
 
         <div class="meta-info">
 
             <div class="meta-author">
-                <a href="/@<?= htmlspecialchars($blog->username); ?>" title="@<?= htmlspecialchars($blog->username); ?>">
-                    <?= htmlspecialchars($blog->name . " ". $blog->name_l); ?>
+                <a href="/@<?= htmlspecialchars($PAGE->username); ?>" title="@<?= htmlspecialchars($PAGE->username); ?>">
+                    <?= htmlspecialchars($PAGE->name . " ". $PAGE->name_l); ?>
                 </a>
 
                 <span class="seperator"></span>
                 <a href="" class="author-follow"> Follow </a>
 
-                <?php if($blog->verified):?>
+                <?php if($PAGE->verified):?>
                     <i class="icon meta-verified" title="Verified">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.15em" viewBox="0 0 24 24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z"></path></svg>
                     </i>
@@ -49,7 +49,7 @@
 
             <div class="meta-date">
                 <span>
-                    <?= htmlspecialchars(date('F j, Y, g:i A', strtotime($blog->created_at))); ?>
+                    <?= htmlspecialchars(date('F j, Y, g:i A', strtotime($PAGE->created_at))); ?>
                 </span>
             </div>
         
@@ -58,7 +58,7 @@
 
 
     <figure class="blog-hero">
-        <img src="<?= htmlspecialchars($blog->featured_img); ?>" alt="<?= htmlspecialchars($blog->title); ?>" class="lazyload">
+        <img src="<?= htmlspecialchars($PAGE->featured_img); ?>" alt="<?= htmlspecialchars($PAGE->title); ?>" class="lazyload">
     </figure>
 </div>
 

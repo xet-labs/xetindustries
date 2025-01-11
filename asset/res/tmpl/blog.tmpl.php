@@ -1,9 +1,14 @@
 <?php
 use xet\Loc;
 
-require(Loc::file('PRTL', 'head')); ?>
+$PAGE = (object) array_merge((array) $blog->getAttributes(), (array) $PAGE);
+$PAGE->canonical = true;
+$imgSrc = "media/{$PAGE->uid}/img/";
 
-</head>
+// dd($blog,$PAGE);
+
+require(Loc::file('PRTL', 'head')); 
+?>
 
 
 <body class="blog-body">
