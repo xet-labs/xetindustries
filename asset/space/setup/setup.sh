@@ -76,6 +76,7 @@ git_pull(){
     else
         echo "Changes detected. Stashing changes."
         git reset --hard HEAD
+        git clean -fd 
         git pull
     fi
 }
