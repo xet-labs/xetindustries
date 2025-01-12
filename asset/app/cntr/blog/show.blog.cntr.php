@@ -14,13 +14,9 @@ $blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
     )
     ->where('users.username', $BlogAuthor)->where('blogs.slug', $BlogSlug)->first();
 
+empty($blog) ? abort(404, 'Blog not found') : '';    
+    
 $blog->imgSrc = "media/{$blog->uid}/img/";
-
 $blogPath = storage_path("app/private/{$blog->uid}/blogs/{$blog->id}/index.php");
-// file_exists($blogPath) ? include($blogPath) : abort(404, 'Blog content not found');
-if (file_exists($blogPath)) {
-    $blog->canonical = true;
-    include($blogPath);
-} else {
-    abort(404, 'Blog content not found');
-}
+
+file_exists($blogPath) ? include($blogPath) : abort(404, 'Blog not found');
