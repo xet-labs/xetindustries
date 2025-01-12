@@ -2,7 +2,6 @@
 use xet\Loc;
 
 require(Loc::file('PRTL', 'head'));
-
 $imgSrc = $blog->imgSrc;
 ?>
 
@@ -64,10 +63,7 @@ $imgSrc = $blog->imgSrc;
 	</main>
 
 
-	<?php
-	require(Loc::file('PRTL', 'footer'));
-	?>
-
+	<?php require(Loc::file('PRTL', 'footer')); ?>
 
 </body>
 

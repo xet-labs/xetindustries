@@ -11,7 +11,8 @@ $PAGE->metaTitle = (
 
 <title><?= $PAGE->metaTitle ?></title>
 
-<?= !empty($PAGE->canonical) ? '<link rel="canonical" href="' . url('/') . $_SERVER['REQUEST_URI'] . '" />' : ''; ?>
+<?= (!isset($PAGE->canonical) || $PAGE->canonical) ? '<link rel="canonical" href="' . htmlspecialchars(url('/') . $_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8') . '" />' : '' ?>
+
 
 <?= '<meta name="title" content="' . $PAGE->metaTitle . '" />' ?>
 

@@ -1,7 +1,8 @@
 <?php
 use xet\Loc;
 
-require(Loc::file('PRTL', 'head')); ?>
+require(Loc::file('PRTL', 'head'));
+?>
 
 <body class="body">
 	<?php require(Loc::file('PRTL', 'scripts.body')); ?>
@@ -41,7 +42,7 @@ require(Loc::file('PRTL', 'head')); ?>
 	</main>
 
 
-	<?php require(Loc::file('PRTL','footer')); ?>
+	<?php require(Loc::file('PRTL', 'footer')); ?>
 
 </body>
 
