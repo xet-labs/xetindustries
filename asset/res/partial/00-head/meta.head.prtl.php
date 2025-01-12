@@ -1,21 +1,19 @@
 <?php
-use xet\Loc;
 
 $PAGE->metaTitle = (
     !empty($PAGE->title) ?
         htmlspecialchars($PAGE->title) .
-        (!empty($PAGE->username) ? ' | by ' . htmlspecialchars($PAGE->name . ' ' . $PAGE->name_l) : '') . ' | ' . 
-        e(config('app.name'))
+        (!empty($PAGE->username) ? ' | by ' . htmlspecialchars($PAGE->name . ' ' . $PAGE->name_l) : '') .
+        ' | ' . e(config('app.name'))
     : e(config('app.name'))
 );
-// dd($PAGE)
 ?>
 
 <title><?= $PAGE->metaTitle ?></title>
 
-<?= !empty($PAGE->canonical) ? '<link rel="canonical" href="' . htmlspecialchars((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) . '" />' : ''; ?>
+<?= !empty($PAGE->canonical) ? '<link rel="canonical" href="' . url('/') . $_SERVER['REQUEST_URI'] . '" />' : ''; ?>
 
-<?= !empty($PAGE->title) ? '<meta name="title" content="' . $PAGE->metaTitle . '" />' : ''; ?>
+<?= '<meta name="title" content="' . $PAGE->metaTitle . '" />' ?>
 
 <?= !empty($PAGE->excerpt) ? '<meta name="description" content="' . htmlspecialchars($PAGE->excerpt) . '" />' : ''; ?>
 

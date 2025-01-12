@@ -36,10 +36,11 @@ function minifyCSS($css) {
 $cssFiles = Loc::file('CSS');
 
 if (is_array($cssFiles)) {
-    
     $css = minifyCSS(combineFiles($cssFiles));
-    // file_put_contents(Loc::file('CSSx','styles'), $css);
     echo $css;
+    $relativePath = parse_url(route('styles.res'), PHP_URL_PATH);
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . $relativePath . '.css';
+    // file_put_contents($filePath, $css);
 } else {
     echo "// nuii css'o fendoz";
     // -so what i meant, no <filename>.prtl.css files were found in the array..

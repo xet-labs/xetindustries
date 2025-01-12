@@ -10,7 +10,7 @@ $imgSrc = $blog->imgSrc;
 <body class="blog-body">
 
 	<?php
-	require(Loc::file('PRTL', 'scripts-top.body'));
+	require(Loc::file('PRTL', 'scripts.body'));
 	
 	$currentMenu = $subBrand = 'Blog';
 	require(Loc::file('PRTL', 'nav'));
@@ -64,7 +64,9 @@ $imgSrc = $blog->imgSrc;
 	</main>
 
 
-	<?php require(Loc::file('PRTL', 'footer')) ?>
+	<?php
+	require(Loc::file('PRTL', 'footer'));
+	?>
 
 
 </body>

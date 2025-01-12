@@ -9,8 +9,12 @@ class ResCntr extends Controller
 {
     public function style()
     {
-        require(Loc::file('CNTR', 'styles'));
+        require(Loc::file('CNTR', 'styles.res'));
     }
 
+    public function sitemap()
+    {
+        require(Loc::file('CNTR', 'sitemap.res'));
+    }
 }
 

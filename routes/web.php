@@ -6,10 +6,8 @@ use App\Http\Controllers\ResCntr;
 use App\Http\Controllers\UserCntr;
 use App\Http\Controllers\BlogsCntr;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User; 
+use App\Models\User;
 
-
-route::get('/res/css/styles',   [ResCntr::class, 'style'])->name('styles.res');
 
 route::post('/blog/get-cards',                  [BlogsCntr::class, 'fetchCards']);
 Route::get('/blog/@{BlogAuthor}/{BlogSlug}',    [BlogsCntr::class, 'show']);
@@ -26,9 +24,13 @@ route::post('/logout',  [UserCntr::class, 'logout'])->name('user.logout');
 route::get('/', function () { Loc::filer('PAGE', 'main'); });
 
 
-
 route::post('/acc/update/profile-img',  [UserCntr::class, 'updateProfileImg'])->name('user.update.profile-img');
 route::get('/acc/update',               [UserCntr::class, 'updateName']);
+
+
+route::get('/res/css/styles',   [ResCntr::class, 'style'])->name('styles.res');
+route::get('/sitemap.xml',   [ResCntr::class, 'sitemap'])->name('sitemap.res');
+
 
 route::get('/t', function () { Loc::filer('PAGE', 'profile'); });
 

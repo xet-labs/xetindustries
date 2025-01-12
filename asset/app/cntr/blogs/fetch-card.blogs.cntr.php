@@ -28,14 +28,13 @@ $blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 		'users.verified', 
 		'users.profile_img'
 	)
-	->where('blogs.status', 'published')
+	->whereIn('blogs.status', ['published', 'published_hidden'])
 	->orderBy('blogs.created_at', 'desc')
 	->skip($BlogsOffset)
 	->take($BlogsLimit)
 	->get();
 	
 // $blogsCardBuffer ? sleep(0.8) : '';
-
 $response = [ 'noMoreBlogs' => $blogs->isEmpty() ? 1 : 0 ];
 
 // Check if blogs exist and buffer the output if enabled

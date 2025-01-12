@@ -17,5 +17,6 @@ $blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 $blog->canonical = true;
 $blog->imgSrc = "media/{$blog->uid}/img/";
 
+
 $blogPath = storage_path("app/private/{$blog->uid}/blogs/{$blog->id}/index.php");
 file_exists($blogPath) ? include($blogPath) : abort(404, 'Blog content not found');

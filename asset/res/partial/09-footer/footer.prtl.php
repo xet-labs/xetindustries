@@ -76,9 +76,9 @@ use xet\Loc;
             <!-- Site Links -->
             <div class="site-links tag">
                 <a href="/home/home-1-light">Home</a>
-                <a href="/post-grids/2-col-sidebar-light">Posts</a>
-                <a href="/about/about-light">About</a>
-                <a href="/contact-2/contact-light">Services</a>
+                <a href="/blog">Blog</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
             </div>
 
             <!-- Social Links -->
@@ -135,5 +135,4 @@ use xet\Loc;
 
 <?php
 include_once(Loc::FILE('PRTL','scripts.footer'));
-include_once(Loc::FILE('PRTL','php.footer'));
 ?>

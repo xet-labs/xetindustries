@@ -4,7 +4,7 @@ use xet\Loc;
 require(Loc::file('PRTL', 'head')); ?>
 
 <body class="body">
-	<?php require(Loc::file('PRTL', 'scripts-top.body')); ?>
+	<?php require(Loc::file('PRTL', 'scripts.body')); ?>
 
 	<?php
 	require(Loc::file('PRTL','nav'));
