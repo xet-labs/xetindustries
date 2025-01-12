@@ -33,6 +33,7 @@ fi
 
     mysql --skip-password XI < asset/space/setup/db/XI.sql
     mysql --skip-password < asset/space/setup/db/XI-init99.sql
+    systemctl restart mysql
 }
 
 function setup_composer(){
@@ -143,7 +144,7 @@ while [[ $# -gt 0 ]]; do
             setup_larvel
             shift
             ;;
-        --service|service)
+        --srvc|srvc|service)
             init_services
             shift
             ;;
