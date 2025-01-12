@@ -70,17 +70,19 @@ function init_services(){
     sleep 4
     systemctl restart nginx mariadb php8.2-fpm.service
 }
-
-function get_update(){
-    if git diff --quiet; then
-    echo "No changes detected, pulling latest changes."
-    git pull
+git_pull(){
+        if git diff --quiet; then
+        echo "No changes detected, pulling latest changes."
+        git pull
     else
-    echo "Changes detected. Stashing changes."
-    git stash --include-untracked
-    git pull
+        echo "Changes detected. Stashing changes."
+        git stash --include-untracked
+        git pull
     fi
+}
+function get_update(){
 
+    git_pull
     # setup_pkg
     setup_nginx
     setup_db
@@ -118,6 +120,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         -u|--update|update)
             get_update
+            shift
+            ;;
+        --git|git)
+            git_pull
             shift
             ;;
         --pkg|pkg)
