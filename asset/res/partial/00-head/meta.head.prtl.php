@@ -57,7 +57,7 @@ $PAGE->metaTitle = (
     <meta name="twitter:data3" value="' . htmlspecialchars($PAGE->created_at_h) . '" />' : ''; ?>
 <?php endif; ?>
 
-<script type="application/ld+json">
+<!-- <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "publisher": {
@@ -71,8 +71,8 @@ $PAGE->metaTitle = (
     "@type": "Organization",
     "name": "Xet Industries",
     "description": "A blog to share latest tech news and articles about technology trends by Xet Industries",
-    "url": "https://xet.ilovekulhad.com/blog/mysterium-node-backup-and-restore/#",
-    "logo": "https://xet.ilovekulhad.com/res/brand/favicon-192x192.png",
+    "url": "https://xetindustries.com/blog/mysterium-node-backup-and-restore/#",
+    "logo": "https://xetindustries.com/res/brand/favicon-192x192.png",
     "sameAs": [
         "http://www.twitter.com",
         "http://www.instagram.com",
@@ -87,4 +87,4 @@ $PAGE->metaTitle = (
         "country": "India"
     }
 }
-</script>
+</script> -->

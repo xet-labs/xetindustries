@@ -51,7 +51,7 @@ $blogUrl = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$bl
 
                         <div class="meta-date">
                             <span>
-                                <?= util::getTimeAgo($blog->created_at); ?>
+                                <?= util::getTimeAgo($blog->updated_at); ?>
                             </span>
                         </div>
                     
