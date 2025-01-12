@@ -9,7 +9,19 @@ $PAGE = (object) array_merge(
 );
 
 
-function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="preload" as="style"><link href="' . $cssFile . '" rel="stylesheet">'; }
+function csslink($cssUrl) { return '
+	<link href="' . $cssUrl . '" rel="preload" as="style">
+	<link href="' . $cssUrl . '" rel="stylesheet">'
+	; }
+
+function jslinkP($jsUrl) { return '
+	<link rel="preload" href="' . $jsUrl . '" as="script">
+	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
+	; }
+function jslink($jsUrl) { return '
+	<link rel="preload" href="' . $jsUrl . '" as="script">
+	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
+	; }
 ?>
 
 <!DOCTYPE html>
@@ -37,17 +49,17 @@ function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="p
 	<link rel="preload" href="/res/static/fonts/Wix_Madefor_Text/WixMadeforText-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
 	<!--  Style-Sheet  -->
-	<?php //linkStylesheet(Loc::fileurl('CSS', 'styles')) ?>
-	<?= linkStylesheet(route('styles.res')) ?>
+	<?php //csslink(Loc::fileurl('CSS', 'styles')) ?>
+	<?= csslink(route('styles.res')) ?>
 
 	<?php if (!empty($PAGE->link) && $PAGE->link !== false) {
 		if (is_array($PAGE->link)) { 
-			foreach ($PAGE->link as $link) { ?><?= linkStylesheet(htmlspecialchars($link)); ?><?php }
-		} else { ?><?= linkStylesheet(htmlspecialchars($PAGE->link)); ?><?php } ?>
+			foreach ($PAGE->link as $link) { ?><?= csslink(htmlspecialchars($link)); ?><?php }
+		} else { ?><?= csslink(htmlspecialchars($PAGE->link)); ?><?php } ?>
 	<?php } ?>
 
-	<?= !empty($PAGE->lib->tw) ? linkStylesheet('/res/lib/tailwind.css') : ''; ?>
-	<?= !empty($PAGE->lib->fa) ? linkStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
+	<?= !empty($PAGE->lib->tw) ? csslink('/res/lib/tailwind.css') : ''; ?>
+	<?= !empty($PAGE->lib->fa) ? csslink('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
 	
 	<?php require(Loc::file('PRTL', 'script.head')); ?>
 

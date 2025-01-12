@@ -28,7 +28,7 @@ use xet\Loc;
         <?php 
             $blogsCardEncode = 0;
             $blogsCardBuffer = 0;
-            require(Loc::file('CNTR','fetch-card.blogs'));
+            require(Loc::file('CNTR','get-card.blogs'));
         ?>
     </div>
 
