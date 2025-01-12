@@ -77,7 +77,7 @@ git_pull(){
         git pull
     else
         echo "Changes detected. Stashing changes."
-        git stash --include-untracked
+        git reset --hard HEAD
         git pull
     fi
 }
