@@ -22,8 +22,14 @@ function setup_db(){
     echo "-Importing databases..."
     mysql --skip-password < asset/space/setup/db/XI-init.sql
     if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
+        echo "--applying db patch"
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
+    if grep -q "/*M!999999\- enable the sandbox mode */" asset/space/setup/db/XI.sql; then
+        echo "-- Removing problematic comment line"
+        sed -i '/\/\*M!999999\\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
+    fi
+
     mysql --skip-password XI < asset/space/setup/db/XI.sql
     mysql --skip-password < asset/space/setup/db/XI-init99.sql
 }
