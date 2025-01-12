@@ -1,7 +1,12 @@
 <?php
 $PAGE->appName = empty($PAGE->appName) ? htmlspecialchars(config('app.name')) : htmlspecialchars($PAGE->appName) ; 
-$PAGE->author = empty($PAGE->author) && !empty($PAGE->username) ? htmlspecialchars($PAGE->name . ' ' . $PAGE->name_l) : htmlspecialchars($PAGE->author);
-$PAGE->authorUrl = empty($PAGE->authorUrl) && !empty($PAGE->username) ? url('/') . '/@' . htmlspecialchars($PAGE->username) : htmlspecialchars($PAGE->authorUrl);
+$PAGE->author = empty($PAGE->author) ? 
+    (!empty($PAGE->username) ? htmlspecialchars($PAGE->name . ' ' . $PAGE->name_l) : '') 
+    : htmlspecialchars($PAGE->author);
+
+$PAGE->authorUrl = empty($PAGE->authorUrl) ? 
+    (!empty($PAGE->username) ? url('/') . '/@' . htmlspecialchars($PAGE->username) : '') 
+    : htmlspecialchars($PAGE->authorUrl);
 $PAGE->baseUrl = empty($PAGE->baseUrl) ? htmlspecialchars(url('/') . $_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8') : '';
 $PAGE->metaTitle = (
     !empty($PAGE->title) ?
@@ -18,14 +23,14 @@ $PAGE->metaTitle = (
 <?= '<meta name="title" content="' . $PAGE->metaTitle . '" />' ?>
 <?= !empty($PAGE->excerpt) ? '<meta name="description" content="' . htmlspecialchars($PAGE->excerpt) . '" />' : ''; ?>
 
-<?php if ($PAGE->type === 'article'): ?>
+<?php if (!empty($PAGE->type) && $PAGE->type === 'article'): ?>
     <?= !empty($PAGE->username) ? '<meta name="author" content="' .  htmlspecialchars($PAGE->author) . '" />' : ''; ?>
     <?= !empty($PAGE->authorUrl) ? '<link rel="author" href="' . htmlspecialchars($PAGE->authorUrl) . '" />' : ''; ?>
     <?= !empty($PAGE->created_at) ? '<meta property="article:published_time" content="' . htmlspecialchars($PAGE->created_at) . '" />' : ''; ?>
 <?php endif; ?>
 
 <meta name="robots" content="index,noarchive,follow" />
-<?= !empty($PAGE->keywords) ? '<meta name="keywords" content="Xet, Xet Industries, XetIndustries, Xtreme Embeded Tech Industries, ' . htmlspecialchars($PAGE->keywords) . '" />' : ''; ?>
+<?= !empty($PAGE->keywords) ? '<meta name="keywords" content="xet industries, xetindustries, Xet Industries, XetIndustries, Xtreme Embeded Tech Industries, ' . htmlspecialchars($PAGE->keywords) . '" />' : ''; ?>
 
 <!-- Open Graph -->
 <?= empty($PAGE->type) ? '<meta property="og:type" content="website" />' : '<meta property="og:type" content="' . $PAGE->type . '" />'; ?>
@@ -45,7 +50,7 @@ $PAGE->metaTitle = (
 <?= !empty($PAGE->x['site']) ? '<meta name="twitter:site" content="' . htmlspecialchars($PAGE->x['site']) . '" />' : ''; ?>
 <?= !empty($PAGE->x['creator']) ? '<meta name="twitter:creator" content="' . htmlspecialchars($PAGE->x['creator']) . '" />' : ''; ?>
 
-<?php if ($PAGE->type === 'article'): ?>
+<?php if (!empty($PAGE->type) && $PAGE->type === 'article'): ?>
     <?= !empty($PAGE->author) ? '<meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="' . htmlspecialchars($PAGE->author) . '" />' : ''; ?>
     <?= !empty($PAGE->x['category']) ? '<meta name="twitter:label2" value="Category" />
