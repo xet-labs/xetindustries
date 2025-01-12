@@ -25,10 +25,7 @@ function setup_db(){
         echo "--applying db patch"
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
-if grep -q '/*M!999999\- enable the sandbox mode */' asset/space/setup/db/XI.sql; then
-    echo "-- Removing problematic comment line"
-    sed -i '/\/\*M!999999\\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
-fi
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql 
 
 
     mysql --skip-password XI < asset/space/setup/db/XI.sql
