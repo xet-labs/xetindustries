@@ -74,6 +74,13 @@ function get_update(){
     setup_larvel
 }
 
+function get_backup(){
+    echo "Perfoming backup"
+    git add -A && git commit -m "stable-bkp $(date)" && git push
+    # setup_pkg
+    mysqldump XI --skip-password  > asset/space/setup/db/XI.bkp.sql
+}
+
 #-main script
 if [[ -e $CURRENT_PATH/asset/space/setup/setup.sh ]]; then
     git config --global --add safe.directory $CURRENT_PATH
@@ -90,6 +97,10 @@ while [[ $# -gt 0 ]]; do
             setup_larvel
             init_services
 
+            shift
+            ;;
+        -b|--backup|backup)
+            get_backup
             shift
             ;;
         -u|--update|update)
@@ -115,10 +126,6 @@ while [[ $# -gt 0 ]]; do
         --service|service)
             init_services
             shift
-            ;;
-        -b|b|basedir)
-            baseDir="$2"
-            shift 2
             ;;
         -h|help)
             usage
