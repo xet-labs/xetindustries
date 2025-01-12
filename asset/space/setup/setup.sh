@@ -76,9 +76,8 @@ function get_update(){
 
 function get_backup(){
     echo "Perfoming backup"
-    git add -A && git commit -m "stable-bkp $(date)" && git push
-    # setup_pkg
     mysqldump XI --skip-password  > asset/space/setup/db/XI.sql
+    git add -A && git commit -m "stable-bkp $(date)" && git push
 }
 
 #-main script
