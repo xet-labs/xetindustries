@@ -72,7 +72,15 @@ function init_services(){
 }
 
 function get_update(){
+    if git diff --quiet; then
+    echo "No changes detected, pulling latest changes."
     git pull
+    else
+    echo "Changes detected. Stashing changes."
+    git stash --include-untracked
+    git pull
+    fi
+
     # setup_pkg
     setup_nginx
     setup_db
