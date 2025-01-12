@@ -92,6 +92,7 @@ function get_update(){
 function get_backup(){
     echo "Perfoming backup"
     mysqldump XI --skip-password  > asset/space/setup/db/XI.sql
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql 
     git add -A && git commit -m "stable-bkp $(date)" && git push
 }
 
