@@ -1,13 +1,9 @@
 <?php
 use xet\Loc;
 
-$PAGE = (object) array_merge((array) $blog->getAttributes(), (array) $PAGE);
-$PAGE->canonical = true;
-$imgSrc = "media/{$PAGE->uid}/img/";
+require(Loc::file('PRTL', 'head'));
 
-// dd($blog,$PAGE);
-
-require(Loc::file('PRTL', 'head')); 
+$imgSrc = $blog->imgSrc;
 ?>
 
 

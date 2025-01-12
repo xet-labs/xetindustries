@@ -13,7 +13,7 @@
     <script src="asset/js/xscript.js" defer></script>
 <?php } ?>
 
-<?php if (empty($Page['jsClean'])): ?>
+<?php if (empty($PAGE->jsClean)): ?>
     <script src="<?php echo Loc::fileurl('JS', 'script'); ?>" defer></script>
 <?php endif; ?>
 
@@ -27,9 +27,10 @@ if (file_exists(public_path($currentDir . '/asset/js/script.js'))){ ?>
 
 
 <!-- =============== Custom Libs =============== -->
-<?php if (isset($Page['jsFiles'])): foreach ($Page['jsFiles'] as $jsFile): ?>
-    <script src="<?= asset($jsFile) ?>" defer></script>
-<?php endforeach; endif; ?>
+<?php if (!empty($PAGE->jsInc)){ foreach ($PAGE->jsInc as $js_inc){ ?>
+    <script src="<?= asset($js_inc) ?>" defer></script>
+<?php }}; ?>
+
 
 
 <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSG89CVQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->

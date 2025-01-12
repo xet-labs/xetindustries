@@ -2,7 +2,13 @@
 session_start();
 use xet\Loc;
 
-empty($PAGE) ? $PAGE = (object) null : '';
+// $PAGE = (object) array_merge((array) $blog->getAttributes(), (array) $PAGE);
+$PAGE = (object) array_merge(
+    (array) $PAGE,
+    !empty($blog) ? $blog->getAttributes() : []
+);
+
+// dd($PAGE);
 
 function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="preload" as="style"><link href="' . $cssFile . '" rel="stylesheet">'; }
 ?>
@@ -36,15 +42,15 @@ function linkStylesheet($cssFile) { return '<link href="' . $cssFile . '" rel="p
 	<!-- == Style-Sheet == -->
 	<?= file_exists(Loc::file('CNTR', 'styles')) ? linkStylesheet(route('styles.res')) : linkStylesheet(Loc::fileurl('CSS', 'styles')); ?>
 
-	<?php if (!empty($Page['link']) && $Page['link'] !== false) {
-		if (is_array($Page['link'])) { 
-			foreach ($Page['link'] as $link) { ?><?= linkStylesheet(htmlspecialchars($link)); ?><?php }
-		} else { ?><?= linkStylesheet(htmlspecialchars($Page['link'])); ?><?php } ?>
+	<?php if (!empty($PAGE->link) && $PAGE->link !== false) {
+		if (is_array($PAGE->link)) { 
+			foreach ($PAGE->link as $link) { ?><?= linkStylesheet(htmlspecialchars($link)); ?><?php }
+		} else { ?><?= linkStylesheet(htmlspecialchars($PAGE->link)); ?><?php } ?>
 	<?php } ?>
 
 	
-	<?= !empty($Page['lib']['tw']) ? linkStylesheet('/res/lib/tailwind.css') : ''; ?>
-	<?= !empty($Page->lib->fa) ? linkStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
+	<?= !empty($PAGE->lib['tw']) ? linkStylesheet('/res/lib/tailwind.css') : ''; ?>
+	<?= !empty($PAGE->lib->fa) ? linkStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
 	
 
 
