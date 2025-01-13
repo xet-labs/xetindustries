@@ -5,8 +5,8 @@ use xet\Loc;
 
 $sitemapBuffer = $sitemapBuffe ?? 1;
 $pages = [
-    ['/', '2024-04-01', 'monthly', 0.5],
-    ['/blog', '2024-04-01', 'monthly', 0.5],
+    ['/', '2024-04-01', 'daily', 0.5],
+    ['/blog', '2024-04-01', 'daily', 0.5],
     ['/about', '2024-04-01', 'monthly', 0.5],
     ['/contact', '2024-04-01', 'monthly', 0.5],
     ['/service', '2024-04-01', 'monthly', 0.5],

@@ -32,7 +32,6 @@ $PAGE->metaTitle = (
 <meta name="robots" content="index,noarchive,follow" />
 <?= !empty($PAGE->keywords) ? '<meta name="keywords" content="xet industries, xetindustries, Xet Industries, XetIndustries, Xtreme Embeded Tech Industries, ' . htmlspecialchars($PAGE->keywords) . '" />' : ''; ?>
 
-<!-- Open Graph -->
 <?= empty($PAGE->type) ? '<meta property="og:type" content="website" />' : '<meta property="og:type" content="' . $PAGE->type . '" />'; ?>
 <?= empty($PAGE->canonical)? '<meta property="og:url" content="' . $PAGE->baseUrl . '" />' : ''; ?>
 <?= !empty($PAGE->title) ? '<meta property="og:title" content="' . htmlspecialchars($PAGE->title) . '" />' : ''; ?>
@@ -40,8 +39,6 @@ $PAGE->metaTitle = (
 <?= !empty($PAGE->featured_img) ? '<meta property="og:image:secure_url" content="' . htmlspecialchars($PAGE->featured_img) . '" />' : ''; ?>
 <?= '<meta property="og:site_name" content="' . htmlspecialchars($PAGE->appName) . '" />' ; ?>
 
-
-<!-- Twitter -->
 <?= empty($PAGE->canonical) ? '<meta name="twitter:url" content="' . htmlspecialchars($PAGE->baseUrl) . '">' : ''; ?>
 <?= !empty($PAGE->title) ? '<meta name="twitter:title" content="' . htmlspecialchars($PAGE->title) . '">' : ''; ?>
 <?= !empty($PAGE->excerpt) ? '<meta name="twitter:description" content="' . htmlspecialchars($PAGE->excerpt) . '">' : ''; ?>
