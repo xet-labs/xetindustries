@@ -1,25 +1,14 @@
 <?php
-$PAGE->appName = empty($PAGE->appName) ? htmlspecialchars(config('app.name')) : htmlspecialchars($PAGE->appName) ; 
-$PAGE->author = empty($PAGE->author) ? 
-    (!empty($PAGE->username) ? htmlspecialchars($PAGE->name . ' ' . $PAGE->name_l) : '') 
-    : htmlspecialchars($PAGE->author);
-
-$PAGE->authorUrl = empty($PAGE->authorUrl) ? 
-    (!empty($PAGE->username) ? url('/') . '/@' . htmlspecialchars($PAGE->username) : '') 
-    : htmlspecialchars($PAGE->authorUrl);
-$PAGE->baseUrl = empty($PAGE->baseUrl) ? htmlspecialchars(url('/') . $_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8') : '';
-$PAGE->metaTitle = (
-    !empty($PAGE->title) ?
-        htmlspecialchars($PAGE->title) .
-        (!empty($PAGE->username) ? ' | by ' . htmlspecialchars($PAGE->author) : '') .
-        ' | ' . $PAGE->appName
-    : $PAGE->appName
-);
+$PAGE->appName = htmlspecialchars(empty($PAGE->appName) ? config('app.name') : $PAGE->appName); 
+$PAGE->author = htmlspecialchars(empty($PAGE->author) ? (!empty($PAGE->username) ? $PAGE->name . ' ' . $PAGE->name_l : '') : $PAGE->author);
+$PAGE->authorUrl = htmlspecialchars(empty($PAGE->authorUrl) ? (!empty($PAGE->username) ? url('/') . '/@' . $PAGE->username : '') : $PAGE->authorUrl);
+$PAGE->canonicalUrl = htmlspecialchars(empty($PAGE->canonicalUrl) ? url('/') . $_SERVER['REQUEST_URI'] : '');
+$PAGE->metaTitle = htmlspecialchars(!empty($PAGE->title) ? $PAGE->title . (!empty($PAGE->username) ? ' | by ' . $PAGE->author : '') . ' | ' . $PAGE->appName : $PAGE->appName );
 ?>
 
 <title><?= $PAGE->metaTitle ?></title>
 
-<?= empty($PAGE->canonical)? '<link rel="canonical" href="' . htmlspecialchars($PAGE->baseUrl) . '" />' : '' ?>
+<?= empty($PAGE->canonical) ? '<link rel="canonical" href="' . htmlspecialchars($PAGE->canonicalUrl) . '" />' : '' ?>
 <?= '<meta name="title" content="' . $PAGE->metaTitle . '" />' ?>
 <?= !empty($PAGE->excerpt) ? '<meta name="description" content="' . htmlspecialchars($PAGE->excerpt) . '" />' : ''; ?>
 
@@ -33,13 +22,13 @@ $PAGE->metaTitle = (
 <?= !empty($PAGE->keywords) ? '<meta name="keywords" content="xet industries, xetindustries, Xet Industries, XetIndustries, Xtreme Embeded Tech Industries, ' . htmlspecialchars($PAGE->keywords) . '" />' : ''; ?>
 
 <?= empty($PAGE->type) ? '<meta property="og:type" content="website" />' : '<meta property="og:type" content="' . $PAGE->type . '" />'; ?>
-<?= empty($PAGE->canonical)? '<meta property="og:url" content="' . $PAGE->baseUrl . '" />' : ''; ?>
+<?= empty($PAGE->canonical)? '<meta property="og:url" content="' . $PAGE->canonicalUrl . '" />' : ''; ?>
 <?= !empty($PAGE->title) ? '<meta property="og:title" content="' . htmlspecialchars($PAGE->title) . '" />' : ''; ?>
 <?= !empty($PAGE->excerpt) ? '<meta property="og:description" content="' . htmlspecialchars($PAGE->excerpt) . '" />' : ''; ?>
 <?= !empty($PAGE->featured_img) ? '<meta property="og:image:secure_url" content="' . htmlspecialchars($PAGE->featured_img) . '" />' : ''; ?>
 <?= '<meta property="og:site_name" content="' . htmlspecialchars($PAGE->appName) . '" />' ; ?>
 
-<?= empty($PAGE->canonical) ? '<meta name="twitter:url" content="' . htmlspecialchars($PAGE->baseUrl) . '">' : ''; ?>
+<?= empty($PAGE->canonical) ? '<meta name="twitter:url" content="' . htmlspecialchars($PAGE->canonicalUrl) . '">' : ''; ?>
 <?= !empty($PAGE->title) ? '<meta name="twitter:title" content="' . htmlspecialchars($PAGE->title) . '">' : ''; ?>
 <?= !empty($PAGE->excerpt) ? '<meta name="twitter:description" content="' . htmlspecialchars($PAGE->excerpt) . '">' : ''; ?>
 <?= !empty($PAGE->featured_img) ? '<meta name="twitter:image" content="' . htmlspecialchars($PAGE->featured_img) . '">' : ''; ?>

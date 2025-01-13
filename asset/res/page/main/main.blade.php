@@ -1,7 +1,9 @@
 <?php
   use xet\Loc;
   
-  $PAGE = [];
+  $PAGE = [
+    'excerpt' => 'dd'
+  ];
 
   $currentMenu = 'Home';
   include_once(Loc::FILE('TMPL','page'));
