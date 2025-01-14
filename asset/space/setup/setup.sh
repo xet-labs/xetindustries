@@ -104,7 +104,7 @@ function get_backup(){
     pmsg "Perfoming bkp"
     mkdir -p "$(dirname "$dbPath")"
     if mysqldump XI --skip-password  > "$dbPath" ; then
-        pmsg "DB backed up locally"
+        pmsg "DB backed up locally $(inf "[$dbPath]")"
         sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' "$dbPath"
         pmsg "pushing latest changes [git]"
         git add -A && git commit -m "stable-bkp $(date)" && git push
