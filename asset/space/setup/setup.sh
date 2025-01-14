@@ -79,8 +79,8 @@ function init_services(){
     systemctl restart nginx mariadb php8.2-fpm.service
 }
 git_pull(){
+    inf "fetching latest changes [git]"
     if git diff --quiet; then
-        inf "fetching latest changes [git]"
         git pull
     else
         alert "Changes detected. Discarding em all"
