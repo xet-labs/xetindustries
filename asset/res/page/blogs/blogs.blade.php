@@ -4,7 +4,7 @@
   
   $PAGE = [
     'title' => 'Blog',
-    'excerpt' => 'dd',
+    'excerpt' => 'Explore insightful articles, inspiring ideas and expert tips. Connect, share, and grow with our community.',
     'jsInc' => [
       Loc::Fileurl('JS','fetch-card-onscroll.blogs'),
       Loc::Fileurl('JS','clickable-card.blogs'),
