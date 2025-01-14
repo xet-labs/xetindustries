@@ -1,32 +1,41 @@
 #!/bin/bash
 CURRENT_PATH=$(pwd)
 
+out() { printf "$1$2\e[0m\n"; }
+msg() { out "\n\e[1;34m--" "$@"; }
+pmsg() { out "\e[1;34m" "$@"; }
+inf() { out "\e[0;2m" "$@"; }
+inf2() { out "\e[0;2m--" "$@"; }
+alert() { out "\e[0;35m" "$@"; }
+wrn() { out "\e[0;33m--" "${@} !!"; return 1; }
+err() { out "\e[0;31m\n--" "${@} !!"; exit 1; }
+
+
 function setup_pkg(){
-    echo "Installing required packages..."
+    inf "Installing required packages..."
     apt install -y git nginx keepalived openssl mariadb-server mariadb-client avahi-daemon avahi-utils curl composer php php-mysql php-fpm php-xml php-readline php-common php-gd php-mbstring php-curl php-zip php-cli php-json php-bcmath php-sqlite3 unzip
 }
 
 function setup_nginx(){
     NGINX_CONFIG="/xlvini/asset/proconf/mx/root.d/etc/nginx/sites-available/xi.com.4000"
     if [[ -e $NGINX_CONFIG ]]; then
-        echo "Configuring Nginx for xi.com.4000..."
+        inf "Configuring Nginx config for site"
         cp $NGINX_CONFIG /etc/nginx/sites-available/xi.com.4000
         ln -sf /etc/nginx/sites-available/xi.com.4000 /etc/nginx/sites-enabled/
         systemctl reload nginx
     else
-        echo "Nginx configuration file not found: $NGINX_CONFIG"
+        wrn "Nginx configuration file not found: $NGINX_CONFIG"
     fi
 }
 
 function setup_db(){
-    echo "-Importing databases..."
+    inf "Importing databases"
     mysql --skip-password < asset/space/setup/db/XI-init.sql
     if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
-        echo "--applying db patch"
+        inf2 "applying db patch"
         sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
     fi
     sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql 
-
 
     mysql --skip-password XI < asset/space/setup/db/XI.sql
     mysql --skip-password < asset/space/setup/db/XI-init99.sql
@@ -35,7 +44,7 @@ function setup_db(){
 
 function setup_composer(){
     if [ "$(id -u)" -eq 0 ]; then
-        echo "Switching to www-data user to run Composer..."
+        inf "Switching to www-data user to run Composer..."
         sudo -u www-data composer install --no-dev --optimize-autoloader
         sudo -u www-data composer update
     else
@@ -46,17 +55,17 @@ function setup_composer(){
 
 function setup_larvel(){
     # Laravel setup
-    echo "-setting up Laravel..."
+    inf "setting up Laravel..."
     if [[ ! -e .env ]]; then
         cp .env.example .env
     else
-        echo "Php env file exists, keeping it"
+        alert "Php env file exists, keeping it"
     fi
     php artisan key:generate
     php artisan migrate --force
     php artisan storage:link
 
-    echo "Clearing and caching Laravel configurations..."
+    inf "Clearing and caching Laravel config..."
     php artisan config:clear
     php artisan config:cache
     php artisan route:clear
@@ -64,17 +73,17 @@ function setup_larvel(){
 }
 
 function init_services(){
-    echo "Enabling and restarting services..."
+    inf "Enabling and restarting services..."
     systemctl enable nginx mariadb php8.2-fpm.service
     sleep 4
     systemctl restart nginx mariadb php8.2-fpm.service
 }
 git_pull(){
     if git diff --quiet; then
-        echo "No changes detected, pulling latest changes."
+        inf "fetching latest changes [git]"
         git pull
     else
-        echo "Changes detected. Stashing changes."
+        alert "Changes detected. Discarding em all"
         git reset --hard HEAD
         git clean -fd 
         git pull
@@ -91,9 +100,11 @@ function get_update(){
 }
 
 function get_backup(){
-    echo "Perfoming backup"
+    msg "init bkp"
+    inf "Perfoming DB bkp"
     mysqldump XI --skip-password  > asset/space/setup/db/XI.sql
-    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql 
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
+    inf "pushing latest changes [git]"
     git add -A && git commit -m "stable-bkp $(date)" && git push
 }
 
