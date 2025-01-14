@@ -102,8 +102,8 @@ function get_update(){
 function get_backup(){
     pmsg "Perfoming DB bkp"
     mysqldump XI --skip-password  > asset/space/setup/db/XI.sql
-    pmsg -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
-    inf "pushing latest changes [git]"
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
+    pmsg "pushing latest changes [git]"
     git add -A && git commit -m "stable-bkp $(date)" && git push
 }
 
