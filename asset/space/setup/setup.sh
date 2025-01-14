@@ -1,5 +1,6 @@
 #!/bin/bash
 CURRENT_PATH=$(pwd)
+dbPath="asset/space/setup/db/XI.sql"
 
 out() { printf "$1$2\e[0m\n"; }
 msg() { out "\n\e[1;34m--" "$@"; }
@@ -83,7 +84,7 @@ git_pull(){
     if git diff --quiet; then
         git pull
     else
-        alert "Changes detected. Discarding em all"
+        alert "Changes detected, discarding em all"
         git reset --hard HEAD
         git clean -fd 
         git pull
@@ -100,11 +101,16 @@ function get_update(){
 }
 
 function get_backup(){
-    pmsg "Perfoming DB bkp"
-    mysqldump XI --skip-password  > asset/space/setup/db/XI.sql
-    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql
-    pmsg "pushing latest changes [git]"
-    git add -A && git commit -m "stable-bkp $(date)" && git push
+    pmsg "Perfoming bkp"
+    mkdir -p "$(dirname "$dbPath")"
+    if mysqldump XI --skip-password  > "$dbPath" ; then
+        pmsg "DB backed up locally"
+        sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' "$dbPath"
+        pmsg "pushing latest changes [git]"
+        git add -A && git commit -m "stable-bkp $(date)" && git push
+    else
+        wrn "Couldnt backup db"
+    fi
 }
 
 #-main script

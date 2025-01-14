@@ -17,6 +17,7 @@ $blog = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 empty($blog) ? abort(404, 'Blog not found') : '';    
 
 $blog->type = "article";
+$blog->prtl_stickySocial = 'true';
 $blog->imgSrc = "media/{$blog->uid}/img/";
 $blogPath = storage_path("app/private/{$blog->uid}/blogs/{$blog->id}/index.php");
 

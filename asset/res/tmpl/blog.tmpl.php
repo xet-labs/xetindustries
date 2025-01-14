@@ -7,13 +7,11 @@ $imgSrc = $blog->imgSrc;
 
 
 <body class="blog-body">
-
 	<?php
 	require(Loc::file('PRTL', 'scripts.body'));
-	
 	$currentMenu = $subBrand = 'Blog';
 	require(Loc::file('PRTL', 'nav'));
-	require(Loc::file('PRTL', 'sticky-social'));
+	!empty($PAGE->prtl_stickySocial) ? require(Loc::file('PRTL','sticky-social')) : '';
 	?>
 
 	<main class="main-wrap">

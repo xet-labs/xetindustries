@@ -2,7 +2,7 @@
   use xet\Loc;
   
   $PAGE = [
-    'excerpt' => 'dd'
+    // 'excerpt' => 'dd'
   ];
 
   $currentMenu = 'Home';

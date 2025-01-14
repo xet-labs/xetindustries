@@ -4,13 +4,13 @@
   
   $PAGE = [
     'title' => 'Blog',
+    'excerpt' => 'dd',
     'jsInc' => [
       Loc::Fileurl('JS','fetch-card-onscroll.blogs'),
       Loc::Fileurl('JS','clickable-card.blogs'),
-      'canonical'=> false
-    ]
-  ];
-
-  $currentMenu=$subBrand='Blog';
+    ],
+    ];
+    
+    $currentMenu=$subBrand='Blog';
   include_once(Loc::FILE('TMPL','page'));
 ?>

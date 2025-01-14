@@ -5,11 +5,10 @@ require(Loc::file('PRTL', 'head'));
 ?>
 
 <body class="body">
-	<?php require(Loc::file('PRTL', 'scripts.body')); ?>
-
 	<?php
+	require(Loc::file('PRTL', 'scripts.body'));
 	require(Loc::file('PRTL','nav'));
-	// require(Loc::file('PRTL','sticky-social']);
+	!empty($PAGE->prtl_stickySocial) ? require(Loc::file('PRTL','sticky-social')) : '';
 	?>
 
 
