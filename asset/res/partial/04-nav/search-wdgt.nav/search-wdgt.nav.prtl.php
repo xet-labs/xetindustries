@@ -21,7 +21,7 @@
         <!-- search-bar-->
         <form action="" method="get" class="search-form">
             <input type="search" name="search" id="id-search_input" autocomplete="search" maxlength="256" class="search-input" placeholder="Search..">
-            <button type="reset" class="search-reset"></button>
+            <button type="reset"  title="clear" class="search-reset"></button>
         </form>
     </div>
 </div>

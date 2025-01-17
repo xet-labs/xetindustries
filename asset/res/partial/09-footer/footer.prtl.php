@@ -75,32 +75,32 @@ use xet\Loc;
         <div class="footer-links">
             <!-- Site Links -->
             <div class="site-links tag">
-                <a href="/home/home-1-light">Home</a>
-                <a href="/post-grids/2-col-sidebar-light">Posts</a>
-                <a href="/about/about-light">About</a>
-                <a href="/contact-2/contact-light">Services</a>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
             </div>
 
             <!-- Social Links -->
             <div class="social-links tag">
-                <a href="http://www.twitter.com" target="_blank">
+                <a href="http://www.twitter.com" target="_blank" rel="nofollow">
                     <img
                         src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22bfdeaf266bfbc017_twitter%20-%20light.png"
                         loading="lazy" alt="">
                 </a>
-                <!-- <a href="http://www.facebook.com" target="_blank">
+                <!-- <a href="http://www.facebook.com" target="_blank" rel="nofollow">
             <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d228bff5114fee6b7d6_facebook%20-%20light.png" loading="lazy" alt="">
           </a> -->
-                <a href="http://www.instagram.com" target="_blank">
+                <a href="http://www.instagram.com" target="_blank" rel="nofollow">
                     <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22afd8bd32d4220b0b_instagram%20-%20light.png" loading="lazy" alt="">
                 </a>
-                <!-- <a href="http://www.spotify.com" target="_blank">
+                <!-- <a href="http://www.spotify.com" target="_blank" rel="nofollow">
             <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22b8ab6349f47d2e57_spotify%20-%20light.png" loading="lazy" alt="">
           </a> -->
-                <a href="http://www.youtube.com" target="_blank">
+                <a href="http://www.youtube.com" target="_blank" rel="nofollow">
                     <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d22a064d81aceb83d58_youtube%20-%20light.png" loading="lazy" alt="">
                 </a>
-                <a href="http://www.pinterest.com" target="_blank">
+                <a href="http://www.pinterest.com" target="_blank" rel="nofollow">
                     <img src="https://assets.website-files.com/6059daa7fc68d6b5f2d5eda5/605a7d2109dd4901b630721a_pinterest%20-%20light.png"
                         loading="lazy" alt="">
                 </a>
@@ -108,19 +108,19 @@ use xet\Loc;
 
             <!-- Other Links -->
             <div class="tag other-links">
-                <a href="https://github.com" target="_blank">
+                <a href="https://github.com" target="_blank" rel="nofollow">
                     <img
                         src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973ddd931304595a882b0_icon__github--black.svg"
                         loading="eager" alt="" class="tag-icon">
                     <div>Github</div>
                 </a>
-                <a href="https://threads.net">
+                <a href="https://threads.net" rel="nofollow">
                     <img
                         src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973e73a288dd4fc132723_icon__threads--black.svg"
                         loading="eager" alt="" class="tag-icon">
                     <div>Threads</div>
                 </a>
-                <a href="mailto:youremail@email.com?subject=Define%20-%20Contact">
+                <a href="mailto:youremail@email.com?subject=Define%20-%20Contact" rel="nofollow">
                     <img
                         src="https://assets-global.website-files.com/6599356db6dc9ea103f4681c/659973f3c489a49f48894b71_icon__email--black.svg"
                         loading="eager" alt="" class="tag-icon">
@@ -135,5 +135,4 @@ use xet\Loc;
 
 <?php
 include_once(Loc::FILE('PRTL','scripts.footer'));
-include_once(Loc::FILE('PRTL','php.footer'));
 ?>

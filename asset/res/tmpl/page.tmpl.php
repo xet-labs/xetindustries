@@ -1,16 +1,14 @@
 <?php
 use xet\Loc;
+
+require(Loc::file('PRTL', 'head'));
 ?>
 
-<?php require(Loc::file('PRTL','head')); ?>
-</head>
-
 <body class="body">
-	<?php require(Loc::file('PRTL', 'scripts-top.body')); ?>
-
 	<?php
+	require(Loc::file('PRTL', 'scripts.body'));
 	require(Loc::file('PRTL','nav'));
-	// require(Loc::file('PRTL','sticky-social']);
+	!empty($PAGE->prtl_stickySocial) ? require(Loc::file('PRTL','sticky-social')) : '';
 	?>
 
 
@@ -43,7 +41,7 @@ use xet\Loc;
 	</main>
 
 
-	<?php require(Loc::file('PRTL','footer')); ?>
+	<?php require(Loc::file('PRTL', 'footer')); ?>
 
 </body>
 

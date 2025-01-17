@@ -4,13 +4,13 @@
     $subBrand = isset($subBrand) ? $subBrand : "";
     $currentMenu = isset($currentMenu) ? $currentMenu : 'null';
 
-	$menu_items = array(
-		"Home" => "/",
-		"Blog" => "/blog",
-		"Product" => "pages/product",
-		"Support" => "pages/support",
-		"Contact" => "pages/contact",
-	);
+	$menu_items = [
+		'Home' => "/",
+		'Blog' => "/blog",
+		'Product' => "/product",
+		'Support' => "/support",
+		'Contact' => "/contact",
+	];
 ?>
 
 

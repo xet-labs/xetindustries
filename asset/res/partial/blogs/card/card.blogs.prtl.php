@@ -2,13 +2,12 @@
 use xet\util;
 use xet\h\timesince;
 
-// $user = User::select('users.uid')->where('username', $username)->first();
-$BlogCnt = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$blog->slug;
+$blogUrl = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$blog->slug;
 ?>
 
-<div class="post" data-href="<?= htmlspecialchars($BlogCnt); ?>" tabindex="0" role="link" aria-label="Read more about <?= htmlspecialchars($blog->title); ?>">
+<div class="post" data-href="<?= htmlspecialchars($blogUrl); ?>" tabindex="0" role="link" aria-label="Read more about <?= htmlspecialchars($blog->title); ?>">
 		
-    <a href="<?= htmlspecialchars($BlogCnt); ?>" class="post-img-wrap">
+    <a href="<?= htmlspecialchars($blogUrl); ?>" class="post-img-wrap">
         <div class="post-img">
             <img data-src="<?= htmlspecialchars($blog->featured_img); ?>" alt="<?= htmlspecialchars($blog->title); ?>" loading="lazy" class="lazyload">
         </div>
@@ -18,7 +17,7 @@ $BlogCnt = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$bl
         <div class="post-info">
 
             <h3 class="post-title" title="<?= htmlspecialchars($blog->title); ?>">
-                <a href="<?= htmlspecialchars($BlogCnt); ?>">
+                <a href="<?= htmlspecialchars($blogUrl); ?>">
                     <?= htmlspecialchars($blog->short_title ?? $blog->title); ?>
                 </a>
             </h3>
@@ -52,7 +51,7 @@ $BlogCnt = !empty($blog->path) ? $blog->path : '/blog/@'.$blog->username.'/'.$bl
 
                         <div class="meta-date">
                             <span>
-                                <?= util::getTimeAgo($blog->created_at); ?>
+                                <?= util::getTimeAgo($blog->updated_at); ?>
                             </span>
                         </div>
                     

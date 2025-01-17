@@ -20,7 +20,7 @@ $blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 		'blogs.short_title',
 		'blogs.featured_img', 
 		'blogs.path',
-		'blogs.created_at', 
+		'blogs.updated_at', 
 		'blogs.excerpt', 
 		'users.username', 
 		'users.name', 
@@ -28,14 +28,13 @@ $blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 		'users.verified', 
 		'users.profile_img'
 	)
-	->where('blogs.status', 'published')
-	->orderBy('blogs.created_at', 'desc')
+	->whereIn('blogs.status', ['published'])
+	->orderBy('blogs.updated_at', 'desc')
 	->skip($BlogsOffset)
 	->take($BlogsLimit)
 	->get();
 	
 // $blogsCardBuffer ? sleep(0.8) : '';
-
 $response = [ 'noMoreBlogs' => $blogs->isEmpty() ? 1 : 0 ];
 
 // Check if blogs exist and buffer the output if enabled

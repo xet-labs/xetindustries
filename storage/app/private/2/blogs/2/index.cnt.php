@@ -111,7 +111,7 @@
     </a>
 </h2>
 <p>
-    Earnapp allows users to earn money by sharing their internet bandwidth with businesses in need of network resources. Your device works as a proxy service enabling clients to route traffic through your device.
+    Earnapp makes you money by sharing your internet bandwidth with businesses in need of network resources. Your device works as a proxy service enabling clients to route traffic through your device.
 </p>
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
@@ -137,7 +137,7 @@
     </div>
     </a>
 </h2>
-<p>PacketStream is another proxy service app that lets you earn by allowing clients to route internet traffic anonymously through your device and earn based on the amount of data transferred.</p>
+<p>PacketStream is similar proxy service app that lets you earn by allowing clients to route internet traffic through your device and earn based on the amount of data transferred.</p>
 <p>
     <b><b>Rate: </b></b>$1 / 10GB
     <br>

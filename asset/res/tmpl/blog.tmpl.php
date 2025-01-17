@@ -1,19 +1,17 @@
 <?php
 use xet\Loc;
 
-require(Loc::file('PRTL', 'head')); ?>
-
-</head>
+require(Loc::file('PRTL', 'head'));
+$imgSrc = $blog->imgSrc;
+?>
 
 
 <body class="blog-body">
-
 	<?php
 	require(Loc::file('PRTL', 'scripts.body'));
-	
 	$currentMenu = $subBrand = 'Blog';
 	require(Loc::file('PRTL', 'nav'));
-	require(Loc::file('PRTL', 'sticky-social'));
+	!empty($PAGE->prtl_stickySocial) ? require(Loc::file('PRTL','sticky-social')) : '';
 	?>
 
 	<main class="main-wrap">
@@ -63,8 +61,7 @@ require(Loc::file('PRTL', 'head')); ?>
 	</main>
 
 
-	<?php require(Loc::file('PRTL', 'footer')) ?>
-
+	<?php require(Loc::file('PRTL', 'footer')); ?>
 
 </body>
 

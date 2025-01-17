@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    // 'name' => env('APP_NAME', 'XetIndustries'),
+    'name' => 'XetIndustries',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +53,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    // 'url' => env('APP_URL', 'https://xetindustries.com'),
+    'url' => 'https://xetindustries.com',
 
     /*
     |--------------------------------------------------------------------------

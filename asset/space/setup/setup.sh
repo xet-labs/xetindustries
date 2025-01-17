@@ -1,55 +1,74 @@
 #!/bin/bash
+CURRENT_PATH=$(pwd)
+dbName="XI"
+dbPath="asset/space/setup/db/XI.sql"
+
+out() { printf "$1$2\e[0m\n"; }
+msg() { out "\n\e[1;34m--" "$@"; }
+pmsg() { out "\e[1;34m" "$@"; }
+inf() { out "\e[0;2m" "$@"; }
+inf2() { out "\e[0;2m--" "$@"; }
+alert() { out "\e[0;35m" "$@"; }
+wrn() { out "\e[0;33m--" "${@} !!"; return 1; }
+err() { out "\e[0;31m\n--" "${@} !!"; exit 1; }
+
 
 function setup_pkg(){
-    echo "Installing required packages..."
-    sudo apt update && sudo apt install -y git nginx keepalived openssl mariadb-server mariadb-client avahi-daemon avahi-utils curl composer php php-mysql php-fpm php-xml php-readline php-common php-gd php-mbstring php-curl php-zip php-cli php-json php-bcmath php-sqlite3 unzip
+    inf "Installing required packages..."
+    apt install -y git nginx keepalived openssl mariadb-server mariadb-client avahi-daemon avahi-utils curl composer php php-mysql php-fpm php-xml php-readline php-common php-gd php-mbstring php-curl php-zip php-cli php-json php-bcmath php-sqlite3 unzip
 }
 
 function setup_nginx(){
     NGINX_CONFIG="/xlvini/asset/proconf/mx/root.d/etc/nginx/sites-available/xi.com.4000"
     if [[ -e $NGINX_CONFIG ]]; then
-        echo "Configuring Nginx for xi.com.4000..."
-        sudo cp $NGINX_CONFIG /etc/nginx/sites-available/xi.com.4000
-        sudo ln -sf /etc/nginx/sites-available/xi.com.4000 /etc/nginx/sites-enabled/
-        sudo systemctl reload nginx
+        inf "Configuring Nginx config for site"
+        cp $NGINX_CONFIG /etc/nginx/sites-available/xi.com.4000
+        ln -sf /etc/nginx/sites-available/xi.com.4000 /etc/nginx/sites-enabled/
+        systemctl reload nginx
     else
-        echo "Nginx configuration file not found: $NGINX_CONFIG"
+        wrn "Nginx configuration file not found: $NGINX_CONFIG"
     fi
 }
 
-function setup_db(){
-    echo "-Importing databases..."
-    sudo mysql -u root -p < asset/space/setup/db/XI-init.sql
-    if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
-        sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
+function db_patch(){
+    inf2 "applying db patch"
+    if ! grep -q "SET foreign_key_checks = 0;" $dbPath; then
+        sed -i '1s/^/SET foreign_key_checks = 0;\n/' $dbPath
     fi
-    sudo mysql -u root -p XI < asset/space/setup/db/XI.sql
-    sudo mysql -u root -p < asset/space/setup/db/XI-init99.sql
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' $dbPath 
+}
+function setup_db(){
+    inf "Importing DB"
+    mysql --skip-password < asset/space/setup/db/XI-init.sql
+    mysql --skip-password $dbName < $dbPath
+    mysql --skip-password < asset/space/setup/db/XI-init99.sql
+    systemctl restart mysql
+}
+
+function setup_composer(){
+    if [ "$(id -u)" -eq 0 ]; then
+        inf "Switching to www-data user to run Composer..."
+        sudo -u www-data composer install --no-dev --optimize-autoloader
+        sudo -u www-data composer update
+    else
+        composer install --no-dev --optimize-autoloader
+        composer update
+    fi
 }
 
 function setup_larvel(){
-    if [ "$(whoami)" != "$LOGNAME" ]; then
-        echo "Switching to user: $LOGNAME"
-        sudo exec su - "$LOGNAME" -c "$0 --continue"
-    fi
-
-    # Composer setup
-    echo "-setting up Composer..."
-    sudo composer install --no-dev --optimize-autoloader
-    sudo composer update
-
     # Laravel setup
-    echo "-setting up Laravel..."
+    inf "setting up Laravel..."
     if [[ ! -e .env ]]; then
         cp .env.example .env
     else
-        echo "Php env file exists, keeping it"
+        alert "Php env file exists, keeping it"
     fi
     php artisan key:generate
     php artisan migrate --force
     php artisan storage:link
 
-    echo "Clearing and caching Laravel configurations..."
+    inf "Clearing and caching Laravel config..."
     php artisan config:clear
     php artisan config:cache
     php artisan route:clear
@@ -57,20 +76,112 @@ function setup_larvel(){
 }
 
 function init_services(){
-    echo "Enabling and restarting services..."
-    sudo systemctl enable mariadb nginx php8.2-fpm.service
-    sudo systemctl stop mariadb nginx php8.2-fpm.service
+    inf "Enabling and restarting services..."
+    systemctl enable nginx mariadb php8.2-fpm.service
     sleep 4
-    sudo systemctl restart mariadb nginx php8.2-fpm.service
+    systemctl restart nginx mariadb php8.2-fpm.service
+}
+git_pull(){
+    inf "fetching latest changes [git]"
+    if git diff --quiet; then
+        git pull
+    else
+        alert "Changes detected, discarding em all"
+        git reset --hard HEAD
+        git clean -fd 
+        git pull
+    fi
+}
+function get_update(){
+
+    git_pull
+    # setup_pkg
+    setup_nginx
+    setup_db
+    setup_composer
+    setup_larvel
 }
 
+function get_backup(){
+    pmsg "Perfoming bkp"
+    mkdir -p "$(dirname "$dbPath")"
+    if mysqldump $dbName --skip-password  > "$dbPath" ; then
+        pmsg "DB backed up locally $(inf "[$dbPath]")"
+        db_patch
+        pmsg "pushing latest changes [git]"
+        git add -A && git commit -m "stable-bkp $(date)" && git push
+    else
+        wrn "Aborting, db bkp failed !!"
+    fi
+}
 
 #-main script
-setup_pkg
-setup_nginx
-setup_db
-setup_larvel
-init_services
+if [[ -e $CURRENT_PATH/asset/space/setup/setup.sh ]]; then
+    git config --global --add safe.directory $CURRENT_PATH
+    chown www-data:www-data $CURRENT_PATH -R
+fi
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -a|--all|all)
+            setup_pkg
+            setup_nginx
+            setup_db
+            setup_composer
+            setup_larvel
+            init_services
+
+            shift
+            ;;
+        -b|--backup|backup)
+            get_backup
+            shift
+            ;;
+        -u|--update|update)
+            get_update
+            shift
+            ;;
+        --git|git)
+            git_pull
+            shift
+            ;;
+        --pkg|pkg)
+            setup_pkg
+            shift
+            ;;
+        --db-patch|db-patch)
+            db_patch
+            shift
+            ;;
+        --db|db)
+            setup_db
+            shift
+            ;;
+        --composer|composer)
+            setup_composer
+            shift
+            ;;
+        --larvel|larvel)
+            setup_larvel
+            shift
+            ;;
+        --srvc|srvc|service)
+            init_services
+            shift
+            ;;
+        -h|help)
+            usage
+            exit 0
+            ;;
+        *)
+            alert "Error: Invalid option $1"
+            usage
+            exit 1
+            ;;
+    esac
+done
+
+
 
 if [ $? -eq 0 ]; then
     echo "Setup complete!"
