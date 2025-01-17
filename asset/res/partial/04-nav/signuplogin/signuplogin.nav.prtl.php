@@ -33,7 +33,7 @@ if (Auth::check()) { ?>
     <div class="signuplogin-wrap">
         <div class="signuplogin">
             <span class="signuplogin-brand">
-                <a href="/#" rel="noopener noreferrer"><?php readfile(Loc::file('BRAND','brand')); ?></a>
+                <a href="/" rel="noopener noreferrer"><?php readfile(Loc::file('BRAND','brand')); ?></a>
             </span>
             
             <div class="login-wrap">

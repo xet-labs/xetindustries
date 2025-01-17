@@ -1,5 +1,6 @@
 #!/bin/bash
 CURRENT_PATH=$(pwd)
+dbName="XI"
 dbPath="asset/space/setup/db/XI.sql"
 
 out() { printf "$1$2\e[0m\n"; }
@@ -29,16 +30,17 @@ function setup_nginx(){
     fi
 }
 
-function setup_db(){
-    inf "Importing databases"
-    mysql --skip-password < asset/space/setup/db/XI-init.sql
-    if ! grep -q "SET foreign_key_checks = 0;" asset/space/setup/db/XI.sql; then
-        inf2 "applying db patch"
-        sed -i '1s/^/SET foreign_key_checks = 0;\n/' asset/space/setup/db/XI.sql
+function db_patch(){
+    inf2 "applying db patch"
+    if ! grep -q "SET foreign_key_checks = 0;" $dbPath; then
+        sed -i '1s/^/SET foreign_key_checks = 0;\n/' $dbPath
     fi
-    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' asset/space/setup/db/XI.sql 
-
-    mysql --skip-password XI < asset/space/setup/db/XI.sql
+    sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' $dbPath 
+}
+function setup_db(){
+    inf "Importing DB"
+    mysql --skip-password < asset/space/setup/db/XI-init.sql
+    mysql --skip-password $dbName < $dbPath
     mysql --skip-password < asset/space/setup/db/XI-init99.sql
     systemctl restart mysql
 }
@@ -103,13 +105,13 @@ function get_update(){
 function get_backup(){
     pmsg "Perfoming bkp"
     mkdir -p "$(dirname "$dbPath")"
-    if mysqldump XI --skip-password  > "$dbPath" ; then
+    if mysqldump $dbName --skip-password  > "$dbPath" ; then
         pmsg "DB backed up locally $(inf "[$dbPath]")"
-        sed -i '/\/\*M!999999\\- enable the sandbox mode \*\//d' "$dbPath"
+        db_patch
         pmsg "pushing latest changes [git]"
         git add -A && git commit -m "stable-bkp $(date)" && git push
     else
-        wrn "Couldnt backup db"
+        wrn "Aborting, db bkp failed !!"
     fi
 }
 
@@ -145,6 +147,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --pkg|pkg)
             setup_pkg
+            shift
+            ;;
+        --db-patch|db-patch)
+            db_patch
             shift
             ;;
         --db|db)

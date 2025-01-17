@@ -4,13 +4,13 @@
     $subBrand = isset($subBrand) ? $subBrand : "";
     $currentMenu = isset($currentMenu) ? $currentMenu : 'null';
 
-	$menu_items = array(
-		"Home" => "/",
-		"Blog" => "/blog",
-		"Product" => "pages/product",
-		"Support" => "pages/support",
-		"Contact" => "pages/contact",
-	);
+	$menu_items = [
+		'Home' => "/",
+		'Blog' => "/blog",
+		'Product' => "/product",
+		'Support' => "/support",
+		'Contact' => "/contact",
+	];
 ?>
 
 
@@ -18,8 +18,8 @@
 	<div class="nav navbar">
 
 		<div class="brand">
-			<a href="/#" class="b-logo icon"> <?= Loc::FILEo('BRAND','logo') ?> </a>
-			<a href="/#" class="b-brand"> <?= Loc::FILEo('BRAND','brand') ?> </a>
+			<a href="/" class="b-logo icon"> <?= Loc::FILEo('BRAND','logo') ?> </a>
+			<a href="/" class="b-brand"> <?= Loc::FILEo('BRAND','brand') ?> </a>
 
 			<?php if (!empty($subBrand)) { ?>
 				<div class="sub-brand-wrap">
