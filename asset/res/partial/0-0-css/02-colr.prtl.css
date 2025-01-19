@@ -131,8 +131,14 @@
     --bg-scrollbar-hov: #4b4b4bbd;
 
     --colr: #000;--colr-inv: #fff;--colr-dark: #000;--colr-white: #fff;
+    --searchbar-hov-brdr-colr: #888888b6;
+    --searchbar-focs-brdr-colr: #1a73e8;
 }
-body.themeDark {
+
+
+html.themeDark{
+    --searchbar-hov-brdr-colr: #888888b6;
+    --searchbar-focs-brdr-colr: #888888b6;
     --bg-selection: #6666ff;
     --colr-selection: #fff;
 

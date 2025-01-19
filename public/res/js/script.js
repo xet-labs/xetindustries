@@ -1,6 +1,7 @@
-// Add CSRF token to every AJAX request
+// CSRF token for AJAX request
 $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')} });
 
+// -fix for signupLogin modal (flickers on fade out)
 document.addEventListener('DOMContentLoaded', function () {
   const loginBtn = document.getElementById('id-login-btn');
   const signupBtn = document.getElementById('id-signup-btn');
@@ -26,14 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // -Theme-Manager
 document.addEventListener("DOMContentLoaded", function () {
 
-  document.body.classList.add(localStorage.getItem("theme"));
+  document.documentElement.classList.add(localStorage.getItem("theme"));
 
   // Toggle theme on button click
   document.getElementById("id-themeswitch").addEventListener("click", function () {
-    document.body.classList.toggle("themeDark");
+    document.documentElement.classList.toggle("themeDark");
 
-    // Save user's theme preference
-    const theme = document.body.classList.contains("themeDark") ? "themeDark" : "light";
+    const theme = document.documentElement.classList.contains("themeDark") ? "themeDark" : "light";
     localStorage.setItem("theme", theme);
   });
 });

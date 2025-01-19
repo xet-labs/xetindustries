@@ -16,8 +16,6 @@
     --nav-font-wght: 500;
     /* --nav-font-wght: 450; */
 }
-body.themeDark {
-}
 
 nav {
     z-index: 2000;

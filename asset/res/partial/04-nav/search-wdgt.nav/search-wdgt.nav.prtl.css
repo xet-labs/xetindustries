@@ -1,12 +1,3 @@
-:root{
-    --searchbar-hov-brdr-colr: #888888b6;
-    --searchbar-focs-brdr-colr: #1a73e8;
-}
-
-body.themeDark{
-    --searchbar-hov-brdr-colr: #888888b6;
-    --searchbar-focs-brdr-colr: #888888b6;
-}
 
 
 /* .search-wdgt-input[type="search"]::-webkit-search-cancel-button, */

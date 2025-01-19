@@ -2,10 +2,8 @@
 <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-P4ZM2NDC" as="script">
 <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-23MMMZRSHB" as="script">
 
-<!-- Google Tag Manager (Async) in <head> -->
+<!-- Google Tag Manager -->
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P4ZM2NDC"></script>
-<!-- End Google Tag Manager -->
-
 <!-- Google Analytics (gtag.js) with deferred load -->
 <script>
   window.addEventListener('load', function() {

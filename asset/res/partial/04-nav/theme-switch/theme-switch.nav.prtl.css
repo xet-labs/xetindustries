@@ -2,7 +2,7 @@
     --themeLightIconDisp: flex;
     --themeLightIconVis: visible;
 }
-body.themeDark {
+html.themeDark {
     --themeDarkIconDisp: flex;  --themeLightIconDisp: none;
     --themeDarkIconVis: visible; --themeLightIconVis: hidden;
 }

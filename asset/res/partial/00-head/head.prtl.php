@@ -8,25 +8,24 @@ $PAGE = (object) array_merge(
     !empty($blog) ? $blog->getAttributes() : []
 );
 
-
 function csslink($cssUrl) { return '
 	<link href="' . $cssUrl . '" rel="preload" as="style">
-	<link href="' . $cssUrl . '" rel="stylesheet">'
-	; }
+	<link href="' . $cssUrl . '" rel="stylesheet">' ;
+}
 
 function jslinkP($jsUrl) { return '
 	<link rel="preload" href="' . $jsUrl . '" as="script">
-	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
-	; }
+	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>' ;
+}
 function jslink($jsUrl) { return '
 	<link rel="preload" href="' . $jsUrl . '" as="script">
-	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
-	; }
+	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>' ;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
+<script>document.documentElement.classList.add(localStorage.getItem("theme"));</script>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -61,7 +60,7 @@ function jslink($jsUrl) { return '
 	<?= !empty($PAGE->lib->tw) ? csslink('/res/lib/tailwind.css') : ''; ?>
 	<?= !empty($PAGE->lib->fa) ? csslink('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css') : ''; ?>
 	
-	<?php require(Loc::file('PRTL', 'script.head')); ?>
+	<?php require(Loc::file('PRTL', 'scripts.head')); ?>
 
 	<meta name="csrf-token" content="<?= csrf_token(); ?>">
 

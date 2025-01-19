@@ -12,9 +12,6 @@
     --icon-brdr-scale: .92;
 
 }
-body.themeDark {
-    /* --icon-hov-bg: #ffffff15; */
-}
 
 .icon {
     display: flex;

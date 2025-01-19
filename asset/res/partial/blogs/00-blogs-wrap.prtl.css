@@ -12,7 +12,7 @@
     --posts-media-grid-gap: 2.6rem 1.8rem;
     --posts-media-grid-gap: 2.2rem 20px;
 }
-body.themeDark {
+html.themeDark {
     --post-bg: transparent;
     --post-media-bg: transparent;
 }

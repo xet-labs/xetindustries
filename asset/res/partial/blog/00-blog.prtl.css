@@ -15,8 +15,8 @@
     --colr-h1: #26272e;
     --colr-title: var(--colr-h1);
 }
-body.themeDark {
-    --colr-blog: #d1d1d1;
+html.themeDark {
+    /* --colr-blog: #d1d1d1; */
     /* --colr-h1: #ccc; */
     /* --colr-title: var(--colr-h1); */
 }
@@ -49,8 +49,8 @@ body.themeDark {
 }
 
 .blog-body{
-    --bg: var(--bg-blog);
-    --colr-txt: var(--colr-blog);
+    /* --bg: var(--bg-blog); */
+    /* --colr-txt: var(--colr-blog); */
 }
 .blog-body main{
     margin-left: 0;
