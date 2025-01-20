@@ -9,4 +9,6 @@
 <?= empty($PAGE->jsClean) ? jslinkP(Loc::fileurl('JS', 'script')) : '' ?>
 
 <!-- =============== Custom Libs =============== -->
-<?php if (!empty($PAGE->jsInc)){ foreach ($PAGE->jsInc as $js_inc){ jslink($js_inc); }}; ?>
+<?php if (!empty($PAGE->jsInc)){ foreach ($PAGE->jsInc as $js_inc){ ?>
+    <?= jslink($js_inc) ?>
+<?php }}; ?>

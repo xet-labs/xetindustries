@@ -1,9 +1,9 @@
 SET foreign_key_checks = 0;
--- MariaDB dump 10.19-11.4.3-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19-11.4.4-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: XI
 -- ------------------------------------------------------
--- Server version	11.4.3-MariaDB-1
+-- Server version	11.4.4-MariaDB-3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -232,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-01-20  2:04:14
+-- Dump completed on 2025-01-20 22:07:23

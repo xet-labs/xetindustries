@@ -28,7 +28,7 @@ $blogs = Blog::join('users', 'blogs.uid', '=', 'users.uid')
 		'users.verified', 
 		'users.profile_img'
 	)
-	->whereIn('blogs.status', ['published'])
+	->whereIn('blogs.status', ['published', 'published_hidden'])
 	->orderBy('blogs.updated_at', 'desc')
 	->skip($BlogsOffset)
 	->take($BlogsLimit)

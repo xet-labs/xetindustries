@@ -14,11 +14,11 @@ function csslink($cssUrl) { return '
 }
 
 function jslinkP($jsUrl) { return '
-	<link rel="preload" href="' . $jsUrl . '" as="script">
+	<link rel="preload" href="' . $jsUrl . '" as="script" crossorigin="anonymous">
 	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>' ;
 }
 function jslink($jsUrl) { return '
-	<link rel="preload" href="' . $jsUrl . '" as="script">
+	<link rel="preload" href="' . $jsUrl . '" as="script" crossorigin="anonymous">
 	<script defer src="' . $jsUrl . '" crossorigin="anonymous" referrerpolicy="no-referrer"></script>' ;
 }
 ?>
