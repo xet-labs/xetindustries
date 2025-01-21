@@ -1,17 +1,26 @@
 <div class="blog-header">
     
     <!-- Blog Category -->
-    <?php $blogTags = json_decode($PAGE->tags, true);
-    if (is_array($blogTags)){ ?>
+    <?php if (is_array($PAGE->tags)){ ?>
         <div class="blog-category">
-            <?php $blogTags = array_slice($blogTags, 0, 4); 
+            <?php $blogTags = array_slice($PAGE->tags, 0, 4); 
             foreach ($blogTags as $tag): ?>
                 <a href="<?= htmlspecialchars($tag); ?>">
                     <span><?= htmlspecialchars($tag); ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
-    <?php //else: ?>
+
+    <?php } else {
+        $blogTags = json_decode($PAGE->tags, true); ?>
+        <div class="blog-category">
+            <?php $blogTags = array_slice($PAGE->tags, 0, 4); 
+            foreach ($blogTags as $tag): ?>
+                <a href="<?= htmlspecialchars($tag); ?>">
+                    <span><?= htmlspecialchars($tag); ?></span>
+                </a>
+            <?php endforeach; ?>
+        </div>
     <?php } ?>
 
         

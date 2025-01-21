@@ -4,34 +4,39 @@ function issetx($obj, $property) {
   return isset($obj) && property_exists($obj, $property) && $obj->$property !== false;
 }
 
-$PAGE->appName = issetx($PAGE, 'appName') ?  htmlspecialchars($PAGE->appName) : config('app.name');
-$PAGE->appLogo = url('/') . '/res/static/brand/favicon.svg';
-$PAGE->type = isset($PAGE->type) ? ($PAGE->type === false ? false : htmlspecialchars($PAGE->type)) : 'website';
+$PAGE->app = url('/');
+$PAGE->appName = config('app.name');
+$PAGE->appAltName = ["xet industries", "xetindustries", "Xet Industries", "XetIndustries", "Xtreme Embeded Tech Industries"];
+$PAGE->appLogo = $PAGE->app . '/res/static/brand/favicon.svg';
+$PAGE->appImg = $PAGE->app . '/res/static/brand/brand.svg';
+$PAGE->type = issetx($PAGE, 'type') ?  htmlspecialchars($PAGE->type) : 'website';
 $PAGE->typeLd = $PAGE->type === 'article' ? 'NewsArticle' : 'WebPage';
-$PAGE->canonical = rtrim(issetx($PAGE, 'canonical') ? htmlspecialchars($PAGE->canonical) : url('/') . $_SERVER['REQUEST_URI'], '/');
+$PAGE->canonical = rtrim(issetx($PAGE, 'canonical') ? htmlspecialchars($PAGE->canonical) : $PAGE->app . $_SERVER['REQUEST_URI'], '/');
+$PAGE->description = issetx($PAGE, 'description') ? htmlspecialchars($PAGE->description) : htmlspecialchars(!empty($PAGE->excerpt) ? $PAGE->excerpt : '');
 
+$PAGE->tags = !empty($PAGE->tags) ? json_decode($PAGE->tags, true) : '';
 
-$PAGE->author = htmlspecialchars(empty($PAGE->author) ? (!empty($PAGE->username) ? $PAGE->name . ' ' . $PAGE->name_l : '') : $PAGE->author);
+if (!empty($PAGE->type) && $PAGE->type === 'article'){
+  $PAGE->author = htmlspecialchars(empty($PAGE->author) ? (!empty($PAGE->username) ? $PAGE->name . ' ' . $PAGE->name_l : '') : $PAGE->author);
+  $PAGE->authorUrl = htmlspecialchars(empty($PAGE->authorUrl) ? (!empty($PAGE->username) ? $PAGE->app . '/@' . $PAGE->username : '') : $PAGE->authorUrl);
+  $PAGE->profile_img = !empty($PAGE->profile_img) ? asset($PAGE->profile_img) : '';
+}
+
 $PAGE->metaTitle = htmlspecialchars(!empty($PAGE->title) ? $PAGE->title . (!empty($PAGE->username) ? ' | by ' . $PAGE->author : '') . ' | ' . $PAGE->appName : $PAGE->appName );
-$PAGE->description = isset($PAGE->description) ? ($PAGE->description === false ? false : htmlspecialchars($PAGE->description)) : htmlspecialchars(!empty($PAGE->excerpt) ? $PAGE->excerpt : '');
-$PAGE->featured_img = !empty($PAGE->featured_img) ? url('/') . $PAGE->featured_img : '';
-$PAGE->authorUrl = htmlspecialchars(empty($PAGE->authorUrl) ? (!empty($PAGE->username) ? url('/') . '/@' . $PAGE->username : '') : $PAGE->authorUrl);
+$PAGE->featured_img = !empty($PAGE->featured_img) ? asset($PAGE->featured_img) : '';
 
 ?>
 
 
 <title><?= $PAGE->metaTitle ?></title>
 
+<meta name="robots" content="index,noarchive,follow" />
+<meta name="referrer" content="unsafe-url" />
 <?= issetx($PAGE, 'canonical') ? '<link rel="canonical" href="' . htmlspecialchars($PAGE->canonical) . '" />' : '' ?>
 
 <?= '<meta name="title" content="' . $PAGE->metaTitle . '" />' ?>
 <?= !empty($PAGE->description) ? '<meta name="description" content="' . htmlspecialchars($PAGE->description) . '" />' : ''; ?>
-
-
-<meta name="robots" content="index,noarchive,follow" />
-<meta name="referrer" content="unsafe-url" />
-<?= !empty($PAGE->keywords) ? '<meta name="keywords" content="xet industries, xetindustries, Xet Industries, XetIndustries, Xtreme Embeded Tech Industries, ' . htmlspecialchars($PAGE->keywords) . '" />' : ''; ?>
-
+<?= !empty($PAGE->tags) ? '<meta name="keywords" content="' . implode(', ', $PAGE->tags) . '" />' : ''; ?>
 <?= issetx($PAGE, 'type') ? '<meta property="og:type" content="' . $PAGE->type . '" />' : ''; ?>
 <?= !empty($PAGE->title) ? '<meta property="og:title" content="' . htmlspecialchars($PAGE->title) . '" />' : ''; ?>
 <?= issetx($PAGE, 'canonical') ? '<meta property="og:url" content="' . $PAGE->canonical . '" />' : ''; ?>
@@ -49,7 +54,7 @@ $PAGE->authorUrl = htmlspecialchars(empty($PAGE->authorUrl) ? (!empty($PAGE->use
 <?= issetx($PAGE, 'canonical') ? '<meta name="twitter:url" content="' . htmlspecialchars($PAGE->canonical) . '">' : ''; ?>
 <?= !empty($PAGE->site_domain) ? '<meta name="twitter:domain" value="' . htmlspecialchars($PAGE->site_domain) . '" />' : ''; ?>
 
-<?php if (issetx($PAGE, 'type') && $PAGE->type === 'article'){ ?>
+<?php if (!empty($PAGE->type) && $PAGE->type === 'article'){ ?>
   <?= !empty($PAGE->username) ? '<meta name="author" content="' . htmlspecialchars($PAGE->author) . '" />' : ''; ?>
   <?= !empty($PAGE->username) ? '<meta property="article:author" content="' . htmlspecialchars($PAGE->authorUrl) . '" />' : ''; ?>
   <?= !empty($PAGE->authorUrl) ? '<link rel="author" href="' . htmlspecialchars($PAGE->authorUrl) . '" />' : ''; ?>
@@ -66,31 +71,39 @@ $PAGE->authorUrl = htmlspecialchars(empty($PAGE->authorUrl) ? (!empty($PAGE->use
   "@type": "<?= $PAGE->typeLd ?>",
   "headline": "<?= $PAGE->metaTitle ?>",
   "name": "<?= $PAGE->metaTitle ?>",
+  "description": "<?= $PAGE->description ?>",
   <?= !empty($PAGE->featured_img) ? '"image": [ "' . $PAGE->featured_img . '" ],' : ''; ?>
     
   <?php if (issetx($PAGE, 'type') && $PAGE->type === 'article'){ ?>
-    "editor": "<?= $PAGE->author ?>",
-    "description": "<?= $PAGE->description ?>",
     "dateCreated":"<?= $PAGE->created_at instanceof \Carbon\Carbon ? $blog->created_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->created_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
     "datePublished": "<?= $PAGE->created_at instanceof \Carbon\Carbon ? $blog->created_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->created_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
     "dateModified": "<?= $PAGE->updated_at instanceof \Carbon\Carbon ? $blog->updated_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->updated_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
+
     "author": {
       "@type": "Person",
       "name": "<?= $PAGE->author ?>",
+      <?= !empty($PAGE->profile_description) ? '"description": "' . $PAGE->profile_description . '",' : ''; ?>
+      <?= !empty($PAGE->profile_img) ? '"image": "' . $PAGE->profile_img . '",' : ''; ?>
       "url": "<?= $PAGE->authorUrl ?>"
     },
+    
+    "articleSection": <?= json_encode($PAGE->tags) ?>,
     "creator":["<?= $PAGE->author ?>"],
+    "editor": "<?= $PAGE->author ?>",
   <?php } ?>
 
   "publisher": {
     "@type": "Organization",
     "name": "<?= $PAGE->appName ?>",
-    "url":"<?= url('/') ?>",
+    "alternateName": <?= json_encode($PAGE->appAltName) ?>,
+    "url":"<?= $PAGE->app ?>",
     "logo": {
       "@type": "ImageObject",
-      "url": "<?= $PAGE->appLogo ?>"
+      "url": "<?= $PAGE->appImg ?>"
     }
   },
+  <?= !empty($PAGE->tags) ? '"keywords": ' . json_encode($PAGE->tags) . ',' : ''; ?>
+  <?= (isset($PAGE->isAccessibleForFree) && $PAGE->isAccessibleForFree === false) ? '"isAccessibleForFree": "false",' : '"isAccessibleForFree": "true",'; ?>
 
   "mainEntityOfPage":"<?= $PAGE->canonical ?>"
 }
