@@ -4,9 +4,9 @@ function issetx($obj, $property) {
   return isset($obj) && property_exists($obj, $property) && $obj->$property !== false;
 }
 
-$PAGE->app = url('/');
+$PAGE->app = rtrim(url('/'), '/');
 $PAGE->appName = config('app.name');
-$PAGE->appAltName = ["xet industries", "xetindustries", "Xet Industries", "XetIndustries", "Xtreme Embeded Tech Industries"];
+$PAGE->appAltName = ["XetIndustries", "Xet Industries", "xet industries", "xetindustries", "Xtreme Embeded Tech Industries"];
 $PAGE->appLogo = $PAGE->app . '/res/static/brand/favicon.svg';
 $PAGE->appImg = $PAGE->app . '/res/static/brand/brand.svg';
 $PAGE->type = issetx($PAGE, 'type') ?  htmlspecialchars($PAGE->type) : 'website';
@@ -78,10 +78,10 @@ $PAGE->featured_img = !empty($PAGE->featured_img) ? asset($PAGE->featured_img) :
     "dateCreated":"<?= $PAGE->created_at instanceof \Carbon\Carbon ? $blog->created_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->created_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
     "datePublished": "<?= $PAGE->created_at instanceof \Carbon\Carbon ? $blog->created_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->created_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
     "dateModified": "<?= $PAGE->updated_at instanceof \Carbon\Carbon ? $blog->updated_at->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z') : (new \Carbon\Carbon($blog->updated_at))->setTimezone('UTC')->format('Y-m-d\TH:i:s.v\Z'); ?>",
-
     "author": {
       "@type": "Person",
       "name": "<?= $PAGE->author ?>",
+      "jobTitle": "Lead PC Hardware Editor","sameAs": ["https://www.xda-developers.com/profile/RS650696"]
       <?= !empty($PAGE->profile_description) ? '"description": "' . $PAGE->profile_description . '",' : ''; ?>
       <?= !empty($PAGE->profile_img) ? '"image": "' . $PAGE->profile_img . '",' : ''; ?>
       "url": "<?= $PAGE->authorUrl ?>"
