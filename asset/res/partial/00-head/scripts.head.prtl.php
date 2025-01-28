@@ -1,3 +1,5 @@
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3615660006377319" crossorigin="anonymous"></script>
+
 <!-- Preload Google Tag Manager and Google Analytics -->
 <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-P4ZM2NDC" as="script">
 <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-23MMMZRSHB" as="script">
@@ -20,6 +22,8 @@
     document.head.appendChild(script);
   });
 </script>
+
+
 
 
 
